@@ -26,12 +26,24 @@ import com.peppe130.rominstaller.core.Download;
 @SuppressWarnings("ResultOfMethodCallIgnored, unused")
 public class Utils {
 
-    public static Toast TOAST;
-    public static AppCompatActivity ACTIVITY;
-    public static File ZIP_FILE;
+    public static void ROMDownloadLinkGenerator() {
 
-    public static String MODEL;
-    public static String FILE_NAME;
+        Uri mDownloadLink = Uri.parse("http://www.mediafire.com/download/3a7gefzmxj44lv1/SampleROM.zip");
+        File mDownloadDirectory = new File(ACTIVITY.getString(R.string.rom_download_folder));
+        FILE_NAME = "SampleROM.zip";
+
+        DownloadManager.Request mRequest = new DownloadManager.Request(mDownloadLink);
+        mRequest.setDestinationInExternalPublicDir(mDownloadDirectory.getPath(), FILE_NAME);
+
+        new Download(
+                mRequest,
+                mDownloadDirectory,
+                FILE_NAME, true).execute();
+
+    }
+
+    // Editable ////////////////////////////////////////////////////////////////////////////////////
+
     public static String[] DEVICE_COMPATIBILITY_LIST = new String[] {"SM-G920F"};
     public static String[] ROM_MD5_LIST = new String[] {"4ba678ca02e60557757d29e91e1e792f"};
     public static String[] RECOVERY_MD5_LIST = new String[] {"5fb732eea3d3e2b407fa7685c27a5354"};
@@ -40,8 +52,6 @@ public class Utils {
     public static Boolean TRIAL_MODE = true;
     public static Boolean BUTTON_UI = false;
     public static Boolean SHOULD_SHOW_SPLASH_SCREEN = true;
-    public static Boolean SHOULD_CLOSE_ACTIVITY = false;
-    public static Boolean SHOULD_LOCK_UI = true;
 
     public static Integer SPLASH_SCREEN_DELAY = 3000;
     public static Integer SPLASH_SCREEN_IMAGE = R.drawable.rom_logo;
@@ -57,42 +67,25 @@ public class Utils {
     public static IIcon DEFAULT_OPTIONS_ICON = GoogleMaterial.Icon.gmd_settings_backup_restore;
     public static IIcon CLEAR_DOWNLOADS_ICON = Entypo.Icon.ent_trash;
 
+
+    // Uneditable //////////////////////////////////////////////////////////////////////////////////
+
+    public static Toast TOAST;
+    public static AppCompatActivity ACTIVITY;
+    public static File ZIP_FILE;
+
+    public static String MODEL;
+    public static String FILE_NAME;
+
+    public static Boolean SHOULD_CLOSE_ACTIVITY = false;
+    public static Boolean SHOULD_LOCK_UI = true;
+
     public static ArrayList<DownloadManager.Request> DOWNLOAD_REQUEST_LIST = new ArrayList<>();
     public static ArrayList<Uri> DOWNLOAD_LINK_LIST = new ArrayList<>();
     public static ArrayList<File> DOWNLOAD_DIRECTORY_LIST = new ArrayList<>();
     public static ArrayList<String> DOWNLOADED_FILE_NAME_LIST = new ArrayList<>();
     public static ArrayList<String> DOWNLOADED_FILE_MD5_LIST = new ArrayList<>();
 
-
-    public static void ROMDownloadLinkGenerator() {
-
-        Uri mDownloadLink = Uri.parse("http://www.mediafire.com/download/3a7gefzmxj44lv1/SampleROM.zip");
-        File mDownloadDirectory = new File(ACTIVITY.getString(R.string.rom_download_folder));
-        FILE_NAME = "SampleROM.zip";
-
-        /*switch (Arrays.asList(DEVICE_COMPATIBILITY_LIST).indexOf(MODEL)) {
-            case 0:
-                mDownloadLink = Uri.parse("");
-                mDownloadDirectory = new File("");
-                FILE_NAME = "";
-                break;
-            case 1:
-                mDownloadLink = Uri.parse("");
-                mDownloadDirectory = new File("");
-                FILE_NAME = "";
-                break;
-
-        }*/
-
-        DownloadManager.Request mRequest = new DownloadManager.Request(mDownloadLink);
-        mRequest.setDestinationInExternalPublicDir(mDownloadDirectory.getPath(), FILE_NAME);
-
-        new Download(
-                mRequest,
-                mDownloadDirectory,
-                FILE_NAME, true).execute();
-
-    }
 
     public static void Sleep(long mTime) {
 
@@ -153,20 +146,20 @@ public class Utils {
         }
     }
 
-    public static boolean copyAssetFolder(AssetManager assetManager, String fromAssetPath, String toPath) {
+    public static boolean copyAssetFolder(AssetManager manager, String fromPath, String toPath) {
 
         try {
-            String[] files = assetManager.list(fromAssetPath);
+            String[] files = manager.list(fromPath);
             new File(toPath).mkdirs();
             boolean res = true;
             for (String file : files)
                 if (file.contains("."))
-                    res &= copyAsset(assetManager,
-                            fromAssetPath + "/" + file,
+                    res &= copyAsset(manager,
+                            fromPath + "/" + file,
                             toPath + "/" + file);
                 else
-                    res &= copyAssetFolder(assetManager,
-                            fromAssetPath + "/" + file,
+                    res &= copyAssetFolder(manager,
+                            fromPath + "/" + file,
                             toPath + "/" + file);
             return res;
         } catch (Exception e) {
@@ -176,13 +169,13 @@ public class Utils {
 
     }
 
-    public static boolean copyAsset(AssetManager assetManager, String fromAssetPath, String toPath) {
+    public static boolean copyAsset(AssetManager manager, String fromPath, String toPath) {
 
         InputStream in;
         OutputStream out;
 
         try {
-            in = assetManager.open(fromAssetPath);
+            in = manager.open(fromPath);
             new File(toPath).createNewFile();
             out = new FileOutputStream(toPath);
             copyFile(in, out);
