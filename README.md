@@ -286,5 +286,24 @@ scrivere:
 ```
 
 # How to download files?
+L'App è provvista di un codice interno che permette di scaricare qualsiasi tipo di file nelle seguenti modalità:
+
+1. Simple download without MD5 check
+
+```java
+
+  Uri mDownloadLink = Uri.parse("http://www.mediafire.com/download/z7fn3nw1vn5oo8a/Test.zip");
+  File mDownloadDirectory = new File(getString(R.string.rom_download_folder));
+  String mDownloadedFileFinalName = "Test.zip";
+  
+  DownloadManager.Request mRequest = new DownloadManager.Request(mDownloadLink);
+  mRequest.setDestinationInExternalPublicDir(mDownloadDirectory.getPath(), mDownloadedFileFinalName);
+
+  new Download(
+      mRequest,
+      mDownloadDirectory,
+      mDownloadedFileFinalName).execute();
+
+```
 
 # How to flash recoveries?
