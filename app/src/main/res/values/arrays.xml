@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="kernel">
+        <item>Imperium</item>
+        <item>Kushan</item>
+        <item>Hulk</item>
+        <item>Hulk (OC)</item>
+    </string-array>
+    <string-array name="kernel_values">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+
+    <string-array name="statusbar">
+        <item>Stock</item>
+        <item>3Minit</item>
+        <item>Stock + Home button</item>
+        <item>Stock + Power button</item>
+        <item>Stock + Home button + Power button</item>
+        <item>3Minit + Home button</item>
+        <item>3Minit + Power button</item>
+        <item>3Minit + Home button + Power button</item>
+    </string-array>
+    <string-array name="statusbar_values">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+    </string-array>
+
+    <string-array name="myfiles">
+        <item>S4</item>
+        <item>S5</item>
+    </string-array>
+    <string-array name="myfiles_values">
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+    <string-array name="keyboard" >
+        <item>S4</item>
+        <item>S6</item>
+    </string-array>
+    <string-array name="keybard_values" >
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+    <string-array name="mms" >
+        <item>S4</item>
+        <item>S5</item>
+    </string-array>
+    <string-array name="mms_values" >
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+    <string-array name="fonts" >
+        <item>S4</item>
+        <item>S5</item>
+        <item>S6</item>
+    </string-array>
+    <string-array name="fonts_values" >
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
+    <string-array name="accu" >
+        <item>Note4</item>
+        <item>S4</item>
+        <item>S5</item>
+        <item>S6</item>
+    </string-array>
+    <string-array name="accu_values" >
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+
+    <string-array name="sound" >
+        <item>S4</item>
+        <item>S5</item>
+        <item>S6</item>
+    </string-array>
+    <string-array name="sound_values" >
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
+    <string-array name="bootanim" >
+        <item>S4</item>
+        <item>S5</item>
+        <item>S6</item>
+    </string-array>
+    <string-array name="bootanim_values" >
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
+    <string-array name="secondary_symbol" >
+        <item>Yes</item>
+        <item>No</item>
+    </string-array>
+    <string-array name="secondary_symbol_values" >
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+</resources>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- App colors -->
+    <color name="colorPrimary">#FF5722</color>
+    <color name="colorPrimaryDark">#2e4d50</color>
+    <color name="colorPrimaryDark2">#1c3c3f</color>
+    <color name="colorAccent">@color/colorPrimary</color>
+    <color name="colorBackground">#ff1a292c</color>
+    <color name="textPrimaryColor">@android:color/white</color>
+    <color name="textSecondaryColor">@android:color/white</color>
+
+    <!-- SmartTabLayout colors -->
+    <color name="icon_enabled">@android:color/white</color>
+    <color name="icon_disabled">#FF63727B</color>
+
+    <!-- SweetAlertDialog colors -->
+    <color name="float_transparent">#00000000</color>
+    <color name="sweet_dialog_bg_color">#FFFFFF</color>
+    <color name="button_text_color">#FFFFFF</color>
+    <color name="gray_btn_bg_color">#bfbfbf</color>
+    <color name="gray_btn_bg_pressed_color">#bfbfbf</color>
+    <color name="blue_btn_bg_color">#84d8ff</color>
+    <color name="blue_btn_bg_pressed_color">#84d8ff</color>
+    <color name="red_btn_bg_color">#FF5722</color>
+    <color name="red_btn_bg_pressed_color">#FF5722</color>
+    <color name="error_stroke_color">#FF5722</color>
+    <color name="success_stroke_color">#A5DC86</color>
+    <color name="trans_success_stroke_color">#33A5DC86</color>
+    <color name="warning_stroke_color">#ffae68</color>
+
+    <!-- Other colors -->
+    <color name="text_color">#575757</color>
+    <color name="material_blue_grey_80">#ff37474f</color>
+    <color name="material_blue_grey_90">#ff263238</color>
+    <color name="material_blue_grey_95">#ff21272b</color>
+    <color name="material_deep_teal_20">#ff80cbc4</color>
+    <color name="material_deep_teal_50">#ff009688</color>
+    <color name="light_green_700">#689F38</color>
+    <color name="light_green_900">#33691E</color>
+    <color name="yellow_900">#F57F17</color>
+    <color name="yellow_a700">#FFD600</color>
+    <color name="light_blue_500">#03A9F4</color>
+    <color name="light_blue_a200">#40C4FF</color>
+    <color name="light_blue_a400">#00B0FF</color>
+    <color name="amber_a700">#FFAB00</color>
+    <color name="amber_a200">#FFD740</color>
+    <color name="primary">@color/light_green_700</color>
+    <color name="accent">@color/amber_a700</color>
+    <color name="text_highlight">@color/amber_a200</color>
+    <color name="accent_alt">@color/light_blue_a400</color>
+    <color name="text_highlight_alt">@color/light_blue_a200</color>
+    <color name="material_red_500">#F44336</color>
+    <color name="material_pink_500">#E91E63</color>
+    <color name="material_purple_500">#9C27B0</color>
+    <color name="material_deep_purple_500">#673AB7</color>
+    <color name="material_indigo_500">#3F51B5</color>
+    <color name="material_blue_500">#2196F3</color>
+    <color name="material_light_blue_500">#03A9F4</color>
+    <color name="material_cyan_500">#00BCD4</color>
+    <color name="material_teal_500">#009688</color>
+    <color name="material_green_500">#4CAF50</color>
+    <color name="material_light_green_500">#8BC34A</color>
+    <color name="material_lime_500">#CDDC39</color>
+    <color name="material_yellow_500">#FFEB3B</color>
+    <color name="material_amber_500">#FFC107</color>
+    <color name="material_orange_500">#FF9800</color>
+    <color name="material_deep_orange_500">#FF5722</color>
+
+</resources>

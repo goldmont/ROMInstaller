@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--suppress AndroidElementNotAllowed -->
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory
+        android:title="Apps">
+        <com.peppe130.rominstaller.core.CustomCheckBoxPreference
+            android:key="bloat1"
+            android:defaultValue="false"
+            android:title="AdAway" />
+        <com.peppe130.rominstaller.core.CustomCheckBoxPreference
+            android:key="bloat2"
+            android:defaultValue="false"
+            android:title="ES File Explorer" />
+        <com.peppe130.rominstaller.core.CustomCheckBoxPreference
+            android:key="bloat3"
+            android:defaultValue="false"
+            android:title="S Translator" />
+        <com.peppe130.rominstaller.core.CustomCheckBoxPreference
+            android:key="bloat4"
+            android:defaultValue="false"
+            android:title="Gmail" />
+        <com.peppe130.rominstaller.core.CustomCheckBoxPreference
+            android:key="bloat5"
+            android:defaultValue="false"
+            android:title="S Voice" />
+        <com.peppe130.rominstaller.core.CustomCheckBoxPreference
+            android:key="bloat6"
+            android:defaultValue="false"
+            android:title="S Health" />
+        <com.peppe130.rominstaller.core.CustomCheckBoxPreference
+            android:key="bloat7"
+            android:defaultValue="false"
+            android:title="Kids Mode" />
+    </PreferenceCategory>
+</PreferenceScreen>

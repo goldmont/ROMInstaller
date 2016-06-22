@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory
+        android:title="My Files options">
+        <ListPreference
+            android:title="My Files"
+            android:summary="@string/selected_item"
+            android:key="listMyFiles"
+            android:defaultValue="2"
+            android:entries="@array/myfiles"
+            android:entryValues="@array/myfiles_values" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="Keyboard options">
+        <ListPreference
+            android:title="Keyboard"
+            android:summary="@string/selected_item"
+            android:key="listKey"
+            android:defaultValue="2"
+            android:entries="@array/keyboard"
+            android:entryValues="@array/keybard_values" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="MMS options">
+        <ListPreference
+            android:title="MMS"
+            android:summary="@string/selected_item"
+            android:key="listMMS"
+            android:defaultValue="2"
+            android:entries="@array/mms"
+            android:entryValues="@array/mms_values" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="Fonts options">
+        <ListPreference
+            android:title="Fonts"
+            android:summary="@string/selected_item"
+            android:key="listFonts"
+            android:defaultValue="3"
+            android:entries="@array/fonts"
+            android:entryValues="@array/fonts_values" />
+    </PreferenceCategory>
+</PreferenceScreen>

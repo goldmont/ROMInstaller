@@ -1,0 +1,22 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/settings"
+        android:title="@string/title_activity_settings"
+        android:orderInCategory="100"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/changelog"
+        android:title="@string/changelog_activity_title"
+        android:orderInCategory="90"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/default_options"
+        android:title="@string/restore_default"
+        android:orderInCategory="80"
+        app:showAsAction="ifRoom" />
+
+</menu>

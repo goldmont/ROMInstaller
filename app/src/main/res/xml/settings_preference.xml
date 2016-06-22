@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory
+        android:title="@string/general">
+
+        <Preference
+            android:key="download_center"
+            android:persistent="false"
+            android:title="@string/download_center"
+            android:summary="@string/download_center_summary"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/about_app">
+
+        <Preference
+            android:key="app_build_number"
+            android:persistent="false"
+            android:title="@string/app_version"/>
+
+        <Preference
+            android:key="app_developer"
+            android:persistent="false"
+            android:title="@string/app_developer_title"
+            android:summary="@string/app_developer_summary"/>
+
+        <Preference
+            android:key="app_themer"
+            android:persistent="false"
+            android:title="@string/app_themer_title"
+            android:summary="@string/app_themer_summary"/>
+
+        <Preference
+            android:key="app_github"
+            android:persistent="false"
+            android:title="@string/app_github_title"
+            android:summary="@string/app_github_summary"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/about_rom">
+
+        <Preference
+            android:key="rom_build_number"
+            android:persistent="false"
+            android:title="@string/rom_version"
+            android:summary="@string/rom_build_number"/>
+
+        <Preference
+            android:key="rom_developer"
+            android:persistent="false"
+            android:title="@string/rom_developer_title"
+            android:summary="@string/rom_developer_summary"/>
+
+        <Preference
+            android:key="rom_themer"
+            android:persistent="false"
+            android:title="@string/rom_themer_title"
+            android:summary="@string/rom_themer_summary"/>
+
+        <Preference
+            android:key="rom_xda_thread"
+            android:persistent="false"
+            android:title="@string/rom_xda_thread"
+            android:summary="@string/tap_to_visit"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/play_store">
+
+        <Preference
+            android:key="review_app"
+            android:persistent="false"
+            android:title="@string/review_app_title"
+            android:summary="@string/review_app_summary"/>
+
+        <Preference
+            android:key="all_my_apps"
+            android:persistent="false"
+            android:title="@string/all_my_apps_title"
+            android:summary="@string/all_my_apps_summary"/>
+
+
+    </PreferenceCategory>
+</PreferenceScreen>

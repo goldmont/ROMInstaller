@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tool="http://schemas.android.com/tools"
+    package="com.peppe130.rominstaller">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <application
+        android:allowBackup="true"
+        android:fullBackupContent="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme"
+        tool:replace="android:icon">
+        <activity
+            android:name="com.peppe130.rominstaller.activities.AgreementActivity"
+            android:label="@string/activity_agreement_title"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.peppe130.rominstaller.activities.MainActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.peppe130.rominstaller.activities.ChangelogActivity"
+            android:label="@string/changelog_activity_title"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.peppe130.rominstaller.activities.SettingsActivity"
+            android:label="@string/title_activity_settings"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.peppe130.rominstaller.activities.DownloadActivity"
+            android:label="@string/download_center"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.peppe130.rominstaller.activities.SplashScreenActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Wallpaper.NoTitleBar.Fullscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

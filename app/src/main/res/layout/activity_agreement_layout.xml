@@ -1,0 +1,54 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingTop="12dp"
+    android:paddingBottom="25dp"
+    tools:context=".activities.AgreementActivity">
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollView2"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_above="@+id/agree"
+        android:layout_marginBottom="5dp">
+
+        <org.sufficientlysecure.htmltextview.HtmlTextView
+            android:id="@+id/agreement_html_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:textColor="@color/textPrimaryColor"
+            android:textAppearance="@android:style/TextAppearance.Small" />
+    </ScrollView>
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/agree"
+        android:background="#00000000"
+        android:layout_marginBottom="9dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="30dp"
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/agree_button_behavior"
+        tools:ignore="ContentDescription" />
+
+    <ImageButton
+        android:id="@+id/not_agree"
+        android:background="#00000000"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="9dp"
+        android:layout_marginStart="30dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:src="@drawable/close_button_behavior"
+        tools:ignore="ContentDescription" />
+
+</RelativeLayout>
