@@ -246,7 +246,7 @@ Dopo aver aggiunto le preferenze, dobbiamo configurare il file **XML** in Java. 
 
       @Override
       public void onCreatePreferences2(Bundle savedInstanceState, String rootKey) {
-
+          // Do nothing
       }
 
   }
