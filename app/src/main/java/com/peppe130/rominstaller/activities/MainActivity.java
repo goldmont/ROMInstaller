@@ -565,7 +565,7 @@ public class MainActivity extends AppCompatActivity implements CustomFileChooser
 
         @Override
         public void onCreatePreferences2(Bundle savedInstanceState, String rootKey) {
-
+            // Do nothing
         }
 
     }
@@ -584,7 +584,7 @@ public class MainActivity extends AppCompatActivity implements CustomFileChooser
 
         @Override
         public void onCreatePreferences2(Bundle savedInstanceState, String rootKey) {
-
+            // Do nothing
         }
 
     }
@@ -603,7 +603,7 @@ public class MainActivity extends AppCompatActivity implements CustomFileChooser
 
         @Override
         public void onCreatePreferences2(Bundle savedInstanceState, String rootKey) {
-
+            // Do nothing
         }
 
     }
@@ -622,7 +622,7 @@ public class MainActivity extends AppCompatActivity implements CustomFileChooser
 
         @Override
         public void onCreatePreferences2(Bundle savedInstanceState, String rootKey) {
-
+            // Do nothing
         }
 
     }
@@ -641,7 +641,7 @@ public class MainActivity extends AppCompatActivity implements CustomFileChooser
 
         @Override
         public void onCreatePreferences2(Bundle savedInstanceState, String rootKey) {
-
+            // Do nothing
         }
 
     }
@@ -660,7 +660,7 @@ public class MainActivity extends AppCompatActivity implements CustomFileChooser
 
         @Override
         public void onCreatePreferences2(Bundle savedInstanceState, String rootKey) {
-
+            // Do nothing
         }
 
     }
@@ -679,7 +679,7 @@ public class MainActivity extends AppCompatActivity implements CustomFileChooser
 
         @Override
         public void onCreatePreferences2(Bundle savedInstanceState, String rootKey) {
-
+            // Do nothing
         }
 
     }
