@@ -48,7 +48,7 @@ What makes ROM Installer unique is its characteristic of being easily reprogramm
 ![Screenshots](https://raw.githubusercontent.com/peppe130/ROMInstaller/master/Screenshot/Step11.png) <dl />
 12. Expand the **_"Gradle Scripts"_** menu and open **_"build.gradle(Module: app)"_**.
 13. Replace the old package name defined in **_"applicationId"_** with the new one.
-<dl />For example: **_applicationId "com.peppe130.newrominstaller"_**s
+<dl />For example: **_applicationId "com.peppe130.newrominstaller"_**
 
 ![Screenshots](https://raw.githubusercontent.com/peppe130/ROMInstaller/master/Screenshot/Step13.png)
 
