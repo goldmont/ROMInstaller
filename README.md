@@ -37,11 +37,12 @@ What makes ROM Installer unique is its characteristic of being easily reprogramm
 
 ![Screenshots](https://raw.githubusercontent.com/peppe130/ROMInstaller/master/Screenshot/Step8.png) <dl />
 9. Right click on the package name > **_"Refactor"_** > **_"Rename"_**.
+
 ![Screenshots](https://raw.githubusercontent.com/peppe130/ROMInstaller/master/Screenshot/Step9.png)
 10. From the new window that opens, click on **_"Rename Package"_**, enter a new name in lowercase
 <dl /> (For example: **_newrominstaller_**) and click on **_"Refactor"_**.
 
-![Screenshots](https://raw.githubusercontent.com/peppe130/ROMInstaller/master/Screenshot/Step10.png)
+![Screenshots](https://raw.githubusercontent.com/peppe130/ROMInstaller/master/Screenshot/Step10.png) <dl />
 11. From the new window that appears at the bottom, click on **_"Do Refactor"_** and wait until the process is completed.
 
 ![Screenshots](https://raw.githubusercontent.com/peppe130/ROMInstaller/master/Screenshot/Step11.png)
