@@ -121,7 +121,7 @@ To change **UI**, you have to open the **_Utils_** class and change the value to
 # How to add Preferences?
 
 1. Expand _"res"_ menu, right click on _"xml"_ menu and create a new **_XML_** file.
-2. Expand _"xml"_ menu and open the new created file. Inside it you have to add the preference:
+2. Expand _"xml"_ menu and open the newly created file. Inside it you have to add the preference:
   * To CheckBoxes just add the preference:
   
     ```xml
