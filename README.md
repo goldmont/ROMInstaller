@@ -22,7 +22,7 @@
 
 # Introduction
 ROM Installer is the new revolutionary way to flash Custom ROM on every Android device (5.0+).
-What makes ROM Installer unique is its characteristic of being easily reprogrammable by the developer who adopts it. The App has two user interfaces (ButtonUI and SwipeUI), offers the possibility to add a SplashScreen and a screen for the disclaimer, to verify the integrity of the ROM before installing, to download any type of file in five different ways, to download and install a recovery.
+What makes ROM Installer unique is its characteristic of being easily reprogrammable by the developer who adopts it. The App has two user interfaces (ButtonUI and SwipeUI), offers the possibility to add a splash and a disclaimer screen, to verify the integrity of the ROM before installing, to download any type of file in five different ways, to download and install a recovery.
 
 
 # How to import the project?
@@ -70,7 +70,8 @@ The following items belong to **_Editable_** section:
 * _TEST\_MODE_ = If set to **_true_**, it enables the test mode.
 * _TRIAL\_MODE_ = If set to **_true_**, it enables the trial mode.
 * _BUTTON\_UI_ = If set to **_true_**, it enables the Button user interface.
-* _SHOULD\_SHOW\_SPLASH\_SCREEN_ = If set to **_true_**, it enables the SplashScreen.
+* _SHOULD\_SHOW\_SPLASH\_SCREEN_ = If set to **_true_**, it enables the splash screen.
+* _SHOULD\_SHOW\_DISCLAIMER\_SCREEN_ = If set to **_true_**, it enables the disclaimer creen.
 * _SPLASH\_SCREEN\_DELAY_ = Duration time of SplashScreen (Value in milliseconds).
 * _SPLASH\_SCREEN\_IMAGE_ = Image to display in the SplashScreen.
 * _APP\_ICON\_MULTITASKING_ = Icon of the App's header in multitasking.
