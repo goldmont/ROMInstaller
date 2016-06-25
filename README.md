@@ -21,7 +21,7 @@
 
 
 # Introduction
-ROM Installer is the new revolutionary way to flash Custom ROM on any Android device (5.0+).
+ROM Installer is the new revolutionary way to flash Custom ROM on every Android device (5.0+).
 What makes ROM Installer unique is its characteristic of being easily reprogrammable by the developer who adopts it. The App has two user interfaces (ButtonUI and SwipeUI), offers the possibility to add a SplashScreen and a screen for the disclaimer, to verify the integrity of the ROM before installing, to download any type of file in five different ways, to download and install a recovery.
 
 
