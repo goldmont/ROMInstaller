@@ -37,15 +37,19 @@ What makes ROM Installer unique is its characteristic of being easily reprogramm
 
 ![Screenshots](https://raw.githubusercontent.com/peppe130/ROMInstaller/master/Screenshot/Step8.png)
 9. Right click on the package name > **_"Refactor"_** > **_"Rename"_**.
+
 ![Screenshots](https://raw.githubusercontent.com/peppe130/ROMInstaller/master/Screenshot/Step9.png)
 10. From the new window that opens, click on **_"Rename Package"_**, enter a new name in lowercase
 <dl /> (For example: **_newrominstaller_**) and click on **_"Refactor"_**.
+
 ![Screenshots](https://raw.githubusercontent.com/peppe130/ROMInstaller/master/Screenshot/Step10.png)
 11. From the new window that appears at the bottom, click on **_"Do Refactor"_** and wait until the process is completed.
+
 ![Screenshots](https://raw.githubusercontent.com/peppe130/ROMInstaller/master/Screenshot/Step11.png)
-12. Expand the **_"Gradle Scripts"_** menu and open **_"build.gradle(Module: app)"_**.
+12. Expand the **_"Gradle Scripts"_** menu and open **_"build.gradle(Module: app)"_**. <dl />
 13. Replace the old package name defined in **_"applicationId"_** with the new one.
 <dl />For example: **_applicationId "com.peppe130.newrominstaller"_**
+
 ![Screenshots](https://raw.githubusercontent.com/peppe130/ROMInstaller/master/Screenshot/Step13.png)
 
 **NB:** If the error **_"Activity class {…} does not exist"_** does occur while the App is compiled by Android Studio, just sync again the project. Look at the picture below:
