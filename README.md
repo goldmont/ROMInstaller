@@ -114,7 +114,7 @@ public static String[] RECOVERY_MD5_LIST = new String[] {"5fb732eea3d3e2b407fa76
 ```
 
 # How to set which UI to use?
-To change **UI**, you have to open the **_Utils_** class and change the value to the **_BUTTON_UI_** boolean: <dl />
+To change **UI**, you have to open the **_Utils_** class and change the value to the boolean **_BUTTON_UI:_** <dl />
 1. **_TRUE:_** Enables the UI with _"Next"_ and _"Back"_ buttons. <dl />
 2. **_FALSE:_** It enables the sensitive UI to the sliding of the finger on the screen.
 
