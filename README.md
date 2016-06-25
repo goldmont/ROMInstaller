@@ -17,7 +17,7 @@
 11. [How to add Fragments?](https://github.com/peppe130/ROMInstaller#how-to-add-fragments)
 12. [How to download files?](https://github.com/peppe130/ROMInstaller#how-to-download-files)
 13. [How to flash recoveries?](https://github.com/peppe130/ROMInstaller#how-to-flash-recoveries)
-14. [How to get preferences from updater-script?](https://github.com/peppe130/ROMInstaller#how-to-get-preferences-from-updater-script)
+14. [How to read preferences from updater-script?](https://github.com/peppe130/ROMInstaller#how-to-read-preferences-from-updater-script)
 
 
 # Introduction
@@ -576,7 +576,7 @@ Utils.DOWNLOAD_REQUEST_LIST = List of download requests for multiple downloads.
   
   ```
   
-# How to get preferences from updater-script?
+# How to read preferences from updater-script?
 
 Per leggere le preferenze dall'updater-script, bisogna innanzitutto montare la partizione `/data` con il comando:
 
