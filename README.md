@@ -75,7 +75,7 @@ The following items belong to **_Editable_** section:
 * _TRIAL\_MODE_ = If set to **_true_**, it enables the [trial mode](https://github.com/peppe130/ROMInstaller#what-is-trial-mode).
 * _BUTTON\_UI_ = If set to **_true_**, it enables the Button user interface.
 * _SHOULD\_SHOW\_SPLASH\_SCREEN_ = If set to **_true_**, it enables the splash screen.
-* _SHOULD\_SHOW\_DISCLAIMER\_SCREEN_ = If set to **_true_**, it enables the disclaimer creen.
+* _SHOULD\_SHOW\_DISCLAIMER\_SCREEN_ = If set to **_true_**, it enables the disclaimer screen.
 * _SPLASH\_SCREEN\_DELAY_ = Duration time of splash screen (Value in milliseconds).
 * _SPLASH\_SCREEN\_IMAGE_ = Image to display in the splash screen.
 * _APP\_ICON\_MULTITASKING_ = Icon of the App's header in multitasking.
