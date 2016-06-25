@@ -59,13 +59,21 @@ public class SplashScreenActivity extends Activity {
                 @Override
                 public void run() {
                     if (isActivityVisible) {
-                        startActivity(new Intent(SplashScreenActivity.this, AgreementActivity.class));
+                        if (Utils.SHOULD_SHOW_DISCLAIMER_SCREEN) {
+                            startActivity(new Intent(SplashScreenActivity.this, AgreementActivity.class));
+                        } else {
+                            startActivity(new Intent(SplashScreenActivity.this, MainActivity.class));
+                        }
                         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                     }
                 }
             }, Utils.SPLASH_SCREEN_DELAY);
         } else {
-            startActivity(new Intent(SplashScreenActivity.this, AgreementActivity.class));
+            if (Utils.SHOULD_SHOW_DISCLAIMER_SCREEN) {
+                startActivity(new Intent(SplashScreenActivity.this, AgreementActivity.class));
+            } else {
+                startActivity(new Intent(SplashScreenActivity.this, MainActivity.class));
+            }
         }
 
     }

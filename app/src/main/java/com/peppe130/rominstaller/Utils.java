@@ -52,6 +52,7 @@ public class Utils {
     public static Boolean TRIAL_MODE = true;
     public static Boolean BUTTON_UI = false;
     public static Boolean SHOULD_SHOW_SPLASH_SCREEN = true;
+    public static Boolean SHOULD_SHOW_DISCLAIMER_SCREEN = true;
 
     public static Integer SPLASH_SCREEN_DELAY = 3000;
     public static Integer SPLASH_SCREEN_IMAGE = R.drawable.rom_logo;

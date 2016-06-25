@@ -62,7 +62,9 @@ public class MainActivity extends AppCompatActivity implements CustomFileChooser
 
         if (Utils.SHOULD_CLOSE_ACTIVITY) {
             Utils.SHOULD_CLOSE_ACTIVITY = false;
-            AgreementActivity.mActivity.finish();
+            if (Utils.SHOULD_SHOW_DISCLAIMER_SCREEN) {
+                AgreementActivity.mActivity.finish();
+            }
         }
 
         if (mListFragment != null) {
