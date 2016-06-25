@@ -33,8 +33,7 @@ What makes ROM Installer unique is its characteristic of being easily reprogramm
 5. Click on **_"Open an existing Android Studio project"_**.
 6. From the window that opens, select the project and wait while it is being imported.
 7. From the side panel on the left, select the **_"Android"_** view.
-8. Expand the **_"app"_** menu and then the **_"java"_** one. The package name should now be visible. (**_com.peppe130.rominstaller_**).
-<dl />
+8. Expand the **_"app"_** menu and then the **_"java"_** one. The package name should now be visible. (**_com.peppe130.rominstaller_**). <dl />
 ![Screenshots](https://raw.githubusercontent.com/peppe130/ROMInstaller/master/Screenshot/Step8.png)
 9. Right click on the package name > **_"Refactor"_** > **_"Rename"_**.
 ![Screenshots](https://raw.githubusercontent.com/peppe130/ROMInstaller/master/Screenshot/Step9.png)
