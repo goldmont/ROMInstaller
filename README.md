@@ -67,8 +67,8 @@ The following items belong to **_Editable_** section:
 * _DEVICE\_COMPATIBILITY\_LIST_ = List of devices compatible with the ROM.
 * _ROM\_MD5\_LIST_ = List of ROM's MD5s and any of its add-ons.
 * _RECOVERY\_MD5\_LIST_ = List of recoveries MD5s.
-* _TEST\_MODE_ = If set to **_true_**, it enables the test mode.
-* _TRIAL\_MODE_ = If set to **_true_**, it enables the trial mode.
+* _TEST\_MODE_ = If set to **_true_**, it enables the [test mode](https://github.com/peppe130/ROMInstaller#what-is-test-mode).
+* _TRIAL\_MODE_ = If set to **_true_**, it enables the [trial mode](https://github.com/peppe130/ROMInstaller#what-is-trial-mode).
 * _BUTTON\_UI_ = If set to **_true_**, it enables the Button user interface.
 * _SHOULD\_SHOW\_SPLASH\_SCREEN_ = If set to **_true_**, it enables the splash screen.
 * _SHOULD\_SHOW\_DISCLAIMER\_SCREEN_ = If set to **_true_**, it enables the disclaimer creen.
