@@ -17,107 +17,112 @@
 11. [How to add Fragments?](https://github.com/peppe130/ROMInstaller#how-to-add-fragments)
 12. [How to download files?](https://github.com/peppe130/ROMInstaller#how-to-download-files)
 13. [How to flash recoveries?](https://github.com/peppe130/ROMInstaller#how-to-flash-recoveries)
+14. [How to read preferences from updater-script?](https://github.com/peppe130/ROMInstaller#how-to-read-preferences-from-updater-script)
+
 
 # Introduction
-ROM Installer è il nuovo metodo rivoluzionario per installare le Custom ROM su tutti i dispositivi Android (5.0+).
-Ciò che rende ROM Installer unica, è la sua caratteristica di essere facilmente riprogrammabile dallo sviluppatore che l'adotta. L'App possiede due interfacce utente (ButtonUI e SwipeUI), offre la possibilità di aggiungere una SplashScreen ed una schermata per il disclaimer, di verificare l'integrità della ROM prima dell'installazione, di scaricare qualsiasi tipo di file in cinque diverse modalità, di scaricare ed installare una recovery.
+ROM Installer is the new revolutionary way to flash Custom ROM on every Android device (5.0+).
+What makes ROM Installer unique is its characteristic of being easily reprogrammable by the developer who adopts it. The App has two user interfaces (ButtonUI and SwipeUI), offers the possibility to add a splash and a disclaimer screen, to verify the integrity of the ROM before installing, to download any type of file in five different ways, to download and install a recovery.
 
 
 # How to import the project?
-1. Scaricare il progetto da [GitHub](https://github.com/peppe130/ROMInstaller/archive/master.zip).
-2. Estrarlo e spostare la sua cartella nella directory dei progetti di Android Studio.
-3. Rinominare la cartella del progetto con un nuovo nome. Ad esempio: _NewROMInstaller_.
-4. Avviare Android Studio.
-5. Cliccare su **_"Open an existing Android Studio project"_**.
-6. Dalla finestra che si aprirà, selezionare il progetto ed attendere che venga importato.
-7. Dal pannello laterale a sinistra, selezionare la vista **_"Android"_**.
-8. Estendere il menù **_"app"_** e poi il menù **_"java"_**. Il nome del pacchetto sarà ora visibile (**_com.peppe130.rominstaller_**).
+1. Download the project from [GitHub](https://github.com/peppe130/ROMInstaller/archive/master.zip).
+2. Extract it and move its folder to the Android Studio's project directory.
+3. Give a new name to the project's folder. For example: _NewROMInstaller_.
+4. Launch Android Studio.
+5. Click on **_"Open an existing Android Studio project"_**.
+6. From the window that opens, select the project and wait while it is being imported.
+7. From the side panel on the left, select the **_"Android"_** view.
+8. Expand the **_"app"_** menu and then the **_"java"_** one. The package name should now be visible. (**_com.peppe130.rominstaller_**).
 ![Screenshots](https://raw.githubusercontent.com/peppe130/ROMInstaller/master/Screenshot/Step8.png)
-9. Tasto destro del mouse sul nome del pacchetto > **_"Refactor"_** > **_"Rename"_**.
+9. Right click on the package name > **_"Refactor"_** > **_"Rename"_**.
 ![Screenshots](https://raw.githubusercontent.com/peppe130/ROMInstaller/master/Screenshot/Step9.png)
-10. Nella nuova finestra che si aprirà, cliccare su **_"Rename Package"_**, inserire un nuovo nome in minuscolo
-<dl /> (Ad esempio: **_newrominstaller_**) e cliccare su **_"Refactor"_**.
+10. From the new window that opens, click on **_"Rename Package"_**, enter a new name in lowercase
+<dl /> (For example: **_newrominstaller_**) and click on **_"Refactor"_**.
 ![Screenshots](https://raw.githubusercontent.com/peppe130/ROMInstaller/master/Screenshot/Step10.png)
-11. Nella nuova finestra che apparirà in basso, cliccare su **_"Do Refactor"_** e attendere che il processo venga completato.
+11. From the new window that appears at the bottom, click on **_"Do Refactor"_** and wait until the process is completed.
 ![Screenshots](https://raw.githubusercontent.com/peppe130/ROMInstaller/master/Screenshot/Step11.png)
-12. Estendere il menù **_"Gradle Scripts"_** e aprire **_"build.gradle(Module: app)"_**.
-13. Cambiare il nome del vecchio pacchetto definito in **_"applicationId"_** con il nuovo.
-<dl />Ad esempio: **_applicationId "com.peppe130.newrominstaller"_**
+12. Expand the **_"Gradle Scripts"_** menu and open **_"build.gradle(Module: app)"_**.
+13. Replace the old package name defined in **_"applicationId"_** with the new one.
+<dl />For example: **_applicationId "com.peppe130.newrominstaller"_**
 ![Screenshots](https://raw.githubusercontent.com/peppe130/ROMInstaller/master/Screenshot/Step13.png)
 
-**NB:** Nel caso in cui si verificasse l'errore **_"Activity class {…} does not exist"_** quando viene compilata l'App da Android Studio, sincronizzare nuovamente il progetto. Vedi immagine sottostante:
+**NB:** If the error **_"Activity class {…} does not exist"_** does occur while the App is compiled by Android Studio, just sync again the project. Look at the picture below:
 ![Screenshots](https://raw.githubusercontent.com/peppe130/ROMInstaller/master/Screenshot/Step14.png)
 
 # Project structure
-Il progetto è composto da due pacchetti e una classe:
-  1. **_activities:_** contiene tutte le Activity dell'App.
-  2. **_core:_** contiene il cuore dell'App.
-  3. **_Utils:_** è il centro di controllo dell'App (Guarda [QUI](https://github.com/peppe130/ROMInstaller#what-is-utils)).
+Project is composed of two packages and one class:
+  1. **_activities:_** it contains all the App's activities.
+  2. **_core:_** it contains the "hearth" of the App.
+  3. **_Utils:_** it is the control center of the App (Look [HERE](https://github.com/peppe130/ROMInstaller#what-is-utils)).
 
-**NB:** Non verrà fornito alcun supporto per eventuali modifiche apportate al pacchetto **_core_**.
+**NB:** I will not provide any support for any changes made to the **_core_** package.
 
 # What is Utils?
-Come scritto nell'[Introduzione](https://github.com/peppe130/ROMInstaller#introduction), la principale caratteristica di ROM Installer è quella di essere facilmente riprogrammabile dallo sviluppatore che l'adotta. _Utils_ non è altro che un centro di controllo per regolare il comportamento dell'App modificando poche stringhe di codice. _Utils_ è divisa in due sezioni: **_Editable_** e **_Uneditable_**. Noi ci occuperemo della sezione marcata come _Editable_. <dl />
-**NB:** Non verrà fornito alcun supporto per eventuali modifiche apportate al codice marcato come **_Uneditable_**.
 
-Alla sezione **_Editable_** appartengono:
-* _DEVICE\_COMPATIBILITY\_LIST_ = Lista dei dispositivi compatibili con la ROM.
-* _ROM\_MD5\_LIST_ = Lista degli MD5 della ROM e di eventuali suoi componenti aggiuntivi.
-* _RECOVERY\_MD5\_LIST_ = Lista degli MD5 delle recovery.
-* _TEST\_MODE_ = Se impostato su **_true_**, attiva la modalità test.
-* _TRIAL\_MODE_ = Se impostato su **_true_**, attiva la modalità trial.
-* _BUTTON\_UI_ = Se impostato su **_true_**, attiva la modalità l'interfaccia con i bottoni.
-* _SHOULD\_SHOW\_SPLASH\_SCREEN_ = Se impostato su **_true_**, attiva la SplashScreen.
-* _SPLASH\_SCREEN\_DELAY_ = Tempo di durata della SplashScreen (Valore espresso in millisecondi).
-* _SPLASH\_SCREEN\_IMAGE_ = Immagine da mostrare nella SplashScreen.
-* _APP\_ICON\_MULTITASKING_ = Icona dell'header dell'App nel multitasking.
-* _APP\_HEADER\_COLOR\_MULTITASKING_ = Colore dell'header dell'App nel multitasking.
-* _PROGRESS\_BAR\_COLOR_ = Colore della ProgressBar dei Dialog di caricamento.
-* _FILE\_CHOOSER\_TITLE\_COLOR_ = Colore del titolo del FileChooser.
-* _FILE\_CHOOSER\_CONTENT\_COLOR_ = Colore del contenuto del FileChooser.
-* _FILE\_CHOOSER\_BACKGROUND\_COLOR_ = Colore dello sfondo del FileChooser.
-* _SETTINGS\_ICON_ = Icona delle Impostazioni nella Toolbar.
-* _CHANGELOG\_ICON_ = Icona del Changelog nella Toolbar.
-* _DEFAULT\_OPTIONS\_ICON_ = Icona "Opzioni default" nella Toolbar.
-* _CLEAR\_DOWNLOADS\_ICON_ = Icona "Clear downloads" nella Toolbar.
+As written in the [Introduction](https://github.com/peppe130/ROMInstaller#introduction), the main feature of ROM Installer is its characteristic of being easily reprogrammable by the developer who adopts it. _Utils_ is nothing more than a control center that allows the developer to adjust the App behavior by changing a few lines of code. _Utils_ is divided into two sections: **_Editable_** and **_Uneditable_**. We'll take care of the section marked as _Editable_. <dl />
+**NB:** I will not provide any support for any changes made to the code marked as **_Uneditable_**.
+
+The following items belong to **_Editable_** section:
+* _DEVICE\_COMPATIBILITY\_LIST_ = List of devices compatible with the ROM.
+* _ROM\_MD5\_LIST_ = List of ROM's MD5s and any of its add-ons.
+* _RECOVERY\_MD5\_LIST_ = List of recoveries MD5s.
+* _TEST\_MODE_ = If set to **_true_**, it enables the test mode.
+* _TRIAL\_MODE_ = If set to **_true_**, it enables the trial mode.
+* _BUTTON\_UI_ = If set to **_true_**, it enables the Button user interface.
+* _SHOULD\_SHOW\_SPLASH\_SCREEN_ = If set to **_true_**, it enables the splash screen.
+* _SHOULD\_SHOW\_DISCLAIMER\_SCREEN_ = If set to **_true_**, it enables the disclaimer creen.
+* _SPLASH\_SCREEN\_DELAY_ = Duration time of SplashScreen (Value in milliseconds).
+* _SPLASH\_SCREEN\_IMAGE_ = Image to display in the SplashScreen.
+* _APP\_ICON\_MULTITASKING_ = Icon of the App's header in multitasking.
+* _APP\_HEADER\_COLOR\_MULTITASKING_ = Color of the App's header in multitasking.
+* _PROGRESS\_BAR\_COLOR_ = ProgressBar color of loading Dialogs.
+* _FILE\_CHOOSER\_TITLE\_COLOR_ = FileChooser title color.
+* _FILE\_CHOOSER\_CONTENT\_COLOR_ = FileChooser content color.
+* _FILE\_CHOOSER\_BACKGROUND\_COLOR_ = FileChooser background color.
+* _SETTINGS\_ICON_ = Toolbar Settings icon.
+* _CHANGELOG\_ICON_ = Toolbar Changelog icon.
+* _DEFAULT\_OPTIONS\_ICON_ = Toolbar "Default options" icon.
+* _CLEAR\_DOWNLOADS\_ICON_ = Toolbar "Clear downloads" icon.
 
 # What is test mode?
-La test mode è una particolare modalità dell'App che disattiva ogni controllo che normalmente sarebbe obbligatorio. È stata creata per permettere allo sviluppatore di testare rapidamente il nuovo codice compilato.
+Test mode is a special mode of the App that disables each control that would normally be required. It was created to allow the developer to quickly test the new compiled code.
 
 # What is trial mode?
-La trial mode è un'altra particolare modalità che permette di testare in sicurezza l'App su ogni dispositivo, a prescindere se compatibile o meno. È stata creata per permettere allo sviluppatore di testare l'App su più dispositivi senza il bisogno di aggiornare la lista di compatibilità.
+Trial mode is another special mode that allows the developer to safely test the App on every device, no matter if it is compatible or not. It was created to allow the developer to test the App on multiple devices without the need to update the compatibility list.
 
 # How to add device to compatibility list?
-Per aggiungere un dispositivo alla lista di compatibilità, aprire la classe **_Utils_**, inserire nella lista il modello del dispositivo tra virgolette e separare gli uni dagli altri con una virgola.
+To add a device to the compatibility list, open the **_Utils_** class, enter the device model on the list in quotation marks and separate from each other with a comma.
 
-**Esempio:** <dl />
+**Example:** <dl />
 ```java
 public static String[] DEVICE_COMPATIBILITY_LIST = new String[] {"Device", "Device2", "Device3"};
 ```
 
 # How to add MD5 to its list?
-Come per la lista di compatibilità, anche per l'MD5 basta aprire la classe **_Utils_**, inserire nella lista il codice alfanumerico tra virgolette e separare gli uni dagli altri con una virgola.
+As for the compatibility list, even for the MD5 just open the **_Utils_** class, enter the alphanumeric code on the list in quotation marks and separate from each other with a comma.
 
-**Esempio:** <dl />
+**Example:** <dl />
 ```java
 public static String[] ROM_MD5_LIST = new String[] {"4ba678ca02e60557757d29e91e1e792f", "7b8fd857b3448827c93864d691324ddf", "edbaef755357a3e82e45f1837fd2e10b"};
 ```
 
-**oppure**
+**or**
+
 ```java
 public static String[] RECOVERY_MD5_LIST = new String[] {"5fb732eea3d3e2b407fa7685c27a5354", "b79abd4696176ccd48c883a43027b2b4", "44c22fbf70977c3b44ac1e2a0c5626c3"};
 ```
 
 # How to set which UI to use?
-Per cambiare **UI** bisogna aprire la classe **_Utils_** e cambiare il valore al Boolean **_BUTTON_UI:_** <dl />
-1. **_TRUE:_** Attiva la UI con i bottoni _"Next"_ e _"Back"_. <dl />
-2. **_FALSE:_** Attiva la UI sensibile allo scorrimento del dito sullo schermo.
+To change **UI**, you have to open the **_Utils_** class and change the value to the **_BUTTON_UI_** Boolean: <dl />
+1. **_TRUE:_** Enables the UI with _"Next"_ and _"Back"_ buttons. <dl />
+2. **_FALSE:_** It enables the sensitive UI to the sliding of the finger on the screen.
 
 # How to add Preferences?
 
-1. Espandere il menù _"res"_, tasto destro del mouse su _"xml"_ e creare un nuovo file **_XML_**.
-2. Espandere il menù _"xml"_ ed aprire il nuovo file creato. Dentro di esso si dovrà aggiungere la preferenza:
-  * Per un CheckBox basta aggiungere semplicemente la preferenza:
+1. Expand _"res"_ menu, right click on _"xml"_ menu and create a new **_XML_** file.
+2. Expand _"xml"_ menu and open the new created file. Inside it you have to add the preference:
+  * To CheckBoxes just add the preference:
   
     ```xml
         <PreferenceCategory
@@ -136,7 +141,7 @@ Per cambiare **UI** bisogna aprire la classe **_Utils_** e cambiare il valore al
         
         -->
     ```
-  * Per una Lista, bisogna innanzitutto definire il numero di elementi che la comporranno ed i loro rispettivi valori. Per fare ciò, utilizzeremo il file **_"arrays.xml"_** che si trova nel menù _"values":_
+  * To Lists, you need first to define the number of items that will make up the list and their respective values. To do this, we will use the **_"arrays.xml"_** file which is located in _"values"_ menu:
   
     ```xml
         <string-array name="your_list">
@@ -162,7 +167,7 @@ Per cambiare **UI** bisogna aprire la classe **_Utils_** e cambiare il valore al
             
         -->
     ```
-    * Una volta definiti gli elementi, bisogna creare la preferenza:
+    * After defining the elements, you have to create the preference:
     
       ``` xml
           <PreferenceCategory
@@ -187,11 +192,11 @@ Per cambiare **UI** bisogna aprire la classe **_Utils_** e cambiare il valore al
           
       ```
 
-Il numero ottimale di preferenze per file **XML** è **_quattro_**.
+The optimal number of files for **XML** file is **_4_**.
 
-Configurata la preferenza, affinchè sia possibile esportare il suo valore, è necessario dichiararla in Java. Per fare ciò apriamo la **_MainActivity_** situata in _"java"_ > _"com.peppe130.yourpackagename"_ > _"activities"._
+Once the preference is configured, in order to export its value, you must declare it in Java. To do this, just open the **_MainActivity_** located in _"java"_ > _"com.peppe130.yourpackagename"_ > _"activities"._
 
-Nel metodo `ExportPreferences()` aggiungere:
+In the `ExportPreferences()` method add:
 ```java
 mBufferedWriter.write(
                       "CheckBox=" + (String.valueOf(SP.getBoolean("YourCheckBoxID", DefaultValue))) +
@@ -217,7 +222,7 @@ mBufferedWriter.write(
   */
 ```
 
-Nel metodo `DefaultValues()` aggiungere:
+In the `DefaultValues()` method add:
 ```java
   // To CheckBoxes:
   mEditor.putBoolean("YourCheckBoxID", DefaultValue).commit();
@@ -228,7 +233,7 @@ Nel metodo `DefaultValues()` aggiungere:
 ```
 
 # How to add Fragments?
-Dopo aver aggiunto le preferenze, dobbiamo configurare il file **XML** in Java. Per fare ciò è necessario creare un Fragment. Il Fragment ha lo scopo di mostrare le preferenze sullo schermo in modo tale da poter interagire con esse. Per aggiungere un Fragment, apriamo la **MainActivity** e aggiungiamo in fondo:
+After adding the preferences, you must set up the **XML** file in Java. To do this you must create a Fragment. Fragment has the purpose to show the preferences on the screen in such a way as to interact with them. To add a Fragment, just open the **MainActivity** and add at the bottom:
 
 ```java
 
@@ -253,7 +258,7 @@ Dopo aver aggiunto le preferenze, dobbiamo configurare il file **XML** in Java. 
 
 ```
 
-Ora bisogna dichiarare il Fragment appena creato aggiungendolo alla lista dei Fragment. Per fare ciò, aprire la classe **MainActivity** e, nel metodo onCreate(), sotto
+Now you need to declare the Fragment newly created by adding it to the Fragment list. To do this, open the **MainActivity** class and, in the onCreate() method, under
 
 ```java
 
@@ -263,7 +268,7 @@ Ora bisogna dichiarare il Fragment appena creato aggiungendolo alla lista dei Fr
 
 ```
 
-scrivere:
+write:
 
 ```java
 
@@ -271,7 +276,7 @@ scrivere:
 
 ```
 
-**Esempio:** <dl />
+**Example:** <dl />
 ```java
 
   if (mListFragment != null) {
@@ -286,7 +291,7 @@ scrivere:
 ```
 
 # How to download files?
-L'App è provvista di un codice interno che permette di scaricare qualsiasi tipo di file in diverse modalità al fine di soddisfare ogni esigenza.
+The App is provided with an internal code that lets you download any type of file in different modes in order to satisfy every need.
 
 ## **Legend**
 
@@ -309,7 +314,7 @@ Utils.DOWNLOAD_REQUEST_LIST = List of download requests for multiple downloads.
 
 **NB:** The environment is already placed in the internal storage. So, in **_mDownloadDirectory_**, you have to store only the path from the internal storage to your destination folder and not the full path from root directory.
 
-### Le modalità disponibili sono le seguenti:
+### The available modes are as follows:
 
 1. Simple download without MD5 check
 
@@ -443,7 +448,7 @@ Utils.DOWNLOAD_REQUEST_LIST = List of download requests for multiple downloads.
   
 6. Multiple downloads mixed
 
-  Nel caso in cui si voglia disattivare il controllo dell'MD5 per un determinato file, bisogna semplicemente impostare il valore **_null_** come MD5 di quel file.
+  In case you want to disable the MD5 check for a particular file, simply set **_null_** value as MD5 of that file.
 
   ```java
   
@@ -506,7 +511,7 @@ Utils.DOWNLOAD_REQUEST_LIST = List of download requests for multiple downloads.
 
 **NB:** The environment is already placed in the internal storage. So, in **_mDownloadDirectory_**, you have to store only the path from the internal storage to your destination folder and not the full path from root directory.
 
-### Le modalità disponibili sono le seguenti:
+### The available modes are as follows:
 
 1. Download recovery
   ```java
@@ -573,3 +578,41 @@ Utils.DOWNLOAD_REQUEST_LIST = List of download requests for multiple downloads.
         mRecoveryPartition, true).execute();
   
   ```
+  
+# How to read preferences from updater-script?
+First you need to mount `/data` partition using the following command:
+
+```C
+
+run_program("/sbin/mount", "-t", "auto", "/data");
+
+```
+
+Once the `/data` partition is mounted, you will have access to the internal memory and therefore to the preferences. To read the preferences, just use the standard syntax to retrieve files with `.prop` extension:
+
+```C
+
+if file_getprop("/sdcard/YourROMFolder/preferences.prop", "YourPreferenceID") == "PreferenceValue" then
+	# Do something
+endif;
+
+```
+
+
+**Example:**
+
+```C
+# Mount /data partition
+run_program("/sbin/mount", "-t", "auto", "/data");
+
+# Read from preferences
+if file_getprop("/sdcard/SomeROM/preferences.prop", "wipe_data") == "true" then
+	ui_print("- Wiping data");
+else 
+	ui_print("- Skipping wipe data");
+endif;
+
+# Unmount /data partition
+unmount("/data");
+
+```
