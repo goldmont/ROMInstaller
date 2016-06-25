@@ -46,7 +46,6 @@ What makes ROM Installer unique is its characteristic of being easily reprogramm
 11. From the new window that appears at the bottom, click on **_"Do Refactor"_** and wait until the process is completed.
 
 ![Screenshots](https://raw.githubusercontent.com/peppe130/ROMInstaller/master/Screenshot/Step11.png) <dl />
-
 12. Expand the **_"Gradle Scripts"_** menu and open **_"build.gradle(Module: app)"_**.
 13. Expand the **_"Gradle Scripts"_** menu and open **_"build.gradle(Module: app)"_**.
 ![Screenshots](https://raw.githubusercontent.com/peppe130/ROMInstaller/master/Screenshot/Step13.png)
