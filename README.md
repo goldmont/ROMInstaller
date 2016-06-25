@@ -64,7 +64,7 @@ Project is composed of two packages and one class:
 
 # What is Utils?
 
-As written in the [Introduction](https://github.com/peppe130/ROMInstaller#introduction), the main feature of ROM Installer is its characteristic of being easily reprogrammable by the developer who adopts it. _Utils_ is nothing more than a control center that allows the developer to adjust the App behavior by changing a few lines of code. _Utils_ is divided into two sections: **_Editable_** and **_Uneditable_**. We'll take care of the section marked as _Editable_. <dl />
+As written in the [Introduction](https://github.com/peppe130/ROMInstaller#introduction), the main feature of ROM Installer is its characteristic of being easily reprogrammable by the developer who adopts it. _Utils_ is nothing more than a control center that allows the developer to adjust the App behavior by changing a few lines of code. _Utils_ is divided into two sections: **_Editable_** and **_Uneditable_**. We'll take care of the section marked as _Editable_.<dl />
 **NB:** I will not provide any support for any changes made to the code marked as **_Uneditable_**.
 
 The following items belong to **_Editable_** section:
