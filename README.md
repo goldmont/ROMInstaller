@@ -36,6 +36,7 @@ What makes ROM Installer unique is its characteristic of being easily reprogramm
 8. Expand the **_"app"_** menu and then the **_"java"_** one. The package name should now be visible. (**_com.peppe130.rominstaller_**).
 
 ![Screenshots](https://raw.githubusercontent.com/peppe130/ROMInstaller/master/Screenshot/Step8.png)
+
 9. Right click on the package name > **_"Refactor"_** > **_"Rename"_**.
 
 ![Screenshots](https://raw.githubusercontent.com/peppe130/ROMInstaller/master/Screenshot/Step9.png)
