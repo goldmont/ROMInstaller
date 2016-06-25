@@ -32,7 +32,7 @@ import com.peppe130.rominstaller.R;
 import com.peppe130.rominstaller.Utils;
 
 
-@SuppressWarnings("unused, ResultOfMethodCallIgnored, ConstantConditions")
+@SuppressWarnings("unused, ResultOfMethodCallIgnored, ConstantConditions, deprecation")
 public class CustomFileChooser extends DialogFragment implements MaterialDialog.ListCallback {
 
     private final static String DEFAULT_TAG = "[MD_FILE_SELECTOR]";
