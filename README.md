@@ -17,6 +17,8 @@
 11. [How to add Fragments?](https://github.com/peppe130/ROMInstaller#how-to-add-fragments)
 12. [How to download files?](https://github.com/peppe130/ROMInstaller#how-to-download-files)
 13. [How to flash recoveries?](https://github.com/peppe130/ROMInstaller#how-to-flash-recoveries)
+14. [How to get preferences from updater-script?](https://github.com/peppe130/ROMInstaller#how-to-get-preferences-from-updater-script)
+
 
 # Introduction
 ROM Installer è il nuovo metodo rivoluzionario per installare le Custom ROM su tutti i dispositivi Android (5.0+).
@@ -573,3 +575,42 @@ Utils.DOWNLOAD_REQUEST_LIST = List of download requests for multiple downloads.
         mRecoveryPartition, true).execute();
   
   ```
+  
+# How to get preferences from updater-script?
+
+Per leggere le preferenze dall'updater-script, bisogna innanzitutto montare la partizione `/data` con il comando:
+
+```C
+
+run_program("/sbin/mount", "-t", "auto", "/data");
+
+```
+
+Una volta montata la partizione `/data`, avremo accesso alla memoria interna e di conseguenza alle preferenze. Per leggere le preferenze basta utilizzare la sintassi standard per recuperare i file con estensione `.prop`:
+
+```C
+
+if file_getprop("/sdcard/YourROMFolder/preferences.prop", "YourPreferenceID") == "PreferenceValue" then
+	# Do something
+endif;
+
+```
+
+
+**Esempio:**
+
+```C
+# Mount /data partition
+run_program("/sbin/mount", "-t", "auto", "/data");
+
+# Read from preferences
+if file_getprop("/sdcard/SomeROM/preferences.prop", "wipe_data") == "true" then
+	ui_print("- Wiping data");
+else 
+	ui_print("- Skipping wipe data");
+endif;
+
+# Unmount /data partition
+unmount("/data");
+
+```
