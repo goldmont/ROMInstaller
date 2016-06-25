@@ -28,20 +28,20 @@ Ciò che rende ROM Installer unica, è la sua caratteristica di essere facilment
 2. Estrarlo e spostare la sua cartella nella directory dei progetti di Android Studio.
 3. Rinominare la cartella del progetto con un nuovo nome. Ad esempio: _NewROMInstaller_.
 4. Avviare Android Studio.
-5. Cliccare su _"Open an existing Android Studio project"_.
+5. Cliccare su **_"Open an existing Android Studio project"_**.
 6. Dalla finestra che si aprirà, selezionare il progetto ed attendere che venga importato.
-7. Dal pannello laterale a sinistra, selezionare la vista _"Android"_.
-8. Estendere il menù _"app"_ e poi il menù _"java"_. Il nome del pacchetto sarà ora visibile (_com.peppe130.rominstaller_).
+7. Dal pannello laterale a sinistra, selezionare la vista **_"Android"_**.
+8. Estendere il menù **_"app"_** e poi il menù **_"java"_**. Il nome del pacchetto sarà ora visibile (**_com.peppe130.rominstaller_**).
 ![Screenshots](https://raw.githubusercontent.com/peppe130/ROMInstaller/master/Screenshot/Step8.png)
-9. Tasto destro del mouse sul nome del pacchetto > _"Refactor"_ > _"Rename"_.
+9. Tasto destro del mouse sul nome del pacchetto > **_"Refactor"_** > **_"Rename"_**.
 ![Screenshots](https://raw.githubusercontent.com/peppe130/ROMInstaller/master/Screenshot/Step9.png)
-10. Nella nuova finestra che si aprirà, cliccare su _"Rename Package"_, inserire un nuovo nome in minuscolo
-<dl /> (Ad esempio: **_newrominstaller_**) e cliccare su _"Refactor"_.
+10. Nella nuova finestra che si aprirà, cliccare su **_"Rename Package"_**, inserire un nuovo nome in minuscolo
+<dl /> (Ad esempio: **_newrominstaller_**) e cliccare su **_"Refactor"_**.
 ![Screenshots](https://raw.githubusercontent.com/peppe130/ROMInstaller/master/Screenshot/Step10.png)
-11. Nella nuova finestra che apparirà in basso, cliccare su _"Do Refactor"_ e attendere che il processo venga completato.
+11. Nella nuova finestra che apparirà in basso, cliccare su **_"Do Refactor"_** e attendere che il processo venga completato.
 ![Screenshots](https://raw.githubusercontent.com/peppe130/ROMInstaller/master/Screenshot/Step11.png)
-12. Estendere il menù _"Gradle Scripts"_ e aprire _"build.gradle(Module: app)"_.
-13. Cambiare il nome del vecchio pacchetto definito in _"applicationId"_ con il nuovo.
+12. Estendere il menù **_"Gradle Scripts"_** e aprire **_"build.gradle(Module: app)"_**.
+13. Cambiare il nome del vecchio pacchetto definito in **_"applicationId"_** con il nuovo.
 <dl />Ad esempio: **_applicationId "com.peppe130.newrominstaller"_**
 ![Screenshots](https://raw.githubusercontent.com/peppe130/ROMInstaller/master/Screenshot/Step13.png)
 
