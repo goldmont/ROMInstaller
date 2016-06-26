@@ -34,46 +34,50 @@ What makes ROM Installer unique is its characteristic of being easily reprogramm
 6. From the window that opens, select the project and wait while it is being imported.
 7. From the side panel on the left, select the **_"Android"_** view.
 8. Expand the **_"app"_** menu and then the **_"java"_** one. The package name should now be visible. (**_com.peppe130.rominstaller_**).
-![Screenshots](https://raw.githubusercontent.com/peppe130/ROMInstaller/master/Screenshot/Step8.png)
+
+![Screenshots](https://raw.githubusercontent.com/peppe130/ROMInstaller/master/Screenshot/Step8.png) <dl />
 9. Right click on the package name > **_"Refactor"_** > **_"Rename"_**.
-![Screenshots](https://raw.githubusercontent.com/peppe130/ROMInstaller/master/Screenshot/Step9.png)
+
+![Screenshots](https://raw.githubusercontent.com/peppe130/ROMInstaller/master/Screenshot/Step9.png) <dl />
 10. From the new window that opens, click on **_"Rename Package"_**, enter a new name in lowercase
-<dl /> (For example: **_newrominstaller_**) and click on **_"Refactor"_**.
-![Screenshots](https://raw.githubusercontent.com/peppe130/ROMInstaller/master/Screenshot/Step10.png)
+<dl /> (for example: **_newrominstaller_**) and click on **_"Refactor"_**.
+
+![Screenshots](https://raw.githubusercontent.com/peppe130/ROMInstaller/master/Screenshot/Step10.png) <dl />
 11. From the new window that appears at the bottom, click on **_"Do Refactor"_** and wait until the process is completed.
-![Screenshots](https://raw.githubusercontent.com/peppe130/ROMInstaller/master/Screenshot/Step11.png)
-12. Expand the **_"Gradle Scripts"_** menu and open **_"build.gradle(Module: app)"_**.
-13. Replace the old package name defined in **_"applicationId"_** with the new one.
-<dl />For example: **_applicationId "com.peppe130.newrominstaller"_**
+
+![Screenshots](https://raw.githubusercontent.com/peppe130/ROMInstaller/master/Screenshot/Step11.png) <dl />
+12. Expand the **_"Gradle Scripts"_** menu and open **_"build.gradle(Module: app)"_**. Replace the old package name defined in **_"applicationId"_** with the new one. For example: **_applicationId "com.peppe130.newrominstaller"_**
+
 ![Screenshots](https://raw.githubusercontent.com/peppe130/ROMInstaller/master/Screenshot/Step13.png)
 
 **NB:** If the error **_"Activity class {…} does not exist"_** does occur while the App is compiled by Android Studio, just sync again the project. Look at the picture below:
+
 ![Screenshots](https://raw.githubusercontent.com/peppe130/ROMInstaller/master/Screenshot/Step14.png)
 
 # Project structure
 Project is composed of two packages and one class:
   1. **_activities:_** it contains all the App's activities.
-  2. **_core:_** it contains the "hearth" of the App.
-  3. **_Utils:_** it is the control center of the App (Look [HERE](https://github.com/peppe130/ROMInstaller#what-is-utils)).
+  2. **_core:_** it contains the "heart" of the App.
+  3. **_Utils:_** it is the control center of the App (look [HERE](https://github.com/peppe130/ROMInstaller#what-is-utils)).
 
 **NB:** I will not provide any support for any changes made to the **_core_** package.
 
 # What is Utils?
 
-As written in the [Introduction](https://github.com/peppe130/ROMInstaller#introduction), the main feature of ROM Installer is its characteristic of being easily reprogrammable by the developer who adopts it. _Utils_ is nothing more than a control center that allows the developer to adjust the App behavior by changing a few lines of code. _Utils_ is divided into two sections: **_Editable_** and **_Uneditable_**. We'll take care of the section marked as _Editable_. <dl />
+As written in the [Introduction](https://github.com/peppe130/ROMInstaller#introduction), the main feature of ROM Installer is its characteristic of being easily reprogrammable by the developer who adopts it. _Utils_ is nothing more than a control center that allows the developer to adjust the App behavior by changing a few lines of code. _Utils_ is divided into two sections: **_Editable_** and **_Uneditable_**. We'll take care of the section marked as _Editable_.<dl />
 **NB:** I will not provide any support for any changes made to the code marked as **_Uneditable_**.
 
 The following items belong to **_Editable_** section:
 * _DEVICE\_COMPATIBILITY\_LIST_ = List of devices compatible with the ROM.
 * _ROM\_MD5\_LIST_ = List of ROM's MD5s and any of its add-ons.
 * _RECOVERY\_MD5\_LIST_ = List of recoveries MD5s.
-* _TEST\_MODE_ = If set to **_true_**, it enables the test mode.
-* _TRIAL\_MODE_ = If set to **_true_**, it enables the trial mode.
+* _TEST\_MODE_ = If set to **_true_**, it enables the [test mode](https://github.com/peppe130/ROMInstaller#what-is-test-mode).
+* _TRIAL\_MODE_ = If set to **_true_**, it enables the [trial mode](https://github.com/peppe130/ROMInstaller#what-is-trial-mode).
 * _BUTTON\_UI_ = If set to **_true_**, it enables the Button user interface.
 * _SHOULD\_SHOW\_SPLASH\_SCREEN_ = If set to **_true_**, it enables the splash screen.
-* _SHOULD\_SHOW\_DISCLAIMER\_SCREEN_ = If set to **_true_**, it enables the disclaimer creen.
-* _SPLASH\_SCREEN\_DELAY_ = Duration time of SplashScreen (Value in milliseconds).
-* _SPLASH\_SCREEN\_IMAGE_ = Image to display in the SplashScreen.
+* _SHOULD\_SHOW\_DISCLAIMER\_SCREEN_ = If set to **_true_**, it enables the disclaimer screen.
+* _SPLASH\_SCREEN\_DELAY_ = Duration time of splash screen (value in milliseconds).
+* _SPLASH\_SCREEN\_IMAGE_ = Image to display in the splash screen.
 * _APP\_ICON\_MULTITASKING_ = Icon of the App's header in multitasking.
 * _APP\_HEADER\_COLOR\_MULTITASKING_ = Color of the App's header in multitasking.
 * _PROGRESS\_BAR\_COLOR_ = ProgressBar color of loading Dialogs.
@@ -114,14 +118,14 @@ public static String[] RECOVERY_MD5_LIST = new String[] {"5fb732eea3d3e2b407fa76
 ```
 
 # How to set which UI to use?
-To change **UI**, you have to open the **_Utils_** class and change the value to the **_BUTTON_UI_** Boolean: <dl />
+To change **UI**, you have to open the **_Utils_** class and change the value to the boolean **_BUTTON_UI:_** <dl />
 1. **_TRUE:_** Enables the UI with _"Next"_ and _"Back"_ buttons. <dl />
 2. **_FALSE:_** It enables the sensitive UI to the sliding of the finger on the screen.
 
 # How to add Preferences?
 
 1. Expand _"res"_ menu, right click on _"xml"_ menu and create a new **_XML_** file.
-2. Expand _"xml"_ menu and open the new created file. Inside it you have to add the preference:
+2. Expand _"xml"_ menu and open the newly created file. Inside it you have to add the preference:
   * To CheckBoxes just add the preference:
   
     ```xml
@@ -312,7 +316,11 @@ Utils.DOWNLOAD_REQUEST_LIST = List of download requests for multiple downloads.
 
 ```
 
-**NB:** The environment is already placed in the internal storage. So, in **_mDownloadDirectory_**, you have to store only the path from the internal storage to your destination folder and not the full path from root directory.
+**NB:**
+
+1. You should use hosting services which provide you direct download links such as Mediafire or Dropbox (on Dropbox, to download a file rather than display it, you can use **_dl=1_** as a query parameter in your URL).
+
+2. The environment is already placed in the internal storage. So, in **_mDownloadDirectory_**, you have to store only the path from the internal storage to your destination folder and not the full path from root directory.
 
 ### The available modes are as follows:
 
@@ -509,7 +517,11 @@ Utils.DOWNLOAD_REQUEST_LIST = List of download requests for multiple downloads.
 
 ```
 
-**NB:** The environment is already placed in the internal storage. So, in **_mDownloadDirectory_**, you have to store only the path from the internal storage to your destination folder and not the full path from root directory.
+**NB:**
+
+1. You should use hosting services which provide you direct download links such as Mediafire or Dropbox (on Dropbox, to download a file rather than display it, you can use **_dl=1_** as a query parameter in your URL).
+
+2. The environment is already placed in the internal storage. So, in **_mDownloadDirectory_**, you have to store only the path from the internal storage to your destination folder and not the full path from root directory.
 
 ### The available modes are as follows:
 
