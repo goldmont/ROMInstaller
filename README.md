@@ -40,7 +40,7 @@ What makes ROM Installer unique is its characteristic of being easily reprogramm
 
 ![Screenshots](https://raw.githubusercontent.com/peppe130/ROMInstaller/master/Screenshot/Step9.png) <dl />
 10. From the new window that opens, click on **_"Rename Package"_**, enter a new name in lowercase
-<dl /> (For example: **_newrominstaller_**) and click on **_"Refactor"_**.
+<dl /> (for example: **_newrominstaller_**) and click on **_"Refactor"_**.
 
 ![Screenshots](https://raw.githubusercontent.com/peppe130/ROMInstaller/master/Screenshot/Step10.png) <dl />
 11. From the new window that appears at the bottom, click on **_"Do Refactor"_** and wait until the process is completed.
@@ -58,7 +58,7 @@ What makes ROM Installer unique is its characteristic of being easily reprogramm
 Project is composed of two packages and one class:
   1. **_activities:_** it contains all the App's activities.
   2. **_core:_** it contains the "hearth" of the App.
-  3. **_Utils:_** it is the control center of the App (Look [HERE](https://github.com/peppe130/ROMInstaller#what-is-utils)).
+  3. **_Utils:_** it is the control center of the App (look [HERE](https://github.com/peppe130/ROMInstaller#what-is-utils)).
 
 **NB:** I will not provide any support for any changes made to the **_core_** package.
 
@@ -76,7 +76,7 @@ The following items belong to **_Editable_** section:
 * _BUTTON\_UI_ = If set to **_true_**, it enables the Button user interface.
 * _SHOULD\_SHOW\_SPLASH\_SCREEN_ = If set to **_true_**, it enables the splash screen.
 * _SHOULD\_SHOW\_DISCLAIMER\_SCREEN_ = If set to **_true_**, it enables the disclaimer screen.
-* _SPLASH\_SCREEN\_DELAY_ = Duration time of splash screen (Value in milliseconds).
+* _SPLASH\_SCREEN\_DELAY_ = Duration time of splash screen (value in milliseconds).
 * _SPLASH\_SCREEN\_IMAGE_ = Image to display in the splash screen.
 * _APP\_ICON\_MULTITASKING_ = Icon of the App's header in multitasking.
 * _APP\_HEADER\_COLOR\_MULTITASKING_ = Color of the App's header in multitasking.
