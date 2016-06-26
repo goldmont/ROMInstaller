@@ -316,7 +316,11 @@ Utils.DOWNLOAD_REQUEST_LIST = List of download requests for multiple downloads.
 
 ```
 
-**NB:** The environment is already placed in the internal storage. So, in **_mDownloadDirectory_**, you have to store only the path from the internal storage to your destination folder and not the full path from root directory.
+**NB:**
+
+1. You should use hosting services which provide you direct download links such as Mediafire or Dropbox (on Dropbox, to download a file rather than display it, you can use **_dl=1_** as a query parameter in your URL).
+
+2. The environment is already placed in the internal storage. So, in **_mDownloadDirectory_**, you have to store only the path from the internal storage to your destination folder and not the full path from root directory.
 
 ### The available modes are as follows:
 
@@ -513,7 +517,11 @@ Utils.DOWNLOAD_REQUEST_LIST = List of download requests for multiple downloads.
 
 ```
 
-**NB:** The environment is already placed in the internal storage. So, in **_mDownloadDirectory_**, you have to store only the path from the internal storage to your destination folder and not the full path from root directory.
+**NB:**
+
+1. You should use hosting services which provide you direct download links such as Mediafire or Dropbox (on Dropbox, to download a file rather than display it, you can use **_dl=1_** as a query parameter in your URL).
+
+2. The environment is already placed in the internal storage. So, in **_mDownloadDirectory_**, you have to store only the path from the internal storage to your destination folder and not the full path from root directory.
 
 ### The available modes are as follows:
 
