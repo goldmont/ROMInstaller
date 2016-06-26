@@ -57,7 +57,7 @@ What makes ROM Installer unique is its characteristic of being easily reprogramm
 # Project structure
 Project is composed of two packages and one class:
   1. **_activities:_** it contains all the App's activities.
-  2. **_core:_** it contains the "hearth" of the App.
+  2. **_core:_** it contains the "heart" of the App.
   3. **_Utils:_** it is the control center of the App (look [HERE](https://github.com/peppe130/ROMInstaller#what-is-utils)).
 
 **NB:** I will not provide any support for any changes made to the **_core_** package.
