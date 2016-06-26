@@ -298,8 +298,6 @@ public class MainActivity extends AppCompatActivity implements CustomFileChooser
                         mShouldShowToast = false;
                         if (!Utils.TEST_MODE) {
                             Utils.ToastShort(MainActivity.this, getString(R.string.swipe_right_to_install));
-                        } else {
-                            Utils.ToastShort(MainActivity.this, getString(R.string.can_not_install));
                         }
                     }
                 }
@@ -311,6 +309,8 @@ public class MainActivity extends AppCompatActivity implements CustomFileChooser
                             getFragmentManager().beginTransaction()
                                     .add(new InstallPopupDialog(Utils.ZIP_FILE.toString()), "install_fragment")
                                     .commitAllowingStateLoss();
+                        } else {
+                            Utils.ToastShort(MainActivity.this, getString(R.string.can_not_install));
                         }
                     }
                 }

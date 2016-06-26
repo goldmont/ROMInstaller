@@ -66,7 +66,7 @@
 
     <!-- Install Dialog -->
     <string name="start_install_dialog_title">Ready to install</string>
-    <string name="start_install_dialog_message">Press OK to install the ROM now or press LATER if you want to be free to do some operations before.\n\nATTENTION: You should not do any wipe before flashing or your preferences will be\nlost and the default ones will get installed.</string>
+    <string name="start_install_dialog_message">Tap OK to begin the installation. To review or change any of your installation settings, press BACK softkey. Press LATER to quit.\n\nATTENTION: You should not do any wipe before flashing or your preferences will be\nlost and the default ones will get installed.</string>
     <string name="press_next_to_install">Tap next button again to install.</string>
     <string name="swipe_right_to_install">Swipe to the left again to install.</string>
     <string name="swipe_left_or_right_to_install">Swipe to the left or to the right to install.</string>
