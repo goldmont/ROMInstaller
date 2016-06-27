@@ -649,3 +649,15 @@ Open **_"strings.xml"_** file located in _"res"_ > _"values"_ menu. At the botto
 2. _rom\_developer\_summary_ = write here the developer's name.
 3. _rom\_themer\_summary_ = write here the themer's name.
 4. _rom\_xda\_thread\_link_ = paste here your ROM's XDA Thread link.
+
+To show a **_"Follow me"_** Dialog, open **_SettingsActivity_** located in the _activities_ package, look for the `setOnPreferenceClickListener()` method relative to your preference and add inside the following code:
+
+```java
+
+String[] mSocial = {"Google+", "Twitter"};
+String[] mLinks = {"YourGoogle+Link", "YourTwitterLink"};
+Utils.FollowMeDialog(mSocial, mLinks);
+
+```
+
+You can add as many social networks as you want. Just separate from each other with a comma.
