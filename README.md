@@ -469,7 +469,7 @@ Utils.DOWNLOAD_REQUEST_LIST = List of download requests for multiple downloads.
     mRequest0.setDestinationInExternalPublicDir(Utils.DOWNLOAD_DIRECTORY_LIST.get(0).getPath(), Utils.DOWNLOADED_FILE_NAME_LIST.get(0));
     Utils.DOWNLOAD_REQUEST_LIST.add(mRequest0);
 
-    // Download N°2  - MD5 check disabled
+    // Download N°2 - MD5 check disabled
     Utils.DOWNLOAD_LINK_LIST.add(Uri.parse("http://www.YourDownloadLink.com"));
     Utils.DOWNLOAD_DIRECTORY_LIST.add(new File(DestinationFolderInTheInternalStorage));
     Utils.DOWNLOADED_FILE_NAME_LIST.add("File2.zip");
