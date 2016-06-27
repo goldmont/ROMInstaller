@@ -27,7 +27,7 @@
             android:title="StatusBar"
             android:summary="@string/selected_item"
             android:key="listStatusBar"
-            android:defaultValue="2"
+            android:defaultValue="1"
             android:entries="@array/statusbar"
             android:entryValues="@array/statusbar_values" />
     </PreferenceCategory>

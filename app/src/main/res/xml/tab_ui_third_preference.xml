@@ -7,9 +7,9 @@
             android:title="AccuWeather Widget"
             android:summary="@string/selected_item"
             android:key="listAccuweather"
-            android:defaultValue="4"
-            android:entries="@array/accu"
-            android:entryValues="@array/accu_values" />
+            android:defaultValue="1"
+            android:entries="@array/accuweather"
+            android:entryValues="@array/accuweather_values" />
     </PreferenceCategory>
 
     <PreferenceCategory
@@ -18,7 +18,7 @@
             android:title="Sounds"
             android:summary="@string/selected_item"
             android:key="listSound"
-            android:defaultValue="3"
+            android:defaultValue="1"
             android:entries="@array/sound"
             android:entryValues="@array/sound_values" />
     </PreferenceCategory>
@@ -29,7 +29,7 @@
             android:title="Boot Animation"
             android:summary="@string/selected_item"
             android:key="listBootanimation"
-            android:defaultValue="3"
+            android:defaultValue="1"
             android:entries="@array/bootanim"
             android:entryValues="@array/bootanim_values" />
     </PreferenceCategory>

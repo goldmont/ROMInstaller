@@ -46,14 +46,12 @@
 
     <style name="AppTheme.Dialog" parent="Theme.AppCompat.Light.Dialog">
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:textColorHighlight">@color/text_highlight_alt</item>
         <item name="android:textAppearanceMedium">@style/TextAppearance.AppCompat.Subhead</item>
         <item name="android:textAppearanceMediumInverse">@style/TextAppearance.AppCompat.Subhead.Inverse</item>
     </style>
 
     <style name="AppTheme.Dialog.Alert" parent="Theme.AppCompat.Light.Dialog.Alert">
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:textColorHighlight">@color/text_highlight_alt</item>
         <item name="android:textAppearanceMedium">@style/TextAppearance.AppCompat.Subhead</item>
         <item name="android:textAppearanceMediumInverse">@style/TextAppearance.AppCompat.Subhead.Inverse</item>
     </style>
