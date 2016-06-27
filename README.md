@@ -331,7 +331,6 @@ Utils.DOWNLOAD_REQUEST_LIST = List of download requests for multiple downloads.
     Uri mDownloadLink = Uri.parse("http://www.YourDownloadLink.com");
     File mDownloadDirectory = new File(DestinationFolderInTheInternalStorage);
     String mDownloadedFileFinalName = "File.zip";
-    
     DownloadManager.Request mRequest = new DownloadManager.Request(mDownloadLink);
     mRequest.setDestinationInExternalPublicDir(mDownloadDirectory.getPath(), mDownloadedFileFinalName);
   
@@ -350,7 +349,6 @@ Utils.DOWNLOAD_REQUEST_LIST = List of download requests for multiple downloads.
     File mDownloadDirectory = new File(DestinationFolderInTheInternalStorage);
     String mDownloadedFileFinalName = "File.zip";
     mDownloadedFileMD5 = "3a416cafb312cb15ce6b3b09249fe6e6";
-    
     DownloadManager.Request mRequest = new DownloadManager.Request(mDownloadLink);
     mRequest.setDestinationInExternalPublicDir(mDownloadDirectory.getPath(), mDownloadedFileFinalName);
   
@@ -369,7 +367,6 @@ Utils.DOWNLOAD_REQUEST_LIST = List of download requests for multiple downloads.
     Uri mDownloadLink = Uri.parse("http://www.YourDownloadLink.com");
     File mDownloadDirectory = new File(DestinationFolderInTheInternalStorage);
     String mDownloadedFileFinalName = "ROM.zip";
-    
     DownloadManager.Request mRequest = new DownloadManager.Request(mDownloadLink);
     mRequest.setDestinationInExternalPublicDir(mDownloadDirectory.getPath(), mDownloadedFileFinalName);
   
@@ -532,7 +529,6 @@ Utils.DOWNLOAD_REQUEST_LIST = List of download requests for multiple downloads.
     File mDownloadDirectory = new File(DestinationFolderInTheInternalStorage);
     String mDownloadedFileFinalName = "Recovery.zip";
     mRecoveryPartition = "DeviceRecoveryPartition";
-    
     DownloadManager.Request mRequest = new DownloadManager.Request(mDownloadLink);
     mRequest.setDestinationInExternalPublicDir(mDownloadDirectory.getPath(), mDownloadedFileFinalName);
   
@@ -552,7 +548,6 @@ Utils.DOWNLOAD_REQUEST_LIST = List of download requests for multiple downloads.
     File mDownloadDirectory = new File(DestinationFolderInTheInternalStorage);
     String mDownloadedFileFinalName = "Recovery.zip";
     mRecoveryPartition = "DeviceRecoveryPartition";
-    
     DownloadManager.Request mRequest = new DownloadManager.Request(mDownloadLink);
     mRequest.setDestinationInExternalPublicDir(mDownloadDirectory.getPath(), mDownloadedFileFinalName);
     
