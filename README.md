@@ -627,5 +627,16 @@ unmount("/data");
 
 # How to change App colors?
 
+To change the colors of the App, you need to open **_colors.xml_** file located in _"res"_ > **_"values"_** menu.
+
+The basic parameters are **6**:
+
+1. _colorPrimary_
+2. _colorPrimaryDark_
+3. _colorAccent_
+4. _colorBackground_
+5. _textPrimaryColor_
+6. _textSecondaryColor_
+
 ![Screenshots](https://raw.githubusercontent.com/peppe130/ROMInstaller/master/Screenshot/Colors_Guide.png)
 
