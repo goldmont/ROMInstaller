@@ -627,7 +627,7 @@ unmount("/data");
 
 # How to change App colors?
 
-To change the colors of the App, you need to open **_colors.xml_** file located in _"res"_ > **_"values"_** menu.
+To change the colors of the App, you need to open **_"colors.xml"_** file located in _"res"_ > **_"values"_** menu.
 
 The basic parameters are **6**:
 
