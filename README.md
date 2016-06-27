@@ -18,6 +18,7 @@
 12. [How to download files?](https://github.com/peppe130/ROMInstaller#how-to-download-files)
 13. [How to flash recoveries?](https://github.com/peppe130/ROMInstaller#how-to-flash-recoveries)
 14. [How to read preferences from updater-script?](https://github.com/peppe130/ROMInstaller#how-to-read-preferences-from-updater-script)
+15. [How to change App colors?](https://github.com/peppe130/ROMInstaller#how-to-change-app-colors)
 
 
 # Introduction
@@ -623,3 +624,8 @@ endif;
 unmount("/data");
 
 ```
+
+# How to change App colors?
+
+![Screenshots](https://raw.githubusercontent.com/peppe130/ROMInstaller/master/Screenshot/Colors2.png)
+
