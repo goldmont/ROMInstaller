@@ -29,7 +29,7 @@
     <string name="agreement_dialog_message">Before you can use this App\nyou must agree to Terms and Conditions.</string>
     <string name="double_back_to_exit">Press twice to exit</string>
 
-    <!-- ActionBar -->
+    <!-- Toolbar -->
     <string name="restore_default">Default options</string>
     <string name="changelog_activity_title">Changelog</string>
     <string name="title_activity_settings">Settings</string>
