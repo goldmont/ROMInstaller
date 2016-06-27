@@ -331,7 +331,6 @@ Utils.DOWNLOAD_REQUEST_LIST = List of download requests for multiple downloads.
     Uri mDownloadLink = Uri.parse("http://www.YourDownloadLink.com");
     File mDownloadDirectory = new File(DestinationFolderInTheInternalStorage);
     String mDownloadedFileFinalName = "File.zip";
-    
     DownloadManager.Request mRequest = new DownloadManager.Request(mDownloadLink);
     mRequest.setDestinationInExternalPublicDir(mDownloadDirectory.getPath(), mDownloadedFileFinalName);
   
@@ -350,7 +349,6 @@ Utils.DOWNLOAD_REQUEST_LIST = List of download requests for multiple downloads.
     File mDownloadDirectory = new File(DestinationFolderInTheInternalStorage);
     String mDownloadedFileFinalName = "File.zip";
     mDownloadedFileMD5 = "3a416cafb312cb15ce6b3b09249fe6e6";
-    
     DownloadManager.Request mRequest = new DownloadManager.Request(mDownloadLink);
     mRequest.setDestinationInExternalPublicDir(mDownloadDirectory.getPath(), mDownloadedFileFinalName);
   
@@ -369,7 +367,6 @@ Utils.DOWNLOAD_REQUEST_LIST = List of download requests for multiple downloads.
     Uri mDownloadLink = Uri.parse("http://www.YourDownloadLink.com");
     File mDownloadDirectory = new File(DestinationFolderInTheInternalStorage);
     String mDownloadedFileFinalName = "ROM.zip";
-    
     DownloadManager.Request mRequest = new DownloadManager.Request(mDownloadLink);
     mRequest.setDestinationInExternalPublicDir(mDownloadDirectory.getPath(), mDownloadedFileFinalName);
   
@@ -460,7 +457,7 @@ Utils.DOWNLOAD_REQUEST_LIST = List of download requests for multiple downloads.
 
   ```java
   
-    // Download N°1 - Controllo dell'MD5 attivato
+    // Download N°1 - MD5 check enabled
     Utils.DOWNLOAD_LINK_LIST.add(Uri.parse("http://www.YourDownloadLink.com"));
     Utils.DOWNLOAD_DIRECTORY_LIST.add(new File(DestinationFolderInTheInternalStorage));
     Utils.DOWNLOADED_FILE_NAME_LIST.add("File.zip");
@@ -469,7 +466,7 @@ Utils.DOWNLOAD_REQUEST_LIST = List of download requests for multiple downloads.
     mRequest0.setDestinationInExternalPublicDir(Utils.DOWNLOAD_DIRECTORY_LIST.get(0).getPath(), Utils.DOWNLOADED_FILE_NAME_LIST.get(0));
     Utils.DOWNLOAD_REQUEST_LIST.add(mRequest0);
 
-    // Download N°2  - Controllo dell'MD5 disattivato
+    // Download N°2 - MD5 check disabled
     Utils.DOWNLOAD_LINK_LIST.add(Uri.parse("http://www.YourDownloadLink.com"));
     Utils.DOWNLOAD_DIRECTORY_LIST.add(new File(DestinationFolderInTheInternalStorage));
     Utils.DOWNLOADED_FILE_NAME_LIST.add("File2.zip");
@@ -478,7 +475,7 @@ Utils.DOWNLOAD_REQUEST_LIST = List of download requests for multiple downloads.
     mRequest1.setDestinationInExternalPublicDir(Utils.DOWNLOAD_DIRECTORY_LIST.get(1).getPath(), Utils.DOWNLOADED_FILE_NAME_LIST.get(1));
     Utils.DOWNLOAD_REQUEST_LIST.add(mRequest1);
 
-    // Download N°3 - Controllo dell'MD5 attivato
+    // Download N°3 - MD5 check enabled
     Utils.DOWNLOAD_LINK_LIST.add(Uri.parse("http://www.YourDownloadLink.com"));
     Utils.DOWNLOAD_DIRECTORY_LIST.add(new File(DestinationFolderInTheInternalStorage));
     Utils.DOWNLOADED_FILE_NAME_LIST.add("File3.zip");
@@ -532,7 +529,6 @@ Utils.DOWNLOAD_REQUEST_LIST = List of download requests for multiple downloads.
     File mDownloadDirectory = new File(DestinationFolderInTheInternalStorage);
     String mDownloadedFileFinalName = "Recovery.zip";
     mRecoveryPartition = "DeviceRecoveryPartition";
-    
     DownloadManager.Request mRequest = new DownloadManager.Request(mDownloadLink);
     mRequest.setDestinationInExternalPublicDir(mDownloadDirectory.getPath(), mDownloadedFileFinalName);
   
@@ -547,12 +543,11 @@ Utils.DOWNLOAD_REQUEST_LIST = List of download requests for multiple downloads.
 2. Download Recovery with Add-Ons
 
   ```java
-  
+    // Download recovery
     Uri mDownloadLink = Uri.parse("http://www.YourDownloadLink.com");
     File mDownloadDirectory = new File(DestinationFolderInTheInternalStorage);
     String mDownloadedFileFinalName = "Recovery.zip";
     mRecoveryPartition = "DeviceRecoveryPartition";
-    
     DownloadManager.Request mRequest = new DownloadManager.Request(mDownloadLink);
     mRequest.setDestinationInExternalPublicDir(mDownloadDirectory.getPath(), mDownloadedFileFinalName);
     
@@ -618,7 +613,7 @@ endif;
 run_program("/sbin/mount", "-t", "auto", "/data");
 
 # Read from preferences
-if file_getprop("/sdcard/SomeROM/preferences.prop", "wipe_data") == "true" then
+if file_getprop("/sdcard/ROMFolder/preferences.prop", "wipe_data") == "true" then
 	ui_print("- Wiping data");
 else 
 	ui_print("- Skipping wipe data");
