@@ -27,7 +27,7 @@
     <string name="activity_agreement_title">Agreement</string>
     <string name="agreement_dialog_title">You must agree!</string>
     <string name="agreement_dialog_message">Before you can use this App\nyou must agree to Terms and Conditions.</string>
-    <string name="double_back_to_exit">Press back again to exit</string>
+    <string name="double_back_to_exit">Press twice to exit</string>
 
     <!-- ActionBar -->
     <string name="restore_default">Default options</string>
