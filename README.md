@@ -661,3 +661,19 @@ Utils.FollowMeDialog(mSocial, mLinks);
 ```
 
 You can add as many social networks as you want. Just separate from each other with a comma.
+
+**Example:**
+
+```java
+
+ROM_DEVELOPER.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+        @Override
+        public boolean onPreferenceClick(Preference preference) {
+                String[] mSocial = {"Google+", "Twitter"};
+                String[] mLinks = {"http://google.com/+MRLOUDT_ONE", "https://twitter.com/MR_LOUD_T_ONE"};
+                Utils.FollowMeDialog(mSocial, mLinks);
+                return false;
+        }
+});
+
+```
