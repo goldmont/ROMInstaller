@@ -330,7 +330,7 @@ Utils.DOWNLOAD_REQUEST_LIST = List of download requests for multiple downloads.
 
   ```java
   
-    Uri mDownloadLink = Uri.parse("http://www.YourDownloadLink.com");
+    Uri mDownloadLink = Uri.parse("YourDownloadLink");
     File mDownloadDirectory = new File(DestinationFolderInTheInternalStorage);
     String mDownloadedFileFinalName = "File.zip";
     DownloadManager.Request mRequest = new DownloadManager.Request(mDownloadLink);
@@ -347,7 +347,7 @@ Utils.DOWNLOAD_REQUEST_LIST = List of download requests for multiple downloads.
 
   ```java
   
-    Uri mDownloadLink = Uri.parse("http://www.YourDownloadLink.com");
+    Uri mDownloadLink = Uri.parse("YourDownloadLink");
     File mDownloadDirectory = new File(DestinationFolderInTheInternalStorage);
     String mDownloadedFileFinalName = "File.zip";
     mDownloadedFileMD5 = "3a416cafb312cb15ce6b3b09249fe6e6";
@@ -366,7 +366,7 @@ Utils.DOWNLOAD_REQUEST_LIST = List of download requests for multiple downloads.
 
   ```java
   
-    Uri mDownloadLink = Uri.parse("http://www.YourDownloadLink.com");
+    Uri mDownloadLink = Uri.parse("YourDownloadLink");
     File mDownloadDirectory = new File(DestinationFolderInTheInternalStorage);
     String mDownloadedFileFinalName = "ROM.zip";
     DownloadManager.Request mRequest = new DownloadManager.Request(mDownloadLink);
@@ -384,7 +384,7 @@ Utils.DOWNLOAD_REQUEST_LIST = List of download requests for multiple downloads.
   ```java
   
     // Download N°1
-    Utils.DOWNLOAD_LINK_LIST.add(Uri.parse("http://www.YourDownloadLink.com"));
+    Utils.DOWNLOAD_LINK_LIST.add(Uri.parse("YourDownloadLink"));
     Utils.DOWNLOAD_DIRECTORY_LIST.add(new File(DestinationFolderInTheInternalStorage));
     Utils.DOWNLOADED_FILE_NAME_LIST.add("File.zip");
     DownloadManager.Request mRequest0 = new DownloadManager.Request(Utils.DOWNLOAD_LINK_LIST.get(0));
@@ -392,7 +392,7 @@ Utils.DOWNLOAD_REQUEST_LIST = List of download requests for multiple downloads.
     Utils.DOWNLOAD_REQUEST_LIST.add(mRequest0);
 
     // Download N°2
-    Utils.DOWNLOAD_LINK_LIST.add(Uri.parse("http://www.YourDownloadLink.com"));
+    Utils.DOWNLOAD_LINK_LIST.add(Uri.parse("YourDownloadLink"));
     Utils.DOWNLOAD_DIRECTORY_LIST.add(new File(DestinationFolderInTheInternalStorage));
     Utils.DOWNLOADED_FILE_NAME_LIST.add("File2.zip");
     DownloadManager.Request mRequest1 = new DownloadManager.Request(Utils.DOWNLOAD_LINK_LIST.get(1));
@@ -400,7 +400,7 @@ Utils.DOWNLOAD_REQUEST_LIST = List of download requests for multiple downloads.
     Utils.DOWNLOAD_REQUEST_LIST.add(mRequest1);
 
     // Download N°3
-    Utils.DOWNLOAD_LINK_LIST.add(Uri.parse("http://www.YourDownloadLink.com"));
+    Utils.DOWNLOAD_LINK_LIST.add(Uri.parse("YourDownloadLink"));
     Utils.DOWNLOAD_DIRECTORY_LIST.add(new File(DestinationFolderInTheInternalStorage));
     Utils.DOWNLOADED_FILE_NAME_LIST.add("File3.zip");
     DownloadManager.Request mRequest2 = new DownloadManager.Request(Utils.DOWNLOAD_LINK_LIST.get(2));
@@ -419,7 +419,7 @@ Utils.DOWNLOAD_REQUEST_LIST = List of download requests for multiple downloads.
   ```java
   
     // Download N°1
-    Utils.DOWNLOAD_LINK_LIST.add(Uri.parse("http://www.YourDownloadLink.com"));
+    Utils.DOWNLOAD_LINK_LIST.add(Uri.parse("YourDownloadLink"));
     Utils.DOWNLOAD_DIRECTORY_LIST.add(new File(DestinationFolderInTheInternalStorage));
     Utils.DOWNLOADED_FILE_NAME_LIST.add("File.zip");
     Utils.DOWNLOADED_FILE_MD5_LIST.add("5fb732eea3d3e2b407fa7685c27a5354");
@@ -428,7 +428,7 @@ Utils.DOWNLOAD_REQUEST_LIST = List of download requests for multiple downloads.
     Utils.DOWNLOAD_REQUEST_LIST.add(mRequest0);
 
     // Download N°2
-    Utils.DOWNLOAD_LINK_LIST.add(Uri.parse("http://www.YourDownloadLink.com"));
+    Utils.DOWNLOAD_LINK_LIST.add(Uri.parse("YourDownloadLink"));
     Utils.DOWNLOAD_DIRECTORY_LIST.add(new File(DestinationFolderInTheInternalStorage));
     Utils.DOWNLOADED_FILE_NAME_LIST.add("File2.zip");
     Utils.DOWNLOADED_FILE_MD5_LIST.add("3a416cafb312cb15ce6b3b09249fe6e6");
@@ -437,7 +437,7 @@ Utils.DOWNLOAD_REQUEST_LIST = List of download requests for multiple downloads.
     Utils.DOWNLOAD_REQUEST_LIST.add(mRequest1);
 
     // Download N°3
-    Utils.DOWNLOAD_LINK_LIST.add(Uri.parse("http://www.YourDownloadLink.com"));
+    Utils.DOWNLOAD_LINK_LIST.add(Uri.parse("YourDownloadLink"));
     Utils.DOWNLOAD_DIRECTORY_LIST.add(new File(DestinationFolderInTheInternalStorage));
     Utils.DOWNLOADED_FILE_NAME_LIST.add("File3.zip");
     Utils.DOWNLOADED_FILE_MD5_LIST.add("f946055c11a6a25d202f81171944fa1e");
@@ -460,7 +460,7 @@ Utils.DOWNLOAD_REQUEST_LIST = List of download requests for multiple downloads.
   ```java
   
     // Download N°1 - MD5 check enabled
-    Utils.DOWNLOAD_LINK_LIST.add(Uri.parse("http://www.YourDownloadLink.com"));
+    Utils.DOWNLOAD_LINK_LIST.add(Uri.parse("YourDownloadLink"));
     Utils.DOWNLOAD_DIRECTORY_LIST.add(new File(DestinationFolderInTheInternalStorage));
     Utils.DOWNLOADED_FILE_NAME_LIST.add("File.zip");
     Utils.DOWNLOADED_FILE_MD5_LIST.add("5fb732eea3d3e2b407fa7685c27a5354");
@@ -469,7 +469,7 @@ Utils.DOWNLOAD_REQUEST_LIST = List of download requests for multiple downloads.
     Utils.DOWNLOAD_REQUEST_LIST.add(mRequest0);
 
     // Download N°2 - MD5 check disabled
-    Utils.DOWNLOAD_LINK_LIST.add(Uri.parse("http://www.YourDownloadLink.com"));
+    Utils.DOWNLOAD_LINK_LIST.add(Uri.parse("YourDownloadLink"));
     Utils.DOWNLOAD_DIRECTORY_LIST.add(new File(DestinationFolderInTheInternalStorage));
     Utils.DOWNLOADED_FILE_NAME_LIST.add("File2.zip");
     Utils.DOWNLOADED_FILE_MD5_LIST.add(null);
@@ -478,7 +478,7 @@ Utils.DOWNLOAD_REQUEST_LIST = List of download requests for multiple downloads.
     Utils.DOWNLOAD_REQUEST_LIST.add(mRequest1);
 
     // Download N°3 - MD5 check enabled
-    Utils.DOWNLOAD_LINK_LIST.add(Uri.parse("http://www.YourDownloadLink.com"));
+    Utils.DOWNLOAD_LINK_LIST.add(Uri.parse("YourDownloadLink"));
     Utils.DOWNLOAD_DIRECTORY_LIST.add(new File(DestinationFolderInTheInternalStorage));
     Utils.DOWNLOADED_FILE_NAME_LIST.add("File3.zip");
     Utils.DOWNLOADED_FILE_MD5_LIST.add("f946055c11a6a25d202f81171944fa1e");
@@ -527,7 +527,7 @@ Utils.DOWNLOAD_REQUEST_LIST = List of download requests for multiple downloads.
 1. Download recovery
   ```java
   
-    Uri mDownloadLink = Uri.parse("http://www.YourDownloadLink.com");
+    Uri mDownloadLink = Uri.parse("YourDownloadLink");
     File mDownloadDirectory = new File(DestinationFolderInTheInternalStorage);
     String mDownloadedFileFinalName = "Recovery.zip";
     mRecoveryPartition = "DeviceRecoveryPartition";
@@ -546,7 +546,7 @@ Utils.DOWNLOAD_REQUEST_LIST = List of download requests for multiple downloads.
 
   ```java
     // Download recovery
-    Uri mDownloadLink = Uri.parse("http://www.YourDownloadLink.com");
+    Uri mDownloadLink = Uri.parse("YourDownloadLink");
     File mDownloadDirectory = new File(DestinationFolderInTheInternalStorage);
     String mDownloadedFileFinalName = "Recovery.zip";
     mRecoveryPartition = "DeviceRecoveryPartition";
