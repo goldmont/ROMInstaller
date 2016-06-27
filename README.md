@@ -613,7 +613,7 @@ endif;
 run_program("/sbin/mount", "-t", "auto", "/data");
 
 # Read from preferences
-if file_getprop("/sdcard/SomeROM/preferences.prop", "wipe_data") == "true" then
+if file_getprop("/sdcard/ROMFolder/preferences.prop", "wipe_data") == "true" then
 	ui_print("- Wiping data");
 else 
 	ui_print("- Skipping wipe data");
