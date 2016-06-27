@@ -2,10 +2,9 @@
 <resources>
 
     <!-- App colors -->
-    <color name="colorPrimary">#FF5722</color>
-    <color name="colorPrimaryDark">#2e4d50</color>
-    <color name="colorPrimaryDark2">#1c3c3f</color>
-    <color name="colorAccent">@color/colorPrimary</color>
+    <color name="colorPrimary">#2e4d50</color>
+    <color name="colorPrimaryDark">#1c3c3f</color>
+    <color name="colorAccent">#FF5722</color>
     <color name="colorBackground">#ff1a292c</color>
     <color name="textPrimaryColor">@android:color/white</color>
     <color name="textSecondaryColor">@android:color/white</color>

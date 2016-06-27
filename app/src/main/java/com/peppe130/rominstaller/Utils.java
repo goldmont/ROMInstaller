@@ -57,8 +57,8 @@ public class Utils {
     public static Integer SPLASH_SCREEN_DELAY = 3000;
     public static Integer SPLASH_SCREEN_IMAGE = R.drawable.rom_logo;
     public static Integer APP_ICON_MULTITASKING = R.mipmap.ic_launcher;
-    public static Integer APP_HEADER_COLOR_MULTITASKING = R.color.colorPrimaryDark;
-    public static Integer PROGRESS_BAR_COLOR = R.color.colorPrimary;
+    public static Integer APP_HEADER_COLOR_MULTITASKING = R.color.colorPrimary;
+    public static Integer PROGRESS_BAR_COLOR = R.color.colorAccent;
     public static Integer FILE_CHOOSER_TITLE_COLOR = Color.WHITE;
     public static Integer FILE_CHOOSER_CONTENT_COLOR = Color.WHITE;
     public static Integer FILE_CHOOSER_BACKGROUND_COLOR = R.color.colorBackground;
