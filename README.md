@@ -670,8 +670,8 @@ ROM_DEVELOPER.setOnPreferenceClickListener(new Preference.OnPreferenceClickListe
         @Override
         public boolean onPreferenceClick(Preference preference) {
                 String[] mSocial = {"Google+", "Twitter"};
-                String[] mLinks = {"http://google.com/+MRLOUDT_ONE", "https://twitter.com/MR_LOUD_T_ONE"};
-                Utils.FollowMeDialog(mSocial, mLinks);
+		String[] mLinks = {"YourGoogle+Link", "YourTwitterLink"};
+		Utils.FollowMeDialog(mSocial, mLinks);
                 return false;
         }
 });
