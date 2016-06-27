@@ -147,7 +147,7 @@
     <string name="all_my_apps_title">All my apps</string>
     <string name="all_my_apps_summary">View all my Apps on Play Store</string>
 
-    <!-- ROM Developer -->
+    <!-- ROM Info -->
     <string name="rom_build_number">Your ROM\'s build number</string>
     <string name="rom_developer_summary">ROM developer\'s name</string>
     <string name="rom_themer_summary">ROM themer\'s name</string>
