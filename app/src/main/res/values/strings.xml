@@ -139,21 +139,17 @@
     <string name="app_github_title">GitHub</string>
     <string name="app_github_summary">See the App\'s project on GitHub</string>
     <string name="rom_version">ROM version</string>
-    <string name="rom_build_number">Your ROM\'s build number</string>
     <string name="rom_developer_title">ROM developer</string>
-    <string name="rom_developer_summary">ROM developer\'s name</string>
     <string name="rom_themer_title">ROM themer</string>
-    <string name="rom_themer_summary">ROM themer\'s name</string>
     <string name="rom_xda_thread">XDA Thread</string>
     <string name="review_app_title">Leave a review!</string>
     <string name="review_app_summary">Review the App on Play Store</string>
     <string name="all_my_apps_title">All my apps</string>
     <string name="all_my_apps_summary">View all my Apps on Play Store</string>
-    <string name="app_developer_googleplus_profile_link">http://google.com/+PeppeMontuoro</string>
-    <string name="app_developer_twitter_profile_link">https://twitter.com/PeppeMontuoro</string>
-    <string name="app_themer_googleplus_profile_link">https://plus.google.com/+MRLOUDT_ONE</string>
-    <string name="app_themer_twitter_profile_link">https://twitter.com/MR_LOUD_T_ONE</string>
-    <string name="app_github_link">https://github.com/peppe130/ROMInstaller</string>
-    <string name="rom_xda_thread_link" tools:ignore="TypographyDashes">http://forum.xda-developers.com/galaxy-s4/i9505-develop/rom-osiris-rom-v1-0-t3147053</string>
+
+    <!-- ROM Developer -->
+    <string name="rom_build_number">Your ROM\'s build number</string>
+    <string name="rom_developer_summary">ROM developer\'s name</string>
+    <string name="rom_themer_summary">ROM themer\'s name</string>
 
 </resources>

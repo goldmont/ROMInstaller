@@ -2,11 +2,13 @@ package com.peppe130.rominstaller;
 
 import android.app.DownloadManager;
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.AssetManager;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.Toast;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -15,6 +17,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.ArrayList;
 
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.mikepenz.entypo_typeface_library.Entypo;
 import com.mikepenz.google_material_typeface_library.GoogleMaterial;
 import com.mikepenz.iconics.typeface.IIcon;
@@ -98,26 +101,26 @@ public class Utils {
 
     }
 
-    public static void ToastShort(Context mContext, String message) {
+    public static void ToastShort(Context mContext, String mString) {
 
         if (TOAST != null) {
             TOAST.cancel();
             TOAST = null;
         }
 
-        TOAST = Toast.makeText(mContext, message, Toast.LENGTH_SHORT);
+        TOAST = Toast.makeText(mContext, mString, Toast.LENGTH_SHORT);
         TOAST.show();
 
     }
 
-    public static void ToastLong(Context mContext, String message) {
+    public static void ToastLong(Context mContext, String mString) {
 
         if (TOAST != null) {
             TOAST.cancel();
             TOAST = null;
         }
 
-        TOAST = Toast.makeText(mContext, message, Toast.LENGTH_LONG);
+        TOAST = Toast.makeText(mContext, mString, Toast.LENGTH_LONG);
         TOAST.show();
 
     }
@@ -130,6 +133,18 @@ public class Utils {
         mCustomFileChooserDialog.setCancelable(false);
         mCustomFileChooserDialog.show(ACTIVITY);
 
+    }
+
+    public static void FollowMeDialog(String[] items, final String[] links) {
+        new MaterialDialog.Builder(ACTIVITY)
+                .items(items)
+                .itemsCallback(new MaterialDialog.ListCallback() {
+                    @Override
+                    public void onSelection(MaterialDialog dialog, View view, int which, CharSequence text) {
+                        ACTIVITY.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(links[which])));
+                    }
+                })
+                .show();
     }
 
     public static void deleteFolderRecursively(String path) {

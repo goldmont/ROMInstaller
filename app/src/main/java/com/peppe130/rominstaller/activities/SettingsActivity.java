@@ -7,9 +7,7 @@ import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
 
-import com.afollestad.materialdialogs.MaterialDialog;
 import com.mikepenz.community_material_typeface_library.CommunityMaterial;
 import com.mikepenz.entypo_typeface_library.Entypo;
 import com.mikepenz.google_material_typeface_library.GoogleMaterial;
@@ -109,25 +107,9 @@ public class SettingsActivity extends AppCompatActivity {
             APP_DEVELOPER.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                 @Override
                 public boolean onPreferenceClick(Preference preference) {
-                    String[] mString = {"Google+", "Twitter"};
-                    new MaterialDialog.Builder(getActivity())
-                            .items(mString)
-                            .itemsCallback(new MaterialDialog.ListCallback() {
-                                @Override
-                                public void onSelection(MaterialDialog dialog, View view, int which, CharSequence text) {
-                                    switch (which) {
-                                        case 0:
-                                            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.app_developer_googleplus_profile_link))));
-                                            break;
-                                        case 1:
-                                            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.app_developer_twitter_profile_link))));
-                                            break;
-                                        default:
-                                            break;
-                                    }
-                                }
-                            })
-                            .show();
+                    String[] mSocial = {"Google+", "Twitter"};
+                    String[] mLinks = {"http://google.com/+PeppeMontuoro", "https://twitter.com/PeppeMontuoro"};
+                    Utils.FollowMeDialog(mSocial, mLinks);
                     return false;
                 }
             });
@@ -136,25 +118,9 @@ public class SettingsActivity extends AppCompatActivity {
             APP_THEMER.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                 @Override
                 public boolean onPreferenceClick(Preference preference) {
-                    String[] mString = {"Google+", "Twitter"};
-                    new MaterialDialog.Builder(getActivity())
-                            .items(mString)
-                            .itemsCallback(new MaterialDialog.ListCallback() {
-                                @Override
-                                public void onSelection(MaterialDialog dialog, View view, int which, CharSequence text) {
-                                    switch (which) {
-                                        case 0:
-                                            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.app_themer_googleplus_profile_link))));
-                                            break;
-                                        case 1:
-                                            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.app_themer_twitter_profile_link))));
-                                            break;
-                                        default:
-                                            break;
-                                    }
-                                }
-                            })
-                            .show();
+                    String[] mSocial = {"Google+", "Twitter"};
+                    String[] mLinks = {"http://google.com/+MRLOUDT_ONE", "https://twitter.com/MR_LOUD_T_ONE"};
+                    Utils.FollowMeDialog(mSocial, mLinks);
                     return false;
                 }
             });
@@ -163,7 +129,8 @@ public class SettingsActivity extends AppCompatActivity {
             APP_GITHUB.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                 @Override
                 public boolean onPreferenceClick(Preference preference) {
-                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.app_github_link))));
+                    Uri mUri = Uri.parse("https://github.com/peppe130/ROMInstaller");
+                    startActivity(new Intent(Intent.ACTION_VIEW, mUri));
                     return false;
                 }
             });
@@ -192,7 +159,8 @@ public class SettingsActivity extends AppCompatActivity {
             ROM_XDA_THREAD.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                 @Override
                 public boolean onPreferenceClick(Preference preference) {
-                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.rom_xda_thread_link))));
+                    Uri mUri = Uri.parse("http://forum.xda-developers.com/galaxy-s4/i9505-develop/rom-osiris-rom-v1-0-t3147053");
+                    startActivity(new Intent(Intent.ACTION_VIEW, mUri));
                     return false;
                 }
             });
