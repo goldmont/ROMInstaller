@@ -627,5 +627,5 @@ unmount("/data");
 
 # How to change App colors?
 
-![Screenshots](https://raw.githubusercontent.com/peppe130/ROMInstaller/master/Screenshot/Colors3.png)
+![Screenshots](https://raw.githubusercontent.com/peppe130/ROMInstaller/master/Screenshot/Colors4.png)
 
