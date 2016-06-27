@@ -643,12 +643,11 @@ The basic parameters are **6**:
 
 # How to add your own info in Settings?
 
-Open **_"strings.xml"_** file located in _"res"_ > _"values"_ menu. At the bottom there is a **_"ROM Developer"_** section composed of four strings:
+Open **_"strings.xml"_** file located in _"res"_ > _"values"_ menu. At the bottom there is a **_"ROM Developer"_** section composed of three strings:
 
 1. _rom\_build\_number_ = it is the build number of your ROM (for example: 1.0).
 2. _rom\_developer\_summary_ = write here the developer's name.
 3. _rom\_themer\_summary_ = write here the themer's name.
-4. _rom\_xda\_thread\_link_ = paste here your ROM's XDA Thread link.
 
 To show a **_"Follow me"_** Dialog, open **_SettingsActivity_** located in the _activities_ package, look for the `setOnPreferenceClickListener()` method relative to your preference and add inside the following code:
 
