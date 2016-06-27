@@ -547,7 +547,7 @@ Utils.DOWNLOAD_REQUEST_LIST = List of download requests for multiple downloads.
 2. Download Recovery with Add-Ons
 
   ```java
-  
+    // Download recovery
     Uri mDownloadLink = Uri.parse("http://www.YourDownloadLink.com");
     File mDownloadDirectory = new File(DestinationFolderInTheInternalStorage);
     String mDownloadedFileFinalName = "Recovery.zip";
