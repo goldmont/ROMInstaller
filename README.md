@@ -364,6 +364,8 @@ Utils.DOWNLOAD_REQUEST_LIST = List of download requests for multiple downloads.
   
 3. Download ROM
 
+   **NB:** in _Utils_ there is a method called `DownloadROM()`. You can configure it to download the ROM and you can call it by typing `DownloadROM()` wherever you want.
+
   ```java
   
     Uri mDownloadLink = Uri.parse("YourDownloadLink");
