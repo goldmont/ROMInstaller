@@ -185,7 +185,7 @@ public class CustomFileChooser extends DialogFragment implements MaterialDialog.
                                             new Handler().postDelayed(new Runnable() {
                                                 @Override
                                                 public void run() {
-                                                    Utils.ROMDownloadLinkGenerator();
+                                                    Utils.DownloadROM();
                                                 }
                                             }, 300);
                                         }

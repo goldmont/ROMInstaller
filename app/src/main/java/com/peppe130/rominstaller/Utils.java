@@ -29,7 +29,7 @@ import com.peppe130.rominstaller.core.Download;
 @SuppressWarnings("ResultOfMethodCallIgnored, unused")
 public class Utils {
 
-    public static void ROMDownloadLinkGenerator() {
+    public static void DownloadROM() {
 
         Uri mDownloadLink = Uri.parse("http://www.mediafire.com/download/3a7gefzmxj44lv1/SampleROM.zip");
         File mDownloadDirectory = new File(ACTIVITY.getString(R.string.rom_download_folder));

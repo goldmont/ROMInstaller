@@ -210,7 +210,7 @@ public class CheckFile extends AsyncTask<String, String, Boolean> {
                                 @Override
                                 public void run() {
                                     Utils.ZIP_FILE.delete();
-                                    Utils.ROMDownloadLinkGenerator();
+                                    Utils.DownloadROM();
                                 }
                             }, 300);
                         }
