@@ -4,9 +4,11 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
 import android.support.v7.app.AppCompatActivity;
+import java.io.File;
 
 import com.mikepenz.community_material_typeface_library.CommunityMaterial;
 import com.mikepenz.entypo_typeface_library.Entypo;
@@ -17,6 +19,7 @@ import com.peppe130.rominstaller.R;
 import com.peppe130.rominstaller.Utils;
 
 
+@SuppressWarnings("ResultOfMethodCallIgnored")
 public class SettingsActivity extends AppCompatActivity {
 
     @Override
@@ -33,7 +36,20 @@ public class SettingsActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
+
         Utils.ACTIVITY = this;
+
+        File mPath = new File(Environment.getExternalStorageDirectory().getPath() + "/" + getString(R.string.rom_download_folder));
+        File mSample = new File(mPath.getPath() + "/" + "Sample.zip");
+
+        if(!mPath.exists()) {
+            mPath.mkdirs();
+        }
+
+        if(!mSample.exists()) {
+            Utils.copyAssetFolder(getAssets(), "sample", mPath.toString());
+        }
+
     }
 
     public static class SettingsPreferencesFragment extends PreferenceFragment {

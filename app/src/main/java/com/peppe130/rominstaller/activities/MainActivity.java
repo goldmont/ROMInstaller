@@ -40,7 +40,7 @@ import com.peppe130.rominstaller.core.SystemProperties;
 import cn.pedant.SweetAlert.SweetAlertDialog;
 
 
-@SuppressWarnings({"unused", "ResultOfMethodCallIgnored"})
+@SuppressWarnings("unused, ResultOfMethodCallIgnored")
 @SuppressLint("CommitPrefEdits")
 public class MainActivity extends AppCompatActivity implements CustomFileChooser.FileCallback {
 
@@ -475,7 +475,7 @@ public class MainActivity extends AppCompatActivity implements CustomFileChooser
         }
 
         if(!mSample.exists()) {
-            Utils.copyAssetFolder(MainActivity.this.getAssets(), "sample", mPath.toString());
+            Utils.copyAssetFolder(getAssets(), "sample", mPath.toString());
         }
 
     }
