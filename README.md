@@ -655,8 +655,8 @@ To show a **_"Follow me"_** Dialog, open **_SettingsActivity_** located in the _
 
 ```java
 
-String[] mSocial = {"Google+", "Twitter"};
-String[] mLinks = {"YourGoogle+Link", "YourTwitterLink"};
+String[] mSocial = new String[] {"Google+", "Twitter"};
+String[] mLinks = new String[] {"YourGoogle+Link", "YourTwitterLink"};
 Utils.FollowMeDialog(mSocial, mLinks);
 
 ```
@@ -670,8 +670,8 @@ You can add as many social networks as you want. Just separate from each other w
 ROM_DEVELOPER.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
         @Override
         public boolean onPreferenceClick(Preference preference) {
-                String[] mSocial = {"Google+", "Twitter"};
-                String[] mLinks = {"YourGoogle+Link", "YourTwitterLink"};
+                String[] mSocial = new String[] {"Google+", "Twitter"};
+                String[] mLinks = new String[] {"YourGoogle+Link", "YourTwitterLink"};
                 Utils.FollowMeDialog(mSocial, mLinks);
                 return false;
         }
