@@ -645,7 +645,7 @@ The basic parameters are **6**:
 
 Open **_"strings.xml"_** file located in _"res"_ > _"values"_ menu. At the bottom there is a **_"ROM Info"_** section composed of three strings:
 
-1. _rom\_build\_number_ = write here the build number of your ROM (for example: 1.0).
+1. _rom\_build\_number_ = write here the build number of your ROM.
 2. _rom\_developer\_summary_ = write here the developer's name.
 3. _rom\_themer\_summary_ = write here the themer's name.
 
