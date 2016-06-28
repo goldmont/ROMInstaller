@@ -198,7 +198,7 @@ To change **UI**, you have to open the **_Utils_** class and change the value to
           
       ```
 
-The optimal number of files for **XML** file is **_4_**.
+The optimal number of preferences for **XML** file is **_4_**.
 
 Once the preference is configured, in order to export its value, you must declare it in Java. To do this, just open the **_MainActivity_** located in _"java"_ > _"com.peppe130.yourpackagename"_ > _"activities"._
 
@@ -554,7 +554,7 @@ Utils.DOWNLOAD_REQUEST_LIST = List of download requests for multiple downloads.
     mRequest.setDestinationInExternalPublicDir(mDownloadDirectory.getPath(), mDownloadedFileFinalName);
     
     // Download Add-On N°1
-    Utils.DOWNLOAD_LINK_LIST.add(Uri.parse("http://www.YourDownloadLink.com"));
+    Utils.DOWNLOAD_LINK_LIST.add(Uri.parse("YourDownloadLink"));
     Utils.DOWNLOAD_DIRECTORY_LIST.add(new File(DestinationFolderInTheInternalStorage));
     Utils.DOWNLOADED_FILE_NAME_LIST.add("Add-On.zip");
     Utils.DOWNLOADED_FILE_MD5_LIST.add("5fb732eea3d3e2b407fa7685c27a5354");
@@ -563,7 +563,7 @@ Utils.DOWNLOAD_REQUEST_LIST = List of download requests for multiple downloads.
     Utils.DOWNLOAD_REQUEST_LIST.add(mRequest0);
 
     // Download Add-On N°2
-    Utils.DOWNLOAD_LINK_LIST.add(Uri.parse("http://www.YourDownloadLink.com"));
+    Utils.DOWNLOAD_LINK_LIST.add(Uri.parse("YourDownloadLink"));
     Utils.DOWNLOAD_DIRECTORY_LIST.add(new File(DestinationFolderInTheInternalStorage));
     Utils.DOWNLOADED_FILE_NAME_LIST.add("Add-On2.zip");
     Utils.DOWNLOADED_FILE_MD5_LIST.add("3a416cafb312cb15ce6b3b09249fe6e6");
@@ -572,7 +572,7 @@ Utils.DOWNLOAD_REQUEST_LIST = List of download requests for multiple downloads.
     Utils.DOWNLOAD_REQUEST_LIST.add(mRequest1);
 
     // Download Add-On N°3
-    Utils.DOWNLOAD_LINK_LIST.add(Uri.parse("http://www.YourDownloadLink.com"));
+    Utils.DOWNLOAD_LINK_LIST.add(Uri.parse("YourDownloadLink"));
     Utils.DOWNLOAD_DIRECTORY_LIST.add(new File(DestinationFolderInTheInternalStorage));
     Utils.DOWNLOADED_FILE_NAME_LIST.add("Add-On3.zip");
     Utils.DOWNLOADED_FILE_MD5_LIST.add("f946055c11a6a25d202f81171944fa1e");
