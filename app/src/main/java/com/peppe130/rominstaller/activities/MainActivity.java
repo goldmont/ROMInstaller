@@ -50,10 +50,10 @@ public class MainActivity extends AppCompatActivity implements CustomFileChooser
     public static CustomViewPager mViewPager;
     public static FragmentPagerAdapter mFragmentPagerAdapter;
     public static SmartTabLayout mSmartTabLayout;
+    public static ArrayList<Fragment> mListFragment = new ArrayList<>();
     Boolean mDefaultOptions, mLastPageScrolled = false, mShouldShowToast = false, mNextOrInstallHint = false;
     Vibrator mVibrator;
     Integer mLatestPage, mCurrentItem, mPosition;
-    public static ArrayList<Fragment> mListFragment = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

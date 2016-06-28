@@ -107,8 +107,8 @@ public class SettingsActivity extends AppCompatActivity {
             APP_DEVELOPER.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                 @Override
                 public boolean onPreferenceClick(Preference preference) {
-                    String[] mSocial = {"Google+", "Twitter"};
-                    String[] mLinks = {"http://google.com/+PeppeMontuoro", "https://twitter.com/PeppeMontuoro"};
+                    String[] mSocial = new String[] {"Google+", "Twitter"};
+                    String[] mLinks = new String[] {"http://google.com/+PeppeMontuoro", "https://twitter.com/PeppeMontuoro"};
                     Utils.FollowMeDialog(mSocial, mLinks);
                     return false;
                 }
@@ -118,8 +118,8 @@ public class SettingsActivity extends AppCompatActivity {
             APP_THEMER.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                 @Override
                 public boolean onPreferenceClick(Preference preference) {
-                    String[] mSocial = {"Google+", "Twitter"};
-                    String[] mLinks = {"http://google.com/+MRLOUDT_ONE", "https://twitter.com/MR_LOUD_T_ONE"};
+                    String[] mSocial = new String[] {"Google+", "Twitter"};
+                    String[] mLinks = new String[] {"http://google.com/+MRLOUDT_ONE", "https://twitter.com/MR_LOUD_T_ONE"};
                     Utils.FollowMeDialog(mSocial, mLinks);
                     return false;
                 }
