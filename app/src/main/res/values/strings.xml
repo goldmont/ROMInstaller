@@ -132,15 +132,15 @@
     <string name="download_center">Download Center</string>
     <string name="download_center_summary">Download add-ons/features</string>
     <string name="app_version">App version</string>
-    <string name="app_developer_title">App developer</string>
+    <string name="app_developer_title">Project developer</string>
     <string name="app_developer_summary">Giuseppe Montuoro</string>
-    <string name="app_themer_title">App themer</string>
+    <string name="app_themer_title">Project themer</string>
     <string name="app_themer_summary">Costantino Di Bruno</string>
     <string name="app_github_title">GitHub</string>
     <string name="app_github_summary">See the App\'s project on GitHub</string>
     <string name="rom_version">ROM version</string>
-    <string name="rom_developer_title">ROM developer</string>
-    <string name="rom_themer_title">ROM themer</string>
+    <string name="rom_developer_title">App &amp; ROM developer</string>
+    <string name="rom_themer_title">App &amp; ROM themer</string>
     <string name="rom_xda_thread">XDA Thread</string>
     <string name="review_app_title">Leave a review!</string>
     <string name="review_app_summary">Review the App on Play Store</string>
@@ -149,7 +149,7 @@
 
     <!-- ROM Info -->
     <string name="rom_build_number">Your ROM\'s build number</string>
-    <string name="rom_developer_summary">ROM developer\'s name</string>
-    <string name="rom_themer_summary">ROM themer\'s name</string>
+    <string name="rom_developer_summary">App &amp; ROM developer\'s name</string>
+    <string name="rom_themer_summary">App &amp; ROM themer\'s name</string>
 
 </resources>
