@@ -20,7 +20,7 @@ import org.michaelevans.colorart.library.ColorArt;
 public class SplashScreenActivity extends Activity {
 
     public static Activity mActivity;
-    Bitmap mAppIconBitmap, mBitmap;
+    Bitmap mBitmap;
     String mAppName;
     ColorArt mColorArt;
     ImageView mImageView;
@@ -41,10 +41,9 @@ public class SplashScreenActivity extends Activity {
             mImageView = (ImageView) findViewById(R.id.imageView);
 
             mAppName = getString(R.string.app_name);
-            mAppIconBitmap = BitmapFactory.decodeResource(getResources(), Utils.APP_ICON_MULTITASKING);
-            mHeaderColor = ContextCompat.getColor(this, Utils.APP_HEADER_COLOR_MULTITASKING);
+            mHeaderColor = ContextCompat.getColor(this, R.color.colorPrimary);
 
-            setTaskDescription(new ActivityManager.TaskDescription(mAppName, mAppIconBitmap, mHeaderColor));
+            setTaskDescription(new ActivityManager.TaskDescription(mAppName, null, mHeaderColor));
 
             mOptions = new BitmapFactory.Options();
             mOptions.inJustDecodeBounds = true;

@@ -59,8 +59,6 @@ public class Utils {
 
     public static Integer SPLASH_SCREEN_DELAY = 3000;
     public static Integer SPLASH_SCREEN_IMAGE = R.drawable.rom_logo;
-    public static Integer APP_ICON_MULTITASKING = R.mipmap.ic_launcher;
-    public static Integer APP_HEADER_COLOR_MULTITASKING = R.color.colorPrimary;
     public static Integer PROGRESS_BAR_COLOR = R.color.colorAccent;
     public static Integer FILE_CHOOSER_TITLE_COLOR = Color.WHITE;
     public static Integer FILE_CHOOSER_CONTENT_COLOR = Color.WHITE;
@@ -70,7 +68,6 @@ public class Utils {
     public static IIcon CHANGELOG_ICON = Ionicons.Icon.ion_ios_paper_outline;
     public static IIcon DEFAULT_OPTIONS_ICON = GoogleMaterial.Icon.gmd_settings_backup_restore;
     public static IIcon CLEAR_DOWNLOADS_ICON = Entypo.Icon.ent_trash;
-
 
     // Uneditable //////////////////////////////////////////////////////////////////////////////////
 
