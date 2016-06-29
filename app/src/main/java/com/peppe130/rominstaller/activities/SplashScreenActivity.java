@@ -21,7 +21,6 @@ public class SplashScreenActivity extends Activity {
 
     public static Activity mActivity;
     Bitmap mBitmap;
-    String mAppName;
     ColorArt mColorArt;
     ImageView mImageView;
     RelativeLayout mRelativeLayout;
@@ -39,11 +38,9 @@ public class SplashScreenActivity extends Activity {
         if (Utils.SHOULD_SHOW_SPLASH_SCREEN) {
             mRelativeLayout = (RelativeLayout) findViewById(R.id.splash_screen_layout);
             mImageView = (ImageView) findViewById(R.id.imageView);
-
-            mAppName = getString(R.string.app_name);
             mHeaderColor = ContextCompat.getColor(this, R.color.colorPrimary);
 
-            setTaskDescription(new ActivityManager.TaskDescription(mAppName, null, mHeaderColor));
+            setTaskDescription(new ActivityManager.TaskDescription(null, null, mHeaderColor));
 
             mOptions = new BitmapFactory.Options();
             mOptions.inJustDecodeBounds = true;
