@@ -1,9 +1,9 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
 
     <string name="app_name">ROM Installer</string>
     <string name="toolbar_title2">Preferences</string>
     <string name="rom_name">ROMInstaller</string>
-    <string name="rom_download_folder">ROMInstaller/Download</string>
+    <string name="rom_folder">ROMInstaller/Download</string>
     <string name="choose_sample_file">Choose \"SampleROM.zip\" file under ROMInstaller/Download</string>
 
     <!-- Buttons -->

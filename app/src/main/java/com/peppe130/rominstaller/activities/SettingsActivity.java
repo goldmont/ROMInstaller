@@ -39,15 +39,15 @@ public class SettingsActivity extends AppCompatActivity {
 
         Utils.ACTIVITY = this;
 
-        File mPath = new File(Environment.getExternalStorageDirectory().getPath() + "/" + getString(R.string.rom_download_folder));
-        File mSample = new File(mPath.getPath() + "/" + "Sample.zip");
+        File mROMFolder = new File(Environment.getExternalStorageDirectory().getPath() + "/" + getString(R.string.rom_folder));
+        File mSampleZIP = new File(mROMFolder.getPath() + "/" + "Sample.zip");
 
-        if(!mPath.exists()) {
-            mPath.mkdirs();
+        if(!mROMFolder.exists()) {
+            mROMFolder.mkdirs();
         }
 
-        if(!mSample.exists()) {
-            Utils.copyAssetFolder(getAssets(), "sample", mPath.toString());
+        if(Utils.TRIAL_MODE && !mSampleZIP.exists()) {
+            Utils.copyAssetFolder(getAssets(), "sample", mROMFolder.toString());
         }
 
     }

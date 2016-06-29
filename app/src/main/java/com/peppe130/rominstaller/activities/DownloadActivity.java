@@ -55,7 +55,7 @@ public class DownloadActivity extends AppCompatActivity implements CustomFileCho
             @Override
             public void onClick(View view) {
                 mDownloadLink = Uri.parse("http://www.mediafire.com/download/z7fn3nw1vn5oo8a/Test.zip");
-                mDownloadDirectory = new File(getString(R.string.rom_download_folder));
+                mDownloadDirectory = new File(getString(R.string.rom_folder));
                 mDownloadedFileFinalName = "Test.zip";
 
                 mRequest = new DownloadManager.Request(mDownloadLink);
@@ -91,7 +91,7 @@ public class DownloadActivity extends AppCompatActivity implements CustomFileCho
             @Override
             public void onClick(View view) {
                 mDownloadLink = Uri.parse("http://www.mediafire.com/download/a0jswcs84smbi8i/Test2.zip");
-                mDownloadDirectory = new File(getString(R.string.rom_download_folder));
+                mDownloadDirectory = new File(getString(R.string.rom_folder));
                 mDownloadedFileFinalName = "Test2.zip";
                 mDownloadedFileMD5 = "3a416cafb312cb15ce6b3b09249fe6e6";
 
@@ -129,7 +129,7 @@ public class DownloadActivity extends AppCompatActivity implements CustomFileCho
             @Override
             public void onClick(View view) {
                 mDownloadLink = Uri.parse("http://www.mediafire.com/download/7waxhxzanc31y1z/Test3.zip");
-                mDownloadDirectory = new File(getString(R.string.rom_download_folder));
+                mDownloadDirectory = new File(getString(R.string.rom_folder));
                 mDownloadedFileFinalName = "Test3.zip";
                 mDownloadedFileMD5 = "3a416cafb312cb15ce6b3b09249fe6e6";
 
@@ -167,7 +167,7 @@ public class DownloadActivity extends AppCompatActivity implements CustomFileCho
             @Override
             public void onClick(View view) {
                 mDownloadLink = Uri.parse("http://www.mediafire.com/download/3a7gefzmxj44lv1/SampleROM.zip");
-                mDownloadDirectory = new File(getString(R.string.rom_download_folder));
+                mDownloadDirectory = new File(getString(R.string.rom_folder));
                 mDownloadedFileFinalName = "SampleROM.zip";
                 if (Utils.TEST_MODE) {
                     Utils.MODEL = SystemProperties.get("ro.product.model");
@@ -206,7 +206,7 @@ public class DownloadActivity extends AppCompatActivity implements CustomFileCho
             @Override
             public void onClick(View view) {
                 mDownloadLink = Uri.parse("http://www.mediafire.com/download/z7fn3nw1vn5oo8a/Test.zip");
-                mDownloadDirectory = new File(getString(R.string.rom_download_folder));
+                mDownloadDirectory = new File(getString(R.string.rom_folder));
                 mDownloadedFileFinalName = "Recovery.zip";
                 mRecoveryPartition = "YourDeviceRecoveryPartition";
 
@@ -244,7 +244,7 @@ public class DownloadActivity extends AppCompatActivity implements CustomFileCho
             @Override
             public void onClick(View view) {
                 mDownloadLink = Uri.parse("http://www.mediafire.com/download/z7fn3nw1vn5oo8a/Test.zip");
-                mDownloadDirectory = new File(getString(R.string.rom_download_folder));
+                mDownloadDirectory = new File(getString(R.string.rom_folder));
                 mDownloadedFileFinalName = "Recovery.zip";
                 mRecoveryPartition = "YourDeviceRecoveryPartition";
                 mRequest = new DownloadManager.Request(mDownloadLink);
@@ -252,7 +252,7 @@ public class DownloadActivity extends AppCompatActivity implements CustomFileCho
 
                 // Download Add-On N°1
                 Utils.DOWNLOAD_LINK_LIST.add(Uri.parse("http://www.mediafire.com/download/z7fn3nw1vn5oo8a/Test.zip"));
-                Utils.DOWNLOAD_DIRECTORY_LIST.add(new File(getString(R.string.rom_download_folder)));
+                Utils.DOWNLOAD_DIRECTORY_LIST.add(new File(getString(R.string.rom_folder)));
                 Utils.DOWNLOADED_FILE_NAME_LIST.add("Add-On.zip");
                 Utils.DOWNLOADED_FILE_MD5_LIST.add("5fb732eea3d3e2b407fa7685c27a5354");
                 DownloadManager.Request request = new DownloadManager.Request(Utils.DOWNLOAD_LINK_LIST.get(0));
@@ -261,7 +261,7 @@ public class DownloadActivity extends AppCompatActivity implements CustomFileCho
 
                 // Download Add-On N°2
                 Utils.DOWNLOAD_LINK_LIST.add(Uri.parse("http://www.mediafire.com/download/a0jswcs84smbi8i/Test2.zip"));
-                Utils.DOWNLOAD_DIRECTORY_LIST.add(new File(getString(R.string.rom_download_folder)));
+                Utils.DOWNLOAD_DIRECTORY_LIST.add(new File(getString(R.string.rom_folder)));
                 Utils.DOWNLOADED_FILE_NAME_LIST.add("Add-On2.zip");
                 Utils.DOWNLOADED_FILE_MD5_LIST.add("3a416cafb312cb15ce6b3b09249fe6e6");
                 DownloadManager.Request request2 = new DownloadManager.Request(Utils.DOWNLOAD_LINK_LIST.get(1));
@@ -270,7 +270,7 @@ public class DownloadActivity extends AppCompatActivity implements CustomFileCho
 
                 // Download Add-On N°3
                 Utils.DOWNLOAD_LINK_LIST.add(Uri.parse("http://www.mediafire.com/download/7waxhxzanc31y1z/Test3.zip"));
-                Utils.DOWNLOAD_DIRECTORY_LIST.add(new File(getString(R.string.rom_download_folder)));
+                Utils.DOWNLOAD_DIRECTORY_LIST.add(new File(getString(R.string.rom_folder)));
                 Utils.DOWNLOADED_FILE_NAME_LIST.add("Add-On3.zip");
                 Utils.DOWNLOADED_FILE_MD5_LIST.add("f946055c11a6a25d202f81171944fa1e");
                 DownloadManager.Request request3 = new DownloadManager.Request(Utils.DOWNLOAD_LINK_LIST.get(2));
@@ -309,7 +309,7 @@ public class DownloadActivity extends AppCompatActivity implements CustomFileCho
             public void onClick(View view) {
                 // Download N°1
                 Utils.DOWNLOAD_LINK_LIST.add(Uri.parse("http://www.mediafire.com/download/z7fn3nw1vn5oo8a/Test.zip"));
-                Utils.DOWNLOAD_DIRECTORY_LIST.add(new File(getString(R.string.rom_download_folder)));
+                Utils.DOWNLOAD_DIRECTORY_LIST.add(new File(getString(R.string.rom_folder)));
                 Utils.DOWNLOADED_FILE_NAME_LIST.add("Test.zip");
                 DownloadManager.Request request = new DownloadManager.Request(Utils.DOWNLOAD_LINK_LIST.get(0));
                 request.setDestinationInExternalPublicDir(Utils.DOWNLOAD_DIRECTORY_LIST.get(0).getPath(), Utils.DOWNLOADED_FILE_NAME_LIST.get(0));
@@ -317,7 +317,7 @@ public class DownloadActivity extends AppCompatActivity implements CustomFileCho
 
                 // Download N°2
                 Utils.DOWNLOAD_LINK_LIST.add(Uri.parse("http://www.mediafire.com/download/a0jswcs84smbi8i/Test2.zip"));
-                Utils.DOWNLOAD_DIRECTORY_LIST.add(new File(getString(R.string.rom_download_folder)));
+                Utils.DOWNLOAD_DIRECTORY_LIST.add(new File(getString(R.string.rom_folder)));
                 Utils.DOWNLOADED_FILE_NAME_LIST.add("Test2.zip");
                 DownloadManager.Request request2 = new DownloadManager.Request(Utils.DOWNLOAD_LINK_LIST.get(1));
                 request2.setDestinationInExternalPublicDir(Utils.DOWNLOAD_DIRECTORY_LIST.get(1).getPath(), Utils.DOWNLOADED_FILE_NAME_LIST.get(1));
@@ -325,7 +325,7 @@ public class DownloadActivity extends AppCompatActivity implements CustomFileCho
 
                 // Download N°3
                 Utils.DOWNLOAD_LINK_LIST.add(Uri.parse("http://www.mediafire.com/download/7waxhxzanc31y1z/Test3.zip"));
-                Utils.DOWNLOAD_DIRECTORY_LIST.add(new File(getString(R.string.rom_download_folder)));
+                Utils.DOWNLOAD_DIRECTORY_LIST.add(new File(getString(R.string.rom_folder)));
                 Utils.DOWNLOADED_FILE_NAME_LIST.add("Test3.zip");
                 DownloadManager.Request request3 = new DownloadManager.Request(Utils.DOWNLOAD_LINK_LIST.get(2));
                 request3.setDestinationInExternalPublicDir(Utils.DOWNLOAD_DIRECTORY_LIST.get(2).getPath(), Utils.DOWNLOADED_FILE_NAME_LIST.get(2));
@@ -362,7 +362,7 @@ public class DownloadActivity extends AppCompatActivity implements CustomFileCho
             public void onClick(View view) {
                 // Download N°1
                 Utils.DOWNLOAD_LINK_LIST.add(Uri.parse("http://www.mediafire.com/download/z7fn3nw1vn5oo8a/Test.zip"));
-                Utils.DOWNLOAD_DIRECTORY_LIST.add(new File(getString(R.string.rom_download_folder)));
+                Utils.DOWNLOAD_DIRECTORY_LIST.add(new File(getString(R.string.rom_folder)));
                 Utils.DOWNLOADED_FILE_NAME_LIST.add("Test.zip");
                 Utils.DOWNLOADED_FILE_MD5_LIST.add("5fb732eea3d3e2b407fa7685c27a5354");
                 DownloadManager.Request request = new DownloadManager.Request(Utils.DOWNLOAD_LINK_LIST.get(0));
@@ -371,7 +371,7 @@ public class DownloadActivity extends AppCompatActivity implements CustomFileCho
 
                 // Download N°2
                 Utils.DOWNLOAD_LINK_LIST.add(Uri.parse("http://www.mediafire.com/download/a0jswcs84smbi8i/Test2.zip"));
-                Utils.DOWNLOAD_DIRECTORY_LIST.add(new File(getString(R.string.rom_download_folder)));
+                Utils.DOWNLOAD_DIRECTORY_LIST.add(new File(getString(R.string.rom_folder)));
                 Utils.DOWNLOADED_FILE_NAME_LIST.add("Test2.zip");
                 Utils.DOWNLOADED_FILE_MD5_LIST.add("3a416cafb312cb15ce6b3b09249fe6e6");
                 DownloadManager.Request request2 = new DownloadManager.Request(Utils.DOWNLOAD_LINK_LIST.get(1));
@@ -380,7 +380,7 @@ public class DownloadActivity extends AppCompatActivity implements CustomFileCho
 
                 // Download N°3
                 Utils.DOWNLOAD_LINK_LIST.add(Uri.parse("http://www.mediafire.com/download/7waxhxzanc31y1z/Test3.zip"));
-                Utils.DOWNLOAD_DIRECTORY_LIST.add(new File(getString(R.string.rom_download_folder)));
+                Utils.DOWNLOAD_DIRECTORY_LIST.add(new File(getString(R.string.rom_folder)));
                 Utils.DOWNLOADED_FILE_NAME_LIST.add("Test3.zip");
                 Utils.DOWNLOADED_FILE_MD5_LIST.add("f946055c11a6a25d202f81171944fa1e");
                 DownloadManager.Request request3 = new DownloadManager.Request(Utils.DOWNLOAD_LINK_LIST.get(2));
@@ -419,7 +419,7 @@ public class DownloadActivity extends AppCompatActivity implements CustomFileCho
             public void onClick(View view) {
                 // Download N°1 - MD5 matches
                 Utils.DOWNLOAD_LINK_LIST.add(Uri.parse("http://www.mediafire.com/download/z7fn3nw1vn5oo8a/Test.zip"));
-                Utils.DOWNLOAD_DIRECTORY_LIST.add(new File(getString(R.string.rom_download_folder)));
+                Utils.DOWNLOAD_DIRECTORY_LIST.add(new File(getString(R.string.rom_folder)));
                 Utils.DOWNLOADED_FILE_NAME_LIST.add("Test.zip");
                 Utils.DOWNLOADED_FILE_MD5_LIST.add("5fb732eea3d3e2b407fa7685c27a5354");
                 DownloadManager.Request request = new DownloadManager.Request(Utils.DOWNLOAD_LINK_LIST.get(0));
@@ -428,7 +428,7 @@ public class DownloadActivity extends AppCompatActivity implements CustomFileCho
 
                 // Download N°2 - MD5 does not match
                 Utils.DOWNLOAD_LINK_LIST.add(Uri.parse("http://www.mediafire.com/download/a0jswcs84smbi8i/Test2.zip"));
-                Utils.DOWNLOAD_DIRECTORY_LIST.add(new File(getString(R.string.rom_download_folder)));
+                Utils.DOWNLOAD_DIRECTORY_LIST.add(new File(getString(R.string.rom_folder)));
                 Utils.DOWNLOADED_FILE_NAME_LIST.add("Test2.zip");
                 Utils.DOWNLOADED_FILE_MD5_LIST.add("3a416cafb312cb15ce6b3b09249fe6e6sd");
                 DownloadManager.Request request2 = new DownloadManager.Request(Utils.DOWNLOAD_LINK_LIST.get(1));
@@ -437,7 +437,7 @@ public class DownloadActivity extends AppCompatActivity implements CustomFileCho
 
                 // Download N°3 - No MD5 check
                 Utils.DOWNLOAD_LINK_LIST.add(Uri.parse("http://www.mediafire.com/download/7waxhxzanc31y1z/Test3.zip"));
-                Utils.DOWNLOAD_DIRECTORY_LIST.add(new File(getString(R.string.rom_download_folder)));
+                Utils.DOWNLOAD_DIRECTORY_LIST.add(new File(getString(R.string.rom_folder)));
                 Utils.DOWNLOADED_FILE_NAME_LIST.add("Test3.zip");
                 Utils.DOWNLOADED_FILE_MD5_LIST.add(null);
                 DownloadManager.Request request3 = new DownloadManager.Request(Utils.DOWNLOAD_LINK_LIST.get(2));
@@ -446,7 +446,7 @@ public class DownloadActivity extends AppCompatActivity implements CustomFileCho
 
                 // Download N°4 - MD5 matches
                 Utils.DOWNLOAD_LINK_LIST.add(Uri.parse("http://www.mediafire.com/download/7waxhxzanc31y1z/Test3.zip"));
-                Utils.DOWNLOAD_DIRECTORY_LIST.add(new File(getString(R.string.rom_download_folder)));
+                Utils.DOWNLOAD_DIRECTORY_LIST.add(new File(getString(R.string.rom_folder)));
                 Utils.DOWNLOADED_FILE_NAME_LIST.add("Test4.zip");
                 Utils.DOWNLOADED_FILE_MD5_LIST.add("f946055c11a6a25d202f81171944fa1e");
                 DownloadManager.Request request4 = new DownloadManager.Request(Utils.DOWNLOAD_LINK_LIST.get(3));
@@ -487,10 +487,10 @@ public class DownloadActivity extends AppCompatActivity implements CustomFileCho
 
         Utils.ACTIVITY = this;
 
-        File mPath = new File(Environment.getExternalStorageDirectory().getPath() + "/" + getString(R.string.rom_download_folder));
+        File mROMFolder = new File(Environment.getExternalStorageDirectory().getPath() + "/" + getString(R.string.rom_folder));
 
-        if(!mPath.exists()) {
-            mPath.mkdirs();
+        if(!mROMFolder.exists()) {
+            mROMFolder.mkdirs();
         }
 
     }
@@ -525,7 +525,7 @@ public class DownloadActivity extends AppCompatActivity implements CustomFileCho
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.clear_downloads:
-                final File mFile = new File(Environment.getExternalStorageDirectory().getPath() + "/" + getString(R.string.rom_download_folder));
+                final File mFile = new File(Environment.getExternalStorageDirectory().getPath() + "/" + getString(R.string.rom_folder));
                 if (mFile.exists() && mFile.isDirectory() && mFile.listFiles().length != 0) {
                     SweetAlertDialog sweetAlertDialog = new SweetAlertDialog(DownloadActivity.this, SweetAlertDialog.WARNING_TYPE)
                             .setTitleText(getString(R.string.clear_downloads_dialog_title))
@@ -548,7 +548,7 @@ public class DownloadActivity extends AppCompatActivity implements CustomFileCho
                                         @Override
                                         public void run() {
                                             new CustomFileChooser.Builder(DownloadActivity.this)
-                                                    .initialPath(Environment.getExternalStorageDirectory().getPath() + "/" + getString(R.string.rom_download_folder))
+                                                    .initialPath(Environment.getExternalStorageDirectory().getPath() + "/" + getString(R.string.rom_folder))
                                                     .lockFolder(null, true, true)
                                                     .canceledOnTouchOutside(true)
                                                     .show();

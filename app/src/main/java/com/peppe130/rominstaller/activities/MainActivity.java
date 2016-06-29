@@ -2,14 +2,12 @@ package com.peppe130.rominstaller.activities;
 
 import android.annotation.SuppressLint;
 import android.support.annotation.NonNull;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
-import android.os.Vibrator;
 import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -51,9 +49,8 @@ public class MainActivity extends AppCompatActivity implements CustomFileChooser
     public static FragmentPagerAdapter mFragmentPagerAdapter;
     public static SmartTabLayout mSmartTabLayout;
     public static ArrayList<Fragment> mListFragment = new ArrayList<>();
-    Boolean mDefaultOptions, mLastPageScrolled = false, mShouldShowToast = false, mNextOrInstallHint = false;
-    Vibrator mVibrator;
     Integer mLatestPage, mCurrentItem, mPosition;
+    Boolean mLastPageScrolled = false, mShouldShowToast = false, mNextOrInstallHint = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,9 +81,6 @@ public class MainActivity extends AppCompatActivity implements CustomFileChooser
         NEXT = (ImageButton) findViewById(R.id.next);
         BACK = (ImageButton) findViewById(R.id.back);
         DONE = (ImageButton) findViewById(R.id.done);
-        mVibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-        mDefaultOptions = SP.getBoolean("default", true);
-
         mViewPager = (CustomViewPager) findViewById(R.id.viewpager);
         mFragmentPagerAdapter = new PagerAdapter(getSupportFragmentManager());
         mSmartTabLayout = (SmartTabLayout) findViewById(R.id.viewpager_indicator);
@@ -104,7 +98,7 @@ public class MainActivity extends AppCompatActivity implements CustomFileChooser
             }
             mViewPager.setAdapter(mFragmentPagerAdapter);
             mSmartTabLayout.setViewPager(mViewPager);
-            mEditor.putBoolean("default", true).apply();
+            mEditor.putBoolean("default_options", true).apply();
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
@@ -113,7 +107,7 @@ public class MainActivity extends AppCompatActivity implements CustomFileChooser
                 }
             }, 200);
         } else {
-            if (mDefaultOptions) {
+            if (SP.getBoolean("default_options", true)) {
                 mViewPager.removeAllViews();
                 new Handler().postDelayed(new Runnable() {
                     @Override
@@ -193,7 +187,7 @@ public class MainActivity extends AppCompatActivity implements CustomFileChooser
                 }
                 mViewPager.setAdapter(mFragmentPagerAdapter);
                 mSmartTabLayout.setViewPager(mViewPager);
-                mEditor.putBoolean("default", true).apply();
+                mEditor.putBoolean("default_options", true).apply();
                 Utils.ZIP_FILE = new File(SP.getString("file_path", ""));
                 new Handler().postDelayed(new Runnable() {
                     @Override
@@ -208,7 +202,6 @@ public class MainActivity extends AppCompatActivity implements CustomFileChooser
         NEXT.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 BACK.setVisibility(View.VISIBLE);
 
                 if (mViewPager.getCurrentItem() != mFragmentPagerAdapter.getCount()) {
@@ -228,7 +221,6 @@ public class MainActivity extends AppCompatActivity implements CustomFileChooser
         BACK.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 mNextOrInstallHint = false;
                 DONE.setVisibility(View.GONE);
                 NEXT.setVisibility(View.VISIBLE);
@@ -467,15 +459,15 @@ public class MainActivity extends AppCompatActivity implements CustomFileChooser
 
         Utils.ACTIVITY = this;
 
-        File mPath = new File(Environment.getExternalStorageDirectory().getPath() + "/" + getString(R.string.rom_download_folder));
-        File mSample = new File(mPath.getPath() + "/" + "Sample.zip");
+        File mROMFolder = new File(Environment.getExternalStorageDirectory().getPath() + "/" + getString(R.string.rom_folder));
+        File mSampleZIP = new File(mROMFolder.getPath() + "/" + "Sample.zip");
 
-        if(!mPath.exists()) {
-            mPath.mkdirs();
+        if(!mROMFolder.exists()) {
+            mROMFolder.mkdirs();
         }
 
-        if(!mSample.exists()) {
-            Utils.copyAssetFolder(getAssets(), "sample", mPath.toString());
+        if(Utils.TRIAL_MODE && !mSampleZIP.exists()) {
+            Utils.copyAssetFolder(getAssets(), "sample", mROMFolder.toString());
         }
 
     }
@@ -490,8 +482,7 @@ public class MainActivity extends AppCompatActivity implements CustomFileChooser
         }
 
         if (mViewPager.getCurrentItem() == 0 && !Utils.SHOULD_LOCK_UI) {
-
-            SweetAlertDialog sweetAlertDialog = new SweetAlertDialog(MainActivity.this, SweetAlertDialog.WARNING_TYPE)
+            SweetAlertDialog mSweetAlertDialog = new SweetAlertDialog(MainActivity.this, SweetAlertDialog.WARNING_TYPE)
                     .setTitleText(getString(R.string.exit_dialog_title))
                     .setContentText(getString(R.string.exit_dialog_message))
                     .showCancelButton(true)
@@ -503,9 +494,8 @@ public class MainActivity extends AppCompatActivity implements CustomFileChooser
                             finishAffinity();
                         }
                     });
-            sweetAlertDialog.setCanceledOnTouchOutside(true);
-            sweetAlertDialog.show();
-
+            mSweetAlertDialog.setCanceledOnTouchOutside(true);
+            mSweetAlertDialog.show();
         } else if (mViewPager.getCurrentItem() > 0) {
             mViewPager.setCurrentItem(mViewPager.getCurrentItem() - 1);
         }
@@ -733,9 +723,7 @@ public class MainActivity extends AppCompatActivity implements CustomFileChooser
                         .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
                             @Override
                             public void onClick(SweetAlertDialog sDialog) {
-
                                 DefaultValues();
-
                                 sDialog.setTitleText(getString(R.string.restored_default_options_title))
                                         .setContentText(getString(R.string.restored_default_options_message))
                                         .setConfirmText(getString(R.string.ok_button))
@@ -743,10 +731,9 @@ public class MainActivity extends AppCompatActivity implements CustomFileChooser
                                         .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
                                             @Override
                                             public void onClick(SweetAlertDialog sDialog) {
-                                                // Recreate activity
                                                 finishAffinity();
                                                 startActivity(getIntent());
-                                                mEditor.putBoolean("default", false).commit();
+                                                mEditor.putBoolean("default_options", false).commit();
                                             }
                                         });
                                 sDialog.setCancelable(false);
