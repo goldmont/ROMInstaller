@@ -331,7 +331,7 @@ Utils.DOWNLOAD_REQUEST_LIST = List of download requests for multiple downloads.
   ```java
   
     Uri mDownloadLink = Uri.parse("YourDownloadLink");
-    File mDownloadDirectory = new File(DestinationFolderInTheInternalStorage);
+    File mDownloadDirectory = new File(getString(R.string.rom_folder));
     String mDownloadedFileFinalName = "File.zip";
     DownloadManager.Request mRequest = new DownloadManager.Request(mDownloadLink);
     mRequest.setDestinationInExternalPublicDir(mDownloadDirectory.getPath(), mDownloadedFileFinalName);
@@ -348,7 +348,7 @@ Utils.DOWNLOAD_REQUEST_LIST = List of download requests for multiple downloads.
   ```java
   
     Uri mDownloadLink = Uri.parse("YourDownloadLink");
-    File mDownloadDirectory = new File(DestinationFolderInTheInternalStorage);
+    File mDownloadDirectory = new File(getString(R.string.rom_folder));
     String mDownloadedFileFinalName = "File.zip";
     mDownloadedFileMD5 = "3a416cafb312cb15ce6b3b09249fe6e6";
     DownloadManager.Request mRequest = new DownloadManager.Request(mDownloadLink);
@@ -369,7 +369,7 @@ Utils.DOWNLOAD_REQUEST_LIST = List of download requests for multiple downloads.
   ```java
   
     Uri mDownloadLink = Uri.parse("YourDownloadLink");
-    File mDownloadDirectory = new File(DestinationFolderInTheInternalStorage);
+    File mDownloadDirectory = new File(getString(R.string.rom_folder));
     String mDownloadedFileFinalName = "ROM.zip";
     DownloadManager.Request mRequest = new DownloadManager.Request(mDownloadLink);
     mRequest.setDestinationInExternalPublicDir(mDownloadDirectory.getPath(), mDownloadedFileFinalName);
@@ -387,7 +387,7 @@ Utils.DOWNLOAD_REQUEST_LIST = List of download requests for multiple downloads.
   
     // Download N°1
     Utils.DOWNLOAD_LINK_LIST.add(Uri.parse("YourDownloadLink"));
-    Utils.DOWNLOAD_DIRECTORY_LIST.add(new File(DestinationFolderInTheInternalStorage));
+    Utils.DOWNLOAD_DIRECTORY_LIST.add(new File(getString(R.string.rom_folder)));
     Utils.DOWNLOADED_FILE_NAME_LIST.add("File.zip");
     DownloadManager.Request mRequest0 = new DownloadManager.Request(Utils.DOWNLOAD_LINK_LIST.get(0));
     mRequest0.setDestinationInExternalPublicDir(Utils.DOWNLOAD_DIRECTORY_LIST.get(0).getPath(), Utils.DOWNLOADED_FILE_NAME_LIST.get(0));
@@ -395,7 +395,7 @@ Utils.DOWNLOAD_REQUEST_LIST = List of download requests for multiple downloads.
 
     // Download N°2
     Utils.DOWNLOAD_LINK_LIST.add(Uri.parse("YourDownloadLink"));
-    Utils.DOWNLOAD_DIRECTORY_LIST.add(new File(DestinationFolderInTheInternalStorage));
+    Utils.DOWNLOAD_DIRECTORY_LIST.add(new File(getString(R.string.rom_folder)));
     Utils.DOWNLOADED_FILE_NAME_LIST.add("File2.zip");
     DownloadManager.Request mRequest1 = new DownloadManager.Request(Utils.DOWNLOAD_LINK_LIST.get(1));
     mRequest1.setDestinationInExternalPublicDir(Utils.DOWNLOAD_DIRECTORY_LIST.get(1).getPath(), Utils.DOWNLOADED_FILE_NAME_LIST.get(1));
@@ -403,7 +403,7 @@ Utils.DOWNLOAD_REQUEST_LIST = List of download requests for multiple downloads.
 
     // Download N°3
     Utils.DOWNLOAD_LINK_LIST.add(Uri.parse("YourDownloadLink"));
-    Utils.DOWNLOAD_DIRECTORY_LIST.add(new File(DestinationFolderInTheInternalStorage));
+    Utils.DOWNLOAD_DIRECTORY_LIST.add(new File(getString(R.string.rom_folder)));
     Utils.DOWNLOADED_FILE_NAME_LIST.add("File3.zip");
     DownloadManager.Request mRequest2 = new DownloadManager.Request(Utils.DOWNLOAD_LINK_LIST.get(2));
     mRequest2.setDestinationInExternalPublicDir(Utils.DOWNLOAD_DIRECTORY_LIST.get(2).getPath(), Utils.DOWNLOADED_FILE_NAME_LIST.get(2));
@@ -422,7 +422,7 @@ Utils.DOWNLOAD_REQUEST_LIST = List of download requests for multiple downloads.
   
     // Download N°1
     Utils.DOWNLOAD_LINK_LIST.add(Uri.parse("YourDownloadLink"));
-    Utils.DOWNLOAD_DIRECTORY_LIST.add(new File(DestinationFolderInTheInternalStorage));
+    Utils.DOWNLOAD_DIRECTORY_LIST.add(new File(getString(R.string.rom_folder)));
     Utils.DOWNLOADED_FILE_NAME_LIST.add("File.zip");
     Utils.DOWNLOADED_FILE_MD5_LIST.add("5fb732eea3d3e2b407fa7685c27a5354");
     DownloadManager.Request mRequest0 = new DownloadManager.Request(Utils.DOWNLOAD_LINK_LIST.get(0));
@@ -431,7 +431,7 @@ Utils.DOWNLOAD_REQUEST_LIST = List of download requests for multiple downloads.
 
     // Download N°2
     Utils.DOWNLOAD_LINK_LIST.add(Uri.parse("YourDownloadLink"));
-    Utils.DOWNLOAD_DIRECTORY_LIST.add(new File(DestinationFolderInTheInternalStorage));
+    Utils.DOWNLOAD_DIRECTORY_LIST.add(new File(getString(R.string.rom_folder)));
     Utils.DOWNLOADED_FILE_NAME_LIST.add("File2.zip");
     Utils.DOWNLOADED_FILE_MD5_LIST.add("3a416cafb312cb15ce6b3b09249fe6e6");
     DownloadManager.Request mRequest1 = new DownloadManager.Request(Utils.DOWNLOAD_LINK_LIST.get(1));
@@ -440,7 +440,7 @@ Utils.DOWNLOAD_REQUEST_LIST = List of download requests for multiple downloads.
 
     // Download N°3
     Utils.DOWNLOAD_LINK_LIST.add(Uri.parse("YourDownloadLink"));
-    Utils.DOWNLOAD_DIRECTORY_LIST.add(new File(DestinationFolderInTheInternalStorage));
+    Utils.DOWNLOAD_DIRECTORY_LIST.add(new File(getString(R.string.rom_folder)));
     Utils.DOWNLOADED_FILE_NAME_LIST.add("File3.zip");
     Utils.DOWNLOADED_FILE_MD5_LIST.add("f946055c11a6a25d202f81171944fa1e");
     DownloadManager.Request mRequest2 = new DownloadManager.Request(Utils.DOWNLOAD_LINK_LIST.get(2));
@@ -463,7 +463,7 @@ Utils.DOWNLOAD_REQUEST_LIST = List of download requests for multiple downloads.
   
     // Download N°1 - MD5 check enabled
     Utils.DOWNLOAD_LINK_LIST.add(Uri.parse("YourDownloadLink"));
-    Utils.DOWNLOAD_DIRECTORY_LIST.add(new File(DestinationFolderInTheInternalStorage));
+    Utils.DOWNLOAD_DIRECTORY_LIST.add(new File(getString(R.string.rom_folder)));
     Utils.DOWNLOADED_FILE_NAME_LIST.add("File.zip");
     Utils.DOWNLOADED_FILE_MD5_LIST.add("5fb732eea3d3e2b407fa7685c27a5354");
     DownloadManager.Request mRequest0 = new DownloadManager.Request(Utils.DOWNLOAD_LINK_LIST.get(0));
@@ -472,7 +472,7 @@ Utils.DOWNLOAD_REQUEST_LIST = List of download requests for multiple downloads.
 
     // Download N°2 - MD5 check disabled
     Utils.DOWNLOAD_LINK_LIST.add(Uri.parse("YourDownloadLink"));
-    Utils.DOWNLOAD_DIRECTORY_LIST.add(new File(DestinationFolderInTheInternalStorage));
+    Utils.DOWNLOAD_DIRECTORY_LIST.add(new File(getString(R.string.rom_folder)));
     Utils.DOWNLOADED_FILE_NAME_LIST.add("File2.zip");
     Utils.DOWNLOADED_FILE_MD5_LIST.add(null);
     DownloadManager.Request mRequest1 = new DownloadManager.Request(Utils.DOWNLOAD_LINK_LIST.get(1));
@@ -481,7 +481,7 @@ Utils.DOWNLOAD_REQUEST_LIST = List of download requests for multiple downloads.
 
     // Download N°3 - MD5 check enabled
     Utils.DOWNLOAD_LINK_LIST.add(Uri.parse("YourDownloadLink"));
-    Utils.DOWNLOAD_DIRECTORY_LIST.add(new File(DestinationFolderInTheInternalStorage));
+    Utils.DOWNLOAD_DIRECTORY_LIST.add(new File(getString(R.string.rom_folder)));
     Utils.DOWNLOADED_FILE_NAME_LIST.add("File3.zip");
     Utils.DOWNLOADED_FILE_MD5_LIST.add("f946055c11a6a25d202f81171944fa1e");
     DownloadManager.Request mRequest2 = new DownloadManager.Request(Utils.DOWNLOAD_LINK_LIST.get(2));
@@ -530,7 +530,7 @@ Utils.DOWNLOAD_REQUEST_LIST = List of download requests for multiple downloads.
   ```java
   
     Uri mDownloadLink = Uri.parse("YourDownloadLink");
-    File mDownloadDirectory = new File(DestinationFolderInTheInternalStorage);
+    File mDownloadDirectory = new File(getString(R.string.rom_folder));
     String mDownloadedFileFinalName = "Recovery.zip";
     mRecoveryPartition = "DeviceRecoveryPartition";
     DownloadManager.Request mRequest = new DownloadManager.Request(mDownloadLink);
@@ -549,7 +549,7 @@ Utils.DOWNLOAD_REQUEST_LIST = List of download requests for multiple downloads.
   ```java
     // Download recovery
     Uri mDownloadLink = Uri.parse("YourDownloadLink");
-    File mDownloadDirectory = new File(DestinationFolderInTheInternalStorage);
+    File mDownloadDirectory = new File(getString(R.string.rom_folder));
     String mDownloadedFileFinalName = "Recovery.zip";
     mRecoveryPartition = "DeviceRecoveryPartition";
     DownloadManager.Request mRequest = new DownloadManager.Request(mDownloadLink);
@@ -557,7 +557,7 @@ Utils.DOWNLOAD_REQUEST_LIST = List of download requests for multiple downloads.
     
     // Download Add-On N°1
     Utils.DOWNLOAD_LINK_LIST.add(Uri.parse("YourDownloadLink"));
-    Utils.DOWNLOAD_DIRECTORY_LIST.add(new File(DestinationFolderInTheInternalStorage));
+    Utils.DOWNLOAD_DIRECTORY_LIST.add(new File(getString(R.string.rom_folder)));
     Utils.DOWNLOADED_FILE_NAME_LIST.add("Add-On.zip");
     Utils.DOWNLOADED_FILE_MD5_LIST.add("5fb732eea3d3e2b407fa7685c27a5354");
     DownloadManager.Request mRequest0 = new DownloadManager.Request(Utils.DOWNLOAD_LINK_LIST.get(0));
@@ -566,7 +566,7 @@ Utils.DOWNLOAD_REQUEST_LIST = List of download requests for multiple downloads.
 
     // Download Add-On N°2
     Utils.DOWNLOAD_LINK_LIST.add(Uri.parse("YourDownloadLink"));
-    Utils.DOWNLOAD_DIRECTORY_LIST.add(new File(DestinationFolderInTheInternalStorage));
+    Utils.DOWNLOAD_DIRECTORY_LIST.add(new File(getString(R.string.rom_folder)));
     Utils.DOWNLOADED_FILE_NAME_LIST.add("Add-On2.zip");
     Utils.DOWNLOADED_FILE_MD5_LIST.add("3a416cafb312cb15ce6b3b09249fe6e6");
     DownloadManager.Request mRequest1 = new DownloadManager.Request(Utils.DOWNLOAD_LINK_LIST.get(1));
@@ -575,7 +575,7 @@ Utils.DOWNLOAD_REQUEST_LIST = List of download requests for multiple downloads.
 
     // Download Add-On N°3
     Utils.DOWNLOAD_LINK_LIST.add(Uri.parse("YourDownloadLink"));
-    Utils.DOWNLOAD_DIRECTORY_LIST.add(new File(DestinationFolderInTheInternalStorage));
+    Utils.DOWNLOAD_DIRECTORY_LIST.add(new File(getString(R.string.rom_folder)));
     Utils.DOWNLOADED_FILE_NAME_LIST.add("Add-On3.zip");
     Utils.DOWNLOADED_FILE_MD5_LIST.add("f946055c11a6a25d202f81171944fa1e");
     DownloadManager.Request mRequest2 = new DownloadManager.Request(Utils.DOWNLOAD_LINK_LIST.get(2));
