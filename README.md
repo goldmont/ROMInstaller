@@ -80,8 +80,6 @@ The following items belong to **_Editable_** section:
 * _SHOULD\_SHOW\_DISCLAIMER\_SCREEN_ = If set to **_true_**, it enables the disclaimer screen.
 * _SPLASH\_SCREEN\_DELAY_ = Duration time of splash screen (value in milliseconds).
 * _SPLASH\_SCREEN\_IMAGE_ = Image to display in the splash screen.
-* _APP\_ICON\_MULTITASKING_ = Icon of the App's header in multitasking.
-* _APP\_HEADER\_COLOR\_MULTITASKING_ = Color of the App's header in multitasking.
 * _PROGRESS\_BAR\_COLOR_ = ProgressBar color of loading Dialogs.
 * _FILE\_CHOOSER\_TITLE\_COLOR_ = FileChooser title color.
 * _FILE\_CHOOSER\_CONTENT\_COLOR_ = FileChooser content color.
