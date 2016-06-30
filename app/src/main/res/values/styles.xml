@@ -12,8 +12,9 @@
 
         <!-- Material Dialog Theme -->
         <item name="md_dark_theme">false</item>
-        <item name="md_title_color">@android:color/black</item>
-        <item name="md_content_color">@android:color/black</item>
+        <item name="md_title_color">@color/colorPrimaryDark.Theme.Light</item>
+        <item name="md_content_color">@color/colorPrimaryDark.Theme.Light</item>
+        <item name="md_background_color">@color/colorBackground.Theme.Light</item>
         <item name="md_widget_color">@color/colorAccent.Theme.Light</item>
         <item name="md_positive_color">@color/colorAccent.Theme.Light</item>
         <item name="md_neutral_color">@color/colorAccent.Theme.Light</item>
@@ -40,8 +41,9 @@
 
         <!-- Material Dialog Theme -->
         <item name="md_dark_theme">false</item>
-        <item name="md_title_color">@android:color/black</item>
-        <item name="md_content_color">@android:color/black</item>
+        <item name="md_title_color">@color/textPrimaryColor.Theme.Dark</item>
+        <item name="md_content_color">@color/textPrimaryColor.Theme.Dark</item>
+        <item name="md_background_color">@color/colorBackground.Theme.Dark</item>
         <item name="md_widget_color">@color/colorAccent.Theme.Dark</item>
         <item name="md_positive_color">@color/colorAccent.Theme.Dark</item>
         <item name="md_neutral_color">@color/colorAccent.Theme.Dark</item>

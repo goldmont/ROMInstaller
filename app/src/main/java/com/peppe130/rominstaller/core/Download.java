@@ -91,7 +91,7 @@ public class Download extends AsyncTask<String, String, String> {
         mProgress = new SweetAlertDialog(Utils.ACTIVITY, SweetAlertDialog.PROGRESS_TYPE);
         mProgress.setTitleText(Utils.ACTIVITY.getString(R.string.download_progress_dialog_title));
         mProgress.setContentText(mContent);
-        mProgress.getProgressHelper().setBarColor(ContextCompat.getColor(Utils.ACTIVITY, ControlCenter.AccentColorChooser()));
+        mProgress.getProgressHelper().setBarColor(Utils.FetchAccentColor());
         mProgress.setCancelable(false);
         mProgress.setOnCancelListener(new DialogInterface.OnCancelListener() {
             @Override

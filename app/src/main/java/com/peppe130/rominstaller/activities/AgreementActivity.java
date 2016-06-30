@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Handler;
 import android.preference.PreferenceManager;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -112,8 +111,8 @@ public class AgreementActivity extends AppCompatActivity {
         mEditor = SP.edit();
         AGREE = (Button) findViewById(R.id.agree);
         CLOSE = (Button) findViewById(R.id.close);
-        AGREE.setTextColor(ContextCompat.getColor(this, ControlCenter.AccentColorChooser()));
-        CLOSE.setTextColor(ContextCompat.getColor(this, ControlCenter.AccentColorChooser()));
+        AGREE.setTextColor(Utils.FetchAccentColor());
+        CLOSE.setTextColor(Utils.FetchAccentColor());
 
         final String[] mString = {"Buttons UI", "Swipe UI"};
 

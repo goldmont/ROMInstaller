@@ -12,7 +12,6 @@ import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -71,7 +70,7 @@ public class MainActivity extends AppCompatActivity implements CustomFileChooser
         mFragmentPagerAdapter = new PagerAdapter(getSupportFragmentManager());
         mSmartTabLayout = (SmartTabLayout) findViewById(R.id.viewpager_indicator);
         assert mSmartTabLayout != null;
-        mSmartTabLayout.setSelectedIndicatorColors(ContextCompat.getColor(this, ControlCenter.AccentColorChooser()));
+        mSmartTabLayout.setSelectedIndicatorColors(Utils.FetchAccentColor());
 
         FragmentsCollector.Setup();
 

@@ -47,7 +47,7 @@ public class CheckFile extends AsyncTask<String, String, Boolean> {
 
         mProgress.setTitleText(Utils.ACTIVITY.getString(R.string.progress_dialog_title));
         mProgress.setContentText(Utils.ACTIVITY.getString(R.string.check_configuration));
-        mProgress.getProgressHelper().setBarColor(ContextCompat.getColor(Utils.ACTIVITY, ControlCenter.AccentColorChooser()));
+        mProgress.getProgressHelper().setBarColor(Utils.FetchAccentColor());
         mProgress.setCancelable(false);
         mProgress.setCanceledOnTouchOutside(false);
         mProgress.setOnCancelListener(new DialogInterface.OnCancelListener() {

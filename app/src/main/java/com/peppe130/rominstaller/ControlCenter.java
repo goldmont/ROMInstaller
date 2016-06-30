@@ -171,46 +171,6 @@ public class ControlCenter {
     }
 
     @Nullable
-    public static Integer AccentColorChooser() {
-        Integer mTheme = null;
-
-        try {
-            mTheme = Utils.ACTIVITY.getPackageManager().getPackageInfo(Utils.ACTIVITY.getPackageName(), 0).applicationInfo.theme;
-        } catch (PackageManager.NameNotFoundException e) {
-            e.printStackTrace();
-        }
-
-        switch (mTheme) {
-            case R.style.AppTheme_Light:
-                return R.color.colorAccent_Theme_Light;
-            case R.style.AppTheme_Dark:
-                return R.color.colorAccent_Theme_Dark;
-            default:
-                return null;
-        }
-    }
-
-    @Nullable
-    public static Integer ButtonBackgroundColorChooser() {
-        Integer mTheme = null;
-
-        try {
-            mTheme = Utils.ACTIVITY.getPackageManager().getPackageInfo(Utils.ACTIVITY.getPackageName(), 0).applicationInfo.theme;
-        } catch (PackageManager.NameNotFoundException e) {
-            e.printStackTrace();
-        }
-
-        switch (mTheme) {
-            case R.style.AppTheme_Light:
-                return R.color.colorPrimary_Theme_Light;
-            case R.style.AppTheme_Dark:
-                return R.color.colorPrimary_Theme_Dark;
-            default:
-                return null;
-        }
-    }
-
-    @Nullable
     public static Integer ButtonBorderColorChooser() {
         Integer mTheme = null;
 
@@ -225,46 +185,6 @@ public class ControlCenter {
                 return R.color.colorPrimaryDark_Theme_Light;
             case R.style.AppTheme_Dark:
                 return R.color.colorAccent_Theme_Dark;
-            default:
-                return null;
-        }
-    }
-
-    @Nullable
-    public static Integer FileChooserBackgroundColorChooser() {
-        Integer mTheme = null;
-
-        try {
-            mTheme = Utils.ACTIVITY.getPackageManager().getPackageInfo(Utils.ACTIVITY.getPackageName(), 0).applicationInfo.theme;
-        } catch (PackageManager.NameNotFoundException e) {
-            e.printStackTrace();
-        }
-
-        switch (mTheme) {
-            case R.style.AppTheme_Light:
-                return android.R.color.white;
-            case R.style.AppTheme_Dark:
-                return R.color.colorBackground_Theme_Dark;
-            default:
-                return null;
-        }
-    }
-
-    @Nullable
-    public static Integer FileChooserTextColorChooser() {
-        Integer mTheme = null;
-
-        try {
-            mTheme = Utils.ACTIVITY.getPackageManager().getPackageInfo(Utils.ACTIVITY.getPackageName(), 0).applicationInfo.theme;
-        } catch (PackageManager.NameNotFoundException e) {
-            e.printStackTrace();
-        }
-
-        switch (mTheme) {
-            case R.style.AppTheme_Light:
-                return R.color.colorPrimaryDark_Theme_Light;
-            case R.style.AppTheme_Dark:
-                return android.R.color.white;
             default:
                 return null;
         }

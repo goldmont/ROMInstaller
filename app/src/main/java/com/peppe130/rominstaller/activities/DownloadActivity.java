@@ -55,7 +55,7 @@ public class DownloadActivity extends AppCompatActivity implements CustomFileCho
 
         RelativeLayout mRelativeLayout = (RelativeLayout) findViewById(R.id.relativeLayout);
         for (int i = 0; i != mRelativeLayout.getChildCount(); i++) {
-            mRelativeLayout.getChildAt(i).setBackgroundColor(ContextCompat.getColor(this, ControlCenter.ButtonBackgroundColorChooser()));
+            mRelativeLayout.getChildAt(i).setBackgroundColor(Utils.FetchPrimaryColor());
             mBorderColor = ContextCompat.getColor(DownloadActivity.this, ControlCenter.ButtonBorderColorChooser());
         }
 

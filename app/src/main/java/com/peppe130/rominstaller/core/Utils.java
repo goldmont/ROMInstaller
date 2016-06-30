@@ -4,9 +4,11 @@ import android.app.DownloadManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.AssetManager;
+import android.content.res.TypedArray;
 import android.net.Uri;
 import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
+import android.util.TypedValue;
 import android.view.View;
 import android.widget.Toast;
 import java.io.File;
@@ -17,6 +19,7 @@ import java.io.OutputStream;
 import java.util.ArrayList;
 
 import com.afollestad.materialdialogs.MaterialDialog;
+import com.peppe130.rominstaller.R;
 
 
 @SuppressWarnings("ResultOfMethodCallIgnored, unused, ConstantConditions")
@@ -108,6 +111,22 @@ public class Utils {
                 e.printStackTrace();
             }
         }
+    }
+
+    public static int FetchPrimaryColor() {
+        TypedValue mTypedValue = new TypedValue();
+        TypedArray mTypedArray = ACTIVITY.obtainStyledAttributes(mTypedValue.data, new int[] {R.attr.colorPrimary});
+        int mColor = mTypedArray.getColor(0, 0);
+        mTypedArray.recycle();
+        return mColor;
+    }
+
+    public static int FetchAccentColor() {
+        TypedValue mTypedValue = new TypedValue();
+        TypedArray mTypedArray = ACTIVITY.obtainStyledAttributes(mTypedValue.data, new int[] {R.attr.colorAccent});
+        int mColor = mTypedArray.getColor(0, 0);
+        mTypedArray.recycle();
+        return mColor;
     }
 
     public static boolean copyAssetFolder(AssetManager manager, String fromPath, String toPath) {
