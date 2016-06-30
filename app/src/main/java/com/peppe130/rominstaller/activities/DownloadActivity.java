@@ -13,6 +13,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.RelativeLayout;
+
 import java.io.File;
 
 import cn.pedant.SweetAlert.SweetAlertDialog;
@@ -26,7 +28,7 @@ import com.peppe130.rominstaller.core.FlashRecovery;
 import com.peppe130.rominstaller.core.SystemProperties;
 
 
-@SuppressWarnings("ResultOfMethodCallIgnored")
+@SuppressWarnings("ResultOfMethodCallIgnored, ConstantConditions")
 public class DownloadActivity extends AppCompatActivity implements CustomFileChooser.FileCallback {
 
     FancyButton BUTTON, BUTTON2, BUTTON3, BUTTON4, BUTTON5, BUTTON6, BUTTON7, BUTTON8, BUTTON9;
@@ -34,6 +36,7 @@ public class DownloadActivity extends AppCompatActivity implements CustomFileCho
     File mDownloadDirectory;
     String mDownloadedFileFinalName, mDownloadedFileMD5, mRecoveryPartition;
     DownloadManager.Request mRequest;
+    Integer mBorderColor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +52,12 @@ public class DownloadActivity extends AppCompatActivity implements CustomFileCho
         BUTTON7 = (FancyButton) findViewById(R.id.download_button7);
         BUTTON8 = (FancyButton) findViewById(R.id.download_button8);
         BUTTON9 = (FancyButton) findViewById(R.id.download_button9);
+
+        RelativeLayout mRelativeLayout = (RelativeLayout) findViewById(R.id.relativeLayout);
+        for (int i = 0; i != mRelativeLayout.getChildCount(); i++) {
+            mRelativeLayout.getChildAt(i).setBackgroundColor(ContextCompat.getColor(this, Utils.ButtonBackgroundColorChooser()));
+            mBorderColor = ContextCompat.getColor(DownloadActivity.this, Utils.ButtonBorderColorChooser());
+        }
 
         // Simple download without MD5 check
         BUTTON.setOnClickListener(new View.OnClickListener() {
@@ -73,7 +82,7 @@ public class DownloadActivity extends AppCompatActivity implements CustomFileCho
             public boolean onTouch(View view, MotionEvent motionEvent) {
                 switch (motionEvent.getAction()) {
                     case MotionEvent.ACTION_DOWN:
-                        BUTTON.setBorderColor(ContextCompat.getColor(DownloadActivity.this, R.color.colorAccent));
+                        BUTTON.setBorderColor(mBorderColor);
                         return false;
                     case MotionEvent.ACTION_UP:
                         BUTTON.setBorderColor(0);
@@ -111,7 +120,7 @@ public class DownloadActivity extends AppCompatActivity implements CustomFileCho
             public boolean onTouch(View view, MotionEvent motionEvent) {
                 switch (motionEvent.getAction()) {
                     case MotionEvent.ACTION_DOWN:
-                        BUTTON2.setBorderColor(ContextCompat.getColor(DownloadActivity.this, R.color.colorAccent));
+                        BUTTON2.setBorderColor(mBorderColor);
                         return false;
                     case MotionEvent.ACTION_UP:
                         BUTTON2.setBorderColor(0);
@@ -149,7 +158,7 @@ public class DownloadActivity extends AppCompatActivity implements CustomFileCho
             public boolean onTouch(View view, MotionEvent motionEvent) {
                 switch (motionEvent.getAction()) {
                     case MotionEvent.ACTION_DOWN:
-                        BUTTON3.setBorderColor(ContextCompat.getColor(DownloadActivity.this, R.color.colorAccent));
+                        BUTTON3.setBorderColor(mBorderColor);
                         return false;
                     case MotionEvent.ACTION_UP:
                         BUTTON3.setBorderColor(0);
@@ -188,7 +197,7 @@ public class DownloadActivity extends AppCompatActivity implements CustomFileCho
             public boolean onTouch(View view, MotionEvent motionEvent) {
                 switch (motionEvent.getAction()) {
                     case MotionEvent.ACTION_DOWN:
-                        BUTTON4.setBorderColor(ContextCompat.getColor(DownloadActivity.this, R.color.colorAccent));
+                        BUTTON4.setBorderColor(mBorderColor);
                         return false;
                     case MotionEvent.ACTION_UP:
                         BUTTON4.setBorderColor(0);
@@ -226,7 +235,7 @@ public class DownloadActivity extends AppCompatActivity implements CustomFileCho
             public boolean onTouch(View view, MotionEvent motionEvent) {
                 switch (motionEvent.getAction()) {
                     case MotionEvent.ACTION_DOWN:
-                        BUTTON5.setBorderColor(ContextCompat.getColor(DownloadActivity.this, R.color.colorAccent));
+                        BUTTON5.setBorderColor(mBorderColor);
                         return false;
                     case MotionEvent.ACTION_UP:
                         BUTTON5.setBorderColor(0);
@@ -290,7 +299,7 @@ public class DownloadActivity extends AppCompatActivity implements CustomFileCho
             public boolean onTouch(View view, MotionEvent motionEvent) {
                 switch (motionEvent.getAction()) {
                     case MotionEvent.ACTION_DOWN:
-                        BUTTON6.setBorderColor(ContextCompat.getColor(DownloadActivity.this, R.color.colorAccent));
+                        BUTTON6.setBorderColor(mBorderColor);
                         return false;
                     case MotionEvent.ACTION_UP:
                         BUTTON6.setBorderColor(0);
@@ -343,7 +352,7 @@ public class DownloadActivity extends AppCompatActivity implements CustomFileCho
             public boolean onTouch(View view, MotionEvent motionEvent) {
                 switch (motionEvent.getAction()) {
                     case MotionEvent.ACTION_DOWN:
-                        BUTTON7.setBorderColor(ContextCompat.getColor(DownloadActivity.this, R.color.colorAccent));
+                        BUTTON7.setBorderColor(mBorderColor);
                         return false;
                     case MotionEvent.ACTION_UP:
                         BUTTON7.setBorderColor(0);
@@ -400,7 +409,7 @@ public class DownloadActivity extends AppCompatActivity implements CustomFileCho
             public boolean onTouch(View view, MotionEvent motionEvent) {
                 switch (motionEvent.getAction()) {
                     case MotionEvent.ACTION_DOWN:
-                        BUTTON8.setBorderColor(ContextCompat.getColor(DownloadActivity.this, R.color.colorAccent));
+                        BUTTON8.setBorderColor(mBorderColor);
                         return false;
                     case MotionEvent.ACTION_UP:
                         BUTTON8.setBorderColor(0);
@@ -466,7 +475,7 @@ public class DownloadActivity extends AppCompatActivity implements CustomFileCho
             public boolean onTouch(View view, MotionEvent motionEvent) {
                 switch (motionEvent.getAction()) {
                     case MotionEvent.ACTION_DOWN:
-                        BUTTON9.setBorderColor(ContextCompat.getColor(DownloadActivity.this, R.color.colorAccent));
+                        BUTTON9.setBorderColor(mBorderColor);
                         return false;
                     case MotionEvent.ACTION_UP:
                         BUTTON9.setBorderColor(0);

@@ -25,7 +25,7 @@ import com.stericson.RootTools.RootTools;
 import cn.pedant.SweetAlert.SweetAlertDialog;
 
 
-@SuppressWarnings("unused, ResultOfMethodCallIgnored")
+@SuppressWarnings("unused, ResultOfMethodCallIgnored, ConstantConditions")
 public class FlashRecovery extends AsyncTask<String, String, Boolean> {
 
     SweetAlertDialog mProgress;
@@ -62,7 +62,7 @@ public class FlashRecovery extends AsyncTask<String, String, Boolean> {
         mProgress = new SweetAlertDialog(Utils.ACTIVITY, SweetAlertDialog.PROGRESS_TYPE);
         mProgress.setTitleText(Utils.ACTIVITY.getString(R.string.download_recovery_progress_dialog_title));
         mProgress.setContentText(mContent);
-        mProgress.getProgressHelper().setBarColor(ContextCompat.getColor(Utils.ACTIVITY, Utils.PROGRESS_BAR_COLOR));
+        mProgress.getProgressHelper().setBarColor(ContextCompat.getColor(Utils.ACTIVITY, Utils.AccentColorChooser()));
         mProgress.setCancelable(false);
         mProgress.setOnCancelListener(new DialogInterface.OnCancelListener() {
             @Override

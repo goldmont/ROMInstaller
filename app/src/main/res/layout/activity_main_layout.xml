@@ -37,7 +37,6 @@
         app:stl_customTabTextLayoutId="@layout/tab_indicator_layout"
         app:stl_dividerColor="@android:color/transparent"
         app:stl_dividerThickness="0dp"
-        app:stl_indicatorColor="@color/colorAccent"
         app:stl_indicatorCornerRadius="4dp"
         app:stl_indicatorGravity="center"
         app:stl_indicatorInterpolation="linear"

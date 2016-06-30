@@ -23,8 +23,8 @@ import com.stericson.RootTools.RootTools;
 import cn.pedant.SweetAlert.SweetAlertDialog;
 
 
-@SuppressWarnings("ResultOfMethodCallIgnored")
 @SuppressLint("CommitPrefEdits")
+@SuppressWarnings("ResultOfMethodCallIgnored, ConstantConditions")
 public class CheckFile extends AsyncTask<String, String, Boolean> {
 
     Boolean isDeviceCompatible;
@@ -47,7 +47,7 @@ public class CheckFile extends AsyncTask<String, String, Boolean> {
 
         mProgress.setTitleText(Utils.ACTIVITY.getString(R.string.progress_dialog_title));
         mProgress.setContentText(Utils.ACTIVITY.getString(R.string.check_configuration));
-        mProgress.getProgressHelper().setBarColor(ContextCompat.getColor(Utils.ACTIVITY, Utils.PROGRESS_BAR_COLOR));
+        mProgress.getProgressHelper().setBarColor(ContextCompat.getColor(Utils.ACTIVITY, Utils.AccentColorChooser()));
         mProgress.setCancelable(false);
         mProgress.setCanceledOnTouchOutside(false);
         mProgress.setOnCancelListener(new DialogInterface.OnCancelListener() {

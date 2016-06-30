@@ -12,6 +12,7 @@ import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.preference.XpPreferenceFragment;
@@ -38,8 +39,8 @@ import com.peppe130.rominstaller.core.SystemProperties;
 import cn.pedant.SweetAlert.SweetAlertDialog;
 
 
-@SuppressWarnings("unused, ResultOfMethodCallIgnored")
 @SuppressLint("CommitPrefEdits")
+@SuppressWarnings("unused, ResultOfMethodCallIgnored, ConstantConditions")
 public class MainActivity extends AppCompatActivity implements CustomFileChooser.FileCallback {
 
     SharedPreferences SP;
@@ -85,6 +86,7 @@ public class MainActivity extends AppCompatActivity implements CustomFileChooser
         mFragmentPagerAdapter = new PagerAdapter(getSupportFragmentManager());
         mSmartTabLayout = (SmartTabLayout) findViewById(R.id.viewpager_indicator);
         assert mSmartTabLayout != null;
+        mSmartTabLayout.setSelectedIndicatorColors(ContextCompat.getColor(this, Utils.AccentColorChooser()));
 
         if (Utils.TEST_MODE) {
             Utils.SHOULD_LOCK_UI = false;
@@ -354,15 +356,15 @@ public class MainActivity extends AppCompatActivity implements CustomFileChooser
             mBufferedWriter.write(
                             "wipe=" + (String.valueOf(SP.getBoolean("wipe", false))) +
                             "\nkernel=" + (SP.getString("listKernel", "1")) +
-                            "\nstatusbar=" + (SP.getString("listStatusBar", "2")) +
+                            "\nstatusbar=" + (SP.getString("listStatusBar", "1")) +
                             "\nsf_qc=" + String.valueOf(SP.getBoolean("SF-QC", false)) +
-                            "\nmy_files=" + SP.getString("listMyFile", "2") +
-                            "\nkeyboard=" + (SP.getString("listKey", "2")) +
-                            "\nmms=" + SP.getString("listMMS", "2") +
-                            "\nfonts=" + SP.getString("listFonts", "3") +
-                            "\naccuweather=" + SP.getString("listAccuweather", "4") +
-                            "\nsounds=" + SP.getString("listSound", "3") +
-                            "\nboot_animation=" + SP.getString("listBootanimation", "3") +
+                            "\nmy_files=" + SP.getString("listMyFile", "1") +
+                            "\nkeyboard=" + (SP.getString("listKey", "1")) +
+                            "\nmms=" + SP.getString("listMMS", "1") +
+                            "\nfonts=" + SP.getString("listFonts", "1") +
+                            "\naccuweather=" + SP.getString("listAccuweather", "1") +
+                            "\nsounds=" + SP.getString("listSound", "1") +
+                            "\nboot_animation=" + SP.getString("listBootanimation", "1") +
                             "\nscrolling_wallpaper=" + String.valueOf(SP.getBoolean("scrolling_wallpaper", false)) +
                             "\nincreasing_ringtone=" + String.valueOf(SP.getBoolean("increasing_ringtone", true)) +
                             "\nsec_symbols=" + String.valueOf(SP.getBoolean("sec_symbol", false)) +
@@ -425,14 +427,14 @@ public class MainActivity extends AppCompatActivity implements CustomFileChooser
         mEditor.putBoolean("bloat7", false).commit();
         // Lists
         mEditor.putString("listKernel", "1").commit();
-        mEditor.putString("listStatusBar", "2").commit();
-        mEditor.putString("listMyFiles", "2").commit();
-        mEditor.putString("listKey", "2").commit();
-        mEditor.putString("listMMS", "2").commit();
-        mEditor.putString("listFonts", "3").commit();
-        mEditor.putString("listAccuweather", "4").commit();
-        mEditor.putString("listSound", "3").commit();
-        mEditor.putString("listBootanimation", "3").commit();
+        mEditor.putString("listStatusBar", "1").commit();
+        mEditor.putString("listMyFiles", "1").commit();
+        mEditor.putString("listKey", "1").commit();
+        mEditor.putString("listMMS", "1").commit();
+        mEditor.putString("listFonts", "1").commit();
+        mEditor.putString("listAccuweather", "1").commit();
+        mEditor.putString("listSound", "1").commit();
+        mEditor.putString("listBootanimation", "1").commit();
     }
 
     public static class PagerAdapter extends FragmentPagerAdapter {

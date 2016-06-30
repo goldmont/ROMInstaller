@@ -3,6 +3,7 @@ package com.peppe130.rominstaller.activities;
 import android.app.Activity;
 import android.app.ActivityManager;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -17,6 +18,7 @@ import com.peppe130.rominstaller.Utils;
 import org.michaelevans.colorart.library.ColorArt;
 
 
+@SuppressWarnings("ConstantConditions")
 public class SplashScreenActivity extends Activity {
 
     public static Activity mActivity;
@@ -38,9 +40,25 @@ public class SplashScreenActivity extends Activity {
         if (Utils.SHOULD_SHOW_SPLASH_SCREEN) {
             mRelativeLayout = (RelativeLayout) findViewById(R.id.splash_screen_layout);
             mImageView = (ImageView) findViewById(R.id.imageView);
-            mHeaderColor = ContextCompat.getColor(this, R.color.colorPrimary);
 
-            setTaskDescription(new ActivityManager.TaskDescription(null, null, mHeaderColor));
+            Integer mTheme = null;
+
+            try {
+                mTheme = getPackageManager().getPackageInfo(getPackageName(), 0).applicationInfo.theme;
+            } catch (PackageManager.NameNotFoundException e) {
+                e.printStackTrace();
+            }
+
+            switch (mTheme) {
+                case R.style.AppTheme_Light:
+                    mHeaderColor = ContextCompat.getColor(this, R.color.colorPrimary_Theme_Light);
+                    setTaskDescription(new ActivityManager.TaskDescription(null, null, mHeaderColor));
+                    break;
+                case R.style.AppTheme_Dark:
+                    mHeaderColor = ContextCompat.getColor(this, R.color.colorPrimary_Theme_Dark);
+                    setTaskDescription(new ActivityManager.TaskDescription(null, null, mHeaderColor));
+                    break;
+            }
 
             mOptions = new BitmapFactory.Options();
             mOptions.inJustDecodeBounds = true;

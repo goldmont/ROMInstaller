@@ -1,13 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- App colors -->
-    <color name="colorPrimary">#2e4d50</color>
-    <color name="colorPrimaryDark">#1c3c3f</color>
-    <color name="colorAccent">#FF5722</color>
-    <color name="colorBackground">#ff1a292c</color>
-    <color name="textPrimaryColor">@android:color/white</color>
-    <color name="textSecondaryColor">@android:color/white</color>
+    <!-- App Theme Light -->
+    <color name="colorPrimary.Theme.Light">#af8e5b</color>
+    <color name="colorPrimaryDark.Theme.Light">#8f7040</color>
+    <color name="colorAccent.Theme.Light">#af8e4b</color>
+    <color name="colorBackground.Theme.Light">#f7f7f7</color>
+    <color name="textPrimaryColor.Theme.Light">@android:color/black</color>
+    <color name="textSecondaryColor.Theme.Light">@android:color/black</color>
+
+    <!-- App Theme Dark -->
+    <color name="colorPrimary.Theme.Dark">#2e4d50</color>
+    <color name="colorPrimaryDark.Theme.Dark">#1c3c3f</color>
+    <color name="colorAccent.Theme.Dark">#FF5722</color>
+    <color name="colorBackground.Theme.Dark">#ff1a292c</color>
+    <color name="textPrimaryColor.Theme.Dark">@android:color/white</color>
+    <color name="textSecondaryColor.Theme.Dark">@android:color/white</color>
 
     <!-- SmartTabLayout colors -->
     <color name="icon_enabled">@android:color/white</color>

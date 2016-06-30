@@ -5,10 +5,11 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Handler;
 import android.preference.PreferenceManager;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageButton;
+import android.widget.Button;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.afollestad.materialdialogs.Theme;
@@ -18,10 +19,11 @@ import org.sufficientlysecure.htmltextview.HtmlTextView;
 import cn.pedant.SweetAlert.SweetAlertDialog;
 
 
+@SuppressWarnings("ConstantConditions")
 @SuppressLint("CommitPrefEdits")
 public class AgreementActivity extends AppCompatActivity {
 
-    ImageButton CLOSE, AGREE;
+    Button AGREE, CLOSE;
     SharedPreferences SP;
     SharedPreferences.Editor mEditor;
     public static AppCompatActivity mActivity;
@@ -33,6 +35,7 @@ public class AgreementActivity extends AppCompatActivity {
         setContentView(R.layout.activity_agreement_layout);
 
         mActivity = this;
+        Utils.ACTIVITY = this;
 
         if (Utils.SHOULD_CLOSE_ACTIVITY) {
             Utils.SHOULD_CLOSE_ACTIVITY = false;
@@ -41,8 +44,10 @@ public class AgreementActivity extends AppCompatActivity {
 
         SP = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
         mEditor = SP.edit();
-        AGREE = (ImageButton) findViewById(R.id.agree);
-        CLOSE = (ImageButton) findViewById(R.id.not_agree);
+        AGREE = (Button) findViewById(R.id.agree);
+        CLOSE = (Button) findViewById(R.id.close);
+        AGREE.setTextColor(ContextCompat.getColor(this, Utils.AccentColorChooser()));
+        CLOSE.setTextColor(ContextCompat.getColor(this, Utils.AccentColorChooser()));
 
         mFirstTime = SP.getBoolean("first_time", true);
 
@@ -95,6 +100,7 @@ public class AgreementActivity extends AppCompatActivity {
         setContentView(R.layout.activity_agreement_layout);
 
         mActivity = this;
+        Utils.ACTIVITY = this;
 
         if (Utils.SHOULD_CLOSE_ACTIVITY) {
             Utils.SHOULD_CLOSE_ACTIVITY = false;
@@ -103,8 +109,10 @@ public class AgreementActivity extends AppCompatActivity {
 
         SP = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
         mEditor = SP.edit();
-        AGREE = (ImageButton) findViewById(R.id.agree);
-        CLOSE = (ImageButton) findViewById(R.id.not_agree);
+        AGREE = (Button) findViewById(R.id.agree);
+        CLOSE = (Button) findViewById(R.id.close);
+        AGREE.setTextColor(ContextCompat.getColor(this, Utils.AccentColorChooser()));
+        CLOSE.setTextColor(ContextCompat.getColor(this, Utils.AccentColorChooser()));
 
         final String[] mString = {"Buttons UI", "Swipe UI"};
 
@@ -183,7 +191,6 @@ public class AgreementActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        Utils.ACTIVITY = this;
         Utils.SHOULD_CLOSE_ACTIVITY = false;
     }
 

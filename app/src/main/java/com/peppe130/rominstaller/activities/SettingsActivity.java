@@ -1,12 +1,14 @@
 package com.peppe130.rominstaller.activities;
 
 import android.content.Intent;
-import android.graphics.Color;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
+import android.preference.PreferenceManager;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import java.io.File;
 
@@ -19,13 +21,17 @@ import com.peppe130.rominstaller.R;
 import com.peppe130.rominstaller.Utils;
 
 
-@SuppressWarnings("ResultOfMethodCallIgnored")
+@SuppressWarnings("ResultOfMethodCallIgnored, ConstantConditions")
 public class SettingsActivity extends AppCompatActivity {
+
+    static SharedPreferences SP;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings_layout);
+
+        SP = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
 
         getFragmentManager().beginTransaction()
                 .replace(R.id.frame_layout, new SettingsPreferencesFragment())
@@ -72,39 +78,41 @@ public class SettingsActivity extends AppCompatActivity {
             Preference REVIEW_APP = findPreference("review_app");
             Preference ALL_MY_APPS = findPreference("all_my_apps");
 
+            Integer mIconColor = ContextCompat.getColor(getActivity(), Utils.IconColorChooser());
+
             IconicsDrawable mDownloadCenterIcon = new IconicsDrawable(getActivity())
                     .icon(Entypo.Icon.ent_download)
-                    .color(Color.WHITE)
+                    .color(mIconColor)
                     .sizeDp(40);
 
             IconicsDrawable mXDAIcon = new IconicsDrawable(getActivity())
                     .icon(CommunityMaterial.Icon.cmd_book_open_page_variant)
-                    .color(Color.WHITE)
+                    .color(mIconColor)
                     .sizeDp(40);
 
             IconicsDrawable mInfoIcon = new IconicsDrawable(getActivity())
                     .icon(GoogleMaterial.Icon.gmd_info_outline)
-                    .color(Color.WHITE)
+                    .color(mIconColor)
                     .sizeDp(40);
 
             IconicsDrawable mDeveloperIcon = new IconicsDrawable(getActivity())
                     .icon(GoogleMaterial.Icon.gmd_developer_board)
-                    .color(Color.WHITE)
+                    .color(mIconColor)
                     .sizeDp(40);
 
             IconicsDrawable mThemerIcon = new IconicsDrawable(getActivity())
                     .icon(GoogleMaterial.Icon.gmd_color_lens)
-                    .color(Color.WHITE)
+                    .color(mIconColor)
                     .sizeDp(40);
 
             IconicsDrawable mGitHubIcon = new IconicsDrawable(getActivity())
                     .icon(CommunityMaterial.Icon.cmd_github_circle)
-                    .color(Color.WHITE)
+                    .color(mIconColor)
                     .sizeDp(40);
 
             IconicsDrawable mPlayStoreIcon = new IconicsDrawable(getActivity())
                     .icon(CommunityMaterial.Icon.cmd_google_play)
-                    .color(Color.WHITE)
+                    .color(mIconColor)
                     .sizeDp(40);
 
             DOWNLOAD_CENTER.setIcon(mDownloadCenterIcon);

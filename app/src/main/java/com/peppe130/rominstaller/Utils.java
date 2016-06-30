@@ -3,10 +3,11 @@ package com.peppe130.rominstaller;
 import android.app.DownloadManager;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.content.res.AssetManager;
-import android.graphics.Color;
 import android.net.Uri;
 import android.os.Environment;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Toast;
@@ -26,7 +27,7 @@ import com.peppe130.rominstaller.core.CustomFileChooser;
 import com.peppe130.rominstaller.core.Download;
 
 
-@SuppressWarnings("ResultOfMethodCallIgnored, unused")
+@SuppressWarnings("ResultOfMethodCallIgnored, unused, ConstantConditions")
 public class Utils {
 
     public static void DownloadROM() {
@@ -58,16 +59,153 @@ public class Utils {
     public static Boolean SHOULD_SHOW_DISCLAIMER_SCREEN = true;
 
     public static Integer SPLASH_SCREEN_DELAY = 3000;
-    public static Integer SPLASH_SCREEN_IMAGE = R.drawable.rom_logo;
-    public static Integer PROGRESS_BAR_COLOR = R.color.colorAccent;
-    public static Integer FILE_CHOOSER_TITLE_COLOR = Color.WHITE;
-    public static Integer FILE_CHOOSER_CONTENT_COLOR = Color.WHITE;
-    public static Integer FILE_CHOOSER_BACKGROUND_COLOR = R.color.colorBackground;
+    public static Integer SPLASH_SCREEN_IMAGE = R.drawable.rom_logo_light;
 
     public static IIcon SETTINGS_ICON = GoogleMaterial.Icon.gmd_settings;
     public static IIcon CHANGELOG_ICON = Ionicons.Icon.ion_ios_paper_outline;
     public static IIcon DEFAULT_OPTIONS_ICON = GoogleMaterial.Icon.gmd_settings_backup_restore;
     public static IIcon CLEAR_DOWNLOADS_ICON = Entypo.Icon.ent_trash;
+
+
+    @Nullable
+    public static Integer IconColorChooser() {
+        Integer mTheme = null;
+
+        try {
+            mTheme = ACTIVITY.getPackageManager().getPackageInfo(ACTIVITY.getPackageName(), 0).applicationInfo.theme;
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        switch (mTheme) {
+            case R.style.AppTheme_Light:
+                return R.color.colorPrimary_Theme_Light;
+            case R.style.AppTheme_Dark:
+                return android.R.color.white;
+            default:
+                return null;
+        }
+    }
+
+    @Nullable
+    public static Integer AccentColorChooser() {
+        Integer mTheme = null;
+
+        try {
+            mTheme = ACTIVITY.getPackageManager().getPackageInfo(ACTIVITY.getPackageName(), 0).applicationInfo.theme;
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        switch (mTheme) {
+            case R.style.AppTheme_Light:
+                return R.color.colorAccent_Theme_Light;
+            case R.style.AppTheme_Dark:
+                return R.color.colorAccent_Theme_Dark;
+            default:
+                return null;
+        }
+    }
+
+    @Nullable
+    public static Integer PrimaryTextColorChooser() {
+        Integer mTheme = null;
+
+        try {
+            mTheme = ACTIVITY.getPackageManager().getPackageInfo(ACTIVITY.getPackageName(), 0).applicationInfo.theme;
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        switch (mTheme) {
+            case R.style.AppTheme_Light:
+                return android.R.color.white;
+            case R.style.AppTheme_Dark:
+                return R.color.textPrimaryColor_Theme_Dark;
+            default:
+                return null;
+        }
+    }
+
+    @Nullable
+    public static Integer ButtonBackgroundColorChooser() {
+        Integer mTheme = null;
+
+        try {
+            mTheme = ACTIVITY.getPackageManager().getPackageInfo(ACTIVITY.getPackageName(), 0).applicationInfo.theme;
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        switch (mTheme) {
+            case R.style.AppTheme_Light:
+                return R.color.colorPrimary_Theme_Light;
+            case R.style.AppTheme_Dark:
+                return R.color.colorPrimary_Theme_Dark;
+            default:
+                return null;
+        }
+    }
+
+    @Nullable
+    public static Integer ButtonBorderColorChooser() {
+        Integer mTheme = null;
+
+        try {
+            mTheme = ACTIVITY.getPackageManager().getPackageInfo(ACTIVITY.getPackageName(), 0).applicationInfo.theme;
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        switch (mTheme) {
+            case R.style.AppTheme_Light:
+                return R.color.colorPrimaryDark_Theme_Light;
+            case R.style.AppTheme_Dark:
+                return R.color.colorAccent_Theme_Dark;
+            default:
+                return null;
+        }
+    }
+
+    @Nullable
+    public static Integer FileChooserBackgroundColorChooser() {
+        Integer mTheme = null;
+
+        try {
+            mTheme = ACTIVITY.getPackageManager().getPackageInfo(ACTIVITY.getPackageName(), 0).applicationInfo.theme;
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        switch (mTheme) {
+            case R.style.AppTheme_Light:
+                return android.R.color.white;
+            case R.style.AppTheme_Dark:
+                return R.color.colorBackground_Theme_Dark;
+            default:
+                return null;
+        }
+    }
+
+    @Nullable
+    public static Integer FileChooserTextColorChooser() {
+        Integer mTheme = null;
+
+        try {
+            mTheme = ACTIVITY.getPackageManager().getPackageInfo(ACTIVITY.getPackageName(), 0).applicationInfo.theme;
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        switch (mTheme) {
+            case R.style.AppTheme_Light:
+                return R.color.colorPrimaryDark_Theme_Light;
+            case R.style.AppTheme_Dark:
+                return android.R.color.white;
+            default:
+                return null;
+        }
+    }
 
     // Uneditable //////////////////////////////////////////////////////////////////////////////////
 

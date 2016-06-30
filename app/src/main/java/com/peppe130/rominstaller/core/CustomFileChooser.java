@@ -15,6 +15,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.webkit.MimeTypeMap;
@@ -148,9 +149,9 @@ public class CustomFileChooser extends DialogFragment implements MaterialDialog.
                     .title(R.string.md_error_label)
                     .content(R.string.md_storage_perm_error)
                     .positiveText(android.R.string.ok)
-                    .titleColor(Utils.FILE_CHOOSER_TITLE_COLOR)
-                    .contentColor(Utils.FILE_CHOOSER_CONTENT_COLOR)
-                    .backgroundColorRes(Utils.FILE_CHOOSER_BACKGROUND_COLOR)
+                    .titleColor(ContextCompat.getColor(getActivity(), Utils.FileChooserTextColorChooser()))
+                    .contentColor(ContextCompat.getColor(getActivity(), Utils.FileChooserTextColorChooser()))
+                    .backgroundColor(ContextCompat.getColor(getActivity(), Utils.FileChooserBackgroundColorChooser()))
                     .build();
         }
 
@@ -190,18 +191,18 @@ public class CustomFileChooser extends DialogFragment implements MaterialDialog.
                                             }, 300);
                                         }
                                     })
-                                    .titleColor(Utils.FILE_CHOOSER_TITLE_COLOR)
-                                    .contentColor(Utils.FILE_CHOOSER_CONTENT_COLOR)
-                                    .backgroundColorRes(Utils.FILE_CHOOSER_BACKGROUND_COLOR)
+                                    .titleColor(ContextCompat.getColor(getActivity(), Utils.FileChooserTextColorChooser()))
+                                    .contentColor(ContextCompat.getColor(getActivity(), Utils.FileChooserTextColorChooser()))
+                                    .backgroundColor(ContextCompat.getColor(getActivity(), Utils.FileChooserBackgroundColorChooser()))
                                     .show();
                         }
                     }
                 })
                 .autoDismiss(false)
                 .canceledOnTouchOutside(getCanceledOnTouchOutside())
-                .titleColor(Utils.FILE_CHOOSER_TITLE_COLOR)
-                .contentColor(Utils.FILE_CHOOSER_CONTENT_COLOR)
-                .backgroundColorRes(Utils.FILE_CHOOSER_BACKGROUND_COLOR)
+                .titleColor(ContextCompat.getColor(getActivity(), Utils.FileChooserTextColorChooser()))
+                .contentColor(ContextCompat.getColor(getActivity(), Utils.FileChooserTextColorChooser()))
+                .backgroundColor(ContextCompat.getColor(getActivity(), Utils.FileChooserBackgroundColorChooser()))
                 .build();
 
         return mDialog;
@@ -255,9 +256,9 @@ public class CustomFileChooser extends DialogFragment implements MaterialDialog.
                                 dialog2.setItems(getContentsArray());
                             }
                         })
-                        .titleColor(Utils.FILE_CHOOSER_TITLE_COLOR)
-                        .contentColor(Utils.FILE_CHOOSER_CONTENT_COLOR)
-                        .backgroundColorRes(Utils.FILE_CHOOSER_BACKGROUND_COLOR)
+                        .titleColor(ContextCompat.getColor(getActivity(), Utils.FileChooserTextColorChooser()))
+                        .contentColor(ContextCompat.getColor(getActivity(), Utils.FileChooserTextColorChooser()))
+                        .backgroundColor(ContextCompat.getColor(getActivity(), Utils.FileChooserBackgroundColorChooser()))
                         .show();
             } else {
                 mCallback.onFileSelection(this, parentFolder);
@@ -428,9 +429,9 @@ public class CustomFileChooser extends DialogFragment implements MaterialDialog.
                     .content(getString(R.string.choose_sample_file))
                     .positiveText(getString(R.string.ok_button))
                     .canceledOnTouchOutside(false)
-                    .titleColor(Utils.FILE_CHOOSER_TITLE_COLOR)
-                    .contentColor(Utils.FILE_CHOOSER_CONTENT_COLOR)
-                    .backgroundColorRes(Utils.FILE_CHOOSER_BACKGROUND_COLOR)
+                    .titleColor(ContextCompat.getColor(getActivity(), Utils.FileChooserTextColorChooser()))
+                    .contentColor(ContextCompat.getColor(getActivity(), Utils.FileChooserTextColorChooser()))
+                    .backgroundColor(ContextCompat.getColor(getActivity(), Utils.FileChooserBackgroundColorChooser()))
                     .show();
         }
     }

@@ -10,6 +10,7 @@
     <string name="positive_button">YES</string>
     <string name="negative_button">NO</string>
     <string name="ok_button">OK</string>
+    <string name="agree_button">I AGREE</string>
     <string name="close_button">CLOSE</string>
     <string name="later_button">LATER</string>
     <string name="download_button">DOWNLOAD</string>
