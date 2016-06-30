@@ -17,8 +17,9 @@ import com.mikepenz.entypo_typeface_library.Entypo;
 import com.mikepenz.google_material_typeface_library.GoogleMaterial;
 import com.mikepenz.iconics.IconicsDrawable;
 import com.peppe130.rominstaller.BuildConfig;
+import com.peppe130.rominstaller.ControlCenter;
 import com.peppe130.rominstaller.R;
-import com.peppe130.rominstaller.Utils;
+import com.peppe130.rominstaller.core.Utils;
 
 
 @SuppressWarnings("ResultOfMethodCallIgnored, ConstantConditions")
@@ -52,7 +53,7 @@ public class SettingsActivity extends AppCompatActivity {
             mROMFolder.mkdirs();
         }
 
-        if(Utils.TRIAL_MODE && !mSampleZIP.exists()) {
+        if(ControlCenter.TRIAL_MODE && !mSampleZIP.exists()) {
             Utils.copyAssetFolder(getAssets(), "sample", mROMFolder.toString());
         }
 
@@ -78,7 +79,7 @@ public class SettingsActivity extends AppCompatActivity {
             Preference REVIEW_APP = findPreference("review_app");
             Preference ALL_MY_APPS = findPreference("all_my_apps");
 
-            Integer mIconColor = ContextCompat.getColor(getActivity(), Utils.IconColorChooser());
+            Integer mIconColor = ContextCompat.getColor(getActivity(), ControlCenter.IconColorChooser());
 
             IconicsDrawable mDownloadCenterIcon = new IconicsDrawable(getActivity())
                     .icon(Entypo.Icon.ent_download)

@@ -13,8 +13,9 @@ import android.support.v4.content.ContextCompat;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
+import com.peppe130.rominstaller.ControlCenter;
 import com.peppe130.rominstaller.R;
-import com.peppe130.rominstaller.Utils;
+import com.peppe130.rominstaller.core.Utils;
 import org.michaelevans.colorart.library.ColorArt;
 
 
@@ -37,7 +38,7 @@ public class SplashScreenActivity extends Activity {
 
         mActivity = this;
 
-        if (Utils.SHOULD_SHOW_SPLASH_SCREEN) {
+        if (ControlCenter.SHOULD_SHOW_SPLASH_SCREEN) {
             mRelativeLayout = (RelativeLayout) findViewById(R.id.splash_screen_layout);
             mImageView = (ImageView) findViewById(R.id.imageView);
 
@@ -62,8 +63,8 @@ public class SplashScreenActivity extends Activity {
 
             mOptions = new BitmapFactory.Options();
             mOptions.inJustDecodeBounds = true;
-            BitmapFactory.decodeResource(getResources(), Utils.SPLASH_SCREEN_IMAGE, mOptions);
-            mBitmap = decodeBitmapFromResource(getResources(), Utils.SPLASH_SCREEN_IMAGE, 500, 500);
+            BitmapFactory.decodeResource(getResources(), ControlCenter.SPLASH_SCREEN_IMAGE, mOptions);
+            mBitmap = decodeBitmapFromResource(getResources(), ControlCenter.SPLASH_SCREEN_IMAGE, 500, 500);
 
             mColorArt = new ColorArt(mBitmap);
             mRelativeLayout.setBackgroundColor(mColorArt.getBackgroundColor());
@@ -73,7 +74,7 @@ public class SplashScreenActivity extends Activity {
                 @Override
                 public void run() {
                     if (isActivityVisible) {
-                        if (Utils.SHOULD_SHOW_DISCLAIMER_SCREEN) {
+                        if (ControlCenter.SHOULD_SHOW_DISCLAIMER_SCREEN) {
                             startActivity(new Intent(SplashScreenActivity.this, AgreementActivity.class));
                         } else {
                             startActivity(new Intent(SplashScreenActivity.this, MainActivity.class));
@@ -81,9 +82,9 @@ public class SplashScreenActivity extends Activity {
                         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                     }
                 }
-            }, Utils.SPLASH_SCREEN_DELAY);
+            }, ControlCenter.SPLASH_SCREEN_DELAY);
         } else {
-            if (Utils.SHOULD_SHOW_DISCLAIMER_SCREEN) {
+            if (ControlCenter.SHOULD_SHOW_DISCLAIMER_SCREEN) {
                 startActivity(new Intent(SplashScreenActivity.this, AgreementActivity.class));
             } else {
                 startActivity(new Intent(SplashScreenActivity.this, MainActivity.class));

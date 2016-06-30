@@ -19,8 +19,8 @@ import java.io.IOException;
 import com.google.common.hash.HashCode;
 import com.google.common.hash.Hashing;
 import com.google.common.io.Files;
+import com.peppe130.rominstaller.ControlCenter;
 import com.peppe130.rominstaller.R;
-import com.peppe130.rominstaller.Utils;
 import cn.pedant.SweetAlert.SweetAlertDialog;
 
 
@@ -91,7 +91,7 @@ public class Download extends AsyncTask<String, String, String> {
         mProgress = new SweetAlertDialog(Utils.ACTIVITY, SweetAlertDialog.PROGRESS_TYPE);
         mProgress.setTitleText(Utils.ACTIVITY.getString(R.string.download_progress_dialog_title));
         mProgress.setContentText(mContent);
-        mProgress.getProgressHelper().setBarColor(ContextCompat.getColor(Utils.ACTIVITY, Utils.AccentColorChooser()));
+        mProgress.getProgressHelper().setBarColor(ContextCompat.getColor(Utils.ACTIVITY, ControlCenter.AccentColorChooser()));
         mProgress.setCancelable(false);
         mProgress.setOnCancelListener(new DialogInterface.OnCancelListener() {
             @Override
@@ -307,7 +307,7 @@ public class Download extends AsyncTask<String, String, String> {
                     } else {
                         if (mStartCheckFile != null && mStartCheckFile) {
                             cancel(true);
-                            if (!Utils.TEST_MODE) {
+                            if (!ControlCenter.TEST_MODE) {
                                 Utils.ZIP_FILE = mDownloadedFile;
                                 new CheckFile().execute();
                             } else {

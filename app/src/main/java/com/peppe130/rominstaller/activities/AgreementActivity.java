@@ -13,8 +13,9 @@ import android.widget.Button;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.afollestad.materialdialogs.Theme;
+import com.peppe130.rominstaller.ControlCenter;
 import com.peppe130.rominstaller.R;
-import com.peppe130.rominstaller.Utils;
+import com.peppe130.rominstaller.core.Utils;
 import org.sufficientlysecure.htmltextview.HtmlTextView;
 import cn.pedant.SweetAlert.SweetAlertDialog;
 
@@ -46,8 +47,8 @@ public class AgreementActivity extends AppCompatActivity {
         mEditor = SP.edit();
         AGREE = (Button) findViewById(R.id.agree);
         CLOSE = (Button) findViewById(R.id.close);
-        AGREE.setTextColor(ContextCompat.getColor(this, Utils.AccentColorChooser()));
-        CLOSE.setTextColor(ContextCompat.getColor(this, Utils.AccentColorChooser()));
+        AGREE.setTextColor(ContextCompat.getColor(this, ControlCenter.AccentColorChooser()));
+        CLOSE.setTextColor(ContextCompat.getColor(this, ControlCenter.AccentColorChooser()));
 
         mFirstTime = SP.getBoolean("first_time", true);
 
@@ -111,8 +112,8 @@ public class AgreementActivity extends AppCompatActivity {
         mEditor = SP.edit();
         AGREE = (Button) findViewById(R.id.agree);
         CLOSE = (Button) findViewById(R.id.close);
-        AGREE.setTextColor(ContextCompat.getColor(this, Utils.AccentColorChooser()));
-        CLOSE.setTextColor(ContextCompat.getColor(this, Utils.AccentColorChooser()));
+        AGREE.setTextColor(ContextCompat.getColor(this, ControlCenter.AccentColorChooser()));
+        CLOSE.setTextColor(ContextCompat.getColor(this, ControlCenter.AccentColorChooser()));
 
         final String[] mString = {"Buttons UI", "Swipe UI"};
 
@@ -126,10 +127,10 @@ public class AgreementActivity extends AppCompatActivity {
                             public void onSelection(MaterialDialog dialog, View view, int which, CharSequence text) {
                                 switch (which) {
                                     case 0:
-                                        Utils.BUTTON_UI = true;
+                                        ControlCenter.BUTTON_UI = true;
                                         break;
                                     case 1:
-                                        Utils.BUTTON_UI = false;
+                                        ControlCenter.BUTTON_UI = false;
                                         break;
                                     default:
                                         break;

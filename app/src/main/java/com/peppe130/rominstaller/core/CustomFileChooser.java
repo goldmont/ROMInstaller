@@ -29,8 +29,8 @@ import java.util.List;
 
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
+import com.peppe130.rominstaller.ControlCenter;
 import com.peppe130.rominstaller.R;
-import com.peppe130.rominstaller.Utils;
 
 
 @SuppressWarnings("unused, ResultOfMethodCallIgnored, ConstantConditions, deprecation")
@@ -137,7 +137,7 @@ public class CustomFileChooser extends DialogFragment implements MaterialDialog.
     @NonNull
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-        if (Utils.TRIAL_MODE && !getLockExplorer()) {
+        if (ControlCenter.TRIAL_MODE && !getLockExplorer()) {
             getFragmentManager().beginTransaction()
                     .add(new ChooseSampleFile(), "choose_sample_file")
                     .commitAllowingStateLoss();
@@ -149,9 +149,9 @@ public class CustomFileChooser extends DialogFragment implements MaterialDialog.
                     .title(R.string.md_error_label)
                     .content(R.string.md_storage_perm_error)
                     .positiveText(android.R.string.ok)
-                    .titleColor(ContextCompat.getColor(getActivity(), Utils.FileChooserTextColorChooser()))
-                    .contentColor(ContextCompat.getColor(getActivity(), Utils.FileChooserTextColorChooser()))
-                    .backgroundColor(ContextCompat.getColor(getActivity(), Utils.FileChooserBackgroundColorChooser()))
+                    .titleColor(ContextCompat.getColor(getActivity(), ControlCenter.FileChooserTextColorChooser()))
+                    .contentColor(ContextCompat.getColor(getActivity(), ControlCenter.FileChooserTextColorChooser()))
+                    .backgroundColor(ContextCompat.getColor(getActivity(), ControlCenter.FileChooserBackgroundColorChooser()))
                     .build();
         }
 
@@ -186,23 +186,23 @@ public class CustomFileChooser extends DialogFragment implements MaterialDialog.
                                             new Handler().postDelayed(new Runnable() {
                                                 @Override
                                                 public void run() {
-                                                    Utils.DownloadROM();
+                                                    ControlCenter.DownloadROM();
                                                 }
                                             }, 300);
                                         }
                                     })
-                                    .titleColor(ContextCompat.getColor(getActivity(), Utils.FileChooserTextColorChooser()))
-                                    .contentColor(ContextCompat.getColor(getActivity(), Utils.FileChooserTextColorChooser()))
-                                    .backgroundColor(ContextCompat.getColor(getActivity(), Utils.FileChooserBackgroundColorChooser()))
+                                    .titleColor(ContextCompat.getColor(getActivity(), ControlCenter.FileChooserTextColorChooser()))
+                                    .contentColor(ContextCompat.getColor(getActivity(), ControlCenter.FileChooserTextColorChooser()))
+                                    .backgroundColor(ContextCompat.getColor(getActivity(), ControlCenter.FileChooserBackgroundColorChooser()))
                                     .show();
                         }
                     }
                 })
                 .autoDismiss(false)
                 .canceledOnTouchOutside(getCanceledOnTouchOutside())
-                .titleColor(ContextCompat.getColor(getActivity(), Utils.FileChooserTextColorChooser()))
-                .contentColor(ContextCompat.getColor(getActivity(), Utils.FileChooserTextColorChooser()))
-                .backgroundColor(ContextCompat.getColor(getActivity(), Utils.FileChooserBackgroundColorChooser()))
+                .titleColor(ContextCompat.getColor(getActivity(), ControlCenter.FileChooserTextColorChooser()))
+                .contentColor(ContextCompat.getColor(getActivity(), ControlCenter.FileChooserTextColorChooser()))
+                .backgroundColor(ContextCompat.getColor(getActivity(), ControlCenter.FileChooserBackgroundColorChooser()))
                 .build();
 
         return mDialog;
@@ -256,9 +256,9 @@ public class CustomFileChooser extends DialogFragment implements MaterialDialog.
                                 dialog2.setItems(getContentsArray());
                             }
                         })
-                        .titleColor(ContextCompat.getColor(getActivity(), Utils.FileChooserTextColorChooser()))
-                        .contentColor(ContextCompat.getColor(getActivity(), Utils.FileChooserTextColorChooser()))
-                        .backgroundColor(ContextCompat.getColor(getActivity(), Utils.FileChooserBackgroundColorChooser()))
+                        .titleColor(ContextCompat.getColor(getActivity(), ControlCenter.FileChooserTextColorChooser()))
+                        .contentColor(ContextCompat.getColor(getActivity(), ControlCenter.FileChooserTextColorChooser()))
+                        .backgroundColor(ContextCompat.getColor(getActivity(), ControlCenter.FileChooserBackgroundColorChooser()))
                         .show();
             } else {
                 mCallback.onFileSelection(this, parentFolder);
@@ -429,9 +429,9 @@ public class CustomFileChooser extends DialogFragment implements MaterialDialog.
                     .content(getString(R.string.choose_sample_file))
                     .positiveText(getString(R.string.ok_button))
                     .canceledOnTouchOutside(false)
-                    .titleColor(ContextCompat.getColor(getActivity(), Utils.FileChooserTextColorChooser()))
-                    .contentColor(ContextCompat.getColor(getActivity(), Utils.FileChooserTextColorChooser()))
-                    .backgroundColor(ContextCompat.getColor(getActivity(), Utils.FileChooserBackgroundColorChooser()))
+                    .titleColor(ContextCompat.getColor(getActivity(), ControlCenter.FileChooserTextColorChooser()))
+                    .contentColor(ContextCompat.getColor(getActivity(), ControlCenter.FileChooserTextColorChooser()))
+                    .backgroundColor(ContextCompat.getColor(getActivity(), ControlCenter.FileChooserBackgroundColorChooser()))
                     .show();
         }
     }

@@ -16,8 +16,8 @@ import java.util.Arrays;
 
 import com.google.common.hash.Hashing;
 import com.google.common.io.Files;
+import com.peppe130.rominstaller.ControlCenter;
 import com.peppe130.rominstaller.R;
-import com.peppe130.rominstaller.Utils;
 import com.peppe130.rominstaller.activities.MainActivity;
 import com.stericson.RootTools.RootTools;
 import cn.pedant.SweetAlert.SweetAlertDialog;
@@ -43,11 +43,11 @@ public class CheckFile extends AsyncTask<String, String, Boolean> {
         Utils.ACTIVITY.getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         Utils.ACTIVITY.getWindow().addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
         mVibrator = (Vibrator) Utils.ACTIVITY.getSystemService(Context.VIBRATOR_SERVICE);
-        isDeviceCompatible = Arrays.asList(Utils.DEVICE_COMPATIBILITY_LIST).contains(Utils.MODEL);
+        isDeviceCompatible = Arrays.asList(ControlCenter.DEVICE_COMPATIBILITY_LIST).contains(Utils.MODEL);
 
         mProgress.setTitleText(Utils.ACTIVITY.getString(R.string.progress_dialog_title));
         mProgress.setContentText(Utils.ACTIVITY.getString(R.string.check_configuration));
-        mProgress.getProgressHelper().setBarColor(ContextCompat.getColor(Utils.ACTIVITY, Utils.AccentColorChooser()));
+        mProgress.getProgressHelper().setBarColor(ContextCompat.getColor(Utils.ACTIVITY, ControlCenter.AccentColorChooser()));
         mProgress.setCancelable(false);
         mProgress.setCanceledOnTouchOutside(false);
         mProgress.setOnCancelListener(new DialogInterface.OnCancelListener() {
@@ -75,7 +75,7 @@ public class CheckFile extends AsyncTask<String, String, Boolean> {
         updateResult((long) 1300, sbUpdate.append(Utils.ACTIVITY.getString(R.string.check_model)).toString());
         updateResult((long) 1200, sbUpdate.append(mModel).toString());
 
-        if (Utils.TRIAL_MODE) {
+        if (ControlCenter.TRIAL_MODE) {
             isDeviceCompatible = true;
         }
 
@@ -95,7 +95,7 @@ public class CheckFile extends AsyncTask<String, String, Boolean> {
                 e.printStackTrace();
             }
 
-            if ((Utils.ZIP_FILE.exists()) && Arrays.asList(Utils.ROM_MD5_LIST).contains(mMD5)) {
+            if ((Utils.ZIP_FILE.exists()) && Arrays.asList(ControlCenter.ROM_MD5_LIST).contains(mMD5)) {
                 updateResult((long) 5000, sbUpdate.append(Utils.ACTIVITY.getString(R.string.initializing_start)).toString());
                 return true;
             }
@@ -177,7 +177,7 @@ public class CheckFile extends AsyncTask<String, String, Boolean> {
                             new Handler().postDelayed(new Runnable() {
                                 @Override
                                 public void run() {
-                                    if (Utils.BUTTON_UI) {
+                                    if (ControlCenter.BUTTON_UI) {
                                         MainActivity.DONE.setVisibility(View.VISIBLE);
                                     } else {
                                         Utils.ToastShort(Utils.ACTIVITY, Utils.ACTIVITY.getString(R.string.swipe_left_or_right_to_install));
@@ -185,7 +185,7 @@ public class CheckFile extends AsyncTask<String, String, Boolean> {
                                 }
                             }, 300);
                         } else {
-                            if (Utils.BUTTON_UI) {
+                            if (ControlCenter.BUTTON_UI) {
                                 MainActivity.BACK.setVisibility(View.GONE);
                                 MainActivity.DONE.setVisibility(View.GONE);
                                 MainActivity.NEXT.setVisibility(View.VISIBLE);
@@ -210,7 +210,7 @@ public class CheckFile extends AsyncTask<String, String, Boolean> {
                                 @Override
                                 public void run() {
                                     Utils.ZIP_FILE.delete();
-                                    Utils.DownloadROM();
+                                    ControlCenter.DownloadROM();
                                 }
                             }, 300);
                         }

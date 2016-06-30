@@ -15,22 +15,20 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.preference.XpPreferenceFragment;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
-import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileWriter;
-import java.util.ArrayList;
 
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.mikepenz.iconics.IconicsDrawable;
 import com.ogaclejapan.smarttablayout.SmartTabLayout;
+import com.peppe130.rominstaller.ControlCenter;
+import com.peppe130.rominstaller.FragmentsCollector;
 import com.peppe130.rominstaller.R;
-import com.peppe130.rominstaller.Utils;
+import com.peppe130.rominstaller.core.Utils;
 import com.peppe130.rominstaller.core.CustomViewPager;
 import com.peppe130.rominstaller.core.CheckFile;
 import com.peppe130.rominstaller.core.CustomFileChooser;
@@ -49,7 +47,6 @@ public class MainActivity extends AppCompatActivity implements CustomFileChooser
     public static CustomViewPager mViewPager;
     public static FragmentPagerAdapter mFragmentPagerAdapter;
     public static SmartTabLayout mSmartTabLayout;
-    public static ArrayList<Fragment> mListFragment = new ArrayList<>();
     Integer mLatestPage, mCurrentItem, mPosition;
     Boolean mLastPageScrolled = false, mShouldShowToast = false, mNextOrInstallHint = false;
 
@@ -60,22 +57,10 @@ public class MainActivity extends AppCompatActivity implements CustomFileChooser
 
         if (Utils.SHOULD_CLOSE_ACTIVITY) {
             Utils.SHOULD_CLOSE_ACTIVITY = false;
-            if (Utils.SHOULD_SHOW_DISCLAIMER_SCREEN) {
+            if (ControlCenter.SHOULD_SHOW_DISCLAIMER_SCREEN) {
                 AgreementActivity.mActivity.finish();
             }
         }
-
-        if (mListFragment != null) {
-            mListFragment.clear();
-        }
-
-        mListFragment.add(new FirstFragment());
-        mListFragment.add(new SecondFragment());
-        mListFragment.add(new ThirdFragment());
-        mListFragment.add(new FourthFragment());
-        mListFragment.add(new FifthFragment());
-        mListFragment.add(new CscFragment());
-        mListFragment.add(new BloatFragment());
 
         SP = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
         mEditor = SP.edit();
@@ -86,12 +71,14 @@ public class MainActivity extends AppCompatActivity implements CustomFileChooser
         mFragmentPagerAdapter = new PagerAdapter(getSupportFragmentManager());
         mSmartTabLayout = (SmartTabLayout) findViewById(R.id.viewpager_indicator);
         assert mSmartTabLayout != null;
-        mSmartTabLayout.setSelectedIndicatorColors(ContextCompat.getColor(this, Utils.AccentColorChooser()));
+        mSmartTabLayout.setSelectedIndicatorColors(ContextCompat.getColor(this, ControlCenter.AccentColorChooser()));
 
-        if (Utils.TEST_MODE) {
+        FragmentsCollector.Setup();
+
+        if (ControlCenter.TEST_MODE) {
             Utils.SHOULD_LOCK_UI = false;
             invalidateOptionsMenu();
-            if (Utils.BUTTON_UI) {
+            if (ControlCenter.BUTTON_UI) {
                 if (mFragmentPagerAdapter.getCount() == 1) {
                     DONE.setVisibility(View.VISIBLE);
                 } else {
@@ -137,7 +124,7 @@ public class MainActivity extends AppCompatActivity implements CustomFileChooser
                                             public void run() {
                                                 new MaterialDialog.Builder(MainActivity.this)
                                                         .positiveText(getString(R.string.not_in_list_button))
-                                                        .items(Utils.DEVICE_COMPATIBILITY_LIST)
+                                                        .items(ControlCenter.DEVICE_COMPATIBILITY_LIST)
                                                         .itemsCallback(new MaterialDialog.ListCallback() {
                                                             @Override
                                                             public void onSelection(MaterialDialog dialog, View view, int which, CharSequence text) {
@@ -180,7 +167,7 @@ public class MainActivity extends AppCompatActivity implements CustomFileChooser
             } else {
                 Utils.SHOULD_LOCK_UI = false;
                 invalidateOptionsMenu();
-                if (Utils.BUTTON_UI) {
+                if (ControlCenter.BUTTON_UI) {
                     if (mFragmentPagerAdapter.getCount() == 1) {
                         DONE.setVisibility(View.VISIBLE);
                     } else {
@@ -244,8 +231,8 @@ public class MainActivity extends AppCompatActivity implements CustomFileChooser
         DONE.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (!Utils.TEST_MODE) {
-                    ExportPreferences();
+                if (!ControlCenter.TEST_MODE) {
+                    ControlCenter.ExportPreferences();
                     getFragmentManager().beginTransaction()
                             .add(new InstallPopupDialog(Utils.ZIP_FILE.toString()), "install_fragment")
                             .commitAllowingStateLoss();
@@ -268,7 +255,7 @@ public class MainActivity extends AppCompatActivity implements CustomFileChooser
             @Override
             public void onPageSelected(int position) {
                 if (mLatestPage.equals(position)) {
-                    if (Utils.BUTTON_UI) {
+                    if (ControlCenter.BUTTON_UI) {
                         mLastPageScrolled = false;
                         mNextOrInstallHint = true;
                         NEXT.setVisibility(View.GONE);
@@ -288,18 +275,18 @@ public class MainActivity extends AppCompatActivity implements CustomFileChooser
                     BACK.setVisibility(View.GONE);
                 }
                 if (mShouldShowToast && mLatestPage.equals(position)) {
-                    if (!Utils.BUTTON_UI) {
+                    if (!ControlCenter.BUTTON_UI) {
                         mShouldShowToast = false;
-                        if (!Utils.TEST_MODE) {
+                        if (!ControlCenter.TEST_MODE) {
                             Utils.ToastShort(MainActivity.this, getString(R.string.swipe_right_to_install));
                         }
                     }
                 }
-                if (!Utils.BUTTON_UI) {
+                if (!ControlCenter.BUTTON_UI) {
                     if (mLastPageScrolled && mLatestPage.equals(position)) {
                         mLastPageScrolled = false;
-                        if (!Utils.TEST_MODE) {
-                            ExportPreferences();
+                        if (!ControlCenter.TEST_MODE) {
+                            ControlCenter.ExportPreferences();
                             getFragmentManager().beginTransaction()
                                     .add(new InstallPopupDialog(Utils.ZIP_FILE.toString()), "install_fragment")
                                     .commitAllowingStateLoss();
@@ -349,94 +336,6 @@ public class MainActivity extends AppCompatActivity implements CustomFileChooser
         }, 500);
     }
 
-    public void ExportPreferences() {
-        try {
-            FileWriter mFileWriter = new FileWriter(Environment.getExternalStorageDirectory().getPath() + "/" + getString(R.string.rom_name) + "/" + "preferences.prop");
-            BufferedWriter mBufferedWriter = new BufferedWriter(mFileWriter);
-            mBufferedWriter.write(
-                            "wipe=" + (String.valueOf(SP.getBoolean("wipe", false))) +
-                            "\nkernel=" + (SP.getString("listKernel", "1")) +
-                            "\nstatusbar=" + (SP.getString("listStatusBar", "1")) +
-                            "\nsf_qc=" + String.valueOf(SP.getBoolean("SF-QC", false)) +
-                            "\nmy_files=" + SP.getString("listMyFile", "1") +
-                            "\nkeyboard=" + (SP.getString("listKey", "1")) +
-                            "\nmms=" + SP.getString("listMMS", "1") +
-                            "\nfonts=" + SP.getString("listFonts", "1") +
-                            "\naccuweather=" + SP.getString("listAccuweather", "1") +
-                            "\nsounds=" + SP.getString("listSound", "1") +
-                            "\nboot_animation=" + SP.getString("listBootanimation", "1") +
-                            "\nscrolling_wallpaper=" + String.valueOf(SP.getBoolean("scrolling_wallpaper", false)) +
-                            "\nincreasing_ringtone=" + String.valueOf(SP.getBoolean("increasing_ringtone", true)) +
-                            "\nsec_symbols=" + String.valueOf(SP.getBoolean("sec_symbol", false)) +
-                            "\nvoice_call=" + String.valueOf(SP.getBoolean("voice_call", true)) +
-                            "\ncall_button=" + String.valueOf(SP.getBoolean("call_button", true)) +
-                            "\nscheduled_messages=" + String.valueOf(SP.getBoolean("scheduled_messages", true)) +
-                            "\nshutter_sound=" + String.valueOf(SP.getBoolean("shutter_sound", false)) +
-                            "\nboot_sound=" + String.valueOf(SP.getBoolean("boot_sound", false)) +
-                            "\nxposed=" + String.valueOf(SP.getBoolean("xposed", false)) +
-                            "\ncsc1=" + String.valueOf(SP.getBoolean("csc1", true)) +
-                            "\ncsc2=" + String.valueOf(SP.getBoolean("csc2", true)) +
-                            "\ncsc3=" + String.valueOf(SP.getBoolean("csc3", true)) +
-                            "\ncsc4=" + String.valueOf(SP.getBoolean("csc4", true)) +
-                            "\ncsc5=" + String.valueOf(SP.getBoolean("csc5", true)) +
-                            "\ncsc6=" + String.valueOf(SP.getBoolean("csc6", true)) +
-                            "\ncsc7=" + String.valueOf(SP.getBoolean("csc7", true)) +
-                            "\ncsc8=" + String.valueOf(SP.getBoolean("csc8", true)) +
-                            "\nbloat1=" + String.valueOf(SP.getBoolean("bloat1", true)) +
-                            "\nbloat2=" + String.valueOf(SP.getBoolean("bloat2", true)) +
-                            "\nbloat3=" + String.valueOf(SP.getBoolean("bloat3", false)) +
-                            "\nbloat4=" + String.valueOf(SP.getBoolean("bloat4", false)) +
-                            "\nbloat5=" + String.valueOf(SP.getBoolean("bloat5", true)) +
-                            "\nbloat6=" + String.valueOf(SP.getBoolean("bloat6", false)) +
-                            "\nbloat7=" + String.valueOf(SP.getBoolean("bloat7", false))
-            );
-            mBufferedWriter.close();
-        } catch (Exception e) {
-            System.err.println("Error: " + e.getMessage());
-        }
-    }
-
-    public void DefaultValues() {
-        // CheckBoxes
-        mEditor.putBoolean("wipe", false).commit();
-        mEditor.putBoolean("SF-QC", false).commit();
-        mEditor.putBoolean("scrolling_wallpaper", false).commit();
-        mEditor.putBoolean("increasing_ringtone", true).commit();
-        mEditor.putBoolean("sec_symbols", false).commit();
-        mEditor.putBoolean("voice_call", true).commit();
-        mEditor.putBoolean("shutter_sound", false).commit();
-        mEditor.putBoolean("boot_sound", false).commit();
-        mEditor.putBoolean("call_button", true).commit();
-        mEditor.putBoolean("xposed", false).commit();
-        mEditor.putBoolean("csc1", false).commit();
-        mEditor.putBoolean("csc2", false).commit();
-        mEditor.putBoolean("csc3", false).commit();
-        mEditor.putBoolean("csc4", false).commit();
-        mEditor.putBoolean("csc5", false).commit();
-        mEditor.putBoolean("csc6", false).commit();
-        mEditor.putBoolean("csc7", false).commit();
-        mEditor.putBoolean("csc8", false).commit();
-        mEditor.putBoolean("csc10", false).commit();
-        mEditor.putBoolean("csc11", false).commit();
-        mEditor.putBoolean("bloat1", false).commit();
-        mEditor.putBoolean("bloat2", false).commit();
-        mEditor.putBoolean("bloat3", false).commit();
-        mEditor.putBoolean("bloat4", false).commit();
-        mEditor.putBoolean("bloat5", false).commit();
-        mEditor.putBoolean("bloat6", false).commit();
-        mEditor.putBoolean("bloat7", false).commit();
-        // Lists
-        mEditor.putString("listKernel", "1").commit();
-        mEditor.putString("listStatusBar", "1").commit();
-        mEditor.putString("listMyFiles", "1").commit();
-        mEditor.putString("listKey", "1").commit();
-        mEditor.putString("listMMS", "1").commit();
-        mEditor.putString("listFonts", "1").commit();
-        mEditor.putString("listAccuweather", "1").commit();
-        mEditor.putString("listSound", "1").commit();
-        mEditor.putString("listBootanimation", "1").commit();
-    }
-
     public static class PagerAdapter extends FragmentPagerAdapter {
 
         public PagerAdapter(FragmentManager fragmentManager) {
@@ -445,12 +344,12 @@ public class MainActivity extends AppCompatActivity implements CustomFileChooser
 
         @Override
         public int getCount() {
-            return mListFragment.size();
+            return FragmentsCollector.mListFragment.size();
         }
 
         @Override
         public Fragment getItem(int position) {
-            return mListFragment.get(position);
+            return FragmentsCollector.mListFragment.get(position);
         }
 
     }
@@ -468,7 +367,7 @@ public class MainActivity extends AppCompatActivity implements CustomFileChooser
             mROMFolder.mkdirs();
         }
 
-        if(Utils.TRIAL_MODE && !mSampleZIP.exists()) {
+        if(ControlCenter.TRIAL_MODE && !mSampleZIP.exists()) {
             Utils.copyAssetFolder(getAssets(), "sample", mROMFolder.toString());
         }
 
@@ -477,7 +376,7 @@ public class MainActivity extends AppCompatActivity implements CustomFileChooser
     @Override
     public void onBackPressed() {
 
-        if (Utils.BUTTON_UI && mFragmentPagerAdapter.getCount() != 1) {
+        if (ControlCenter.BUTTON_UI && mFragmentPagerAdapter.getCount() != 1) {
             mNextOrInstallHint = false;
             DONE.setVisibility(View.GONE);
             NEXT.setVisibility(View.VISIBLE);
@@ -545,139 +444,6 @@ public class MainActivity extends AppCompatActivity implements CustomFileChooser
 
     }
 
-    public static class FirstFragment extends XpPreferenceFragment {
-
-        public static FirstFragment newInstance() {
-            return new FirstFragment();
-        }
-
-        @Override
-        public void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            addPreferencesFromResource(R.xml.tab_ui_first_preference);
-        }
-
-        @Override
-        public void onCreatePreferences2(Bundle savedInstanceState, String rootKey) {
-            // Do nothing
-        }
-
-    }
-
-    public static class SecondFragment extends XpPreferenceFragment {
-
-        public static SecondFragment newInstance() {
-            return new SecondFragment();
-        }
-
-        @Override
-        public void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            addPreferencesFromResource(R.xml.tab_ui_second_preference);
-        }
-
-        @Override
-        public void onCreatePreferences2(Bundle savedInstanceState, String rootKey) {
-            // Do nothing
-        }
-
-    }
-
-    public static class ThirdFragment extends XpPreferenceFragment {
-
-        public static ThirdFragment newInstance() {
-            return new ThirdFragment();
-        }
-
-        @Override
-        public void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            addPreferencesFromResource(R.xml.tab_ui_third_preference);
-        }
-
-        @Override
-        public void onCreatePreferences2(Bundle savedInstanceState, String rootKey) {
-            // Do nothing
-        }
-
-    }
-
-    public static class FourthFragment extends XpPreferenceFragment {
-
-        public static FourthFragment newInstance() {
-            return new FourthFragment();
-        }
-
-        @Override
-        public void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            addPreferencesFromResource(R.xml.tab_ui_fourth_preference);
-        }
-
-        @Override
-        public void onCreatePreferences2(Bundle savedInstanceState, String rootKey) {
-            // Do nothing
-        }
-
-    }
-
-    public static class FifthFragment extends XpPreferenceFragment {
-
-        public static FifthFragment newInstance() {
-            return new FifthFragment();
-        }
-
-        @Override
-        public void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            addPreferencesFromResource(R.xml.tab_ui_fifth_preference);
-        }
-
-        @Override
-        public void onCreatePreferences2(Bundle savedInstanceState, String rootKey) {
-            // Do nothing
-        }
-
-    }
-
-    public static class CscFragment extends XpPreferenceFragment {
-
-        public static CscFragment newInstance() {
-            return new CscFragment();
-        }
-
-        @Override
-        public void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            addPreferencesFromResource(R.xml.tab_ui_csc_preference);
-        }
-
-        @Override
-        public void onCreatePreferences2(Bundle savedInstanceState, String rootKey) {
-            // Do nothing
-        }
-
-    }
-
-    public static class BloatFragment extends XpPreferenceFragment {
-
-        public static BloatFragment newInstance() {
-            return new BloatFragment();
-        }
-
-        @Override
-        public void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            addPreferencesFromResource(R.xml.tab_ui_bloat_preference);
-        }
-
-        @Override
-        public void onCreatePreferences2(Bundle savedInstanceState, String rootKey) {
-            // Do nothing
-        }
-
-    }
-
     @Override
     public boolean onPrepareOptionsMenu (Menu menu) {
         menu.findItem(R.id.settings).setEnabled(!Utils.SHOULD_LOCK_UI);
@@ -690,17 +456,17 @@ public class MainActivity extends AppCompatActivity implements CustomFileChooser
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.activity_main_menu, menu);
         IconicsDrawable mSettingsIcon = new IconicsDrawable(MainActivity.this)
-                .icon(Utils.SETTINGS_ICON)
+                .icon(ControlCenter.SETTINGS_ICON)
                 .actionBar()
                 .color(Color.WHITE)
                 .sizeDp(30);
         IconicsDrawable mChangelogIcon = new IconicsDrawable(MainActivity.this)
-                .icon(Utils.CHANGELOG_ICON)
+                .icon(ControlCenter.CHANGELOG_ICON)
                 .actionBar()
                 .color(Color.WHITE)
                 .sizeDp(30);
         IconicsDrawable mDefaultOptionsIcon = new IconicsDrawable(MainActivity.this)
-                .icon(Utils.DEFAULT_OPTIONS_ICON)
+                .icon(ControlCenter.DEFAULT_OPTIONS_ICON)
                 .actionBar()
                 .color(Color.WHITE)
                 .sizeDp(35);
@@ -725,7 +491,7 @@ public class MainActivity extends AppCompatActivity implements CustomFileChooser
                         .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
                             @Override
                             public void onClick(SweetAlertDialog sDialog) {
-                                DefaultValues();
+                                ControlCenter.DefaultValues();
                                 sDialog.setTitleText(getString(R.string.restored_default_options_title))
                                         .setContentText(getString(R.string.restored_default_options_message))
                                         .setConfirmText(getString(R.string.ok_button))

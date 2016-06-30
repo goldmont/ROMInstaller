@@ -14,14 +14,14 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.RelativeLayout;
-
 import java.io.File;
 
 import cn.pedant.SweetAlert.SweetAlertDialog;
 import mehdi.sakout.fancybuttons.FancyButton;
 import com.mikepenz.iconics.IconicsDrawable;
+import com.peppe130.rominstaller.ControlCenter;
 import com.peppe130.rominstaller.R;
-import com.peppe130.rominstaller.Utils;
+import com.peppe130.rominstaller.core.Utils;
 import com.peppe130.rominstaller.core.CustomFileChooser;
 import com.peppe130.rominstaller.core.Download;
 import com.peppe130.rominstaller.core.FlashRecovery;
@@ -55,8 +55,8 @@ public class DownloadActivity extends AppCompatActivity implements CustomFileCho
 
         RelativeLayout mRelativeLayout = (RelativeLayout) findViewById(R.id.relativeLayout);
         for (int i = 0; i != mRelativeLayout.getChildCount(); i++) {
-            mRelativeLayout.getChildAt(i).setBackgroundColor(ContextCompat.getColor(this, Utils.ButtonBackgroundColorChooser()));
-            mBorderColor = ContextCompat.getColor(DownloadActivity.this, Utils.ButtonBorderColorChooser());
+            mRelativeLayout.getChildAt(i).setBackgroundColor(ContextCompat.getColor(this, ControlCenter.ButtonBackgroundColorChooser()));
+            mBorderColor = ContextCompat.getColor(DownloadActivity.this, ControlCenter.ButtonBorderColorChooser());
         }
 
         // Simple download without MD5 check
@@ -178,7 +178,7 @@ public class DownloadActivity extends AppCompatActivity implements CustomFileCho
                 mDownloadLink = Uri.parse("http://www.mediafire.com/download/3a7gefzmxj44lv1/SampleROM.zip");
                 mDownloadDirectory = new File(getString(R.string.rom_folder));
                 mDownloadedFileFinalName = "SampleROM.zip";
-                if (Utils.TEST_MODE) {
+                if (ControlCenter.TEST_MODE) {
                     Utils.MODEL = SystemProperties.get("ro.product.model");
                 }
 
@@ -521,7 +521,7 @@ public class DownloadActivity extends AppCompatActivity implements CustomFileCho
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.activity_download_menu, menu);
         IconicsDrawable mClearDownloadsIcon = new IconicsDrawable(DownloadActivity.this)
-                .icon(Utils.CLEAR_DOWNLOADS_ICON)
+                .icon(ControlCenter.CLEAR_DOWNLOADS_ICON)
                 .actionBar()
                 .color(Color.WHITE)
                 .sizeDp(30);

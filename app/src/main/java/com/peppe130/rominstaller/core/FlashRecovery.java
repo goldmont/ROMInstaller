@@ -17,8 +17,8 @@ import java.util.concurrent.TimeoutException;
 
 import com.google.common.hash.Hashing;
 import com.google.common.io.Files;
+import com.peppe130.rominstaller.ControlCenter;
 import com.peppe130.rominstaller.R;
-import com.peppe130.rominstaller.Utils;
 import com.stericson.RootShell.exceptions.RootDeniedException;
 import com.stericson.RootShell.execution.Command;
 import com.stericson.RootTools.RootTools;
@@ -62,7 +62,7 @@ public class FlashRecovery extends AsyncTask<String, String, Boolean> {
         mProgress = new SweetAlertDialog(Utils.ACTIVITY, SweetAlertDialog.PROGRESS_TYPE);
         mProgress.setTitleText(Utils.ACTIVITY.getString(R.string.download_recovery_progress_dialog_title));
         mProgress.setContentText(mContent);
-        mProgress.getProgressHelper().setBarColor(ContextCompat.getColor(Utils.ACTIVITY, Utils.AccentColorChooser()));
+        mProgress.getProgressHelper().setBarColor(ContextCompat.getColor(Utils.ACTIVITY, ControlCenter.AccentColorChooser()));
         mProgress.setCancelable(false);
         mProgress.setOnCancelListener(new DialogInterface.OnCancelListener() {
             @Override
@@ -108,7 +108,7 @@ public class FlashRecovery extends AsyncTask<String, String, Boolean> {
                                 public void run() {
                                     try {
                                         mMD5 = Files.hash(mDownloadedFile, Hashing.md5()).toString();
-                                        if (Arrays.asList(Utils.RECOVERY_MD5_LIST).contains(mMD5)) {
+                                        if (Arrays.asList(ControlCenter.RECOVERY_MD5_LIST).contains(mMD5)) {
                                             new Handler().postDelayed(new Runnable() {
                                                 @Override
                                                 public void run() {
@@ -117,7 +117,7 @@ public class FlashRecovery extends AsyncTask<String, String, Boolean> {
                                                     mProgress.setTitleText(Utils.ACTIVITY.getString(R.string.flash_recovery_progress_dialog_title));
                                                     mProgress.setContentText(Utils.ACTIVITY.getString(R.string.flash_recovery_progress_dialog_message));
                                                     mProgress.show();
-                                                    if (!Utils.TRIAL_MODE) {
+                                                    if (!ControlCenter.TRIAL_MODE) {
                                                         try {
                                                             Command flashRecovery = new Command(0, "dd " + "if=" + mDownloadedFile + " of=" + mRecoveryPartition);
                                                             RootTools.getShell(true).add(flashRecovery);
