@@ -46,8 +46,8 @@ public class AgreementActivity extends AppCompatActivity {
         mEditor = SP.edit();
         AGREE = (Button) findViewById(R.id.agree);
         CLOSE = (Button) findViewById(R.id.close);
-        AGREE.setTextColor(ContextCompat.getColor(this, ControlCenter.AccentColorChooser()));
-        CLOSE.setTextColor(ContextCompat.getColor(this, ControlCenter.AccentColorChooser()));
+        AGREE.setTextColor(Utils.FetchAccentColor());
+        CLOSE.setTextColor(Utils.FetchAccentColor());
 
         mFirstTime = SP.getBoolean("first_time", true);
 
