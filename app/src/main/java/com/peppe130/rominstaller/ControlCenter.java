@@ -56,6 +56,7 @@ public class ControlCenter {
     }
 
     public static void ExportPreferences() {
+
         SharedPreferences SP = PreferenceManager.getDefaultSharedPreferences(Utils.ACTIVITY);
 
         try {
@@ -102,9 +103,11 @@ public class ControlCenter {
         } catch (Exception e) {
             System.err.println("Error: " + e.getMessage());
         }
+
     }
 
     public static void DefaultValues() {
+
         SharedPreferences SP = PreferenceManager.getDefaultSharedPreferences(Utils.ACTIVITY);
         SharedPreferences.Editor mEditor = SP.edit();
 
@@ -146,6 +149,7 @@ public class ControlCenter {
         mEditor.putString("listAccuweather", "1").apply();
         mEditor.putString("listSound", "1").apply();
         mEditor.putString("listBootanimation", "1").apply();
+
     }
 
 }
