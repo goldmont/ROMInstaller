@@ -54,8 +54,8 @@ public class DownloadActivity extends AppCompatActivity implements CustomFileCho
         BUTTON9 = (FancyButton) findViewById(R.id.download_button9);
 
         RelativeLayout mRelativeLayout = (RelativeLayout) findViewById(R.id.relativeLayout);
-        for (int i = 0; i != mRelativeLayout.getChildCount(); i++) {
-            mRelativeLayout.getChildAt(i).setBackgroundColor(Utils.FetchPrimaryColor());
+        for (int mInt = 0; mInt != mRelativeLayout.getChildCount(); mInt++) {
+            mRelativeLayout.getChildAt(mInt).setBackgroundColor(Utils.FetchPrimaryColor());
             mBorderColor = ContextCompat.getColor(DownloadActivity.this, ControlCenter.ButtonBorderColorChooser());
         }
 
@@ -579,7 +579,7 @@ public class DownloadActivity extends AppCompatActivity implements CustomFileCho
 
     @Override
     public void onFileSelection(@NonNull CustomFileChooser dialog, @NonNull File file) {
-
+        // Do nothing
     }
 
 }
