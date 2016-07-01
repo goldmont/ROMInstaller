@@ -24,6 +24,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
             android:textAppearance="@android:style/TextAppearance.Small" />
+
     </ScrollView>
 
     <Button
@@ -32,7 +33,7 @@
         android:id="@+id/agree"
         android:text="@string/agree_button"
         android:textSize="20sp"
-        android:background="?attr/selectableItemBackgroundBorderless"
+        android:background="?attr/selectableItemBackground"
         android:layout_marginEnd="30dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
@@ -44,7 +45,7 @@
         android:id="@+id/close"
         android:text="@string/close_button"
         android:textSize="20sp"
-        android:background="?attr/selectableItemBackgroundBorderless"
+        android:background="?attr/selectableItemBackground"
         android:layout_marginStart="30dp"
         android:layout_alignBottom="@+id/agree"
         android:layout_alignParentBottom="true"

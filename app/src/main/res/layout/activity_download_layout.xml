@@ -26,8 +26,7 @@
             fancy:fb_radius="5dp"
             android:padding="15dp"
             android:layout_alignParentEnd="true"
-            android:layout_alignParentStart="true">
-        </mehdi.sakout.fancybuttons.FancyButton>
+            android:layout_alignParentStart="true" />
 
         <mehdi.sakout.fancybuttons.FancyButton
             android:id="@+id/download_button2"
@@ -40,8 +39,7 @@
             fancy:fb_borderWidth="2dp"
             fancy:fb_radius="5dp"
             android:padding="15dp"
-            android:layout_marginTop="5dp">
-        </mehdi.sakout.fancybuttons.FancyButton>
+            android:layout_marginTop="5dp" />
 
         <mehdi.sakout.fancybuttons.FancyButton
             android:id="@+id/download_button3"
@@ -54,8 +52,7 @@
             fancy:fb_borderWidth="2dp"
             fancy:fb_radius="5dp"
             android:padding="15dp"
-            android:layout_marginTop="5dp">
-        </mehdi.sakout.fancybuttons.FancyButton>
+            android:layout_marginTop="5dp" />
 
         <mehdi.sakout.fancybuttons.FancyButton
             android:id="@+id/download_button4"
@@ -68,8 +65,7 @@
             fancy:fb_borderWidth="2dp"
             fancy:fb_radius="5dp"
             android:padding="15dp"
-            android:layout_marginTop="5dp">
-        </mehdi.sakout.fancybuttons.FancyButton>
+            android:layout_marginTop="5dp" />
 
         <mehdi.sakout.fancybuttons.FancyButton
             android:id="@+id/download_button5"
@@ -82,8 +78,7 @@
             fancy:fb_borderWidth="2dp"
             fancy:fb_radius="5dp"
             android:padding="15dp"
-            android:layout_marginTop="5dp">
-        </mehdi.sakout.fancybuttons.FancyButton>
+            android:layout_marginTop="5dp" />
 
         <mehdi.sakout.fancybuttons.FancyButton
             android:id="@+id/download_button6"
@@ -96,8 +91,7 @@
             fancy:fb_borderWidth="2dp"
             fancy:fb_radius="5dp"
             android:padding="15dp"
-            android:layout_marginTop="5dp">
-        </mehdi.sakout.fancybuttons.FancyButton>
+            android:layout_marginTop="5dp" />
 
         <mehdi.sakout.fancybuttons.FancyButton
             android:id="@+id/download_button7"
@@ -110,8 +104,7 @@
             fancy:fb_borderWidth="2dp"
             fancy:fb_radius="5dp"
             android:padding="15dp"
-            android:layout_marginTop="5dp">
-        </mehdi.sakout.fancybuttons.FancyButton>
+            android:layout_marginTop="5dp" />
 
         <mehdi.sakout.fancybuttons.FancyButton
             android:id="@+id/download_button8"
@@ -124,8 +117,7 @@
             fancy:fb_borderWidth="2dp"
             fancy:fb_radius="5dp"
             android:padding="15dp"
-            android:layout_marginTop="5dp">
-        </mehdi.sakout.fancybuttons.FancyButton>
+            android:layout_marginTop="5dp" />
 
         <mehdi.sakout.fancybuttons.FancyButton
             android:id="@+id/download_button9"
@@ -138,8 +130,7 @@
             fancy:fb_borderWidth="2dp"
             fancy:fb_radius="5dp"
             android:padding="15dp"
-            android:layout_marginTop="5dp">
-        </mehdi.sakout.fancybuttons.FancyButton>
+            android:layout_marginTop="5dp" />
 
     </RelativeLayout>
 
