@@ -1,11 +1,13 @@
 package com.peppe130.rominstaller.activities;
 
 import android.app.DownloadManager;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Environment;
 import android.os.Handler;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -56,7 +58,7 @@ public class DownloadActivity extends AppCompatActivity implements CustomFileCho
         RelativeLayout mRelativeLayout = (RelativeLayout) findViewById(R.id.relativeLayout);
         for (int mInt = 0; mInt != mRelativeLayout.getChildCount(); mInt++) {
             mRelativeLayout.getChildAt(mInt).setBackgroundColor(Utils.FetchPrimaryColor());
-            mBorderColor = ContextCompat.getColor(DownloadActivity.this, ControlCenter.ButtonBorderColorChooser());
+            mBorderColor = ContextCompat.getColor(DownloadActivity.this, ButtonBorderColorChooser());
         }
 
         // Simple download without MD5 check
@@ -487,6 +489,27 @@ public class DownloadActivity extends AppCompatActivity implements CustomFileCho
                 return false;
             }
         });
+
+    }
+
+    @Nullable
+    public static Integer ButtonBorderColorChooser() {
+        Integer mTheme = null;
+
+        try {
+            mTheme = Utils.ACTIVITY.getPackageManager().getPackageInfo(Utils.ACTIVITY.getPackageName(), 0).applicationInfo.theme;
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        switch (mTheme) {
+            case R.style.AppTheme_Light:
+                return R.color.colorPrimaryDark_Theme_Light;
+            case R.style.AppTheme_Dark:
+                return R.color.colorAccent_Theme_Dark;
+            default:
+                return null;
+        }
 
     }
 

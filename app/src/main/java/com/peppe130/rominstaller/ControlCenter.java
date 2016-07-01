@@ -3,9 +3,7 @@ package com.peppe130.rominstaller;
 import android.content.SharedPreferences;
 import android.os.Environment;
 import android.preference.PreferenceManager;
-import android.support.annotation.Nullable;
 import android.app.DownloadManager;
-import android.content.pm.PackageManager;
 import android.net.Uri;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -148,46 +146,6 @@ public class ControlCenter {
         mEditor.putString("listAccuweather", "1").apply();
         mEditor.putString("listSound", "1").apply();
         mEditor.putString("listBootanimation", "1").apply();
-    }
-
-    @Nullable
-    public static Integer IconColorChooser() {
-        Integer mTheme = null;
-
-        try {
-            mTheme = Utils.ACTIVITY.getPackageManager().getPackageInfo(Utils.ACTIVITY.getPackageName(), 0).applicationInfo.theme;
-        } catch (PackageManager.NameNotFoundException e) {
-            e.printStackTrace();
-        }
-
-        switch (mTheme) {
-            case R.style.AppTheme_Light:
-                return R.color.colorPrimary_Theme_Light;
-            case R.style.AppTheme_Dark:
-                return android.R.color.white;
-            default:
-                return null;
-        }
-    }
-
-    @Nullable
-    public static Integer ButtonBorderColorChooser() {
-        Integer mTheme = null;
-
-        try {
-            mTheme = Utils.ACTIVITY.getPackageManager().getPackageInfo(Utils.ACTIVITY.getPackageName(), 0).applicationInfo.theme;
-        } catch (PackageManager.NameNotFoundException e) {
-            e.printStackTrace();
-        }
-
-        switch (mTheme) {
-            case R.style.AppTheme_Light:
-                return R.color.colorPrimaryDark_Theme_Light;
-            case R.style.AppTheme_Dark:
-                return R.color.colorAccent_Theme_Dark;
-            default:
-                return null;
-        }
     }
 
 }

@@ -2,12 +2,14 @@ package com.peppe130.rominstaller.activities;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
+import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import java.io.File;
@@ -79,7 +81,7 @@ public class SettingsActivity extends AppCompatActivity {
             Preference REVIEW_APP = findPreference("review_app");
             Preference ALL_MY_APPS = findPreference("all_my_apps");
 
-            Integer mIconColor = ContextCompat.getColor(getActivity(), ControlCenter.IconColorChooser());
+            Integer mIconColor = ContextCompat.getColor(getActivity(), IconColorChooser());
 
             IconicsDrawable mDownloadCenterIcon = new IconicsDrawable(getActivity())
                     .icon(Entypo.Icon.ent_download)
@@ -215,6 +217,27 @@ public class SettingsActivity extends AppCompatActivity {
                     return false;
                 }
             });
+
+        }
+
+        @Nullable
+        public static Integer IconColorChooser() {
+            Integer mTheme = null;
+
+            try {
+                mTheme = Utils.ACTIVITY.getPackageManager().getPackageInfo(Utils.ACTIVITY.getPackageName(), 0).applicationInfo.theme;
+            } catch (PackageManager.NameNotFoundException e) {
+                e.printStackTrace();
+            }
+
+            switch (mTheme) {
+                case R.style.AppTheme_Light:
+                    return R.color.colorPrimary_Theme_Light;
+                case R.style.AppTheme_Dark:
+                    return android.R.color.white;
+                default:
+                    return null;
+            }
 
         }
 
