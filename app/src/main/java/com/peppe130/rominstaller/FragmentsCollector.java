@@ -21,8 +21,7 @@ public class FragmentsCollector {
         mListFragment.add(new ThirdFragment());
         mListFragment.add(new FourthFragment());
         mListFragment.add(new FifthFragment());
-        mListFragment.add(new CscFragment());
-        mListFragment.add(new BloatFragment());
+        mListFragment.add(new BloatwareFragment());
 
     }
 
@@ -31,7 +30,7 @@ public class FragmentsCollector {
         @Override
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-            addPreferencesFromResource(R.xml.tab_ui_first_preference);
+            addPreferencesFromResource(R.xml.first_preference);
         }
 
         @Override
@@ -46,7 +45,7 @@ public class FragmentsCollector {
         @Override
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-            addPreferencesFromResource(R.xml.tab_ui_second_preference);
+            addPreferencesFromResource(R.xml.second_preference);
         }
 
         @Override
@@ -61,7 +60,7 @@ public class FragmentsCollector {
         @Override
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-            addPreferencesFromResource(R.xml.tab_ui_third_preference);
+            addPreferencesFromResource(R.xml.third_preference);
         }
 
         @Override
@@ -76,7 +75,7 @@ public class FragmentsCollector {
         @Override
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-            addPreferencesFromResource(R.xml.tab_ui_fourth_preference);
+            addPreferencesFromResource(R.xml.fourth_preference);
         }
 
         @Override
@@ -91,7 +90,7 @@ public class FragmentsCollector {
         @Override
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-            addPreferencesFromResource(R.xml.tab_ui_fifth_preference);
+            addPreferencesFromResource(R.xml.fifth_preference);
         }
 
         @Override
@@ -101,27 +100,12 @@ public class FragmentsCollector {
 
     }
 
-    public static class CscFragment extends XpPreferenceFragment {
+    public static class BloatwareFragment extends XpPreferenceFragment {
 
         @Override
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-            addPreferencesFromResource(R.xml.tab_ui_csc_preference);
-        }
-
-        @Override
-        public void onCreatePreferences2(Bundle savedInstanceState, String rootKey) {
-            // Do nothing
-        }
-
-    }
-
-    public static class BloatFragment extends XpPreferenceFragment {
-
-        @Override
-        public void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            addPreferencesFromResource(R.xml.tab_ui_bloat_preference);
+            addPreferencesFromResource(R.xml.bloatware_preference);
         }
 
         @Override
