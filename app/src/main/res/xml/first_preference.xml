@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--suppress AndroidElementNotAllowed -->
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
     <PreferenceCategory
         android:title="Wipe">
+
         <com.peppe130.rominstaller.core.CustomCheckBoxPreference
             android:key="wipe"
             android:defaultValue="false"
             android:title="Wipe data"
             android:summary="Highly recommended" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
         android:title="Kernel options">
+
         <ListPreference
             android:title="Kernel"
             android:summary="@string/selected_item"
@@ -19,10 +23,12 @@
             android:defaultValue="1"
             android:entries="@array/kernel"
             android:entryValues="@array/kernel_values" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
         android:title="StatusBar options">
+
         <ListPreference
             android:title="StatusBar"
             android:summary="@string/selected_item"
@@ -30,14 +36,18 @@
             android:defaultValue="1"
             android:entries="@array/statusbar"
             android:entryValues="@array/statusbar_values" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
         android:title="SFinder &amp; QuickConnect ">
+
         <com.peppe130.rominstaller.core.CustomCheckBoxPreference
             android:key="SF-QC"
             android:defaultValue="false"
             android:title="Disable SFinder &amp; QuickConnect"
             android:summary="@string/select_disable"/>
+
     </PreferenceCategory>
+
 </PreferenceScreen>

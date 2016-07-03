@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--suppress AndroidElementNotAllowed -->
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
     <PreferenceCategory
         android:title="AccuWeather Widget options">
+
         <ListPreference
             android:title="AccuWeather Widget"
             android:summary="@string/selected_item"
@@ -10,10 +12,12 @@
             android:defaultValue="1"
             android:entries="@array/accuweather"
             android:entryValues="@array/accuweather_values" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
         android:title="Sounds options">
+
         <ListPreference
             android:title="Sounds"
             android:summary="@string/selected_item"
@@ -21,10 +25,12 @@
             android:defaultValue="1"
             android:entries="@array/sound"
             android:entryValues="@array/sound_values" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
         android:title="Boot Animation options">
+
         <ListPreference
             android:title="Boot Animation"
             android:summary="@string/selected_item"
@@ -32,14 +38,18 @@
             android:defaultValue="1"
             android:entries="@array/bootanim"
             android:entryValues="@array/bootanim_values" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
         android:title="Boot Sound">
+
         <com.peppe130.rominstaller.core.CustomCheckBoxPreference
             android:key="boot_sound"
             android:defaultValue="false"
             android:title="Disable Boot Sound?"
             android:summary="@string/select_disable" />
+
     </PreferenceCategory>
+
 </PreferenceScreen>
