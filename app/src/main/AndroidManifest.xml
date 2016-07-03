@@ -17,7 +17,7 @@
         tool:replace="android:icon">
         <activity
             android:name="com.peppe130.rominstaller.activities.AgreementActivity"
-            android:label="@string/activity_agreement_title"
+            android:label="@string/activity_agreement"
             android:screenOrientation="portrait" />
         <activity
             android:name="com.peppe130.rominstaller.activities.MainActivity"
@@ -25,15 +25,15 @@
             android:screenOrientation="portrait" />
         <activity
             android:name="com.peppe130.rominstaller.activities.ChangelogActivity"
-            android:label="@string/changelog_activity_title"
+            android:label="@string/activity_changelog"
             android:screenOrientation="portrait" />
         <activity
             android:name="com.peppe130.rominstaller.activities.SettingsActivity"
-            android:label="@string/title_activity_settings"
+            android:label="@string/activity_settings"
             android:screenOrientation="portrait" />
         <activity
             android:name="com.peppe130.rominstaller.activities.DownloadActivity"
-            android:label="@string/download_center"
+            android:label="@string/activity_download_center"
             android:screenOrientation="portrait" />
         <activity
             android:name="com.peppe130.rominstaller.activities.SplashScreenActivity"

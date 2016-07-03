@@ -25,15 +25,15 @@
     <string name="done_button">Install</string>
 
     <!-- Agreement Activity -->
-    <string name="activity_agreement_title">Agreement</string>
+    <string name="activity_agreement">Agreement</string>
     <string name="agreement_dialog_title">You must agree!</string>
     <string name="agreement_dialog_message">Before you can use this App\nyou must agree to Terms and Conditions.</string>
     <string name="double_back_to_exit">Press twice to exit</string>
 
     <!-- Toolbar -->
     <string name="restore_default">Default options</string>
-    <string name="changelog_activity_title">Changelog</string>
-    <string name="title_activity_settings">Settings</string>
+    <string name="activity_changelog">Changelog</string>
+    <string name="activity_settings">Settings</string>
     <string name="clear_downloads">Clear downloads</string>
 
     <!-- Progress Dialog -->
@@ -130,7 +130,7 @@
     <string name="status_on">Status: Enabled</string>
     <string name="status_off">Status: Disabled</string>
     <string name="tap_to_visit">Tap to visit</string>
-    <string name="download_center">Download Center</string>
+    <string name="activity_download_center">Download Center</string>
     <string name="download_center_summary">Download add-ons/features</string>
     <string name="app_version">App version</string>
     <string name="app_developer_title">Project developer</string>

@@ -7,7 +7,7 @@
         <Preference
             android:key="download_center"
             android:persistent="false"
-            android:title="@string/download_center"
+            android:title="@string/activity_download_center"
             android:summary="@string/download_center_summary"/>
 
     </PreferenceCategory>
