@@ -330,7 +330,7 @@ Utils.StartSingleDownload(mDownloadLink, mDownloadDirectory, mDownloadedFileFina
 String mDownloadLink = "YourDownloadLink";
 String mDownloadDirectory = getString(R.string.rom_folder);
 String mDownloadedFileFinalName = "File.zip";
-String mDownloadedFileMD5 = "3a416cafb312cb15ce6b3b09249fe6e6;
+String mDownloadedFileMD5 = "3a416cafb312cb15ce6b3b09249fe6e6";
 
 Utils.StartSingleDownload(mDownloadLink, mDownloadDirectory, mDownloadedFileFinalName, mDownloadedFileMD5);
   
