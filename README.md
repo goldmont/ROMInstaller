@@ -7,10 +7,10 @@
 1. [Introduction](https://github.com/peppe130/ROMInstaller#introduction)
 2. [How to import the project?](https://github.com/peppe130/ROMInstaller#how-to-import-the-project)
 3. [Project structure](https://github.com/peppe130/ROMInstaller#project-structure)
-4. [What is Utils?](https://github.com/peppe130/ROMInstaller#what-is-utils)
+4. [What is Control Center?](https://github.com/peppe130/ROMInstaller#what-is-control-center)
 5. [What is test mode?](https://github.com/peppe130/ROMInstaller#what-is-test-mode)
 6. [What is trial mode?](https://github.com/peppe130/ROMInstaller#what-is-trial-mode)
-7. [How to add device to compatibility list?](https://github.com/peppe130/ROMInstaller#how-to-add-device-to-compatibility-list)
+7. [How to add a device to compatibility list?](https://github.com/peppe130/ROMInstaller#how-to-add-a-device-to-compatibility-list)
 8. [How to add MD5 to its list?](https://github.com/peppe130/ROMInstaller#how-to-add-md5-to-its-list)
 9. [How to set which UI to use?](https://github.com/peppe130/ROMInstaller#how-to-set-which-ui-to-use)
 10. [How to add Preferences?](https://github.com/peppe130/ROMInstaller#how-to-add-preferences)
@@ -60,16 +60,16 @@ What makes ROM Installer unique is its characteristic of being easily reprogramm
 Project is composed of two packages and one class:
   1. **_activities:_** it contains all the App's activities.
   2. **_core:_** it contains the "heart" of the App.
-  3. **_Utils:_** it is the control center of the App (look [HERE](https://github.com/peppe130/ROMInstaller#what-is-utils)).
+  3. **_Control Center:_** it is the control center of the App (look [HERE](https://github.com/peppe130/ROMInstaller#what-is-control-center)).
+  4. **_FragmentsCollector:_** it is the preferences collector.
 
 **NB:** I will not provide any support for any changes made to the **_core_** package.
 
-# What is Utils?
+# What is Control Center?
 
-As written in the [Introduction](https://github.com/peppe130/ROMInstaller#introduction), the main feature of ROM Installer is its characteristic of being easily reprogrammable by the developer who adopts it. _Utils_ is nothing more than a control center that allows the developer to adjust the App behavior by changing a few lines of code. _Utils_ is divided into two sections: **_Editable_** and **_Uneditable_**. We'll take care of the section marked as _Editable_.<dl />
-**NB:** I will not provide any support for any changes made to the code marked as **_Uneditable_**.
+As written in the [Introduction](https://github.com/peppe130/ROMInstaller#introduction), the main feature of ROM Installer is its characteristic of being easily reprogrammable by the developer who adopts it. _Control Center_ allows the developer to adjust the App behavior by changing a few lines of code.
 
-The following items belong to **_Editable_** section:
+The following items belong to **_Control Center_**:
 * _DEVICE\_COMPATIBILITY\_LIST_ = List of devices compatible with the ROM.
 * _ROM\_MD5\_LIST_ = List of ROM's MD5s and any of its add-ons.
 * _RECOVERY\_MD5\_LIST_ = List of recoveries MD5s.
@@ -80,10 +80,6 @@ The following items belong to **_Editable_** section:
 * _SHOULD\_SHOW\_DISCLAIMER\_SCREEN_ = If set to **_true_**, it enables the disclaimer screen.
 * _SPLASH\_SCREEN\_DELAY_ = Duration time of splash screen (value in milliseconds).
 * _SPLASH\_SCREEN\_IMAGE_ = Image to display in the splash screen.
-* _PROGRESS\_BAR\_COLOR_ = ProgressBar color of loading Dialogs.
-* _FILE\_CHOOSER\_TITLE\_COLOR_ = FileChooser title color.
-* _FILE\_CHOOSER\_CONTENT\_COLOR_ = FileChooser content color.
-* _FILE\_CHOOSER\_BACKGROUND\_COLOR_ = FileChooser background color.
 * _SETTINGS\_ICON_ = Toolbar Settings icon.
 * _CHANGELOG\_ICON_ = Toolbar Changelog icon.
 * _DEFAULT\_OPTIONS\_ICON_ = Toolbar "Default options" icon.
@@ -95,8 +91,8 @@ Test mode is a special mode of the App that disables each control that would nor
 # What is trial mode?
 Trial mode is another special mode that allows the developer to safely test the App on every device, no matter if it is compatible or not. It was created to allow the developer to test the App on multiple devices without the need to update the compatibility list.
 
-# How to add device to compatibility list?
-To add a device to the compatibility list, open the **_Utils_** class, enter the device model on the list in quotation marks and separate from each other with a comma.
+# How to add a device to compatibility list?
+To add a device to the compatibility list, open the **_Control Center_** class, enter the device model on the list in quotation marks and separate from each other with a comma.
 
 **Example:** <dl />
 ```java
@@ -104,7 +100,7 @@ public static String[] DEVICE_COMPATIBILITY_LIST = new String[] {"Device", "Devi
 ```
 
 # How to add MD5 to its list?
-As for the compatibility list, even for the MD5 just open the **_Utils_** class, enter the alphanumeric code on the list in quotation marks and separate from each other with a comma.
+As for the compatibility list, even for the MD5 just open the **_Control Center_** class, enter the alphanumeric code on the list in quotation marks and separate from each other with a comma.
 
 **Example:** <dl />
 ```java
@@ -118,7 +114,7 @@ public static String[] RECOVERY_MD5_LIST = new String[] {"5fb732eea3d3e2b407fa76
 ```
 
 # How to set which UI to use?
-To change **UI**, you have to open the **_Utils_** class and change the value to the boolean **_BUTTON_UI:_** <dl />
+To change **UI**, you have to open the **_Control Center_** class and change the value to the boolean **_BUTTON_UI:_** <dl />
 1. **_TRUE:_** Enables the UI with _"Next"_ and _"Back"_ buttons. <dl />
 2. **_FALSE:_** It enables the sensitive UI to the sliding of the finger on the screen.
 
@@ -198,9 +194,7 @@ To change **UI**, you have to open the **_Utils_** class and change the value to
 
 The optimal number of preferences for **XML** file is **_4_**.
 
-Once the preference is configured, in order to export its value, you must declare it in Java. To do this, just open the **_MainActivity_** located in _"java"_ > _"com.peppe130.yourpackagename"_ > _"activities"._
-
-In the `ExportPreferences()` method add:
+Once the preference is configured, in order to export its value, you must declare it in Java. To do this, just open the **_Control Center_** and, in the `ExportPreferences()` method, add:
 ```java
 mBufferedWriter.write(
                       "CheckBox=" + (String.valueOf(SP.getBoolean("YourCheckBoxID", DefaultValue))) +
@@ -237,7 +231,7 @@ In the `DefaultValues()` method add:
 ```
 
 # How to add Fragments?
-After adding the preferences, you must set up the **XML** file in Java. To do this you must create a Fragment. Fragment has the purpose to show the preferences on the screen in such a way as to interact with them. To add a Fragment, just open the **MainActivity** and add at the bottom:
+After adding the preferences, you must set up the **XML** file in Java. To do this you must create a Fragment. Fragment has the purpose to show the preferences on the screen in such a way as to interact with them. To add a Fragment, just open the **FragmentsCollector** and add at the bottom:
 
 ```java
 
@@ -262,7 +256,7 @@ After adding the preferences, you must set up the **XML** file in Java. To do th
 
 ```
 
-Now you need to declare the Fragment newly created by adding it to the Fragment list. To do this, open the **MainActivity** class and, in the onCreate() method, under
+Then declare the Fragment newly created by adding it to the Fragment list. Under
 
 ```java
 
@@ -301,18 +295,10 @@ The App is provided with an internal code that lets you download any type of fil
 
 ```
 
-Uri mDownloadLink = It's the download link of your file
-File mDownloadDirectory = It's the destination folder
+String mDownloadLink = It's the download link of your file
+String mDownloadDirectory = It's the destination folder
 String mDownloadedFileFinalName = It's the name that the downloaded file should assume
 String mDownloadedFileMD5 = It's the correct MD5 of the file.
-DownloadManager.Request mRequest = It's the download request.
-
-// Multiple downloads
-Utils.DOWNLOAD_LINK_LIST = List of download links for multiple downloads.
-Utils.DOWNLOAD_DIRECTORY_LIST = List of download destination folders for multiple downloads.
-Utils.DOWNLOADED_FILE_NAME_LIST = List of names that the downloaded files should assume for multiple downloads.
-Utils.DOWNLOADED_FILE_MD5_LIST = List of files MD5s for multiple downloads.
-Utils.DOWNLOAD_REQUEST_LIST = List of download requests for multiple downloads.
 
 ```
 
@@ -328,16 +314,12 @@ Utils.DOWNLOAD_REQUEST_LIST = List of download requests for multiple downloads.
 
   ```java
   
-    Uri mDownloadLink = Uri.parse("YourDownloadLink");
-    File mDownloadDirectory = new File(getString(R.string.rom_folder));
-    String mDownloadedFileFinalName = "File.zip";
-    DownloadManager.Request mRequest = new DownloadManager.Request(mDownloadLink);
-    mRequest.setDestinationInExternalPublicDir(mDownloadDirectory.getPath(), mDownloadedFileFinalName);
-  
-    new Download(
-        mRequest,
-        mDownloadDirectory,
-        mDownloadedFileFinalName).execute();
+String mDownloadLink = "YourDownloadLink";
+String mDownloadDirectory = getString(R.string.rom_folder);
+String mDownloadedFileFinalName = "File.zip";
+String mDownloadedFileMD5 = null;
+
+Utils.StartSingleDownload(mDownloadLink, mDownloadDirectory, mDownloadedFileFinalName, mDownloadedFileMD5);
   
   ```
   
@@ -345,37 +327,22 @@ Utils.DOWNLOAD_REQUEST_LIST = List of download requests for multiple downloads.
 
   ```java
   
-    Uri mDownloadLink = Uri.parse("YourDownloadLink");
-    File mDownloadDirectory = new File(getString(R.string.rom_folder));
-    String mDownloadedFileFinalName = "File.zip";
-    mDownloadedFileMD5 = "3a416cafb312cb15ce6b3b09249fe6e6";
-    DownloadManager.Request mRequest = new DownloadManager.Request(mDownloadLink);
-    mRequest.setDestinationInExternalPublicDir(mDownloadDirectory.getPath(), mDownloadedFileFinalName);
-  
-    new Download(
-        mRequest,
-        mDownloadDirectory,
-        mDownloadedFileFinalName,
-        mDownloadedFileMD5).execute();
+String mDownloadLink = "YourDownloadLink";
+String mDownloadDirectory = getString(R.string.rom_folder);
+String mDownloadedFileFinalName = "File.zip";
+String mDownloadedFileMD5 = "3a416cafb312cb15ce6b3b09249fe6e6;
+
+Utils.StartSingleDownload(mDownloadLink, mDownloadDirectory, mDownloadedFileFinalName, mDownloadedFileMD5);
   
   ```
   
 3. Download ROM
 
-   **NB:** In _Utils_ there is a method called `DownloadROM()`. You can configure it to download the ROM and you can call it by typing `DownloadROM()` wherever you want.
+   **NB:** In _Contro Center_ there is a method called `DownloadROM()`. You can configure it to download the ROM and you can call it by typing `DownloadROM()` wherever you want.
 
   ```java
   
-    Uri mDownloadLink = Uri.parse("YourDownloadLink");
-    File mDownloadDirectory = new File(getString(R.string.rom_folder));
-    String mDownloadedFileFinalName = "ROM.zip";
-    DownloadManager.Request mRequest = new DownloadManager.Request(mDownloadLink);
-    mRequest.setDestinationInExternalPublicDir(mDownloadDirectory.getPath(), mDownloadedFileFinalName);
-  
-    new Download(
-        mRequest,
-        mDownloadDirectory,
-        mDownloadedFileFinalName, true).execute();
+ControlCenter.DownloadROM();
   
   ```
   
@@ -383,34 +350,25 @@ Utils.DOWNLOAD_REQUEST_LIST = List of download requests for multiple downloads.
 
   ```java
   
-    // Download N°1
-    Utils.DOWNLOAD_LINK_LIST.add(Uri.parse("YourDownloadLink"));
-    Utils.DOWNLOAD_DIRECTORY_LIST.add(new File(getString(R.string.rom_folder)));
-    Utils.DOWNLOADED_FILE_NAME_LIST.add("File.zip");
-    DownloadManager.Request mRequest0 = new DownloadManager.Request(Utils.DOWNLOAD_LINK_LIST.get(0));
-    mRequest0.setDestinationInExternalPublicDir(Utils.DOWNLOAD_DIRECTORY_LIST.get(0).getPath(), Utils.DOWNLOADED_FILE_NAME_LIST.get(0));
-    Utils.DOWNLOAD_REQUEST_LIST.add(mRequest0);
+// Download N°1
+	Utils.EnqueueDownload(
+		"YourDownloadLink",
+		getString(R.string.rom_folder),
+		"File.zip", null);
 
-    // Download N°2
-    Utils.DOWNLOAD_LINK_LIST.add(Uri.parse("YourDownloadLink"));
-    Utils.DOWNLOAD_DIRECTORY_LIST.add(new File(getString(R.string.rom_folder)));
-    Utils.DOWNLOADED_FILE_NAME_LIST.add("File2.zip");
-    DownloadManager.Request mRequest1 = new DownloadManager.Request(Utils.DOWNLOAD_LINK_LIST.get(1));
-    mRequest1.setDestinationInExternalPublicDir(Utils.DOWNLOAD_DIRECTORY_LIST.get(1).getPath(), Utils.DOWNLOADED_FILE_NAME_LIST.get(1));
-    Utils.DOWNLOAD_REQUEST_LIST.add(mRequest1);
+// Download N°2
+	Utils.EnqueueDownload(
+	        "YourDownloadLink",
+		getString(R.string.rom_folder),
+		"File2.zip", null);
 
-    // Download N°3
-    Utils.DOWNLOAD_LINK_LIST.add(Uri.parse("YourDownloadLink"));
-    Utils.DOWNLOAD_DIRECTORY_LIST.add(new File(getString(R.string.rom_folder)));
-    Utils.DOWNLOADED_FILE_NAME_LIST.add("File3.zip");
-    DownloadManager.Request mRequest2 = new DownloadManager.Request(Utils.DOWNLOAD_LINK_LIST.get(2));
-    mRequest2.setDestinationInExternalPublicDir(Utils.DOWNLOAD_DIRECTORY_LIST.get(2).getPath(), Utils.DOWNLOADED_FILE_NAME_LIST.get(2));
-    Utils.DOWNLOAD_REQUEST_LIST.add(mRequest2);
-  
-    new Download(
-        Utils.DOWNLOAD_REQUEST_LIST.get(0),
-        Utils.DOWNLOAD_DIRECTORY_LIST.get(0),
-        Utils.DOWNLOADED_FILE_NAME_LIST.get(0), 1).execute();
+// Download N°3
+	Utils.EnqueueDownload(
+		"YourDownloadLink",
+		getString(R.string.rom_folder),
+		"File3.zip", null);
+
+Utils.StartMultipleDownloads();
   
   ```
   
@@ -418,38 +376,28 @@ Utils.DOWNLOAD_REQUEST_LIST = List of download requests for multiple downloads.
 
   ```java
   
-    // Download N°1
-    Utils.DOWNLOAD_LINK_LIST.add(Uri.parse("YourDownloadLink"));
-    Utils.DOWNLOAD_DIRECTORY_LIST.add(new File(getString(R.string.rom_folder)));
-    Utils.DOWNLOADED_FILE_NAME_LIST.add("File.zip");
-    Utils.DOWNLOADED_FILE_MD5_LIST.add("5fb732eea3d3e2b407fa7685c27a5354");
-    DownloadManager.Request mRequest0 = new DownloadManager.Request(Utils.DOWNLOAD_LINK_LIST.get(0));
-    mRequest0.setDestinationInExternalPublicDir(Utils.DOWNLOAD_DIRECTORY_LIST.get(0).getPath(), Utils.DOWNLOADED_FILE_NAME_LIST.get(0));
-    Utils.DOWNLOAD_REQUEST_LIST.add(mRequest0);
+// Download N°1
+	Utils.EnqueueDownload(
+		"YourDownloadLink",
+		getString(R.string.rom_folder),
+		"File.zip",
+		"5fb732eea3d3e2b407fa7685c27a5354");
 
-    // Download N°2
-    Utils.DOWNLOAD_LINK_LIST.add(Uri.parse("YourDownloadLink"));
-    Utils.DOWNLOAD_DIRECTORY_LIST.add(new File(getString(R.string.rom_folder)));
-    Utils.DOWNLOADED_FILE_NAME_LIST.add("File2.zip");
-    Utils.DOWNLOADED_FILE_MD5_LIST.add("3a416cafb312cb15ce6b3b09249fe6e6");
-    DownloadManager.Request mRequest1 = new DownloadManager.Request(Utils.DOWNLOAD_LINK_LIST.get(1));
-    mRequest1.setDestinationInExternalPublicDir(Utils.DOWNLOAD_DIRECTORY_LIST.get(1).getPath(), Utils.DOWNLOADED_FILE_NAME_LIST.get(1));
-    Utils.DOWNLOAD_REQUEST_LIST.add(mRequest1);
+// Download N°2
+	Utils.EnqueueDownload(
+		"YourDownloadLink",
+		getString(R.string.rom_folder),
+		"File2.zip",
+		"3a416cafb312cb15ce6b3b09249fe6e6");
 
-    // Download N°3
-    Utils.DOWNLOAD_LINK_LIST.add(Uri.parse("YourDownloadLink"));
-    Utils.DOWNLOAD_DIRECTORY_LIST.add(new File(getString(R.string.rom_folder)));
-    Utils.DOWNLOADED_FILE_NAME_LIST.add("File3.zip");
-    Utils.DOWNLOADED_FILE_MD5_LIST.add("f946055c11a6a25d202f81171944fa1e");
-    DownloadManager.Request mRequest2 = new DownloadManager.Request(Utils.DOWNLOAD_LINK_LIST.get(2));
-    mRequest2.setDestinationInExternalPublicDir(Utils.DOWNLOAD_DIRECTORY_LIST.get(2).getPath(), Utils.DOWNLOADED_FILE_NAME_LIST.get(2));
-    Utils.DOWNLOAD_REQUEST_LIST.add(mRequest2);
-  
-    new Download(
-        Utils.DOWNLOAD_REQUEST_LIST.get(0),
-        Utils.DOWNLOAD_DIRECTORY_LIST.get(0),
-        Utils.DOWNLOADED_FILE_NAME_LIST.get(0),
-        Utils.DOWNLOADED_FILE_MD5_LIST.get(0), 1).execute();
+// Download N°3
+	Utils.EnqueueDownload(
+		"YourDownloadLink",
+		getString(R.string.rom_folder),
+		"File3.zip",
+		"f946055c11a6a25d202f81171944fa1e");
+
+Utils.StartMultipleDownloads();
   
   ```
   
@@ -459,38 +407,27 @@ Utils.DOWNLOAD_REQUEST_LIST = List of download requests for multiple downloads.
 
   ```java
   
-    // Download N°1 - MD5 check enabled
-    Utils.DOWNLOAD_LINK_LIST.add(Uri.parse("YourDownloadLink"));
-    Utils.DOWNLOAD_DIRECTORY_LIST.add(new File(getString(R.string.rom_folder)));
-    Utils.DOWNLOADED_FILE_NAME_LIST.add("File.zip");
-    Utils.DOWNLOADED_FILE_MD5_LIST.add("5fb732eea3d3e2b407fa7685c27a5354");
-    DownloadManager.Request mRequest0 = new DownloadManager.Request(Utils.DOWNLOAD_LINK_LIST.get(0));
-    mRequest0.setDestinationInExternalPublicDir(Utils.DOWNLOAD_DIRECTORY_LIST.get(0).getPath(), Utils.DOWNLOADED_FILE_NAME_LIST.get(0));
-    Utils.DOWNLOAD_REQUEST_LIST.add(mRequest0);
+// Download N°1 - MD5 check enabled
+	Utils.EnqueueDownload(
+		"YourDownloadLink",
+		getString(R.string.rom_folder),
+		"File.zip",
+		"f946055c11a6a25d202f81171944fa1e");
 
-    // Download N°2 - MD5 check disabled
-    Utils.DOWNLOAD_LINK_LIST.add(Uri.parse("YourDownloadLink"));
-    Utils.DOWNLOAD_DIRECTORY_LIST.add(new File(getString(R.string.rom_folder)));
-    Utils.DOWNLOADED_FILE_NAME_LIST.add("File2.zip");
-    Utils.DOWNLOADED_FILE_MD5_LIST.add(null);
-    DownloadManager.Request mRequest1 = new DownloadManager.Request(Utils.DOWNLOAD_LINK_LIST.get(1));
-    mRequest1.setDestinationInExternalPublicDir(Utils.DOWNLOAD_DIRECTORY_LIST.get(1).getPath(), Utils.DOWNLOADED_FILE_NAME_LIST.get(1));
-    Utils.DOWNLOAD_REQUEST_LIST.add(mRequest1);
+// Download N°2 - MD5 check disabled
+	Utils.EnqueueDownload(
+		"YourDownloadLink",
+		getString(R.string.rom_folder),
+		"File2.zip", null);
 
-    // Download N°3 - MD5 check enabled
-    Utils.DOWNLOAD_LINK_LIST.add(Uri.parse("YourDownloadLink"));
-    Utils.DOWNLOAD_DIRECTORY_LIST.add(new File(getString(R.string.rom_folder)));
-    Utils.DOWNLOADED_FILE_NAME_LIST.add("File3.zip");
-    Utils.DOWNLOADED_FILE_MD5_LIST.add("f946055c11a6a25d202f81171944fa1e");
-    DownloadManager.Request mRequest2 = new DownloadManager.Request(Utils.DOWNLOAD_LINK_LIST.get(2));
-    mRequest2.setDestinationInExternalPublicDir(Utils.DOWNLOAD_DIRECTORY_LIST.get(2).getPath(), Utils.DOWNLOADED_FILE_NAME_LIST.get(2));
-    Utils.DOWNLOAD_REQUEST_LIST.add(mRequest2);
+// Download N°3 - MD5 check enabled
+	Utils.EnqueueDownload(
+		"YourDownloadLink",
+		getString(R.string.rom_folder),
+		"File3.zip",
+		"f946055c11a6a25d202f81171944fa1e");
   
-    new Download(
-        Utils.DOWNLOAD_REQUEST_LIST.get(0),
-        Utils.DOWNLOAD_DIRECTORY_LIST.get(0),
-        Utils.DOWNLOADED_FILE_NAME_LIST.get(0),
-        Utils.DOWNLOADED_FILE_MD5_LIST.get(0), 1).execute();
+Utils.StartMultipleDownloads();
   
   ```
 
@@ -500,19 +437,10 @@ Utils.DOWNLOAD_REQUEST_LIST = List of download requests for multiple downloads.
 
 ```
 
-Uri mDownloadLink = It's the download link of your file
-File mDownloadDirectory = It's the destination folder
+String mDownloadLink = It's the download link of your file
+String mDownloadDirectory = It's the destination folder
 String mDownloadedFileFinalName = It's the name that the downloaded file should assume
 String mDownloadedFileMD5 = It's the correct MD5 of the file.
-String mRecoveryPartition = Device's recovery partition.
-DownloadManager.Request mRequest = It's the download request.
-
-// Multiple downloads
-Utils.DOWNLOAD_LINK_LIST = List of download links for multiple downloads.
-Utils.DOWNLOAD_DIRECTORY_LIST = List of download destination folders for multiple downloads.
-Utils.DOWNLOADED_FILE_NAME_LIST = List of names that the downloaded files should assume for multiple downloads.
-Utils.DOWNLOADED_FILE_MD5_LIST = List of files MD5s for multiple downloads.
-Utils.DOWNLOAD_REQUEST_LIST = List of download requests for multiple downloads.
 
 ```
 
@@ -527,64 +455,46 @@ Utils.DOWNLOAD_REQUEST_LIST = List of download requests for multiple downloads.
 1. Download recovery
   ```java
   
-    Uri mDownloadLink = Uri.parse("YourDownloadLink");
-    File mDownloadDirectory = new File(getString(R.string.rom_folder));
-    String mDownloadedFileFinalName = "Recovery.zip";
-    mRecoveryPartition = "DeviceRecoveryPartition";
-    DownloadManager.Request mRequest = new DownloadManager.Request(mDownloadLink);
-    mRequest.setDestinationInExternalPublicDir(mDownloadDirectory.getPath(), mDownloadedFileFinalName);
-  
-    new FlashRecovery(
-        mRequest,
-        mDownloadDirectory,
-        mDownloadedFileFinalName,
-        mRecoveryPartition, false).execute();
+String mDownloadLink = "YourDownloadLink";
+String mDownloadDirectory = getString(R.string.rom_folder);
+String mDownloadedFileFinalName = "Recovery.zip";
+String mRecoveryPartition = "YourDeviceRecoveryPartition";
+
+Utils.StartFlashRecovery(mDownloadLink, mDownloadDirectory, mDownloadedFileFinalName, mRecoveryPartition);
   
   ```
   
 2. Download Recovery with Add-Ons
 
   ```java
-    // Download recovery
-    Uri mDownloadLink = Uri.parse("YourDownloadLink");
-    File mDownloadDirectory = new File(getString(R.string.rom_folder));
-    String mDownloadedFileFinalName = "Recovery.zip";
-    mRecoveryPartition = "DeviceRecoveryPartition";
-    DownloadManager.Request mRequest = new DownloadManager.Request(mDownloadLink);
-    mRequest.setDestinationInExternalPublicDir(mDownloadDirectory.getPath(), mDownloadedFileFinalName);
-    
-    // Download Add-On N°1
-    Utils.DOWNLOAD_LINK_LIST.add(Uri.parse("YourDownloadLink"));
-    Utils.DOWNLOAD_DIRECTORY_LIST.add(new File(getString(R.string.rom_folder)));
-    Utils.DOWNLOADED_FILE_NAME_LIST.add("Add-On.zip");
-    Utils.DOWNLOADED_FILE_MD5_LIST.add("5fb732eea3d3e2b407fa7685c27a5354");
-    DownloadManager.Request mRequest0 = new DownloadManager.Request(Utils.DOWNLOAD_LINK_LIST.get(0));
-    mRequest0.setDestinationInExternalPublicDir(Utils.DOWNLOAD_DIRECTORY_LIST.get(0).getPath(), Utils.DOWNLOADED_FILE_NAME_LIST.get(0));
-    Utils.DOWNLOAD_REQUEST_LIST.add(mRequest0);
+// Download Recovery
+String mDownloadLink = "YourDownloadLink";
+String mDownloadDirectory = getString(R.string.rom_folder);
+String mDownloadedFileFinalName = "Recovery.zip";
+String mRecoveryPartition = "YourDeviceRecoveryPartition";
 
-    // Download Add-On N°2
-    Utils.DOWNLOAD_LINK_LIST.add(Uri.parse("YourDownloadLink"));
-    Utils.DOWNLOAD_DIRECTORY_LIST.add(new File(getString(R.string.rom_folder)));
-    Utils.DOWNLOADED_FILE_NAME_LIST.add("Add-On2.zip");
-    Utils.DOWNLOADED_FILE_MD5_LIST.add("3a416cafb312cb15ce6b3b09249fe6e6");
-    DownloadManager.Request mRequest1 = new DownloadManager.Request(Utils.DOWNLOAD_LINK_LIST.get(1));
-    mRequest1.setDestinationInExternalPublicDir(Utils.DOWNLOAD_DIRECTORY_LIST.get(1).getPath(), Utils.DOWNLOADED_FILE_NAME_LIST.get(1));
-    Utils.DOWNLOAD_REQUEST_LIST.add(mRequest1);
+// Download Add-On N°1
+	Utils.EnqueueDownload(
+		"YourDownloadLink",
+		getString(R.string.rom_folder),
+		"Add-On.zip",
+		"5fb732eea3d3e2b407fa7685c27a5354");
 
-    // Download Add-On N°3
-    Utils.DOWNLOAD_LINK_LIST.add(Uri.parse("YourDownloadLink"));
-    Utils.DOWNLOAD_DIRECTORY_LIST.add(new File(getString(R.string.rom_folder)));
-    Utils.DOWNLOADED_FILE_NAME_LIST.add("Add-On3.zip");
-    Utils.DOWNLOADED_FILE_MD5_LIST.add("f946055c11a6a25d202f81171944fa1e");
-    DownloadManager.Request mRequest2 = new DownloadManager.Request(Utils.DOWNLOAD_LINK_LIST.get(2));
-    mRequest2.setDestinationInExternalPublicDir(Utils.DOWNLOAD_DIRECTORY_LIST.get(2).getPath(), Utils.DOWNLOADED_FILE_NAME_LIST.get(2));
-    Utils.DOWNLOAD_REQUEST_LIST.add(mRequest2);
-  
-    new FlashRecovery(
-        mRequest,
-        mDownloadDirectory,
-        mDownloadedFileFinalName,
-        mRecoveryPartition, true).execute();
+// Download Add-On N°2
+	Utils.EnqueueDownload(
+		"YourDownloadLink",
+		getString(R.string.rom_folder),
+		"Add-On2.zip",
+		"3a416cafb312cb15ce6b3b09249fe6e6");
+
+// Download Add-On N°3
+	Utils.EnqueueDownload(
+		"YourDownloadLink",
+		getString(R.string.rom_folder),
+		"Add-On3.zip",
+		"f946055c11a6a25d202f81171944fa1e");
+
+Utils.StartFlashRecoveryWithAddons(mDownloadLink, mDownloadDirectory, mDownloadedFileFinalName, mRecoveryPartition);
   
   ```
   
