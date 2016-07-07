@@ -3,17 +3,13 @@ package com.peppe130.rominstaller;
 import android.content.SharedPreferences;
 import android.os.Environment;
 import android.preference.PreferenceManager;
-import android.app.DownloadManager;
-import android.net.Uri;
 import java.io.BufferedWriter;
-import java.io.File;
 import java.io.FileWriter;
 
 import com.mikepenz.entypo_typeface_library.Entypo;
 import com.mikepenz.google_material_typeface_library.GoogleMaterial;
 import com.mikepenz.iconics.typeface.IIcon;
 import com.mikepenz.ionicons_typeface_library.Ionicons;
-import com.peppe130.rominstaller.core.Download;
 import com.peppe130.rominstaller.core.Utils;
 
 
