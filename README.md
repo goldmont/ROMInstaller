@@ -7,7 +7,7 @@
 1. [Introduction](https://github.com/peppe130/ROMInstaller#introduction)
 2. [How to import the project?](https://github.com/peppe130/ROMInstaller#how-to-import-the-project)
 3. [Project structure](https://github.com/peppe130/ROMInstaller#project-structure)
-4. [What is Utils?](https://github.com/peppe130/ROMInstaller#what-is-utils)
+4. [What is Control Center?](https://github.com/peppe130/ROMInstaller#what-is-control-center)
 5. [What is test mode?](https://github.com/peppe130/ROMInstaller#what-is-test-mode)
 6. [What is trial mode?](https://github.com/peppe130/ROMInstaller#what-is-trial-mode)
 7. [How to add device to compatibility list?](https://github.com/peppe130/ROMInstaller#how-to-add-device-to-compatibility-list)
