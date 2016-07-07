@@ -295,9 +295,9 @@ The App is provided with an internal code that lets you download any type of fil
 
 ```
 
-String mDownloadLink = It's the download link of your file
-String mDownloadDirectory = It's the destination folder
-String mDownloadedFileFinalName = It's the name that the downloaded file should assume
+String mDownloadLink = It's the download link of your file.
+String mDownloadDirectory = It's the destination folder.
+String mDownloadedFileFinalName = It's the name that the downloaded file should assume.
 String mDownloadedFileMD5 = It's the correct MD5 of the file.
 
 ```
@@ -437,9 +437,9 @@ Utils.StartMultipleDownloads();
 
 ```
 
-String mDownloadLink = It's the download link of your file
-String mDownloadDirectory = It's the destination folder
-String mDownloadedFileFinalName = It's the name that the downloaded file should assume
+String mDownloadLink = It's the download link of your file.
+String mDownloadDirectory = It's the destination folder.
+String mDownloadedFileFinalName = It's the name that the downloaded file should assume.
 String mDownloadedFileMD5 = It's the correct MD5 of the file.
 
 ```
