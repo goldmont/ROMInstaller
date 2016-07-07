@@ -77,14 +77,6 @@ public class ControlCenter {
                             "\nshutter_sound=" + String.valueOf(SP.getBoolean("shutter_sound", false)) +
                             "\nboot_sound=" + String.valueOf(SP.getBoolean("boot_sound", false)) +
                             "\nxposed=" + String.valueOf(SP.getBoolean("xposed", false)) +
-                            "\ncsc1=" + String.valueOf(SP.getBoolean("csc1", true)) +
-                            "\ncsc2=" + String.valueOf(SP.getBoolean("csc2", true)) +
-                            "\ncsc3=" + String.valueOf(SP.getBoolean("csc3", true)) +
-                            "\ncsc4=" + String.valueOf(SP.getBoolean("csc4", true)) +
-                            "\ncsc5=" + String.valueOf(SP.getBoolean("csc5", true)) +
-                            "\ncsc6=" + String.valueOf(SP.getBoolean("csc6", true)) +
-                            "\ncsc7=" + String.valueOf(SP.getBoolean("csc7", true)) +
-                            "\ncsc8=" + String.valueOf(SP.getBoolean("csc8", true)) +
                             "\nbloat1=" + String.valueOf(SP.getBoolean("bloat1", true)) +
                             "\nbloat2=" + String.valueOf(SP.getBoolean("bloat2", true)) +
                             "\nbloat3=" + String.valueOf(SP.getBoolean("bloat3", false)) +
@@ -116,16 +108,6 @@ public class ControlCenter {
         mEditor.putBoolean("boot_sound", false).apply();
         mEditor.putBoolean("call_button", true).apply();
         mEditor.putBoolean("xposed", false).apply();
-        mEditor.putBoolean("csc1", false).apply();
-        mEditor.putBoolean("csc2", false).apply();
-        mEditor.putBoolean("csc3", false).apply();
-        mEditor.putBoolean("csc4", false).apply();
-        mEditor.putBoolean("csc5", false).apply();
-        mEditor.putBoolean("csc6", false).apply();
-        mEditor.putBoolean("csc7", false).apply();
-        mEditor.putBoolean("csc8", false).apply();
-        mEditor.putBoolean("csc10", false).apply();
-        mEditor.putBoolean("csc11", false).apply();
         mEditor.putBoolean("bloat1", false).apply();
         mEditor.putBoolean("bloat2", false).apply();
         mEditor.putBoolean("bloat3", false).apply();
