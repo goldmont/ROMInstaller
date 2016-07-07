@@ -41,17 +41,11 @@ public class ControlCenter {
 
     public static void DownloadROM() {
 
-        Uri mDownloadLink = Uri.parse("http://www.mediafire.com/download/3a7gefzmxj44lv1/SampleROM.zip");
-        File mDownloadDirectory = new File(Utils.ACTIVITY.getString(R.string.rom_folder));
         Utils.FILE_NAME = "SampleROM.zip";
 
-        DownloadManager.Request mRequest = new DownloadManager.Request(mDownloadLink);
-        mRequest.setDestinationInExternalPublicDir(mDownloadDirectory.getPath(), Utils.FILE_NAME);
-
-        new Download(
-                mRequest,
-                mDownloadDirectory,
-                Utils.FILE_NAME, true).execute();
+        Utils.StartDownloadROM(
+                "http://www.mediafire.com/download/3a7gefzmxj44lv1/SampleROM.zip",
+                Utils.ACTIVITY.getString(R.string.rom_folder));
 
     }
 

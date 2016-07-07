@@ -100,6 +100,20 @@ public class Utils {
 
     }
 
+    public static void StartDownloadROM(String downloadLink, String downloadDirectory) {
+
+        Uri mDownloadLink = Uri.parse(downloadLink);
+        File mDownloadDirectory = new File(downloadDirectory);
+        DownloadManager.Request mRequest = new DownloadManager.Request(mDownloadLink);
+        mRequest.setDestinationInExternalPublicDir(mDownloadDirectory.getPath(), Utils.FILE_NAME);
+
+        new Download(
+                mRequest,
+                mDownloadDirectory,
+                Utils.FILE_NAME, true).execute();
+
+    }
+
     public static void StartFlashRecovery(String downloadLink, String downloadDirectory, String downloadedFileFinalName, String recoveryPartition) {
 
         Uri mDownloadLink = Uri.parse(downloadLink);
