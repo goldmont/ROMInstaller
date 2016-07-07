@@ -159,7 +159,7 @@ To change **UI**, you have to open the **_Control Center_** class and change the
           
         <!--
             
-          Each item has its own value.
+          Each item has its own value:
           "Item 1" has value 1.
           "Item 2" has value 2.
           "Item 3" has value 3.
@@ -295,9 +295,9 @@ The App is provided with an internal code that lets you download any type of fil
 
 ```
 
-String mDownloadLink = It's the download link of your file
-String mDownloadDirectory = It's the destination folder
-String mDownloadedFileFinalName = It's the name that the downloaded file should assume
+String mDownloadLink = It's the download link of your file.
+String mDownloadDirectory = It's the destination folder.
+String mDownloadedFileFinalName = It's the name that the downloaded file should assume.
 String mDownloadedFileMD5 = It's the correct MD5 of the file.
 
 ```
@@ -330,7 +330,7 @@ Utils.StartSingleDownload(mDownloadLink, mDownloadDirectory, mDownloadedFileFina
 String mDownloadLink = "YourDownloadLink";
 String mDownloadDirectory = getString(R.string.rom_folder);
 String mDownloadedFileFinalName = "File.zip";
-String mDownloadedFileMD5 = "3a416cafb312cb15ce6b3b09249fe6e6;
+String mDownloadedFileMD5 = "3a416cafb312cb15ce6b3b09249fe6e6";
 
 Utils.StartSingleDownload(mDownloadLink, mDownloadDirectory, mDownloadedFileFinalName, mDownloadedFileMD5);
   
@@ -437,9 +437,9 @@ Utils.StartMultipleDownloads();
 
 ```
 
-String mDownloadLink = It's the download link of your file
-String mDownloadDirectory = It's the destination folder
-String mDownloadedFileFinalName = It's the name that the downloaded file should assume
+String mDownloadLink = It's the download link of your file.
+String mDownloadDirectory = It's the destination folder.
+String mDownloadedFileFinalName = It's the name that the downloaded file should assume.
 String mDownloadedFileMD5 = It's the correct MD5 of the file.
 
 ```
