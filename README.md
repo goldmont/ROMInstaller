@@ -159,7 +159,7 @@ To change **UI**, you have to open the **_Control Center_** class and change the
           
         <!--
             
-          Each item has its own value.
+          Each item has its own value:
           "Item 1" has value 1.
           "Item 2" has value 2.
           "Item 3" has value 3.
