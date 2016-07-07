@@ -32,15 +32,9 @@ public class Download extends AsyncTask<String, String, String> {
     File mDownloadDirectory, mDownloadedFile;
     String mDownloadedFileFinalName, mDownloadedFileMD5;
     Boolean mStartCheckFile;
-    Integer mNextDownloadIndex = null;
+    Integer mNextDownloadIndex;
     DownloadManager.Request mRequest;
     BroadcastReceiver onDownloadFinishReceiver;
-
-    public Download(DownloadManager.Request request, File downloadDirectory, String downloadedFileFinalName) {
-        this.mRequest = request;
-        this.mDownloadDirectory = downloadDirectory;
-        this.mDownloadedFileFinalName = downloadedFileFinalName;
-    }
 
     public Download(DownloadManager.Request request, File downloadDirectory, String downloadedFileFinalName, Boolean isROM) {
         this.mRequest = request;
@@ -54,13 +48,6 @@ public class Download extends AsyncTask<String, String, String> {
         this.mDownloadDirectory = downloadDirectory;
         this.mDownloadedFileFinalName = downloadedFileFinalName;
         this.mDownloadedFileMD5 = downloadedFileMD5;
-    }
-
-    public Download(DownloadManager.Request request, File downloadDirectory, String downloadedFileFinalName, Integer nextDownloadIndex) {
-        this.mRequest = request;
-        this.mDownloadDirectory = downloadDirectory;
-        this.mDownloadedFileFinalName = downloadedFileFinalName;
-        this.mNextDownloadIndex = nextDownloadIndex;
     }
 
     public Download(DownloadManager.Request request, File downloadDirectory, String downloadedFileFinalName, String downloadedFileMD5, Integer nextDownloadIndex) {
@@ -211,11 +198,7 @@ public class Download extends AsyncTask<String, String, String> {
                                                 public void onClick(SweetAlertDialog sweetAlertDialog) {
                                                     cancel(true);
                                                     sweetAlertDialog.dismiss();
-                                                    if (mDownloadedFileMD5 != null && mDownloadedFileMD5.trim().length() != 0) {
-                                                        new Download(mRequest, mDownloadDirectory, mDownloadedFileFinalName, mDownloadedFileMD5, mNextDownloadIndex).execute();
-                                                    } else {
-                                                        new Download(mRequest, mDownloadDirectory, mDownloadedFileFinalName, mNextDownloadIndex).execute();
-                                                    }
+                                                    new Download(mRequest, mDownloadDirectory, mDownloadedFileFinalName, mDownloadedFileMD5, mNextDownloadIndex).execute();
                                                 }
                                             })
                                             .setCancelClickListener(new SweetAlertDialog.OnSweetClickListener() {
@@ -298,7 +281,7 @@ public class Download extends AsyncTask<String, String, String> {
                                     new Download(
                                             Utils.DOWNLOAD_REQUEST_LIST.get(mInt),
                                             Utils.DOWNLOAD_DIRECTORY_LIST.get(mInt),
-                                            Utils.DOWNLOADED_FILE_NAME_LIST.get(mInt), ++mInt).execute();
+                                            Utils.DOWNLOADED_FILE_NAME_LIST.get(mInt), null, ++mInt).execute();
                                     break;
                                 }
                             }

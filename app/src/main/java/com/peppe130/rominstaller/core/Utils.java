@@ -18,8 +18,8 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.ArrayList;
 
-import com.afollestad.materialdialogs.MaterialDialog;
 import com.peppe130.rominstaller.R;
+import com.afollestad.materialdialogs.MaterialDialog;
 
 
 @SuppressWarnings("ResultOfMethodCallIgnored, unused, ConstantConditions")
@@ -76,6 +76,72 @@ public class Utils {
 
     }
 
+    public static void StartSingleDownload(String downloadLink, String downloadDirectory, String downloadedFileFinalName, String downloadedFileMD5) {
+
+        Uri mDownloadLink = Uri.parse(downloadLink);
+        File mDownloadDirectory = new File(downloadDirectory);
+        DownloadManager.Request mRequest = new DownloadManager.Request(mDownloadLink);
+        mRequest.setDestinationInExternalPublicDir(mDownloadDirectory.getPath(), downloadedFileFinalName);
+
+        new Download(
+                mRequest,
+                mDownloadDirectory,
+                downloadedFileFinalName,
+                downloadedFileMD5).execute();
+    }
+
+    public static void StartMultipleDownloads() {
+
+        new Download(
+                Utils.DOWNLOAD_REQUEST_LIST.get(0),
+                Utils.DOWNLOAD_DIRECTORY_LIST.get(0),
+                Utils.DOWNLOADED_FILE_NAME_LIST.get(0),
+                Utils.DOWNLOADED_FILE_MD5_LIST.get(0), 1).execute();
+
+    }
+
+    public static void StartFlashRecovery(String downloadLink, String downloadDirectory, String downloadedFileFinalName, String recoveryPartition) {
+
+        Uri mDownloadLink = Uri.parse(downloadLink);
+        File mDownloadDirectory = new File(downloadDirectory);
+        DownloadManager.Request mRequest = new DownloadManager.Request(mDownloadLink);
+        mRequest.setDestinationInExternalPublicDir(mDownloadDirectory.getPath(), downloadedFileFinalName);
+
+        new FlashRecovery(
+                mRequest,
+                mDownloadDirectory,
+                downloadedFileFinalName,
+                recoveryPartition, false).execute();
+
+    }
+
+    public static void StartFlashRecoveryWithAddons(String downloadLink, String downloadDirectory, String downloadedFileFinalName, String recoveryPartition) {
+
+        Uri mDownloadLink = Uri.parse(downloadLink);
+        File mDownloadDirectory = new File(downloadDirectory);
+        DownloadManager.Request mRequest = new DownloadManager.Request(mDownloadLink);
+        mRequest.setDestinationInExternalPublicDir(mDownloadDirectory.getPath(), downloadedFileFinalName);
+
+        new FlashRecovery(
+                mRequest,
+                mDownloadDirectory,
+                downloadedFileFinalName,
+                recoveryPartition, true).execute();
+
+    }
+
+    public static void EnqueueDownload(String downloadLink, String downloadDirectory, String downloadedFileFinalName, String downloadedFileMD5) {
+
+        Utils.DOWNLOAD_LINK_LIST.add(Uri.parse(downloadLink));
+        Utils.DOWNLOAD_DIRECTORY_LIST.add(new File(downloadDirectory));
+        Utils.DOWNLOADED_FILE_NAME_LIST.add(downloadedFileFinalName);
+        Utils.DOWNLOADED_FILE_MD5_LIST.add(downloadedFileMD5);
+        DownloadManager.Request request = new DownloadManager.Request(Utils.DOWNLOAD_LINK_LIST.get(Utils.DOWNLOAD_LINK_LIST.size() - 1));
+        request.setDestinationInExternalPublicDir(Utils.DOWNLOAD_DIRECTORY_LIST.get(Utils.DOWNLOAD_DIRECTORY_LIST.size() - 1).getPath(), Utils.DOWNLOADED_FILE_NAME_LIST.get(Utils.DOWNLOADED_FILE_NAME_LIST.size() - 1));
+        Utils.DOWNLOAD_REQUEST_LIST.add(request);
+
+    }
+
     public static void FileChooser() {
 
         CustomFileChooser mCustomFileChooserDialog = new CustomFileChooser.Builder(ACTIVITY)
@@ -87,6 +153,7 @@ public class Utils {
     }
 
     public static void FollowMeDialog(String[] items, final String[] links) {
+
         new MaterialDialog.Builder(ACTIVITY)
                 .items(items)
                 .itemsCallback(new MaterialDialog.ListCallback() {
@@ -96,6 +163,7 @@ public class Utils {
                     }
                 })
                 .show();
+
     }
 
     public static void deleteFolderRecursively(String path) {
@@ -111,22 +179,27 @@ public class Utils {
                 e.printStackTrace();
             }
         }
+
     }
 
     public static int FetchPrimaryColor() {
+
         TypedValue mTypedValue = new TypedValue();
         TypedArray mTypedArray = ACTIVITY.obtainStyledAttributes(mTypedValue.data, new int[] {R.attr.colorPrimary});
         int mColor = mTypedArray.getColor(0, 0);
         mTypedArray.recycle();
         return mColor;
+
     }
 
     public static int FetchAccentColor() {
+
         TypedValue mTypedValue = new TypedValue();
         TypedArray mTypedArray = ACTIVITY.obtainStyledAttributes(mTypedValue.data, new int[] {R.attr.colorAccent});
         int mColor = mTypedArray.getColor(0, 0);
         mTypedArray.recycle();
         return mColor;
+
     }
 
     public static boolean copyAssetFolder(AssetManager manager, String fromPath, String toPath) {
