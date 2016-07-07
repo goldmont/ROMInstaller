@@ -92,7 +92,7 @@ Test mode is a special mode of the App that disables each control that would nor
 Trial mode is another special mode that allows the developer to safely test the App on every device, no matter if it is compatible or not. It was created to allow the developer to test the App on multiple devices without the need to update the compatibility list.
 
 # How to add device to compatibility list?
-To add a device to the compatibility list, open the **_Utils_** class, enter the device model on the list in quotation marks and separate from each other with a comma.
+To add a device to the compatibility list, open the **_Control Center_** class, enter the device model on the list in quotation marks and separate from each other with a comma.
 
 **Example:** <dl />
 ```java
@@ -100,7 +100,7 @@ public static String[] DEVICE_COMPATIBILITY_LIST = new String[] {"Device", "Devi
 ```
 
 # How to add MD5 to its list?
-As for the compatibility list, even for the MD5 just open the **_Utils_** class, enter the alphanumeric code on the list in quotation marks and separate from each other with a comma.
+As for the compatibility list, even for the MD5 just open the **_Control Center_** class, enter the alphanumeric code on the list in quotation marks and separate from each other with a comma.
 
 **Example:** <dl />
 ```java
@@ -114,7 +114,7 @@ public static String[] RECOVERY_MD5_LIST = new String[] {"5fb732eea3d3e2b407fa76
 ```
 
 # How to set which UI to use?
-To change **UI**, you have to open the **_Utils_** class and change the value to the boolean **_BUTTON_UI:_** <dl />
+To change **UI**, you have to open the **_Control Center_** class and change the value to the boolean **_BUTTON_UI:_** <dl />
 1. **_TRUE:_** Enables the UI with _"Next"_ and _"Back"_ buttons. <dl />
 2. **_FALSE:_** It enables the sensitive UI to the sliding of the finger on the screen.
 
