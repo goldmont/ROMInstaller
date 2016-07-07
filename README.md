@@ -10,7 +10,7 @@
 4. [What is Control Center?](https://github.com/peppe130/ROMInstaller#what-is-control-center)
 5. [What is test mode?](https://github.com/peppe130/ROMInstaller#what-is-test-mode)
 6. [What is trial mode?](https://github.com/peppe130/ROMInstaller#what-is-trial-mode)
-7. [How to add device to compatibility list?](https://github.com/peppe130/ROMInstaller#how-to-add-device-to-compatibility-list)
+7. [How to add a device to compatibility list?](https://github.com/peppe130/ROMInstaller#how-to-add-a-device-to-compatibility-list)
 8. [How to add MD5 to its list?](https://github.com/peppe130/ROMInstaller#how-to-add-md5-to-its-list)
 9. [How to set which UI to use?](https://github.com/peppe130/ROMInstaller#how-to-set-which-ui-to-use)
 10. [How to add Preferences?](https://github.com/peppe130/ROMInstaller#how-to-add-preferences)
@@ -91,7 +91,7 @@ Test mode is a special mode of the App that disables each control that would nor
 # What is trial mode?
 Trial mode is another special mode that allows the developer to safely test the App on every device, no matter if it is compatible or not. It was created to allow the developer to test the App on multiple devices without the need to update the compatibility list.
 
-# How to add device to compatibility list?
+# How to add a device to compatibility list?
 To add a device to the compatibility list, open the **_Control Center_** class, enter the device model on the list in quotation marks and separate from each other with a comma.
 
 **Example:** <dl />
