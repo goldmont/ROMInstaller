@@ -169,7 +169,7 @@ To change **UI**, you have to open the **_Control Center_** class and change the
             
         -->
     ```
-    * After defining the elements, you have to create the preference:
+    * After defining the items, you have to create the preference:
     
       ``` xml
           <PreferenceCategory
@@ -344,7 +344,7 @@ Utils.StartSingleDownload(mDownloadLink, mDownloadDirectory, mDownloadedFileFina
   
 3. Download ROM
 
-   **NB:** In _Contro Center_ there is a method called `DownloadROM()`. You can configure it to download the ROM and you can call it by typing `DownloadROM()` wherever you want.
+   **NB:** In _Control Center_ there is a method called `DownloadROM()`. You can configure it to download the ROM and you can call it by typing `DownloadROM()` wherever you want.
 
   ```java
   
@@ -364,7 +364,7 @@ ControlCenter.DownloadROM();
 
 // Download N°2
 	Utils.EnqueueDownload(
-	        "YourDownloadLink",
+		"YourDownloadLink",
 		getString(R.string.rom_folder),
 		"File2.zip", null);
 
