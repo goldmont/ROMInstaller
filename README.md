@@ -59,7 +59,7 @@ Make sure that your SDK is updated to the latest version available.
 ![Screenshots](https://raw.githubusercontent.com/peppe130/ROMInstaller/master/Screenshot/ScreenshotStep14.png)
 
 # Project structure
-Project is composed of two packages and one class:
+Project is composed of two packages and two class:
   1. **_activities:_** it contains all the App's activities.
   2. **_core:_** it contains the "heart" of the App.
   3. **_Control Center:_** it is the control center of the App (look [HERE](https://github.com/peppe130/ROMInstaller#what-is-control-center)).
