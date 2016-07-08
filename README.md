@@ -23,11 +23,13 @@
 
 
 # Introduction
-ROM Installer is the new revolutionary way to flash Custom ROM on every Android device (5.0+).
-What makes ROM Installer unique is its characteristic of being easily reprogrammable by the developer who adopts it. The App has two user interfaces (ButtonUI and SwipeUI), offers the possibility to add a splash and a disclaimer screen, to verify the integrity of the ROM before installing, to download any type of file in five different ways, to download and install a recovery.
+ROM Installer is a source code project. This means that you have to download the project and to [import](https://github.com/peppe130/ROMInstaller#how-to-import-the-project) it into your Android Studio. This project requires at least a basic knowledge of Android Studio and Java programming. ROM Installer is the new revolutionary way to flash Custom ROM on every Android device (5.0+). What makes ROM Installer unique is its characteristic of being easily reprogrammable by the developer who adopts it. The App has two user interfaces (ButtonUI and SwipeUI), offers the possibility to add a splash and a disclaimer screen, to verify the integrity of the ROM before installing, to download any type of file in five different ways, to download and install a recovery.
 
 
 # How to import the project?
+
+Make sure that your SDK is updated to the latest version available.
+
 1. Download the project from [GitHub](https://github.com/peppe130/ROMInstaller/archive/master.zip).
 2. Extract it and move its folder to the Android Studio's project directory.
 3. Give a new name to the project's folder. For example: _NewROMInstaller_.
@@ -41,7 +43,7 @@ What makes ROM Installer unique is its characteristic of being easily reprogramm
 9. Right click on the package name > **_"Refactor"_** > **_"Rename"_**.
 
 ![Screenshots](https://raw.githubusercontent.com/peppe130/ROMInstaller/master/Screenshot/Step9.png) <dl />
-10. From the new window that opens, click on **_"Rename Package"_**, enter a new name in lowercase
+10. From the new window that opens, click on **_"Rename Package"_**, enter a new name in **_lowercase_**
 <dl /> (for example: **_newrominstaller_**) and click on **_"Refactor"_**.
 
 ![Screenshots](https://raw.githubusercontent.com/peppe130/ROMInstaller/master/Screenshot/Step10.png) <dl />
@@ -256,7 +258,7 @@ After adding the preferences, you must set up the **XML** file in Java. To do th
 
 ```
 
-Then declare the Fragment newly created by adding it to the Fragment list. Under
+Then, declare the Fragment newly created by adding it to the Fragment list. Under
 
 ```java
 
@@ -537,6 +539,8 @@ unmount("/data");
 ```
 
 # How to change App colors?
+
+The App has two themes: **_AppTheme.Light_** and **_AppTheme.Dark._** To change the theme, open the **_AndroidManifest.xml_** file and edit the value of `android:theme=""`.
 
 To change the colors of the App, you need to open **_"colors.xml"_** file located in _"res"_ > _"values"_ menu.
 
