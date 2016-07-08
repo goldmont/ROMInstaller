@@ -65,7 +65,7 @@ Project is composed of two packages and two classes:
   3. **_Control Center:_** it is the control center of the App (look [HERE](https://github.com/peppe130/ROMInstaller#what-is-control-center)).
   4. **_FragmentsCollector:_** it is the preferences collector.
 
-**NB:** I will not provide any support for any changes made to the **_core_** package.
+**NB:** I will not provide any support for changes made to the **_core_** package.
 
 # What is Control Center?
 
