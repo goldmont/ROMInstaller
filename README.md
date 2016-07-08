@@ -346,16 +346,9 @@ Utils.StartSingleDownload(mDownloadLink, mDownloadDirectory, mDownloadedFileFina
 
 	**NB:**
 
-	1. In _Control Center_ there is a method called `DownloadROM()`. You can configure it to download the ROM and you can call it by typing `DownloadROM()` wherever you want.
+	1. In _Control Center_ there is a method called `DownloadROM()`. You can configure it to download the ROM and you can call it by typing `ControlCenter.DownloadROM();` wherever you want.
 		
 	2. Remember to add ROM MD5 to [ROM\_MD5\_LIST](https://github.com/peppe130/ROMInstaller#how-to-add-md5-to-its-list).
-
-
-  ```java
-  
-ControlCenter.DownloadROM();
-  
-  ```
   
 4. Multiple downloads without MD5 check
 
