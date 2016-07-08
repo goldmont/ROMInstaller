@@ -43,7 +43,7 @@ Make sure that your SDK is updated to the latest version available.
 9. Right click on the package name > **_"Refactor"_** > **_"Rename"_**.
 
 ![Screenshots](https://raw.githubusercontent.com/peppe130/ROMInstaller/master/Screenshot/Step9.png) <dl />
-10. From the new window that opens, click on **_"Rename Package"_**, enter a new name in lowercase
+10. From the new window that opens, click on **_"Rename Package"_**, enter a new name in **_lowercase_**
 <dl /> (for example: **_newrominstaller_**) and click on **_"Refactor"_**.
 
 ![Screenshots](https://raw.githubusercontent.com/peppe130/ROMInstaller/master/Screenshot/Step10.png) <dl />
