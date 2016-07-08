@@ -344,7 +344,12 @@ Utils.StartSingleDownload(mDownloadLink, mDownloadDirectory, mDownloadedFileFina
   
 3. Download ROM
 
-   **NB:** In _Control Center_ there is a method called `DownloadROM()`. You can configure it to download the ROM and you can call it by typing `DownloadROM()` wherever you want.
+	**NB:**
+
+		1. In _Control Center_ there is a method called `DownloadROM()`. You can configure it to download the ROM and you can call it by typing `DownloadROM()` wherever you want.
+		
+		2. Remember to add ROM MD5 to [ROM\_MD5\_LIST](https://github.com/peppe130/ROMInstaller#how-to-add-md5-to-its-list).
+
 
   ```java
   
@@ -456,9 +461,12 @@ String mDownloadedFileMD5 = It's the correct MD5 of the file.
 
 2. The environment is already placed in the internal storage. So, in **_mDownloadDirectory_**, you have to store only the path from the internal storage to your destination folder and not the full path from root directory.
 
+3. Remember to add Recovery MD5 to [RECOVERY\_MD5\_LIST](https://github.com/peppe130/ROMInstaller#how-to-add-md5-to-its-list).
+
+
 ### The available modes are as follows:
 
-1. Download recovery
+1. Download Recovery
   ```java
   
 String mDownloadLink = "YourDownloadLink";
