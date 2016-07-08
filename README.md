@@ -279,14 +279,18 @@ write:
 **Example:** <dl />
 ```java
 
-  if (mListFragment != null) {
-      mListFragment.clear();
-  }
+public static void Setup() {
 
-  mListFragment.add(new YourFragment());
-  mListFragment.add(new YourFragment2());
-  mListFragment.add(new YourFragment3());
-  ...
+	if (mListFragment != null) {
+		mListFragment.clear();
+	}
+		
+	mListFragment.add(new YourFragment());
+	mListFragment.add(new YourFragment2());
+	mListFragment.add(new YourFragment3());
+	...
+
+}
 
 ```
 
