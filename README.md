@@ -258,7 +258,7 @@ After adding the preferences, you must set up the **XML** file in Java. To do th
 
 ```
 
-Then declare the Fragment newly created by adding it to the Fragment list. Under
+Then, declare the Fragment newly created by adding it to the Fragment list. Under
 
 ```java
 
