@@ -94,7 +94,7 @@ Test mode is a special mode of the App that disables each control that would nor
 Trial mode is another special mode that allows the developer to safely test the App on every device, no matter if it is compatible or not. It was created to allow the developer to test the App on multiple devices without the need to update the compatibility list.
 
 # How to add a device to compatibility list?
-To add a device to the compatibility list, open the **_Control Center_** class, enter the device model on the list in quotation marks and separate from each other with a comma.
+To add a device to the compatibility list, open the **_Control Center_** class, enter the device model in quotation marks on the list and separate from each other with a comma.
 
 **Example:** <dl />
 ```java
@@ -102,7 +102,7 @@ public static String[] DEVICE_COMPATIBILITY_LIST = new String[] {"Device", "Devi
 ```
 
 # How to add MD5 to its list?
-As for the compatibility list, even for the MD5 just open the **_Control Center_** class, enter the alphanumeric code on the list in quotation marks and separate from each other with a comma.
+As for the compatibility list, even for the MD5 just open the **_Control Center_** class, enter the alphanumeric code in quotation marks on the list and separate from each other with a comma.
 
 **Example:** <dl />
 ```java
