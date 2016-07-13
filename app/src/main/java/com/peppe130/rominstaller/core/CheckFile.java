@@ -148,20 +148,7 @@ public class CheckFile extends AsyncTask<String, String, Boolean> {
             sweetAlertDialog.show();
         } else if ((Utils.ZIP_FILE.exists()) && result) {
             mVibrator.vibrate(1500);
-            if (!RootTools.isAccessGiven()) {
-                SweetAlertDialog sweetAlertDialog = new SweetAlertDialog(Utils.ACTIVITY, SweetAlertDialog.ERROR_TYPE)
-                        .setTitleText(Utils.ACTIVITY.getString(R.string.no_root_access_dialog_title))
-                        .setContentText(Utils.ACTIVITY.getString(R.string.no_root_access_dialog_message))
-                        .setConfirmText(Utils.ACTIVITY.getString(R.string.close_button))
-                        .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
-                            @Override
-                            public void onClick(SweetAlertDialog sDialog) {
-                                Utils.ACTIVITY.finishAffinity();
-                            }
-                        });
-                sweetAlertDialog.setCancelable(false);
-                sweetAlertDialog.show();
-            } else {
+            if (RootTools.isAccessGiven()) {
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
@@ -192,6 +179,19 @@ public class CheckFile extends AsyncTask<String, String, Boolean> {
                         }
                     }
                 }, 200);
+            } else {
+                SweetAlertDialog sweetAlertDialog = new SweetAlertDialog(Utils.ACTIVITY, SweetAlertDialog.ERROR_TYPE)
+                        .setTitleText(Utils.ACTIVITY.getString(R.string.no_root_access_dialog_title))
+                        .setContentText(Utils.ACTIVITY.getString(R.string.no_root_access_dialog_message))
+                        .setConfirmText(Utils.ACTIVITY.getString(R.string.close_button))
+                        .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                            @Override
+                            public void onClick(SweetAlertDialog sDialog) {
+                                Utils.ACTIVITY.finishAffinity();
+                            }
+                        });
+                sweetAlertDialog.setCancelable(false);
+                sweetAlertDialog.show();
             }
         } else if ((Utils.ZIP_FILE.exists()) && !result) {
             String mContent = (String.format(Utils.ACTIVITY.getString(R.string.zip_file_md5_mismatch_dialog_message), Utils.FILE_NAME));

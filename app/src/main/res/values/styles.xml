@@ -59,47 +59,68 @@
     </style>
 
     <style name="Theme.AppCompat.Translucent" parent="Theme.AppCompat.NoActionBar">
+
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowBackground">@android:color/transparent</item>
         <item name="android:colorBackgroundCacheHint">@null</item>
         <item name="android:windowIsTranslucent">true</item>
         <item name="android:windowAnimationStyle">@android:style/Animation</item>
         <item name="colorPrimaryDark">#00000000</item>
+
     </style>
 
     <style name="Theme.Wallpaper.NoTitleBar.Fullscreen" parent="Theme.Wallpaper.NoTitleBar.Fullscreen">
+
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowFullscreen">true</item>
         <item name="android:windowIsTranslucent">false</item>
         <item name="android:windowAnimationStyle">@android:style/Animation</item>
+
     </style>
 
     <style name="AppTheme.Dialog.Light" parent="Theme.AppCompat.Light.Dialog">
+
         <item name="colorAccent">@color/colorAccent.Theme.Light</item>
         <item name="android:textColor">@android:color/black</item>
         <item name="android:textAppearanceMedium">@style/TextAppearance.AppCompat.Subhead</item>
         <item name="android:textAppearanceMediumInverse">@style/TextAppearance.AppCompat.Subhead.Inverse</item>
+
     </style>
 
     <style name="AppTheme.Dialog.Alert.Light" parent="Theme.AppCompat.Light.Dialog.Alert">
+
         <item name="colorAccent">@color/colorAccent.Theme.Light</item>
         <item name="android:textColor">@android:color/black</item>
         <item name="android:textAppearanceMedium">@style/TextAppearance.AppCompat.Subhead</item>
         <item name="android:textAppearanceMediumInverse">@style/TextAppearance.AppCompat.Subhead.Inverse</item>
+
     </style>
 
     <style name="AppTheme.Dialog.Dark" parent="Theme.AppCompat.Light.Dialog">
+
         <item name="colorAccent">@color/colorAccent.Theme.Dark</item>
         <item name="android:textColor">@android:color/black</item>
         <item name="android:textAppearanceMedium">@style/TextAppearance.AppCompat.Subhead</item>
         <item name="android:textAppearanceMediumInverse">@style/TextAppearance.AppCompat.Subhead.Inverse</item>
+
     </style>
 
     <style name="AppTheme.Dialog.Alert.Dark" parent="Theme.AppCompat.Light.Dialog.Alert">
+
         <item name="colorAccent">@color/colorAccent.Theme.Dark</item>
         <item name="android:textColor">@android:color/black</item>
         <item name="android:textAppearanceMedium">@style/TextAppearance.AppCompat.Subhead</item>
         <item name="android:textAppearanceMediumInverse">@style/TextAppearance.AppCompat.Subhead.Inverse</item>
+
+    </style>
+
+    <style name="RecyclerViewStyle">
+
+        <item name="android:clipChildren">true</item>
+        <item name="android:clipToPadding">false</item>
+        <item name="android:scrollbarStyle">outsideOverlay</item>
+        <item name="android:scrollbars">vertical</item>
+
     </style>
 
 </resources>

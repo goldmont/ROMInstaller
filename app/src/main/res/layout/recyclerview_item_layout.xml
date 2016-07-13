@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fancy="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="75dp"
+    android:background="?attr/selectableItemBackground"
+    android:clickable="true">
+
+    <mehdi.sakout.fancybuttons.FancyButton
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:padding="15dp"
+        android:layout_marginBottom="2dp"
+        android:layout_marginTop="2dp"
+        fancy:fb_text="Item"
+        fancy:fb_borderWidth="2dp"
+        fancy:fb_radius="5dp">
+    </mehdi.sakout.fancybuttons.FancyButton>
+
+</FrameLayout>

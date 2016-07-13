@@ -54,6 +54,8 @@ public class MainActivity extends AppCompatActivity implements CustomFileChooser
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_layout);
 
+        Utils.ACTIVITY = this;
+
         if (Utils.SHOULD_CLOSE_ACTIVITY) {
             Utils.SHOULD_CLOSE_ACTIVITY = false;
             if (ControlCenter.SHOULD_SHOW_DISCLAIMER_SCREEN) {

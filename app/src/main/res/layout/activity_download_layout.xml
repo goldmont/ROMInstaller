@@ -1,136 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:fancy="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:ignore="UselessParent"
-    tools:context="com.peppe130.rominstaller.activities.DownloadActivity">
+<RelativeLayout android:id="@+id/relativeLayout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <RelativeLayout
-        android:id="@+id/relativeLayout"
-        android:layout_width="wrap_content"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        style="@style/RecyclerViewStyle"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
         android:paddingTop="@dimen/activity_vertical_margin"
-        android:paddingBottom="@dimen/activity_vertical_margin">
+        android:paddingBottom="@dimen/activity_vertical_margin"/>
 
-        <mehdi.sakout.fancybuttons.FancyButton
-            android:id="@+id/download_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentStart="true"
-            android:padding="15dp"
-            fancy:fb_text="Download test\n(Without MD5 check)"
-            fancy:fb_borderWidth="2dp"
-            fancy:fb_radius="5dp" />
-
-        <mehdi.sakout.fancybuttons.FancyButton
-            android:id="@+id/download_button2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/download_button"
-            android:layout_alignParentStart="true"
-            android:layout_alignEnd="@+id/download_button"
-            android:layout_marginTop="5dp"
-            android:padding="15dp"
-            fancy:fb_text="Download test\n(With MD5 check - MD5 matches)"
-            fancy:fb_borderWidth="2dp"
-            fancy:fb_radius="5dp" />
-
-        <mehdi.sakout.fancybuttons.FancyButton
-            android:id="@+id/download_button3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/download_button2"
-            android:layout_alignEnd="@+id/download_button2"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="5dp"
-            android:padding="15dp"
-            fancy:fb_text="Download test\n(With MD5 check - MD5 does not match)"
-            fancy:fb_borderWidth="2dp"
-            fancy:fb_radius="5dp" />
-
-        <mehdi.sakout.fancybuttons.FancyButton
-            android:id="@+id/download_button4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/download_button3"
-            android:layout_alignEnd="@+id/download_button3"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="5dp"
-            android:padding="15dp"
-            fancy:fb_text="Download test\n(Download ROM)"
-            fancy:fb_borderWidth="2dp"
-            fancy:fb_radius="5dp" />
-
-        <mehdi.sakout.fancybuttons.FancyButton
-            android:id="@+id/download_button5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/download_button4"
-            android:layout_alignEnd="@+id/download_button4"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="5dp"
-            android:padding="15dp"
-            fancy:fb_text="Download test\n(Download Recovery)"
-            fancy:fb_borderWidth="2dp"
-            fancy:fb_radius="5dp" />
-
-        <mehdi.sakout.fancybuttons.FancyButton
-            android:id="@+id/download_button6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/download_button5"
-            android:layout_alignEnd="@+id/download_button5"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="5dp"
-            android:padding="15dp"
-            fancy:fb_text="Download test\n(Download Recovery with Add-Ons)"
-            fancy:fb_borderWidth="2dp"
-            fancy:fb_radius="5dp" />
-
-        <mehdi.sakout.fancybuttons.FancyButton
-            android:id="@+id/download_button7"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/download_button6"
-            android:layout_alignEnd="@+id/download_button6"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="5dp"
-            android:padding="15dp"
-            fancy:fb_text="Download test\n(Multiple downloads without MD5 check)"
-            fancy:fb_borderWidth="2dp"
-            fancy:fb_radius="5dp" />
-
-        <mehdi.sakout.fancybuttons.FancyButton
-            android:id="@+id/download_button8"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/download_button7"
-            android:layout_alignEnd="@+id/download_button7"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="5dp"
-            android:padding="15dp"
-            fancy:fb_text="Download test\n(Multiple downloads with MD5 check)"
-            fancy:fb_borderWidth="2dp"
-            fancy:fb_radius="5dp" />
-
-        <mehdi.sakout.fancybuttons.FancyButton
-            android:id="@+id/download_button9"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/download_button8"
-            android:layout_alignEnd="@+id/download_button8"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="5dp"
-            android:padding="15dp"
-            fancy:fb_text="Download test\n(Multiple downloads mixed)"
-            fancy:fb_borderWidth="2dp"
-            fancy:fb_radius="5dp" />
-
-    </RelativeLayout>
-
-</ScrollView>
+</RelativeLayout>

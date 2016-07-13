@@ -1,23 +1,29 @@
 package com.peppe130.rominstaller.activities;
 
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.os.Environment;
 import android.os.Handler;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.RelativeLayout;
+import android.view.ViewGroup;
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 
 import cn.pedant.SweetAlert.SweetAlertDialog;
 import mehdi.sakout.fancybuttons.FancyButton;
+import com.h6ah4i.android.widget.advrecyclerview.utils.AbstractDraggableItemViewHolder;
 import com.mikepenz.iconics.IconicsDrawable;
 import com.peppe130.rominstaller.ControlCenter;
 import com.peppe130.rominstaller.R;
@@ -28,382 +34,105 @@ import com.peppe130.rominstaller.core.CustomFileChooser;
 @SuppressWarnings("ResultOfMethodCallIgnored, ConstantConditions")
 public class DownloadActivity extends AppCompatActivity implements CustomFileChooser.FileCallback {
 
-    FancyButton BUTTON, BUTTON2, BUTTON3, BUTTON4, BUTTON5, BUTTON6, BUTTON7, BUTTON8, BUTTON9;
-    String mDownloadLink, mDownloadDirectory, mDownloadedFileFinalName, mDownloadedFileMD5, mRecoveryPartition;
-    Integer mBorderColor;
+    RecyclerView mRecyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_download_layout);
 
-        BUTTON = (FancyButton) findViewById(R.id.download_button);
-        BUTTON2 = (FancyButton) findViewById(R.id.download_button2);
-        BUTTON3 = (FancyButton) findViewById(R.id.download_button3);
-        BUTTON4 = (FancyButton) findViewById(R.id.download_button4);
-        BUTTON5 = (FancyButton) findViewById(R.id.download_button5);
-        BUTTON6 = (FancyButton) findViewById(R.id.download_button6);
-        BUTTON7 = (FancyButton) findViewById(R.id.download_button7);
-        BUTTON8 = (FancyButton) findViewById(R.id.download_button8);
-        BUTTON9 = (FancyButton) findViewById(R.id.download_button9);
+        mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        mRecyclerView.setAdapter(new Adapter());
 
-        RelativeLayout mRelativeLayout = (RelativeLayout) findViewById(R.id.relativeLayout);
-        for (int mInt = 0; mInt != mRelativeLayout.getChildCount(); mInt++) {
-            mRelativeLayout.getChildAt(mInt).setBackgroundColor(Utils.FetchPrimaryColor());
-            mBorderColor = ContextCompat.getColor(DownloadActivity.this, ButtonBorderColorChooser());
+    }
+
+    public static class ViewHolder extends AbstractDraggableItemViewHolder {
+
+        FancyButton mButton;
+
+        public ViewHolder(View itemView) {
+            super(itemView);
+            mButton = (FancyButton) itemView.findViewById(R.id.button);
+            mButton.setBackgroundColor(Utils.FetchPrimaryColor());
         }
 
-        // Single download without MD5 check
-        BUTTON.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                mDownloadLink = "http://www.mediafire.com/download/z7fn3nw1vn5oo8a/Test.zip";
-                mDownloadDirectory = getString(R.string.rom_folder);
-                mDownloadedFileFinalName = "Test.zip";
-                mDownloadedFileMD5 = null;
+    }
 
-                Utils.StartSingleDownload(mDownloadLink, mDownloadDirectory, mDownloadedFileFinalName, mDownloadedFileMD5);
+    public static class Item {
+        public final long ID;
+        public final String TEXT;
+
+        public Item(long id, String text) {
+            this.ID = id;
+            this.TEXT = text;
+        }
+    }
+
+    public class Adapter extends RecyclerView.Adapter<ViewHolder> {
+
+        List<Item> mItems;
+
+        public Adapter() {
+            setHasStableIds(true);
+
+            mItems = new ArrayList<>();
+            for (int mInt = 0; mInt < ControlCenter.AVAILABLE_DOWNLOADS_NUMBER; mInt++) {
+                mItems.add(new Item(mInt, ControlCenter.DownloadNameGetter(mInt)));
             }
-        });
 
-        BUTTON.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                switch (motionEvent.getAction()) {
-                    case MotionEvent.ACTION_DOWN:
-                        BUTTON.setBorderColor(mBorderColor);
-                        return false;
-                    case MotionEvent.ACTION_UP:
-                        BUTTON.setBorderColor(0);
-                        return false;
-                    case MotionEvent.ACTION_CANCEL:
-                        BUTTON.setBorderColor(0);
-                        return false;
+        }
+
+        @Override
+        public long getItemId(int position) {
+            return mItems.get(position).ID;
+        }
+
+        @Override
+        public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+            View mView = LayoutInflater.from(parent.getContext()).inflate(R.layout.recyclerview_item_layout, parent, false);
+            return new ViewHolder(mView);
+        }
+
+        @Override
+        public void onBindViewHolder(final ViewHolder holder, final int position) {
+            final Item mItem = mItems.get(position);
+            holder.mButton.setText(mItem.TEXT);
+            holder.mButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    ControlCenter.DownloadActionGetter((int) mItem.ID);
                 }
-                return false;
-            }
-        });
-
-        // Single download with MD5 check - MD5 matches
-        BUTTON2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                mDownloadLink = "http://www.mediafire.com/download/a0jswcs84smbi8i/Test2.zip";
-                mDownloadDirectory = getString(R.string.rom_folder);
-                mDownloadedFileFinalName = "Test2.zip";
-                mDownloadedFileMD5 = "3a416cafb312cb15ce6b3b09249fe6e6";
-
-                Utils.StartSingleDownload(mDownloadLink, mDownloadDirectory, mDownloadedFileFinalName, mDownloadedFileMD5);
-            }
-        });
-
-        BUTTON2.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                switch (motionEvent.getAction()) {
-                    case MotionEvent.ACTION_DOWN:
-                        BUTTON2.setBorderColor(mBorderColor);
-                        return false;
-                    case MotionEvent.ACTION_UP:
-                        BUTTON2.setBorderColor(0);
-                        return false;
-                    case MotionEvent.ACTION_CANCEL:
-                        BUTTON2.setBorderColor(0);
-                        return false;
+            });
+            holder.mButton.setOnTouchListener(new View.OnTouchListener() {
+                @Override
+                public boolean onTouch(View view, MotionEvent motionEvent) {
+                    switch (motionEvent.getAction()) {
+                        case MotionEvent.ACTION_DOWN:
+                            holder.mButton.setBorderColor(ContextCompat.getColor(DownloadActivity.this, ButtonBorderColorChooser()));
+                            break;
+                        case MotionEvent.ACTION_UP:
+                            holder.mButton.setBorderColor(0);
+                            break;
+                        case MotionEvent.ACTION_CANCEL:
+                            holder.mButton.setBorderColor(0);
+                            break;
+                    }
+                    return false;
                 }
-                return false;
-            }
-        });
+            });
+        }
 
-        // Single download with MD5 check - MD5 does not match
-        BUTTON3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                mDownloadLink = "http://www.mediafire.com/download/7waxhxzanc31y1z/Test3.zip";
-                mDownloadDirectory = getString(R.string.rom_folder);
-                mDownloadedFileFinalName = "Test3.zip";
-                mDownloadedFileMD5 = "3a416cafb312cb15ce6b3b09249fe6e6";
-
-                Utils.StartSingleDownload(mDownloadLink, mDownloadDirectory, mDownloadedFileFinalName, mDownloadedFileMD5);
-            }
-        });
-
-        BUTTON3.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                switch (motionEvent.getAction()) {
-                    case MotionEvent.ACTION_DOWN:
-                        BUTTON3.setBorderColor(mBorderColor);
-                        return false;
-                    case MotionEvent.ACTION_UP:
-                        BUTTON3.setBorderColor(0);
-                        return false;
-                    case MotionEvent.ACTION_CANCEL:
-                        BUTTON3.setBorderColor(0);
-                        return false;
-                }
-                return false;
-            }
-        });
-
-        // Download ROM
-        BUTTON4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                ControlCenter.DownloadROM();
-            }
-        });
-
-        BUTTON4.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                switch (motionEvent.getAction()) {
-                    case MotionEvent.ACTION_DOWN:
-                        BUTTON4.setBorderColor(mBorderColor);
-                        return false;
-                    case MotionEvent.ACTION_UP:
-                        BUTTON4.setBorderColor(0);
-                        return false;
-                    case MotionEvent.ACTION_CANCEL:
-                        BUTTON4.setBorderColor(0);
-                        return false;
-                }
-                return false;
-            }
-        });
-
-        // Download Recovery
-        BUTTON5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                mDownloadLink = "http://www.mediafire.com/download/z7fn3nw1vn5oo8a/Test.zip";
-                mDownloadDirectory = getString(R.string.rom_folder);
-                mDownloadedFileFinalName = "Recovery.zip";
-                mRecoveryPartition = "YourDeviceRecoveryPartition";
-
-                Utils.StartFlashRecovery(mDownloadLink, mDownloadDirectory, mDownloadedFileFinalName, mRecoveryPartition);
-            }
-        });
-
-        BUTTON5.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                switch (motionEvent.getAction()) {
-                    case MotionEvent.ACTION_DOWN:
-                        BUTTON5.setBorderColor(mBorderColor);
-                        return false;
-                    case MotionEvent.ACTION_UP:
-                        BUTTON5.setBorderColor(0);
-                        return false;
-                    case MotionEvent.ACTION_CANCEL:
-                        BUTTON5.setBorderColor(0);
-                        return false;
-                }
-                return false;
-            }
-        });
-
-        // Download Recovery with Add-Ons
-        BUTTON6.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // Download Recovery
-                mDownloadLink = "http://www.mediafire.com/download/z7fn3nw1vn5oo8a/Test.zip";
-                mDownloadDirectory = getString(R.string.rom_folder);
-                mDownloadedFileFinalName = "Recovery.zip";
-                mRecoveryPartition = "YourDeviceRecoveryPartition";
-
-                // Download Add-On N°1
-                Utils.EnqueueDownload(
-                        "http://www.mediafire.com/download/z7fn3nw1vn5oo8a/Test.zip",
-                        getString(R.string.rom_folder),
-                        "Add-On.zip",
-                        "5fb732eea3d3e2b407fa7685c27a5354");
-
-                // Download Add-On N°2
-                Utils.EnqueueDownload(
-                        "http://www.mediafire.com/download/a0jswcs84smbi8i/Test2.zip",
-                        getString(R.string.rom_folder),
-                        "Add-On2.zip",
-                        "3a416cafb312cb15ce6b3b09249fe6e6");
-
-                // Download Add-On N°3
-                Utils.EnqueueDownload(
-                        "http://www.mediafire.com/download/7waxhxzanc31y1z/Test3.zip",
-                        getString(R.string.rom_folder),
-                        "Add-On3.zip",
-                        "f946055c11a6a25d202f81171944fa1e");
-
-                Utils.StartFlashRecoveryWithAddons(mDownloadLink, mDownloadDirectory, mDownloadedFileFinalName, mRecoveryPartition);
-            }
-        });
-
-        BUTTON6.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                switch (motionEvent.getAction()) {
-                    case MotionEvent.ACTION_DOWN:
-                        BUTTON6.setBorderColor(mBorderColor);
-                        return false;
-                    case MotionEvent.ACTION_UP:
-                        BUTTON6.setBorderColor(0);
-                        return false;
-                    case MotionEvent.ACTION_CANCEL:
-                        BUTTON6.setBorderColor(0);
-                        return false;
-                }
-                return false;
-            }
-        });
-
-        // Multiple downloads without MD5 check
-        BUTTON7.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // Download N°1
-                Utils.EnqueueDownload(
-                        "http://www.mediafire.com/download/z7fn3nw1vn5oo8a/Test.zip",
-                        getString(R.string.rom_folder),
-                        "Test.zip", null);
-
-                // Download N°2
-                Utils.EnqueueDownload(
-                        "http://www.mediafire.com/download/a0jswcs84smbi8i/Test2.zip",
-                        getString(R.string.rom_folder),
-                        "Test2.zip", null);
-
-                // Download N°3
-                Utils.EnqueueDownload(
-                        "http://www.mediafire.com/download/7waxhxzanc31y1z/Test3.zip",
-                        getString(R.string.rom_folder),
-                        "Test3.zip", null);
-
-                Utils.StartMultipleDownloads();
-            }
-        });
-
-        BUTTON7.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                switch (motionEvent.getAction()) {
-                    case MotionEvent.ACTION_DOWN:
-                        BUTTON7.setBorderColor(mBorderColor);
-                        return false;
-                    case MotionEvent.ACTION_UP:
-                        BUTTON7.setBorderColor(0);
-                        return false;
-                    case MotionEvent.ACTION_CANCEL:
-                        BUTTON7.setBorderColor(0);
-                        return false;
-                }
-                return false;
-            }
-        });
-
-        // Multiple downloads with MD5 check
-        BUTTON8.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // Download N°1
-                Utils.EnqueueDownload(
-                        "http://www.mediafire.com/download/z7fn3nw1vn5oo8a/Test.zip",
-                        getString(R.string.rom_folder),
-                        "Test.zip",
-                        "5fb732eea3d3e2b407fa7685c27a5354");
-
-                // Download N°2
-                Utils.EnqueueDownload(
-                        "http://www.mediafire.com/download/a0jswcs84smbi8i/Test2.zip",
-                        getString(R.string.rom_folder),
-                        "Test2.zip",
-                        "3a416cafb312cb15ce6b3b09249fe6e6");
-
-                // Download N°3
-                Utils.EnqueueDownload(
-                        "http://www.mediafire.com/download/7waxhxzanc31y1z/Test3.zip",
-                        getString(R.string.rom_folder),
-                        "Test3.zip",
-                        "f946055c11a6a25d202f81171944fa1e");
-
-                Utils.StartMultipleDownloads();
-            }
-        });
-
-        BUTTON8.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                switch (motionEvent.getAction()) {
-                    case MotionEvent.ACTION_DOWN:
-                        BUTTON8.setBorderColor(mBorderColor);
-                        return false;
-                    case MotionEvent.ACTION_UP:
-                        BUTTON8.setBorderColor(0);
-                        return false;
-                    case MotionEvent.ACTION_CANCEL:
-                        BUTTON8.setBorderColor(0);
-                        return false;
-                }
-                return false;
-            }
-        });
-
-        // Multiple downloads mixed
-        BUTTON9.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // Download N°1 - MD5 matches
-                Utils.EnqueueDownload(
-                        "http://www.mediafire.com/download/z7fn3nw1vn5oo8a/Test.zip",
-                        getString(R.string.rom_folder),
-                        "Test.zip",
-                        "5fb732eea3d3e2b407fa7685c27a5354");
-
-                // Download N°2 - MD5 does not match
-                Utils.EnqueueDownload(
-                        "http://www.mediafire.com/download/a0jswcs84smbi8i/Test2.zip",
-                        getString(R.string.rom_folder),
-                        "Test2.zip",
-                        "3a416cafb312cb15ce6b3b09249fe6e6sd");
-
-                // Download N°3 - No MD5 check
-                Utils.EnqueueDownload(
-                        "http://www.mediafire.com/download/7waxhxzanc31y1z/Test3.zip",
-                        getString(R.string.rom_folder),
-                        "Test3.zip", null);
-
-                // Download N°4 - MD5 matches
-                Utils.EnqueueDownload(
-                        "http://www.mediafire.com/download/7waxhxzanc31y1z/Test3.zip",
-                        getString(R.string.rom_folder),
-                        "Test4.zip",
-                        "f946055c11a6a25d202f81171944fa1e");
-
-                Utils.StartMultipleDownloads();
-            }
-        });
-
-        BUTTON9.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                switch (motionEvent.getAction()) {
-                    case MotionEvent.ACTION_DOWN:
-                        BUTTON9.setBorderColor(mBorderColor);
-                        return false;
-                    case MotionEvent.ACTION_UP:
-                        BUTTON9.setBorderColor(0);
-                        return false;
-                    case MotionEvent.ACTION_CANCEL:
-                        BUTTON9.setBorderColor(0);
-                        return false;
-                }
-                return false;
-            }
-        });
+        @Override
+        public int getItemCount() {
+            return mItems.size();
+        }
 
     }
 
     @Nullable
     public static Integer ButtonBorderColorChooser() {
+
         Integer mTheme = null;
 
         try {
