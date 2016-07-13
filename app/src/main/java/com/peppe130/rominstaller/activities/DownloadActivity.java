@@ -47,7 +47,7 @@ public class DownloadActivity extends AppCompatActivity implements CustomFileCho
 
     }
 
-    public static class ViewHolder extends AbstractDraggableItemViewHolder {
+    public class ViewHolder extends AbstractDraggableItemViewHolder {
 
         FancyButton mButton;
 
@@ -59,7 +59,7 @@ public class DownloadActivity extends AppCompatActivity implements CustomFileCho
 
     }
 
-    public static class Item {
+    public class Item {
         public final long ID;
         public final String TEXT;
 
@@ -131,7 +131,7 @@ public class DownloadActivity extends AppCompatActivity implements CustomFileCho
     }
 
     @Nullable
-    public static Integer ButtonBorderColorChooser() {
+    public Integer ButtonBorderColorChooser() {
 
         Integer mTheme = null;
 
