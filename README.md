@@ -336,18 +336,18 @@ public static void DownloadActionGetter(Integer mInt) {
 
         switch (mInt) {
             case 0: // Single download without MD5 check
-                String mDownloadLink = "YourDownloadLink";
-                String mDownloadDirectory = getString(R.string.rom_folder);
-                String mDownloadedFileFinalName = "File.zip";
-                String mDownloadedFileMD5 = null;
+                mDownloadLink = "YourDownloadLink";
+                mDownloadDirectory = getString(R.string.rom_folder);
+                mDownloadedFileFinalName = "File.zip";
+                mDownloadedFileMD5 = null;
 
                 Utils.StartSingleDownload(mDownloadLink, mDownloadDirectory, mDownloadedFileFinalName, mDownloadedFileMD5);
                 break;
             case 1: // Single download with MD5 check
-                String mDownloadLink = "YourDownloadLink";
-                String mDownloadDirectory = getString(R.string.rom_folder);
-                String mDownloadedFileFinalName = "File.zip";
-                String mDownloadedFileMD5 = "3a416cafb312cb15ce6b3b09249fe6e6";
+                mDownloadLink = "YourDownloadLink";
+                mDownloadDirectory = getString(R.string.rom_folder);
+                mDownloadedFileFinalName = "File.zip";
+                mDownloadedFileMD5 = "3a416cafb312cb15ce6b3b09249fe6e6";
 
                 Utils.StartSingleDownload(mDownloadLink, mDownloadDirectory, mDownloadedFileFinalName, mDownloadedFileMD5);
                 break;
