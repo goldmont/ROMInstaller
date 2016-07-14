@@ -83,6 +83,7 @@ The following items belong to **_Control Center_**:
 * _SHOULD\_SHOW\_DISCLAIMER\_SCREEN_ = If set to **_true_**, it enables the disclaimer screen.
 * _SPLASH\_SCREEN\_DELAY_ = Duration time of splash screen (value in milliseconds).
 * _SPLASH\_SCREEN\_IMAGE_ = Image to display in the splash screen.
+* _AVAILABLE\_DOWNLOADS\_NUMBER_ = Number of download buttons.
 * _SETTINGS\_ICON_ = Toolbar Settings icon.
 * _CHANGELOG\_ICON_ = Toolbar Changelog icon.
 * _DEFAULT\_OPTIONS\_ICON_ = Toolbar "Default options" icon.
