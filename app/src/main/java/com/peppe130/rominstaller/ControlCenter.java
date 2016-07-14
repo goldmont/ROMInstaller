@@ -131,6 +131,7 @@ public class ControlCenter {
     @Nullable
     @Contract(pure = true)
     public static String DownloadNameGetter(Integer mInt) {
+
         switch (mInt) {
             case 0:
                 return "Download test\n(Without MD5 check)";
@@ -150,13 +151,14 @@ public class ControlCenter {
                 return "Download test\n(Multiple downloads with MD5 check)";
             case 8:
                 return "Download test\n(Multiple downloads mixed)";
-            default:
-                return null;
         }
+
+        return null;
 
     }
 
     public static void DownloadActionGetter(Integer mInt) {
+
         String mDownloadLink, mDownloadDirectory, mDownloadedFileFinalName, mDownloadedFileMD5, mRecoveryPartition;
 
         switch (mInt) {
@@ -300,7 +302,6 @@ public class ControlCenter {
 
                 Utils.StartMultipleDownloads();
                 break;
-
         }
 
     }
