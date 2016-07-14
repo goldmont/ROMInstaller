@@ -497,7 +497,7 @@ Utils.StartMultipleDownloads();
 
 # How to flash recoveries?
 
-After setting up the buttons, you have to set up the action to run when it get clicked. Look for `DownloadActionGetter` method in **_Control Center_** class. As for the button's text, for each `case` you have to write your own download code.
+After setting up the buttons, you have to set up the action to run when it get clicked. Look for `DownloadActionGetter` method in **_Control Center_** class. As for the button's text, for each `case`, you have to write your own download code.
 
 **For example:**
 
