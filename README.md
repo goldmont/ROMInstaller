@@ -41,11 +41,11 @@ Make sure that your SDK is updated to the latest version available.
 8. Expand the **_"app"_** menu and then the **_"java"_** one. The package name should now be visible. (**_com.peppe130.rominstaller_**).
 
 ![Screenshots](https://raw.githubusercontent.com/peppe130/ROMInstaller/master/Screenshot/ScreenshotStep8.png) <dl />
-9. Right click on the package name > **_"Refactor"_** > **_"Rename"_**.
+9. Right click on the package name > **_"Refactor"_** > **_"Rename"._**
 
 ![Screenshots](https://raw.githubusercontent.com/peppe130/ROMInstaller/master/Screenshot/ScreenshotStep9.png) <dl />
 10. From the new window that opens, click on **_"Rename Package"_**, enter a new name in **_lowercase_**
-<dl /> (for example: **_newrominstaller_**) and click on **_"Refactor"_**.
+<dl /> (for example: **_newrominstaller_**) and click on **_"Refactor"._**
 
 ![Screenshots](https://raw.githubusercontent.com/peppe130/ROMInstaller/master/Screenshot/ScreenshotStep10.png) <dl />
 11. From the new window that appears at the bottom, click on **_"Do Refactor"_** and wait until the process is completed.
