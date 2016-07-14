@@ -297,7 +297,7 @@ public static void Setup() {
 
 # How to add download button?
 
-Open _Control Center_ class, look for `AVAILABLE_DOWNLOADS_NUMBER` variable and write the number of buttons you want to set up in the _Download Center._ To set the text of each button, look for `DownloadNameGetter` method. For each button you have to add a new `case` and, next to it, you have to write the button's ID.
+Open **_Control Center_** class, look for `AVAILABLE_DOWNLOADS_NUMBER` variable and write the number of buttons you want to set up in the **_Download Center._** To set the text of each button, look for `DownloadNameGetter` method. For each button you have to add a new `case` and, next to it, you have to write the button's ID.
 
 **For example:**
 
@@ -495,7 +495,7 @@ Utils.StartMultipleDownloads();
 
 # How to flash recoveries?
 
-After setting up the buttons, you have to set up the action to run when it get clicked. Look for `DownloadActionGetter` method in _Control Center_ class. As for the button's text, for each `case` you have to write your own download code.
+After setting up the buttons, you have to set up the action to run when it get clicked. Look for `DownloadActionGetter` method in **_Control Center_** class. As for the button's text, for each `case` you have to write your own download code.
 
 **For example:**
 
