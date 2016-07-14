@@ -324,7 +324,7 @@ public static String DownloadNameGetter(Integer mInt) {
 # How to download files?
 The App is provided with an internal code that lets you download any type of file in different modes in order to satisfy every need.
 
-After setting up the buttons, you have to set up the action to run when it get clicked. Look for `DownloadActionGetter` method in _Control Center_ class. As for the button's text, for each `case` you have to write your own download code.
+After setting up the buttons, you have to set up the action to run when it get clicked. Look for `DownloadActionGetter` method in _Control Center_ class. As for the button's text, for each `case`, you have to write your own download code.
 
 **For example:**
 
