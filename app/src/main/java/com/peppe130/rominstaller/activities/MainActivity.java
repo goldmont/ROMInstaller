@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity implements CustomFileChooser
         DONE = (ImageButton) findViewById(R.id.done);
         mViewPager = (CustomViewPager) findViewById(R.id.viewpager);
         mFragmentPagerAdapter = new PagerAdapter(getSupportFragmentManager());
-        mSmartTabLayout = (SmartTabLayout) findViewById(R.id.viewpager_indicator);
+        mSmartTabLayout = (SmartTabLayout) findViewById(R.id.indicator);
         assert mSmartTabLayout != null;
         mSmartTabLayout.setSelectedIndicatorColors(Utils.FetchAccentColor());
 
@@ -255,7 +255,7 @@ public class MainActivity extends AppCompatActivity implements CustomFileChooser
 
             @Override
             public void onPageSelected(int position) {
-                if (mLatestPage.equals(position)) {
+                if (mLatestPage != null && mLatestPage.equals(position)) {
                     if (ControlCenter.BUTTON_UI) {
                         mLastPageScrolled = false;
                         mNextOrInstallHint = true;
