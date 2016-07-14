@@ -306,6 +306,7 @@ Open **_Control Center_** class, look for `AVAILABLE_DOWNLOADS_NUMBER` variable 
 @Nullable
 @Contract(pure = true)
 public static String DownloadNameGetter(Integer mInt) {
+
         switch (mInt) {
             case 0: // ID = 0;
                 return "Text of the first button";
