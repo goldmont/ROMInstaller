@@ -33,25 +33,25 @@ Make sure that your SDK is updated to the latest version available.
 
 1. Download the project from [GitHub](https://github.com/peppe130/ROMInstaller/archive/master.zip).
 2. Extract it and move its folder to the Android Studio's project directory.
-3. Give a new name to the project's folder. For example: _NewROMInstaller_.
+3. Give a new name to the project's folder. For example: **_NewROMInstaller._**
 4. Launch Android Studio.
-5. Click on **_"Open an existing Android Studio project"_**.
+5. Click on **_"Open an existing Android Studio project"._**
 6. From the window that opens, select the project and wait while it is being imported.
 7. From the side panel on the left, select the **_"Android"_** view.
 8. Expand the **_"app"_** menu and then the **_"java"_** one. The package name should now be visible. (**_com.peppe130.rominstaller_**).
 
 ![Screenshots](https://raw.githubusercontent.com/peppe130/ROMInstaller/master/Screenshot/ScreenshotStep8.png) <dl />
-9. Right click on the package name > **_"Refactor"_** > **_"Rename"_**.
+9. Right click on the package name > **_"Refactor"_** > **_"Rename"._**
 
 ![Screenshots](https://raw.githubusercontent.com/peppe130/ROMInstaller/master/Screenshot/ScreenshotStep9.png) <dl />
 10. From the new window that opens, click on **_"Rename Package"_**, enter a new name in **_lowercase_**
-<dl /> (for example: **_newrominstaller_**) and click on **_"Refactor"_**.
+<dl /> (for example: **_newrominstaller_**) and click on **_"Refactor"._**
 
 ![Screenshots](https://raw.githubusercontent.com/peppe130/ROMInstaller/master/Screenshot/ScreenshotStep10.png) <dl />
 11. From the new window that appears at the bottom, click on **_"Do Refactor"_** and wait until the process is completed.
 
 ![Screenshots](https://raw.githubusercontent.com/peppe130/ROMInstaller/master/Screenshot/ScreenshotStep11.png) <dl />
-12. Expand the **_"Gradle Scripts"_** menu and open **_"build.gradle(Module: app)"_**. Replace the old package name defined in **_"applicationId"_** with the new one. For example: **_applicationId "com.peppe130.newrominstaller"_**
+12. Expand the **_"Gradle Scripts"_** menu and open **_"build.gradle(Module: app)"_**. Replace the old package name defined in **_"applicationId"_** with the new one. For example: **_applicationId "com.peppe130.newrominstaller"._**
 
 ![Screenshots](https://raw.githubusercontent.com/peppe130/ROMInstaller/master/Screenshot/ScreenshotStep13.png)
 
@@ -78,11 +78,12 @@ The following items belong to **_Control Center_**:
 * _RECOVERY\_MD5\_LIST_ = List of recoveries MD5s.
 * _TEST\_MODE_ = If set to **_true_**, it enables the [test mode](https://github.com/peppe130/ROMInstaller#what-is-test-mode).
 * _TRIAL\_MODE_ = If set to **_true_**, it enables the [trial mode](https://github.com/peppe130/ROMInstaller#what-is-trial-mode).
-* _BUTTON\_UI_ = If set to **_true_**, it enables the Button user interface.
+* _BUTTON\_UI_ = If set to **_true_**, it enables the user interface with buttons.
 * _SHOULD\_SHOW\_SPLASH\_SCREEN_ = If set to **_true_**, it enables the splash screen.
 * _SHOULD\_SHOW\_DISCLAIMER\_SCREEN_ = If set to **_true_**, it enables the disclaimer screen.
 * _SPLASH\_SCREEN\_DELAY_ = Duration time of splash screen (value in milliseconds).
 * _SPLASH\_SCREEN\_IMAGE_ = Image to display in the splash screen.
+* _AVAILABLE\_DOWNLOADS\_NUMBER_ = Number of download buttons.
 * _SETTINGS\_ICON_ = Toolbar Settings icon.
 * _CHANGELOG\_ICON_ = Toolbar Changelog icon.
 * _DEFAULT\_OPTIONS\_ICON_ = Toolbar "Default options" icon.
@@ -323,29 +324,30 @@ public static String DownloadNameGetter(Integer mInt) {
 # How to download files?
 The App is provided with an internal code that lets you download any type of file in different modes in order to satisfy every need.
 
-After setting up the buttons, you have to set up the action to run when it get clicked. Look for `DownloadActionGetter` method in _Control Center_ class. As for the button's text, for each `case` you have to write your own download code.
+After setting up the buttons, you have to set up the action to run when it get clicked. Look for `DownloadActionGetter` method in _Control Center_ class. As for the button's text, for each `case`, you have to write your own download code.
 
 **For example:**
 
 ```java
 
 public static void DownloadActionGetter(Integer mInt) {
+
         String mDownloadLink, mDownloadDirectory, mDownloadedFileFinalName, mDownloadedFileMD5, mRecoveryPartition;
 
         switch (mInt) {
             case 0: // Single download without MD5 check
-                String mDownloadLink = "YourDownloadLink";
-                String mDownloadDirectory = getString(R.string.rom_folder);
-                String mDownloadedFileFinalName = "File.zip";
-                String mDownloadedFileMD5 = null;
+                mDownloadLink = "YourDownloadLink";
+                mDownloadDirectory = getString(R.string.rom_folder);
+                mDownloadedFileFinalName = "File.zip";
+                mDownloadedFileMD5 = null;
 
                 Utils.StartSingleDownload(mDownloadLink, mDownloadDirectory, mDownloadedFileFinalName, mDownloadedFileMD5);
                 break;
             case 1: // Single download with MD5 check
-                String mDownloadLink = "YourDownloadLink";
-                String mDownloadDirectory = getString(R.string.rom_folder);
-                String mDownloadedFileFinalName = "File.zip";
-                String mDownloadedFileMD5 = "3a416cafb312cb15ce6b3b09249fe6e6";
+                mDownloadLink = "YourDownloadLink";
+                mDownloadDirectory = getString(R.string.rom_folder);
+                mDownloadedFileFinalName = "File.zip";
+                mDownloadedFileMD5 = "3a416cafb312cb15ce6b3b09249fe6e6";
 
                 Utils.StartSingleDownload(mDownloadLink, mDownloadDirectory, mDownloadedFileFinalName, mDownloadedFileMD5);
                 break;
@@ -495,13 +497,14 @@ Utils.StartMultipleDownloads();
 
 # How to flash recoveries?
 
-After setting up the buttons, you have to set up the action to run when it get clicked. Look for `DownloadActionGetter` method in **_Control Center_** class. As for the button's text, for each `case` you have to write your own download code.
+After setting up the buttons, you have to set up the action to run when it get clicked. Look for `DownloadActionGetter` method in **_Control Center_** class. As for the button's text, for each `case`, you have to write your own download code.
 
 **For example:**
 
 ```java
 
 public static void DownloadActionGetter(Integer mInt) {
+
         String mDownloadLink, mDownloadDirectory, mDownloadedFileFinalName, mDownloadedFileMD5, mRecoveryPartition;
 
         switch (mInt) {
