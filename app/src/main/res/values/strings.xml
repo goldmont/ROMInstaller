@@ -71,7 +71,7 @@
     <string name="press_next_to_install">Tap next button again to install.</string>
     <string name="swipe_right_to_install">Swipe to the left again to install.</string>
     <string name="swipe_left_or_right_to_install">Swipe to the left or to the right to install.</string>
-    <string name="can_not_install">Disable test mode in order to install.</string>
+    <string name="can_not_install">Preferences exported. Disable test mode in order to install.</string>
     <string name="can_not_check_file">Downloaded. Disable test mode in order to check the downloaded file.</string>
 
     <!-- Incompatible Device Dialog -->

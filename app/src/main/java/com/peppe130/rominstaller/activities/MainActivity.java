@@ -232,8 +232,8 @@ public class MainActivity extends AppCompatActivity implements CustomFileChooser
         DONE.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                ControlCenter.ExportPreferences();
                 if (!ControlCenter.TEST_MODE) {
-                    ControlCenter.ExportPreferences();
                     getFragmentManager().beginTransaction()
                             .add(new InstallPopupDialog(Utils.ZIP_FILE.toString()), "install_fragment")
                             .commitAllowingStateLoss();
@@ -286,8 +286,8 @@ public class MainActivity extends AppCompatActivity implements CustomFileChooser
                 if (!ControlCenter.BUTTON_UI) {
                     if (mLastPageScrolled && mLatestPage.equals(position)) {
                         mLastPageScrolled = false;
+                        ControlCenter.ExportPreferences();
                         if (!ControlCenter.TEST_MODE) {
-                            ControlCenter.ExportPreferences();
                             getFragmentManager().beginTransaction()
                                     .add(new InstallPopupDialog(Utils.ZIP_FILE.toString()), "install_fragment")
                                     .commitAllowingStateLoss();
