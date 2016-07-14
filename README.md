@@ -24,7 +24,7 @@
 
 
 # Introduction
-ROM Installer is a source code project. This means that you have to download the project and to [import](https://github.com/peppe130/ROMInstaller#how-to-import-the-project) it into your Android Studio. This project requires at least a basic knowledge of Android Studio and Java programming. ROM Installer is the new revolutionary way to flash Custom ROM on every Android device (5.0+). What makes ROM Installer unique is its characteristic of being easily reprogrammable by the developer who adopts it. The App has two user interfaces (ButtonUI and SwipeUI), offers the possibility to add a splash and a disclaimer screen, to verify the integrity of the ROM before installing, to download any type of file in five different ways, to download and install a recovery.
+ROM Installer is a source code project. This means that you have to download the project and to [import](https://github.com/peppe130/ROMInstaller#how-to-import-the-project) it into your Android Studio. This project requires at least a basic knowledge of Android Studio and Java programming. ROM Installer is the new revolutionary way to flash Custom ROM on every Android device (5.0+). What makes ROM Installer unique is its characteristic of being easily reprogrammable by the developer who adopts it. The App has two user interfaces (ButtonUI and SwipeUI), offers the possibility to add a splash and a disclaimer screen, to verify the integrity of the ROM before installing, to download any type of file in many different ways, to download and install a recovery.
 
 
 # How to import the project?
