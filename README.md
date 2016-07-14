@@ -35,7 +35,7 @@ Make sure that your SDK is updated to the latest version available.
 2. Extract it and move its folder to the Android Studio's project directory.
 3. Give a new name to the project's folder. For example: **_NewROMInstaller._**
 4. Launch Android Studio.
-5. Click on **_"Open an existing Android Studio project"_**.
+5. Click on **_"Open an existing Android Studio project"._**
 6. From the window that opens, select the project and wait while it is being imported.
 7. From the side panel on the left, select the **_"Android"_** view.
 8. Expand the **_"app"_** menu and then the **_"java"_** one. The package name should now be visible. (**_com.peppe130.rominstaller_**).
