@@ -311,9 +311,9 @@ public static String DownloadNameGetter(Integer mInt) {
                 return "Text of the first button";
             case 1: // ID = 1;
                 return "Text of the second button";
-            default:
-                return null;
         }
+        
+        return null;
 
 }
 
