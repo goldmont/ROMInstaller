@@ -33,7 +33,7 @@ Make sure that your SDK is updated to the latest version available.
 
 1. Download the project from [GitHub](https://github.com/peppe130/ROMInstaller/archive/master.zip).
 2. Extract it and move its folder to the Android Studio's project directory.
-3. Give a new name to the project's folder. For example: _NewROMInstaller_.
+3. Give a new name to the project's folder. For example: **_NewROMInstaller._**
 4. Launch Android Studio.
 5. Click on **_"Open an existing Android Studio project"_**.
 6. From the window that opens, select the project and wait while it is being imported.
