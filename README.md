@@ -196,8 +196,6 @@ To change **UI**, you have to open the **_Control Center_** class and change the
           
       ```
 
-The optimal number of preferences for **XML** file is **_4_**.
-
 Once the preference is configured, in order to export its value, you must declare it in Java. To do this, just open the **_Control Center_** and, in the `ExportPreferences()` method, add:
 ```java
 mBufferedWriter.write(
