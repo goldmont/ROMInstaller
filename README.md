@@ -303,9 +303,9 @@ Open **_Control Center_** class, look for `AVAILABLE_DOWNLOADS_NUMBER` variable 
 
 ```java
 
-    @Nullable
-    @Contract(pure = true)
-    public static String DownloadNameGetter(Integer mInt) {
+@Nullable
+@Contract(pure = true)
+public static String DownloadNameGetter(Integer mInt) {
         switch (mInt) {
             case 0: // ID = 0;
                 return "Text of the first button";
@@ -315,7 +315,7 @@ Open **_Control Center_** class, look for `AVAILABLE_DOWNLOADS_NUMBER` variable 
                 return null;
         }
 
-    }
+}
 
 ```
 
@@ -348,8 +348,7 @@ public static void DownloadActionGetter(Integer mInt) {
 
                 Utils.StartSingleDownload(mDownloadLink, mDownloadDirectory, mDownloadedFileFinalName, mDownloadedFileMD5);
                 break;
-
-        }
+	}
 
 }
 
