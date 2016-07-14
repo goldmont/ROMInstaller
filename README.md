@@ -51,7 +51,7 @@ Make sure that your SDK is updated to the latest version available.
 11. From the new window that appears at the bottom, click on **_"Do Refactor"_** and wait until the process is completed.
 
 ![Screenshots](https://raw.githubusercontent.com/peppe130/ROMInstaller/master/Screenshot/ScreenshotStep11.png) <dl />
-12. Expand the **_"Gradle Scripts"_** menu and open **_"build.gradle(Module: app)"_**. Replace the old package name defined in **_"applicationId"_** with the new one. For example: **_applicationId "com.peppe130.newrominstaller"_**
+12. Expand the **_"Gradle Scripts"_** menu and open **_"build.gradle(Module: app)"_**. Replace the old package name defined in **_"applicationId"_** with the new one. For example: **_applicationId "com.peppe130.newrominstaller"._**
 
 ![Screenshots](https://raw.githubusercontent.com/peppe130/ROMInstaller/master/Screenshot/ScreenshotStep13.png)
 
