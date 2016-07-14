@@ -15,11 +15,12 @@
 9. [How to set which UI to use?](https://github.com/peppe130/ROMInstaller#how-to-set-which-ui-to-use)
 10. [How to add Preferences?](https://github.com/peppe130/ROMInstaller#how-to-add-preferences)
 11. [How to add Fragments?](https://github.com/peppe130/ROMInstaller#how-to-add-fragments)
-12. [How to download files?](https://github.com/peppe130/ROMInstaller#how-to-download-files)
-13. [How to flash recoveries?](https://github.com/peppe130/ROMInstaller#how-to-flash-recoveries)
-14. [How to read preferences from updater-script?](https://github.com/peppe130/ROMInstaller#how-to-read-preferences-from-updater-script)
-15. [How to change App colors?](https://github.com/peppe130/ROMInstaller#how-to-change-app-colors)
-16. [How to add your own info in Settings?](https://github.com/peppe130/ROMInstaller#how-to-add-your-own-info-in-settings)
+12. [How to add download button?](https://github.com/peppe130/ROMInstaller#how-to-add-download-button)
+13. [How to download files?](https://github.com/peppe130/ROMInstaller#how-to-download-files)
+14. [How to flash recoveries?](https://github.com/peppe130/ROMInstaller#how-to-flash-recoveries)
+15. [How to read preferences from updater-script?](https://github.com/peppe130/ROMInstaller#how-to-read-preferences-from-updater-script)
+16. [How to change App colors?](https://github.com/peppe130/ROMInstaller#how-to-change-app-colors)
+17. [How to add your own info in Settings?](https://github.com/peppe130/ROMInstaller#how-to-add-your-own-info-in-settings)
 
 
 # Introduction
@@ -294,8 +295,65 @@ public static void Setup() {
 
 ```
 
+# How to add download button?
+
+Open **_Control Center_** class, look for `AVAILABLE_DOWNLOADS_NUMBER` variable and write the number of buttons you want to set up in the **_Download Center._** To set the text of each button, look for `DownloadNameGetter` method. For each button you have to add a new `case` and, next to it, you have to write the button's ID.
+
+**For example:**
+
+```java
+
+@Nullable
+@Contract(pure = true)
+public static String DownloadNameGetter(Integer mInt) {
+
+        switch (mInt) {
+            case 0: // ID = 0;
+                return "Text of the first button";
+            case 1: // ID = 1;
+                return "Text of the second button";
+        }
+        
+        return null;
+
+}
+
+```
+
 # How to download files?
 The App is provided with an internal code that lets you download any type of file in different modes in order to satisfy every need.
+
+After setting up the buttons, you have to set up the action to run when it get clicked. Look for `DownloadActionGetter` method in _Control Center_ class. As for the button's text, for each `case` you have to write your own download code.
+
+**For example:**
+
+```java
+
+public static void DownloadActionGetter(Integer mInt) {
+        String mDownloadLink, mDownloadDirectory, mDownloadedFileFinalName, mDownloadedFileMD5, mRecoveryPartition;
+
+        switch (mInt) {
+            case 0: // Single download without MD5 check
+                String mDownloadLink = "YourDownloadLink";
+                String mDownloadDirectory = getString(R.string.rom_folder);
+                String mDownloadedFileFinalName = "File.zip";
+                String mDownloadedFileMD5 = null;
+
+                Utils.StartSingleDownload(mDownloadLink, mDownloadDirectory, mDownloadedFileFinalName, mDownloadedFileMD5);
+                break;
+            case 1: // Single download with MD5 check
+                String mDownloadLink = "YourDownloadLink";
+                String mDownloadDirectory = getString(R.string.rom_folder);
+                String mDownloadedFileFinalName = "File.zip";
+                String mDownloadedFileMD5 = "3a416cafb312cb15ce6b3b09249fe6e6";
+
+                Utils.StartSingleDownload(mDownloadLink, mDownloadDirectory, mDownloadedFileFinalName, mDownloadedFileMD5);
+                break;
+	}
+
+}
+
+```
 
 ## **Legend**
 
@@ -436,6 +494,47 @@ Utils.StartMultipleDownloads();
   ```
 
 # How to flash recoveries?
+
+After setting up the buttons, you have to set up the action to run when it get clicked. Look for `DownloadActionGetter` method in **_Control Center_** class. As for the button's text, for each `case` you have to write your own download code.
+
+**For example:**
+
+```java
+
+public static void DownloadActionGetter(Integer mInt) {
+        String mDownloadLink, mDownloadDirectory, mDownloadedFileFinalName, mDownloadedFileMD5, mRecoveryPartition;
+
+        switch (mInt) {
+            case 0: // Download Recovery
+                mDownloadLink = "http://www.mediafire.com/download/z7fn3nw1vn5oo8a/Test.zip";
+                mDownloadDirectory = Utils.ACTIVITY.getString(R.string.rom_folder);
+                mDownloadedFileFinalName = "Recovery.zip";
+                mRecoveryPartition = "YourDeviceRecoveryPartition";
+
+                Utils.StartFlashRecovery(mDownloadLink, mDownloadDirectory, mDownloadedFileFinalName, mRecoveryPartition);
+                break;
+            case 1: // Download Recovery with Add-Ons
+                // Download Recovery
+                mDownloadLink = "http://www.mediafire.com/download/z7fn3nw1vn5oo8a/Test.zip";
+                mDownloadDirectory = Utils.ACTIVITY.getString(R.string.rom_folder);
+                mDownloadedFileFinalName = "Recovery.zip";
+                mRecoveryPartition = "YourDeviceRecoveryPartition";
+
+                // Download Add-On N°1
+                Utils.EnqueueDownload(
+                        "http://www.mediafire.com/download/z7fn3nw1vn5oo8a/Test.zip",
+                        Utils.ACTIVITY.getString(R.string.rom_folder),
+                        "Add-On.zip",
+                        "5fb732eea3d3e2b407fa7685c27a5354");
+
+                Utils.StartFlashRecoveryWithAddons(mDownloadLink, mDownloadDirectory, mDownloadedFileFinalName, mRecoveryPartition);
+                break;
+
+        }
+
+}
+
+```
 
 ## **Legend**
 
