@@ -223,6 +223,7 @@ public class SettingsActivity extends AppCompatActivity {
 
         @Nullable
         public static Integer IconColorChooser() {
+
             Integer mTheme = null;
 
             try {
@@ -236,9 +237,9 @@ public class SettingsActivity extends AppCompatActivity {
                     return R.color.colorPrimary_Theme_Light;
                 case R.style.AppTheme_Dark:
                     return android.R.color.white;
-                default:
-                    return null;
             }
+
+            return null;
 
         }
 

@@ -148,9 +148,9 @@ public class DownloadActivity extends AppCompatActivity implements CustomFileCho
                 return R.color.colorPrimaryDark_Theme_Light;
             case R.style.AppTheme_Dark:
                 return R.color.colorAccent_Theme_Dark;
-            default:
-                return null;
         }
+
+        return null;
 
     }
 
