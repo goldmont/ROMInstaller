@@ -142,7 +142,7 @@
     <string name="rom_version">ROM version</string>
     <string name="rom_developer_title">App &amp; ROM developer</string>
     <string name="rom_themer_title">App &amp; ROM themer</string>
-    <string name="rom_xda_thread">XDA Thread</string>
+    <string name="rom_thread">ROM Thread</string>
     <string name="review_app_title">Leave a review!</string>
     <string name="review_app_summary">Review the App on Play Store</string>
     <string name="all_my_apps_title">All my apps</string>

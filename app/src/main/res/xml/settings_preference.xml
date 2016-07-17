@@ -64,7 +64,7 @@
         <Preference
             android:key="rom_xda_thread"
             android:persistent="false"
-            android:title="@string/rom_xda_thread"
+            android:title="@string/rom_thread"
             android:summary="@string/tap_to_visit"/>
 
     </PreferenceCategory>
