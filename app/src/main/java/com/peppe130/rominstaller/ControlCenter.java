@@ -1,5 +1,7 @@
 package com.peppe130.rominstaller;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.support.annotation.Nullable;
 import org.jetbrains.annotations.Contract;
 import android.content.SharedPreferences;
@@ -304,6 +306,19 @@ public class ControlCenter {
                 break;
         }
 
+    }
+
+    public static void ROMDeveloperInfoAction() {
+        // Do something
+    }
+
+    public static void ROMThemerInfoAction() {
+        // Do something
+    }
+
+    public static void ROMXDAThreadInfoAction() {
+        Uri mUri = Uri.parse("http://forum.xda-developers.com/galaxy-s4/i9505-develop/rom-osiris-rom-v1-0-t3147053");
+        Utils.ACTIVITY.startActivity(new Intent(Intent.ACTION_VIEW, mUri));
     }
 
 }

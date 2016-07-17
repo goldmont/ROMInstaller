@@ -41,6 +41,8 @@ public class DownloadActivity extends AppCompatActivity implements CustomFileCho
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_download_layout);
 
+        Utils.ACTIVITY = this;
+
         mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mRecyclerView.setAdapter(new Adapter());

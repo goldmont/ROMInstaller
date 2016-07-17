@@ -40,26 +40,26 @@ dependencies {
     // ColorArt
     compile 'org.michaelevans.colorart:library:0.0.3'
 
-    //FancyButtons
+    // FancyButtons
     compile 'com.github.medyo:fancybuttons:1.8.1'
 
     // HTML TextView
     compile 'org.sufficientlysecure:html-textview:1.6'
 
     // Iconics
-    compile "com.mikepenz:iconics-core:2.6.6@aar"
+    compile "com.mikepenz:iconics-core:2.6.7@aar"
     compile 'com.mikepenz:google-material-typeface:2.2.0.2.original@aar'
     compile 'com.mikepenz:community-material-typeface:1.5.54.2@aar'
     compile 'com.mikepenz:entypo-typeface:1.0.0.2@aar'
     compile 'com.mikepenz:ionicons-typeface:2.0.1.2@aar'
 
-    //Material Dialogs
+    // Material Dialogs
     compile 'com.afollestad.material-dialogs:core:0.8.6.1'
     compile 'com.afollestad.material-dialogs:commons:0.8.6.1'
 
     // Preference Fragments
-    compile 'com.takisoft.fix:preference-v7:23.4.0.4'
-    compile 'net.xpece.android:support-preference:0.8.1'
+    compile 'net.xpece.android:support-preference:0.9.0'
+    compile 'com.takisoft.fix:preference-v7:24.0.0.1'
 
     // SmartTabLayout
     compile 'com.ogaclejapan.smarttablayout:library:1.6.1@aar'

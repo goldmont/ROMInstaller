@@ -27,12 +27,14 @@ import com.peppe130.rominstaller.core.Utils;
 @SuppressWarnings("ResultOfMethodCallIgnored, ConstantConditions")
 public class SettingsActivity extends AppCompatActivity {
 
-    static SharedPreferences SP;
+    SharedPreferences SP;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings_layout);
+
+        Utils.ACTIVITY = this;
 
         SP = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
 
@@ -70,10 +72,10 @@ public class SettingsActivity extends AppCompatActivity {
             addPreferencesFromResource(R.xml.settings_preference);
 
             Preference DOWNLOAD_CENTER = findPreference("download_center");
-            Preference APP_BUILD_NUMBER = findPreference("app_build_number");
-            Preference APP_DEVELOPER = findPreference("app_developer");
-            Preference APP_THEMER = findPreference("app_themer");
-            Preference APP_GITHUB = findPreference("app_github");
+            Preference PROJECT_BUILD_NUMBER = findPreference("app_build_number");
+            Preference PROJECT_DEVELOPER = findPreference("app_developer");
+            Preference PROJECT_THEMER = findPreference("app_themer");
+            Preference PROJECT_GITHUB = findPreference("app_github");
             Preference ROM_BUILD_NUMBER = findPreference("rom_build_number");
             Preference ROM_DEVELOPER = findPreference("rom_developer");
             Preference ROM_THEMER = findPreference("rom_themer");
@@ -127,11 +129,11 @@ public class SettingsActivity extends AppCompatActivity {
                 }
             });
 
-            APP_BUILD_NUMBER.setIcon(mInfoIcon);
-            APP_BUILD_NUMBER.setSummary(BuildConfig.VERSION_NAME);
+            PROJECT_BUILD_NUMBER.setIcon(mInfoIcon);
+            PROJECT_BUILD_NUMBER.setSummary(BuildConfig.VERSION_NAME);
 
-            APP_DEVELOPER.setIcon(mDeveloperIcon);
-            APP_DEVELOPER.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+            PROJECT_DEVELOPER.setIcon(mDeveloperIcon);
+            PROJECT_DEVELOPER.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                 @Override
                 public boolean onPreferenceClick(Preference preference) {
                     String[] mSocial = new String[] {"Google+", "Twitter"};
@@ -141,8 +143,8 @@ public class SettingsActivity extends AppCompatActivity {
                 }
             });
 
-            APP_THEMER.setIcon(mThemerIcon);
-            APP_THEMER.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+            PROJECT_THEMER.setIcon(mThemerIcon);
+            PROJECT_THEMER.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                 @Override
                 public boolean onPreferenceClick(Preference preference) {
                     String[] mSocial = new String[] {"Google+", "Twitter"};
@@ -152,8 +154,8 @@ public class SettingsActivity extends AppCompatActivity {
                 }
             });
 
-            APP_GITHUB.setIcon(mGitHubIcon);
-            APP_GITHUB.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+            PROJECT_GITHUB.setIcon(mGitHubIcon);
+            PROJECT_GITHUB.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                 @Override
                 public boolean onPreferenceClick(Preference preference) {
                     Uri mUri = Uri.parse("https://github.com/peppe130/ROMInstaller");
@@ -168,7 +170,7 @@ public class SettingsActivity extends AppCompatActivity {
             ROM_DEVELOPER.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                 @Override
                 public boolean onPreferenceClick(Preference preference) {
-                    // Do something
+                    ControlCenter.ROMDeveloperInfoAction();
                     return false;
                 }
             });
@@ -177,7 +179,7 @@ public class SettingsActivity extends AppCompatActivity {
             ROM_THEMER.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                 @Override
                 public boolean onPreferenceClick(Preference preference) {
-                    // Do something
+                    ControlCenter.ROMThemerInfoAction();
                     return false;
                 }
             });
@@ -186,8 +188,7 @@ public class SettingsActivity extends AppCompatActivity {
             ROM_XDA_THREAD.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                 @Override
                 public boolean onPreferenceClick(Preference preference) {
-                    Uri mUri = Uri.parse("http://forum.xda-developers.com/galaxy-s4/i9505-develop/rom-osiris-rom-v1-0-t3147053");
-                    startActivity(new Intent(Intent.ACTION_VIEW, mUri));
+                    ControlCenter.ROMXDAThreadInfoAction();
                     return false;
                 }
             });

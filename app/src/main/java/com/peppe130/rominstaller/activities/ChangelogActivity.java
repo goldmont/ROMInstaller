@@ -14,6 +14,9 @@ public class ChangelogActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_changelog_layout);
+
+        Utils.ACTIVITY = this;
+
         HtmlTextView mHtmlTextView = (HtmlTextView) findViewById(R.id.changelog_html_text);
         assert mHtmlTextView != null;
         mHtmlTextView.setHtmlFromRawResource(ChangelogActivity.this, R.raw.changelog, new HtmlTextView.RemoteImageGetter());

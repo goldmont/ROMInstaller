@@ -52,8 +52,7 @@ public class AgreementActivity extends AppCompatActivity {
         mFirstTime = SP.getBoolean("first_time", true);
 
         if (!mFirstTime) {
-            // Start desired UI using sintax:
-            // startActivity(new Intent(AgreementActivity.this, Activity.class));
+            startActivity(new Intent(AgreementActivity.this, MainActivity.class));
         }
 
         AGREE.setOnClickListener(new View.OnClickListener() {
@@ -61,8 +60,7 @@ public class AgreementActivity extends AppCompatActivity {
             public void onClick(View v) {
                 mEditor.putBoolean("first_time", false).apply();
                 finish();
-                // Start desired UI using sintax:
-                // startActivity(new Intent(AgreementActivity.this, Activity.class));
+                startActivity(new Intent(AgreementActivity.this, MainActivity.class));
             }
         });
 
