@@ -40,7 +40,7 @@ public class ControlCenter {
         Utils.FILE_NAME = "SampleROM.zip";
 
         Utils.StartDownloadROM(
-                "http://www.mediafire.com/download/3a7gefzmxj44lv1/SampleROM.zip",
+                "http://www.mediafire.com/download/cmcckankvzugfdn/SampleROM.zip",
                 Utils.ACTIVITY.getString(R.string.rom_folder));
 
     }
