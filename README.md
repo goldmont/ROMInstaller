@@ -196,42 +196,6 @@ To change **UI**, you have to open the **_Control Center_** class and change the
           
       ```
 
-Once the preference is configured, in order to export its value, you must declare it in Java. To do this, just open the **_Control Center_** and, in the `ExportPreferences()` method, add:
-```java
-mBufferedWriter.write(
-                      "CheckBox=" + (String.valueOf(SP.getBoolean("YourCheckBoxID", DefaultValue))) +
-                      "\nList=" + (SP.getString("YourListID", "DefaultValue")) +
-                      "\nList2=" + (SP.getString("YourList2ID", "DefaultValue")) +
-                      "\nCheckBox2=" + String.valueOf(SP.getBoolean("YourCheckBox2ID", DefaultValue))
-                    );
-                    
-  /*
-  
-  Please notice the "\n" at the beginning of the second, third or fourth string. It is necessary to go in a new line.
-  Each line, except the first, needs "\n". Moreover, for each new line, you have to add a "+" at the end of the previous one.
-  
-  To CheckBoxes the syntax to get the preference value is: (String.valueOf(SP.getBoolean("YourCheckBoxID", DefaultValue)))
-  To Lists the syntax to get the preference value is: (SP.getString("YourListID", "DefaultValue"))
-  
-  The "YourCheckBoxID" or "YourListID" is the "android:key" that you have defined in the XML file.
-  
-  The DefaultValue is the value that the esported preference will assume if something goes wrong during the export process and is equal to the default value you have set in the XML file.
-  To CheckBoxes the DefaultValue could be "true" or "false" (without quotes).
-  To Lists the DefaultValue is the value is a number (put the DefaultValue inside quotes).
-  
-  */
-```
-
-In the `DefaultValues()` method add:
-```java
-  // To CheckBoxes:
-  mEditor.putBoolean("YourCheckBoxID", DefaultValue).commit();
-  
-  // To Lists:
-  mEditor.putString("YourListID", "DefaultValue").commit();
-
-```
-
 # How to add Fragments?
 After adding the preferences, you must set up the **XML** file in Java. To do this you must create a Fragment. Fragment has the purpose to show the preferences on the screen in such a way as to interact with them. To add a Fragment, just open the **FragmentsCollector** and add at the bottom:
 
@@ -668,7 +632,7 @@ Open **_"strings.xml"_** file located in _"res"_ > _"values"_ menu. At the botto
 2. _rom\_developer\_summary_ = write here the developer's name.
 3. _rom\_themer\_summary_ = write here the themer's name.
 
-To show a **_"Follow me"_** Dialog, open **_SettingsActivity_** located in the _"activities"_ package, look for the `setOnPreferenceClickListener()` method relative to your preference and add inside the following code:
+To show a **_"Follow me"_** Dialog, open **_Control Center_**, look for the `ROMDeveloperInfoAction()` method and add inside it the following code:
 
 ```java
 
@@ -684,14 +648,10 @@ You can add as many social networks as you want. Just separate from each other w
 
 ```java
 
-ROM_DEVELOPER.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
-        @Override
-        public boolean onPreferenceClick(Preference preference) {
-                String[] mSocial = new String[] {"Google+", "Twitter"};
-                String[] mLinks = new String[] {"YourGoogle+Link", "YourTwitterLink"};
-                Utils.FollowMeDialog(mSocial, mLinks);
-                return false;
-        }
-});
+public static void ROMDeveloperInfoAction() {
+	String[] mSocial = new String[] {"Google+", "Twitter"};
+	String[] mLinks = new String[] {"YourGoogle+Link", "YourTwitterLink"};
+	Utils.FollowMeDialog(mSocial, mLinks);
+}
 
 ```
