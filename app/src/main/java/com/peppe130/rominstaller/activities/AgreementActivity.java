@@ -10,9 +10,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.afollestad.materialdialogs.MaterialDialog;
-import com.afollestad.materialdialogs.Theme;
-import com.peppe130.rominstaller.ControlCenter;
 import com.peppe130.rominstaller.R;
 import com.peppe130.rominstaller.core.Utils;
 import org.sufficientlysecure.htmltextview.HtmlTextView;
@@ -29,7 +26,7 @@ public class AgreementActivity extends AppCompatActivity {
     public static AppCompatActivity mActivity;
     Boolean mFirstTime, mDoubleBackToExit = false;
 
-    /*@Override
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_agreement_layout);
@@ -89,83 +86,6 @@ public class AgreementActivity extends AppCompatActivity {
         HtmlTextView mHtmlTextView = (HtmlTextView) findViewById(R.id.agreement_html_text);
         assert mHtmlTextView != null;
         mHtmlTextView.setHtmlFromRawResource(AgreementActivity.this, R.raw.agreement, new HtmlTextView.RemoteImageGetter());
-    }*/
-
-    // Custom onCreate with Activity Chooser. Replace it with the above one.
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_agreement_layout);
-
-        mActivity = this;
-        Utils.ACTIVITY = this;
-
-        if (Utils.SHOULD_CLOSE_ACTIVITY) {
-            Utils.SHOULD_CLOSE_ACTIVITY = false;
-            SplashScreenActivity.mActivity.finish();
-        }
-
-        SP = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
-        mEditor = SP.edit();
-        AGREE = (Button) findViewById(R.id.agree);
-        CLOSE = (Button) findViewById(R.id.close);
-        AGREE.setTextColor(Utils.FetchAccentColor());
-        CLOSE.setTextColor(Utils.FetchAccentColor());
-
-        final String[] mString = {"Buttons UI", "Swipe UI"};
-
-        AGREE.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                new MaterialDialog.Builder(AgreementActivity.this)
-                        .items(mString)
-                        .itemsCallback(new MaterialDialog.ListCallback() {
-                            @Override
-                            public void onSelection(MaterialDialog dialog, View view, int which, CharSequence text) {
-                                switch (which) {
-                                    case 0:
-                                        ControlCenter.BUTTON_UI = true;
-                                        break;
-                                    case 1:
-                                        ControlCenter.BUTTON_UI = false;
-                                        break;
-                                    default:
-                                        break;
-                                }
-                                finish();
-                                startActivity(new Intent(AgreementActivity.this, MainActivity.class));
-                            }
-                        })
-                        .theme(Theme.LIGHT)
-                        .show();
-            }
-        });
-
-        CLOSE.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                SweetAlertDialog sweetAlertDialog = new SweetAlertDialog(AgreementActivity.this, SweetAlertDialog.WARNING_TYPE)
-                        .setTitleText(getString(R.string.agreement_dialog_title))
-                        .setContentText(getString(R.string.agreement_dialog_message))
-                        .showCancelButton(true)
-                        .setCancelText(getString(R.string.close_button))
-                        .setConfirmText(getString(R.string.ok_button))
-                        .setCancelClickListener(new SweetAlertDialog.OnSweetClickListener() {
-                            @Override
-                            public void onClick(SweetAlertDialog sDialog) {
-                                finishAffinity();
-                            }
-                        });
-                sweetAlertDialog.setCancelable(true);
-                sweetAlertDialog.setCanceledOnTouchOutside(true);
-                sweetAlertDialog.show();
-            }
-        });
-
-        HtmlTextView mHtmlTextView = (HtmlTextView) findViewById(R.id.agreement_html_text);
-        assert mHtmlTextView != null;
-        mHtmlTextView.setHtmlFromRawResource(AgreementActivity.this, R.raw.agreement, new HtmlTextView.RemoteImageGetter());
     }
 
     @Override
@@ -197,4 +117,5 @@ public class AgreementActivity extends AppCompatActivity {
         super.onPause();
         Utils.SHOULD_CLOSE_ACTIVITY = true;
     }
+
 }
