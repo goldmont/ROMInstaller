@@ -632,7 +632,7 @@ Open **_"strings.xml"_** file located in _"res"_ > _"values"_ menu. At the botto
 2. _rom\_developer\_summary_ = write here the developer's name.
 3. _rom\_themer\_summary_ = write here the themer's name.
 
-To show a **_"Follow me"_** Dialog, open **_SettingsActivity_** located in the _"activities"_ package, look for the `setOnPreferenceClickListener()` method relative to your preference and add inside the following code:
+To show a **_"Follow me"_** Dialog, open **_Control Center_**, look for the `ROMDeveloperInfoAction()` method and add inside it the following code:
 
 ```java
 
@@ -648,14 +648,10 @@ You can add as many social networks as you want. Just separate from each other w
 
 ```java
 
-ROM_DEVELOPER.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
-        @Override
-        public boolean onPreferenceClick(Preference preference) {
-                String[] mSocial = new String[] {"Google+", "Twitter"};
-                String[] mLinks = new String[] {"YourGoogle+Link", "YourTwitterLink"};
-                Utils.FollowMeDialog(mSocial, mLinks);
-                return false;
-        }
-});
+public static void ROMDeveloperInfoAction() {
+	String[] mSocial = new String[] {"Google+", "Twitter"};
+	String[] mLinks = new String[] {"YourGoogle+Link", "YourTwitterLink"};
+	Utils.FollowMeDialog(mSocial, mLinks);
+}
 
 ```
