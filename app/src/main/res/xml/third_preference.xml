@@ -8,7 +8,7 @@
         <ListPreference
             android:title="AccuWeather Widget"
             android:summary="@string/selected_item"
-            android:key="listAccuweather"
+            android:key="accuweather"
             android:defaultValue="1"
             android:entries="@array/accuweather"
             android:entryValues="@array/accuweather_values" />
@@ -21,7 +21,7 @@
         <ListPreference
             android:title="Sounds"
             android:summary="@string/selected_item"
-            android:key="listSound"
+            android:key="sound"
             android:defaultValue="1"
             android:entries="@array/sound"
             android:entryValues="@array/sound_values" />
@@ -34,7 +34,7 @@
         <ListPreference
             android:title="Boot Animation"
             android:summary="@string/selected_item"
-            android:key="listBootanimation"
+            android:key="bootanimation"
             android:defaultValue="1"
             android:entries="@array/bootanim"
             android:entryValues="@array/bootanim_values" />

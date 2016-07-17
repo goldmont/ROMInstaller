@@ -39,7 +39,7 @@
         android:title="Keyboard Secondary Symbols">
 
         <com.peppe130.rominstaller.core.CustomCheckBoxPreference
-            android:key="sec_symbol"
+            android:key="secondary_symbols"
             android:defaultValue="false"
             android:title="Enable Secondary Symbols?"
             android:summary="@string/select_enable" />

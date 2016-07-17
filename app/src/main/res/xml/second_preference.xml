@@ -7,7 +7,7 @@
         <ListPreference
             android:title="My Files"
             android:summary="@string/selected_item"
-            android:key="listMyFiles"
+            android:key="myfiles"
             android:defaultValue="1"
             android:entries="@array/myfiles"
             android:entryValues="@array/myfiles_values" />
@@ -20,7 +20,7 @@
         <ListPreference
             android:title="Keyboard"
             android:summary="@string/selected_item"
-            android:key="listKey"
+            android:key="keyboard"
             android:defaultValue="1"
             android:entries="@array/keyboard"
             android:entryValues="@array/keybard_values" />
@@ -33,7 +33,7 @@
         <ListPreference
             android:title="MMS"
             android:summary="@string/selected_item"
-            android:key="listMMS"
+            android:key="mms"
             android:defaultValue="1"
             android:entries="@array/mms"
             android:entryValues="@array/mms_values" />
@@ -46,7 +46,7 @@
         <ListPreference
             android:title="Fonts"
             android:summary="@string/selected_item"
-            android:key="listFonts"
+            android:key="fonts"
             android:defaultValue="1"
             android:entries="@array/fonts"
             android:entryValues="@array/fonts_values" />

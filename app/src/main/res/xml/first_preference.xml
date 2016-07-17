@@ -19,7 +19,7 @@
         <ListPreference
             android:title="Kernel"
             android:summary="@string/selected_item"
-            android:key="listKernel"
+            android:key="kernel"
             android:defaultValue="1"
             android:entries="@array/kernel"
             android:entryValues="@array/kernel_values" />
@@ -32,7 +32,7 @@
         <ListPreference
             android:title="StatusBar"
             android:summary="@string/selected_item"
-            android:key="listStatusBar"
+            android:key="statusbar"
             android:defaultValue="1"
             android:entries="@array/statusbar"
             android:entryValues="@array/statusbar_values" />
@@ -43,7 +43,7 @@
         android:title="SFinder &amp; QuickConnect ">
 
         <com.peppe130.rominstaller.core.CustomCheckBoxPreference
-            android:key="SF-QC"
+            android:key="sf_qc"
             android:defaultValue="false"
             android:title="Disable SFinder &amp; QuickConnect"
             android:summary="@string/select_disable"/>
