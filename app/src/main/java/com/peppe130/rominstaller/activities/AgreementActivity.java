@@ -10,6 +10,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.afollestad.materialdialogs.MaterialDialog;
+import com.peppe130.rominstaller.ControlCenter;
 import com.peppe130.rominstaller.R;
 import com.peppe130.rominstaller.core.Utils;
 import org.sufficientlysecure.htmltextview.HtmlTextView;
@@ -41,6 +43,7 @@ public class AgreementActivity extends AppCompatActivity {
 
         SP = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
         mEditor = SP.edit();
+
         AGREE = (Button) findViewById(R.id.agree);
         CLOSE = (Button) findViewById(R.id.close);
         AGREE.setTextColor(Utils.FetchAccentColor());
@@ -48,23 +51,44 @@ public class AgreementActivity extends AppCompatActivity {
 
         mFirstTime = SP.getBoolean("first_time", true);
 
-        if (!mFirstTime) {
+        if (!ControlCenter.TRIAL_MODE && !mFirstTime) {
             startActivity(new Intent(AgreementActivity.this, MainActivity.class));
         }
 
         AGREE.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mEditor.putBoolean("first_time", false).apply();
-                finish();
-                startActivity(new Intent(AgreementActivity.this, MainActivity.class));
+                if (ControlCenter.TRIAL_MODE) {
+                    String[] mString = {"Buttons UI", "Swipe UI"};
+                    new MaterialDialog.Builder(AgreementActivity.this)
+                            .items(mString)
+                            .itemsCallback(new MaterialDialog.ListCallback() {
+                                @Override
+                                public void onSelection(MaterialDialog dialog, View view, int which, CharSequence text) {
+                                    switch (which) {
+                                        case 0:
+                                            ControlCenter.BUTTON_UI = true;
+                                            break;
+                                        case 1:
+                                            ControlCenter.BUTTON_UI = false;
+                                            break;
+                                    }
+                                    finish();
+                                    startActivity(new Intent(AgreementActivity.this, MainActivity.class));
+                                }
+                            })
+                            .show();
+                } else {
+                    mEditor.putBoolean("first_time", false).apply();
+                    finish();
+                    startActivity(new Intent(AgreementActivity.this, MainActivity.class));
+                }
             }
         });
 
         CLOSE.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 SweetAlertDialog sweetAlertDialog = new SweetAlertDialog(AgreementActivity.this, SweetAlertDialog.WARNING_TYPE)
                         .setTitleText(getString(R.string.agreement_dialog_title))
                         .setContentText(getString(R.string.agreement_dialog_message))

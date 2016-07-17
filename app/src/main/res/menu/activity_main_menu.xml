@@ -14,8 +14,8 @@
         app:showAsAction="ifRoom" />
 
     <item
-        android:id="@+id/default_options"
-        android:title="@string/restore_default"
+        android:id="@+id/default_values"
+        android:title="@string/set_default_values"
         android:orderInCategory="80"
         app:showAsAction="ifRoom" />
 

@@ -31,7 +31,7 @@
     <string name="double_back_to_exit">Press twice to exit</string>
 
     <!-- Toolbar -->
-    <string name="restore_default">Default options</string>
+    <string name="set_default_values">Set default values</string>
     <string name="activity_changelog">Changelog</string>
     <string name="activity_settings">Settings</string>
     <string name="clear_downloads">Clear downloads</string>
@@ -56,10 +56,10 @@
     <string name="confirm_file_dialog_message">%1$s\n\nProceed with the wizard?</string>
     <string name="download_rom_from_file_chooser_dialog_content">Are you sure you wish to download?</string>
 
-    <!-- Default Options Dialog -->
-    <string name="confirm_restore_default">Are you sure you want to\nset default options?</string>
-    <string name="restored_default_options_title">Restored!</string>
-    <string name="restored_default_options_message">Default options applied</string>
+    <!-- Set Default Values Dialog -->
+    <string name="confirm_set_default_values">Are you sure you want to\nset default values?</string>
+    <string name="set_default_values_title">Restored!</string>
+    <string name="set_default_values_message">Default values applied</string>
 
     <!-- No Root Access Dialog -->
     <string name="no_root_access_dialog_title">No root access!</string>

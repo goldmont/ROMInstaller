@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity implements CustomFileChooser
             }
             mViewPager.setAdapter(mFragmentPagerAdapter);
             mSmartTabLayout.setViewPager(mViewPager);
-            mEditor.putBoolean("default_options", true).apply();
+            mEditor.putBoolean("default_values", true).apply();
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
@@ -97,7 +97,7 @@ public class MainActivity extends AppCompatActivity implements CustomFileChooser
                 }
             }, 200);
         } else {
-            if (SP.getBoolean("default_options", true)) {
+            if (SP.getBoolean("default_values", true)) {
                 mViewPager.removeAllViews();
                 new Handler().postDelayed(new Runnable() {
                     @Override
@@ -177,7 +177,7 @@ public class MainActivity extends AppCompatActivity implements CustomFileChooser
                 }
                 mViewPager.setAdapter(mFragmentPagerAdapter);
                 mSmartTabLayout.setViewPager(mViewPager);
-                mEditor.putBoolean("default_options", true).apply();
+                mEditor.putBoolean("default_values", true).apply();
                 Utils.ZIP_FILE = new File(SP.getString("file_path", ""));
                 new Handler().postDelayed(new Runnable() {
                     @Override
@@ -232,7 +232,7 @@ public class MainActivity extends AppCompatActivity implements CustomFileChooser
         DONE.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ControlCenter.ExportPreferences();
+                Utils.ExportPreferences();
                 if (!ControlCenter.TEST_MODE) {
                     getFragmentManager().beginTransaction()
                             .add(new InstallPopupDialog(Utils.ZIP_FILE.toString()), "install_fragment")
@@ -286,7 +286,7 @@ public class MainActivity extends AppCompatActivity implements CustomFileChooser
                 if (!ControlCenter.BUTTON_UI) {
                     if (mLastPageScrolled && mLatestPage.equals(position)) {
                         mLastPageScrolled = false;
-                        ControlCenter.ExportPreferences();
+                        Utils.ExportPreferences();
                         if (!ControlCenter.TEST_MODE) {
                             getFragmentManager().beginTransaction()
                                     .add(new InstallPopupDialog(Utils.ZIP_FILE.toString()), "install_fragment")
@@ -449,7 +449,7 @@ public class MainActivity extends AppCompatActivity implements CustomFileChooser
     public boolean onPrepareOptionsMenu (Menu menu) {
         menu.findItem(R.id.settings).setEnabled(!Utils.SHOULD_LOCK_UI);
         menu.findItem(R.id.changelog).setEnabled(!Utils.SHOULD_LOCK_UI);
-        menu.findItem(R.id.default_options).setEnabled(!Utils.SHOULD_LOCK_UI);
+        menu.findItem(R.id.default_values).setEnabled(!Utils.SHOULD_LOCK_UI);
         return true;
     }
 
@@ -466,35 +466,35 @@ public class MainActivity extends AppCompatActivity implements CustomFileChooser
                 .actionBar()
                 .color(Color.WHITE)
                 .sizeDp(30);
-        IconicsDrawable mDefaultOptionsIcon = new IconicsDrawable(MainActivity.this)
-                .icon(ControlCenter.DEFAULT_OPTIONS_ICON)
+        IconicsDrawable mDefaultValuesIcon = new IconicsDrawable(MainActivity.this)
+                .icon(ControlCenter.DEFAULT_VALUES_ICON)
                 .actionBar()
                 .color(Color.WHITE)
                 .sizeDp(35);
         MenuItem mSettings, mChangelog, mDefaultOptions;
         mSettings = menu.findItem(R.id.settings);
         mChangelog = menu.findItem(R.id.changelog);
-        mDefaultOptions = menu.findItem(R.id.default_options);
+        mDefaultOptions = menu.findItem(R.id.default_values);
         mSettings.setIcon(mSettingsIcon);
         mChangelog.setIcon(mChangelogIcon);
-        mDefaultOptions.setIcon(mDefaultOptionsIcon);
+        mDefaultOptions.setIcon(mDefaultValuesIcon);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.default_options:
+            case R.id.default_values:
                 SweetAlertDialog sweetAlertDialog = new SweetAlertDialog(MainActivity.this, SweetAlertDialog.WARNING_TYPE)
-                        .setTitleText(getString(R.string.restore_default))
-                        .setContentText(getString(R.string.confirm_restore_default))
+                        .setTitleText(getString(R.string.set_default_values))
+                        .setContentText(getString(R.string.confirm_set_default_values))
                         .setConfirmText(getString(R.string.positive_button))
                         .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
                             @Override
                             public void onClick(SweetAlertDialog sDialog) {
-                                ControlCenter.DefaultValues();
-                                sDialog.setTitleText(getString(R.string.restored_default_options_title))
-                                        .setContentText(getString(R.string.restored_default_options_message))
+                                Utils.SetDefaultValues();
+                                sDialog.setTitleText(getString(R.string.set_default_values_title))
+                                        .setContentText(getString(R.string.set_default_values_message))
                                         .setConfirmText(getString(R.string.ok_button))
                                         .showCancelButton(false)
                                         .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
@@ -502,7 +502,7 @@ public class MainActivity extends AppCompatActivity implements CustomFileChooser
                                             public void onClick(SweetAlertDialog sDialog) {
                                                 finishAffinity();
                                                 startActivity(getIntent());
-                                                mEditor.putBoolean("default_options", false).commit();
+                                                mEditor.putBoolean("default_values", false).commit();
                                             }
                                         });
                                 sDialog.setCancelable(false);

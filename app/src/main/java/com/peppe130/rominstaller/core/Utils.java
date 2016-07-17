@@ -1,27 +1,34 @@
 package com.peppe130.rominstaller.core;
 
+import android.annotation.SuppressLint;
 import android.app.DownloadManager;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.AssetManager;
 import android.content.res.TypedArray;
 import android.net.Uri;
 import android.os.Environment;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.TypedValue;
 import android.view.View;
 import android.widget.Toast;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.ArrayList;
+import java.util.Map;
 
 import com.peppe130.rominstaller.R;
 import com.afollestad.materialdialogs.MaterialDialog;
 
 
+@SuppressLint("CommitPrefEdits")
 @SuppressWarnings("ResultOfMethodCallIgnored, unused, ConstantConditions")
 public class Utils {
 
@@ -73,6 +80,48 @@ public class Utils {
 
         TOAST = Toast.makeText(mContext, mString, Toast.LENGTH_LONG);
         TOAST.show();
+
+    }
+
+    public static void ExportPreferences() {
+
+        SharedPreferences SP = PreferenceManager.getDefaultSharedPreferences(Utils.ACTIVITY);
+
+        try {
+            FileWriter mFileWriter = new FileWriter(Environment.getExternalStorageDirectory().getPath() + "/" + Utils.ACTIVITY.getString(R.string.rom_name) + "/" + "preferences.prop");
+            BufferedWriter mBufferedWriter = new BufferedWriter(mFileWriter);
+            Map<String,?> mPreferences = SP.getAll();
+            mPreferences.remove("file_path");
+            mPreferences.remove("first_time");
+            mPreferences.remove("default_values");
+            for (Map.Entry<String,?> entry : mPreferences.entrySet()) {
+                mBufferedWriter.write(
+                        entry.getKey() + "=" + entry.getValue().toString() + "\n"
+                );
+            }
+            mBufferedWriter.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public static void SetDefaultValues() {
+
+        SharedPreferences SP = PreferenceManager.getDefaultSharedPreferences(Utils.ACTIVITY);
+        SharedPreferences.Editor mEditor = SP.edit();
+
+        try {
+            Map<String,?> mPreferences = SP.getAll();
+            mPreferences.remove("file_path");
+            mPreferences.remove("first_time");
+            mPreferences.remove("default_values");
+            for (Map.Entry<String,?> entry : mPreferences.entrySet()) {
+                mEditor.remove(entry.getKey()).apply();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
     }
 
