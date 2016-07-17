@@ -16,7 +16,7 @@ import com.peppe130.rominstaller.core.Utils;
 public class ControlCenter {
 
     public static String[] DEVICE_COMPATIBILITY_LIST = new String[] {"SM-G920F"};
-    public static String[] ROM_MD5_LIST = new String[] {"4ba678ca02e60557757d29e91e1e792f"};
+    public static String[] ROM_MD5_LIST = new String[] {"f52ab56a816e0fe987409dc4807b8653"};
     public static String[] RECOVERY_MD5_LIST = new String[] {"5fb732eea3d3e2b407fa7685c27a5354"};
 
     public static Boolean TEST_MODE = false;
