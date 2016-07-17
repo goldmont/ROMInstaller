@@ -58,7 +58,7 @@ public class SettingsActivity extends AppCompatActivity {
         }
 
         if(ControlCenter.TRIAL_MODE && !mSampleZIP.exists()) {
-            Utils.copyAssetFolder(getAssets(), "sample", mROMFolder.toString());
+            Utils.CopyAssetFolder(getAssets(), "sample", mROMFolder.toString());
         }
 
     }
@@ -69,7 +69,7 @@ public class SettingsActivity extends AppCompatActivity {
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
 
-            addPreferencesFromResource(R.xml.settings_preference);
+            addPreferencesFromResource(R.xml.settings_fragment);
 
             Preference DOWNLOAD_CENTER = findPreference("download_center");
             Preference PROJECT_BUILD_NUMBER = findPreference("app_build_number");

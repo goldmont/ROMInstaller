@@ -30,7 +30,7 @@ public class FragmentsCollector {
         @Override
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-            addPreferencesFromResource(R.xml.first_preference);
+            addPreferencesFromResource(R.xml.first_fragment);
         }
 
         @Override
@@ -45,7 +45,7 @@ public class FragmentsCollector {
         @Override
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-            addPreferencesFromResource(R.xml.second_preference);
+            addPreferencesFromResource(R.xml.second_fragment);
         }
 
         @Override
@@ -60,7 +60,7 @@ public class FragmentsCollector {
         @Override
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-            addPreferencesFromResource(R.xml.third_preference);
+            addPreferencesFromResource(R.xml.third_fragment);
         }
 
         @Override
@@ -75,7 +75,7 @@ public class FragmentsCollector {
         @Override
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-            addPreferencesFromResource(R.xml.fourth_preference);
+            addPreferencesFromResource(R.xml.fourth_fragment);
         }
 
         @Override
@@ -90,7 +90,7 @@ public class FragmentsCollector {
         @Override
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-            addPreferencesFromResource(R.xml.fifth_preference);
+            addPreferencesFromResource(R.xml.fifth_fragment);
         }
 
         @Override
@@ -105,7 +105,7 @@ public class FragmentsCollector {
         @Override
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-            addPreferencesFromResource(R.xml.bloatware_preference);
+            addPreferencesFromResource(R.xml.bloatware_fragment);
         }
 
         @Override

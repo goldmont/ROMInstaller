@@ -16,7 +16,7 @@ import com.peppe130.rominstaller.core.Utils;
 public class ControlCenter {
 
     public static String[] DEVICE_COMPATIBILITY_LIST = new String[] {"SM-G920F"};
-    public static String[] ROM_MD5_LIST = new String[] {"f52ab56a816e0fe987409dc4807b8653"};
+    public static String[] ROM_MD5_LIST = new String[] {"b14da8918a4359c809f83884c5ec2f5b"};
     public static String[] RECOVERY_MD5_LIST = new String[] {"5fb732eea3d3e2b407fa7685c27a5354"};
 
     public static Boolean TEST_MODE = false;
@@ -40,7 +40,7 @@ public class ControlCenter {
         Utils.FILE_NAME = "SampleROM.zip";
 
         Utils.StartDownloadROM(
-                "http://www.mediafire.com/download/cmcckankvzugfdn/SampleROM.zip",
+                "http://www.mediafire.com/download/hc9r53djj82zncx/SampleROM.zip",
                 Utils.ACTIVITY.getString(R.string.rom_folder));
 
     }

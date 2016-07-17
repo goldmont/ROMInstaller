@@ -209,7 +209,7 @@ public class DownloadActivity extends AppCompatActivity implements CustomFileCho
                                 @Override
                                 public void onClick(SweetAlertDialog sDialog) {
                                     sDialog.dismiss();
-                                    Utils.deleteFolderRecursively(mFile.toString());
+                                    Utils.DeleteFolderRecursively(mFile.toString());
                                     Utils.ToastShort(DownloadActivity.this, getString(R.string.cleared));
                                 }
                             })

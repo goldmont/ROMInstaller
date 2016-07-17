@@ -168,7 +168,7 @@ public class CustomFileChooser extends DialogFragment implements MaterialDialog.
                     public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
                         if (getLockExplorer()) {
                             dialog.dismiss();
-                            Utils.deleteFolderRecursively(getPathToBeLocked());
+                            Utils.DeleteFolderRecursively(getPathToBeLocked());
                             Utils.ToastShort(getActivity(), getString(R.string.cleared));
                         } else {
                             new MaterialDialog.Builder(getActivity())

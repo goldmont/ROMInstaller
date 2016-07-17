@@ -229,7 +229,7 @@ public class Utils {
 
     }
 
-    public static void deleteFolderRecursively(String path) {
+    public static void DeleteFolderRecursively(String path) {
 
         File mFile = new File(path);
 
@@ -265,21 +265,18 @@ public class Utils {
 
     }
 
-    public static boolean copyAssetFolder(AssetManager manager, String fromPath, String toPath) {
+    public static boolean CopyAssetFolder(AssetManager manager, String fromPath, String toPath) {
 
         try {
             String[] files = manager.list(fromPath);
             new File(toPath).mkdirs();
             boolean res = true;
             for (String file : files)
-                if (file.contains("."))
-                    res &= copyAsset(manager,
-                            fromPath + "/" + file,
-                            toPath + "/" + file);
-                else
-                    res &= copyAssetFolder(manager,
-                            fromPath + "/" + file,
-                            toPath + "/" + file);
+                if (file.contains(".")) {
+                    res &= CopyAsset(manager, fromPath + "/" + file, toPath + "/" + file);
+                } else {
+                    res &= CopyAssetFolder(manager, fromPath + "/" + file, toPath + "/" + file);
+                }
             return res;
         } catch (Exception e) {
             e.printStackTrace();
@@ -288,7 +285,7 @@ public class Utils {
 
     }
 
-    public static boolean copyAsset(AssetManager manager, String fromPath, String toPath) {
+    public static boolean CopyAsset(AssetManager manager, String fromPath, String toPath) {
 
         InputStream in;
         OutputStream out;
@@ -297,7 +294,7 @@ public class Utils {
             in = manager.open(fromPath);
             new File(toPath).createNewFile();
             out = new FileOutputStream(toPath);
-            copyFile(in, out);
+            CopyFile(in, out);
             in.close();
             out.flush();
             out.close();
@@ -309,7 +306,7 @@ public class Utils {
 
     }
 
-    public static void copyFile(InputStream in, OutputStream out) throws IOException {
+    public static void CopyFile(InputStream in, OutputStream out) throws IOException {
 
         byte[] buffer = new byte[1024];
         int read;

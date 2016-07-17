@@ -296,7 +296,7 @@ public class Download extends AsyncTask<String, String, String> {
                                 Utils.SHOULD_LOCK_UI = false;
                                 Utils.ACTIVITY.invalidateOptionsMenu();
                                 Utils.ACTIVITY.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
-                                Utils.ToastLong(Utils.ACTIVITY, Utils.ACTIVITY.getString(R.string.can_not_check_file));
+                                Utils.ToastLong(Utils.ACTIVITY, "Disable test mode in order to check the downloaded file.");
                             }
                             Utils.DOWNLOAD_REQUEST_LIST.clear();
                             Utils.DOWNLOAD_LINK_LIST.clear();

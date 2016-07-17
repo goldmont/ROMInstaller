@@ -238,7 +238,7 @@ public class MainActivity extends AppCompatActivity implements CustomFileChooser
                             .add(new InstallPopupDialog(Utils.ZIP_FILE.toString()), "install_fragment")
                             .commitAllowingStateLoss();
                 } else {
-                    Utils.ToastShort(MainActivity.this, getString(R.string.can_not_install));
+                    Utils.ToastShort(MainActivity.this, "Preferences exported. Disable test mode in order to install.");
                 }
             }
         });
@@ -292,7 +292,7 @@ public class MainActivity extends AppCompatActivity implements CustomFileChooser
                                     .add(new InstallPopupDialog(Utils.ZIP_FILE.toString()), "install_fragment")
                                     .commitAllowingStateLoss();
                         } else {
-                            Utils.ToastShort(MainActivity.this, getString(R.string.can_not_install));
+                            Utils.ToastShort(MainActivity.this, "Preferences exported. Disable test mode in order to install.");
                         }
                     }
                 }
@@ -369,7 +369,7 @@ public class MainActivity extends AppCompatActivity implements CustomFileChooser
         }
 
         if(ControlCenter.TRIAL_MODE && !mSampleZIP.exists()) {
-            Utils.copyAssetFolder(getAssets(), "sample", mROMFolder.toString());
+            Utils.CopyAssetFolder(getAssets(), "sample", mROMFolder.toString());
         }
 
     }
