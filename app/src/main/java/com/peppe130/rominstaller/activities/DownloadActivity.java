@@ -17,6 +17,8 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
@@ -46,6 +48,11 @@ public class DownloadActivity extends AppCompatActivity implements CustomFileCho
         mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mRecyclerView.setAdapter(new Adapter());
+
+        if (ControlCenter.AVAILABLE_DOWNLOADS_NUMBER == 0) {
+            TextView mTextView = (TextView) findViewById(R.id.textView);
+            mTextView.setVisibility(View.VISIBLE);
+        }
 
     }
 

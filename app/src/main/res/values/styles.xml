@@ -127,4 +127,12 @@
 
     </style>
 
+    <style name="TextAppearance.Welcome" parent="@android:style/TextAppearance">
+
+        <item name="android:textSize">30.0dip</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+
+    </style>
+
 </resources>
