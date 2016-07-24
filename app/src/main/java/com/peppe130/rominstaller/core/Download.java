@@ -10,7 +10,6 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Environment;
 import android.os.Handler;
-import android.util.Log;
 import android.view.WindowManager;
 import java.io.File;
 import java.io.IOException;
@@ -101,7 +100,7 @@ public class Download extends AsyncTask<String, String, String> {
             DownloadManager mDownloadManager = (DownloadManager) Utils.ACTIVITY.getSystemService(Context.DOWNLOAD_SERVICE);
             mDownloadManager.enqueue(mRequest);
         } catch (Exception e) {
-            Log.e("Error: ", e.getMessage());
+            e.printStackTrace();
         }
         return null;
     }
@@ -161,11 +160,7 @@ public class Download extends AsyncTask<String, String, String> {
                                                 Utils.ACTIVITY.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
                                             }
                                         }, 300);
-                                        Utils.DOWNLOAD_REQUEST_LIST.clear();
-                                        Utils.DOWNLOAD_LINK_LIST.clear();
-                                        Utils.DOWNLOAD_DIRECTORY_LIST.clear();
-                                        Utils.DOWNLOADED_FILE_NAME_LIST.clear();
-                                        Utils.DOWNLOADED_FILE_MD5_LIST.clear();
+                                        ClearArrays();
                                     }
                                 }, 1000);
                             }
@@ -298,11 +293,7 @@ public class Download extends AsyncTask<String, String, String> {
                                 Utils.ACTIVITY.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
                                 Utils.ToastLong(Utils.ACTIVITY, "Disable test mode in order to check the downloaded file.");
                             }
-                            Utils.DOWNLOAD_REQUEST_LIST.clear();
-                            Utils.DOWNLOAD_LINK_LIST.clear();
-                            Utils.DOWNLOAD_DIRECTORY_LIST.clear();
-                            Utils.DOWNLOADED_FILE_NAME_LIST.clear();
-                            Utils.DOWNLOADED_FILE_MD5_LIST.clear();
+                            ClearArrays();
                         } else {
                             new Handler().postDelayed(new Runnable() {
                                 @Override
@@ -312,11 +303,7 @@ public class Download extends AsyncTask<String, String, String> {
                                     Utils.ACTIVITY.invalidateOptionsMenu();
                                     Utils.ToastLong(Utils.ACTIVITY, Utils.ACTIVITY.getString(R.string.download_completed));
                                     Utils.ACTIVITY.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
-                                    Utils.DOWNLOAD_REQUEST_LIST.clear();
-                                    Utils.DOWNLOAD_LINK_LIST.clear();
-                                    Utils.DOWNLOAD_DIRECTORY_LIST.clear();
-                                    Utils.DOWNLOADED_FILE_NAME_LIST.clear();
-                                    Utils.DOWNLOADED_FILE_MD5_LIST.clear();
+                                    ClearArrays();
                                 }
                             }, 500);
                         }
@@ -325,4 +312,13 @@ public class Download extends AsyncTask<String, String, String> {
             }
         }, new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE));
     }
+
+    public void ClearArrays() {
+        Utils.DOWNLOAD_REQUEST_LIST.clear();
+        Utils.DOWNLOAD_LINK_LIST.clear();
+        Utils.DOWNLOAD_DIRECTORY_LIST.clear();
+        Utils.DOWNLOADED_FILE_NAME_LIST.clear();
+        Utils.DOWNLOADED_FILE_MD5_LIST.clear();
+    }
+
 }
