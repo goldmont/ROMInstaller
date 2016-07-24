@@ -1,7 +1,7 @@
 package com.peppe130.rominstaller;
 
-import android.support.annotation.Nullable;
 import org.jetbrains.annotations.Contract;
+import android.support.annotation.Nullable;
 import android.content.Intent;
 import android.net.Uri;
 

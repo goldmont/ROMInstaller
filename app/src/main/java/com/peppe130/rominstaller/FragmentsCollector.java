@@ -21,7 +21,7 @@ public class FragmentsCollector {
         mListFragment.add(new ThirdFragment());
         mListFragment.add(new FourthFragment());
         mListFragment.add(new FifthFragment());
-        mListFragment.add(new BloatwareFragment());
+        mListFragment.add(new SixthFragment());
 
     }
 
@@ -100,12 +100,12 @@ public class FragmentsCollector {
 
     }
 
-    public static class BloatwareFragment extends XpPreferenceFragment {
+    public static class SixthFragment extends XpPreferenceFragment {
 
         @Override
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-            addPreferencesFromResource(R.xml.bloatware_fragment);
+            addPreferencesFromResource(R.xml.sixthfragment);
         }
 
         @Override
