@@ -105,7 +105,7 @@ public class FragmentsCollector {
         @Override
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-            addPreferencesFromResource(R.xml.sixthfragment);
+            addPreferencesFromResource(R.xml.sixth_fragment);
         }
 
         @Override
