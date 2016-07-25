@@ -5,7 +5,7 @@
     <PreferenceCategory
         android:title="Voice Call Recording">
 
-        <com.peppe130.rominstaller.core.CustomCheckBoxPreference
+        <CheckBoxPreference
             android:key="voice_call"
             android:defaultValue="true"
             android:title="Enable Voice Call Recording?"
@@ -16,7 +16,7 @@
     <PreferenceCategory
         android:title="Call Button In Call Log">
 
-        <com.peppe130.rominstaller.core.CustomCheckBoxPreference
+        <CheckBoxPreference
             android:key="call_button"
             android:defaultValue="true"
             android:title="Enable Call Button In Call Log?"
@@ -27,7 +27,7 @@
     <PreferenceCategory
         android:title="Scheduled Messages">
 
-        <com.peppe130.rominstaller.core.CustomCheckBoxPreference
+        <CheckBoxPreference
             android:key="scheduled_messages"
             android:defaultValue="true"
             android:title="Enable Scheduled Messages?"
@@ -38,7 +38,7 @@
     <PreferenceCategory
         android:title="Xposed Framework">
 
-        <com.peppe130.rominstaller.core.CustomCheckBoxPreference
+        <CheckBoxPreference
             android:key="xposed"
             android:defaultValue="false"
             android:title="Install Xposed Framework?"

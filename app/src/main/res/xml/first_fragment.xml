@@ -5,7 +5,7 @@
     <PreferenceCategory
         android:title="Wipe">
 
-        <com.peppe130.rominstaller.core.CustomCheckBoxPreference
+        <CheckBoxPreference
             android:key="wipe"
             android:defaultValue="false"
             android:title="Wipe data"
@@ -42,7 +42,7 @@
     <PreferenceCategory
         android:title="SFinder &amp; QuickConnect ">
 
-        <com.peppe130.rominstaller.core.CustomCheckBoxPreference
+        <CheckBoxPreference
             android:key="sf_qc"
             android:defaultValue="false"
             android:title="Disable SFinder &amp; QuickConnect"

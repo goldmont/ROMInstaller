@@ -44,7 +44,7 @@
     <PreferenceCategory
         android:title="Boot Sound">
 
-        <com.peppe130.rominstaller.core.CustomCheckBoxPreference
+        <CheckBoxPreference
             android:key="boot_sound"
             android:defaultValue="false"
             android:title="Disable Boot Sound?"

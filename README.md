@@ -131,7 +131,7 @@ To change **UI**, you have to open the **_Control Center_** class and change the
     ```xml
         <PreferenceCategory
           android:title="CheckBox">
-          <com.peppe130.rominstaller.core.CustomCheckBoxPreference
+          <CheckBoxPreference
               android:key="testCheckBox"
               android:defaultValue="false"
               android:title="CheckBox Title"

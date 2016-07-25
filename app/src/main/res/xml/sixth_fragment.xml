@@ -5,37 +5,37 @@
     <PreferenceCategory
         android:title="Apps">
 
-        <com.peppe130.rominstaller.core.CustomCheckBoxPreference
+        <CheckBoxPreference
             android:key="adaway"
             android:defaultValue="false"
             android:title="AdAway" />
 
-        <com.peppe130.rominstaller.core.CustomCheckBoxPreference
+        <CheckBoxPreference
             android:key="es_file_explorer"
             android:defaultValue="false"
             android:title="ES File Explorer" />
 
-        <com.peppe130.rominstaller.core.CustomCheckBoxPreference
+        <CheckBoxPreference
             android:key="s_translator"
             android:defaultValue="false"
             android:title="S Translator" />
 
-        <com.peppe130.rominstaller.core.CustomCheckBoxPreference
+        <CheckBoxPreference
             android:key="gmail"
             android:defaultValue="false"
             android:title="Gmail" />
 
-        <com.peppe130.rominstaller.core.CustomCheckBoxPreference
+        <CheckBoxPreference
             android:key="s_voice"
             android:defaultValue="false"
             android:title="S Voice" />
 
-        <com.peppe130.rominstaller.core.CustomCheckBoxPreference
+        <CheckBoxPreference
             android:key="s_health"
             android:defaultValue="false"
             android:title="S Health" />
 
-        <com.peppe130.rominstaller.core.CustomCheckBoxPreference
+        <CheckBoxPreference
             android:key="kids_mode"
             android:defaultValue="false"
             android:title="Kids Mode" />

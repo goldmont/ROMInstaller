@@ -5,7 +5,7 @@
     <PreferenceCategory
         android:title="Wallpaper Scrolling">
 
-        <com.peppe130.rominstaller.core.CustomCheckBoxPreference
+        <CheckBoxPreference
             android:key="scrolling_wallpaper"
             android:defaultValue="false"
             android:title="Enable Wallpaper Scrolling?"
@@ -16,7 +16,7 @@
     <PreferenceCategory
         android:title="Increasing Ringtone">
 
-        <com.peppe130.rominstaller.core.CustomCheckBoxPreference
+        <CheckBoxPreference
             android:key="increasing_ringtone"
             android:defaultValue="true"
             android:title="Disable Increasing Ringtone?"
@@ -27,7 +27,7 @@
     <PreferenceCategory
         android:title="Camera Shutter Sound">
 
-        <com.peppe130.rominstaller.core.CustomCheckBoxPreference
+        <CheckBoxPreference
             android:key="shutter_sound"
             android:defaultValue="false"
             android:title="Disable Camera Shutter Sound?"
@@ -38,7 +38,7 @@
     <PreferenceCategory
         android:title="Keyboard Secondary Symbols">
 
-        <com.peppe130.rominstaller.core.CustomCheckBoxPreference
+        <CheckBoxPreference
             android:key="secondary_symbols"
             android:defaultValue="false"
             android:title="Enable Secondary Symbols?"
