@@ -15,7 +15,6 @@ import android.widget.RelativeLayout;
 
 import com.peppe130.rominstaller.ControlCenter;
 import com.peppe130.rominstaller.R;
-import com.peppe130.rominstaller.core.Utils;
 import org.michaelevans.colorart.library.ColorArt;
 
 
@@ -79,8 +78,8 @@ public class SplashScreenActivity extends Activity {
                         } else {
                             startActivity(new Intent(SplashScreenActivity.this, MainActivity.class));
                         }
-                        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                     }
+                    finish();
                 }
             }, ControlCenter.SPLASH_SCREEN_DELAY);
         } else {
@@ -130,13 +129,11 @@ public class SplashScreenActivity extends Activity {
             isActivityVisible = true;
             recreate();
         }
-        Utils.SHOULD_CLOSE_ACTIVITY = false;
     }
 
     @Override
     protected void onPause() {
         super.onPause();
         isActivityVisible = false;
-        Utils.SHOULD_CLOSE_ACTIVITY = true;
     }
 }

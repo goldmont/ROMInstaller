@@ -14,6 +14,7 @@ import com.afollestad.materialdialogs.MaterialDialog;
 import com.peppe130.rominstaller.ControlCenter;
 import com.peppe130.rominstaller.R;
 import com.peppe130.rominstaller.core.Utils;
+import org.sufficientlysecure.htmltextview.HtmlRemoteImageGetter;
 import org.sufficientlysecure.htmltextview.HtmlTextView;
 import cn.pedant.SweetAlert.SweetAlertDialog;
 
@@ -35,11 +36,6 @@ public class AgreementActivity extends AppCompatActivity {
 
         mActivity = this;
         Utils.ACTIVITY = this;
-
-        if (Utils.SHOULD_CLOSE_ACTIVITY) {
-            Utils.SHOULD_CLOSE_ACTIVITY = false;
-            SplashScreenActivity.mActivity.finish();
-        }
 
         SP = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
         mEditor = SP.edit();
@@ -109,7 +105,7 @@ public class AgreementActivity extends AppCompatActivity {
 
         HtmlTextView mHtmlTextView = (HtmlTextView) findViewById(R.id.agreement_html_text);
         assert mHtmlTextView != null;
-        mHtmlTextView.setHtmlFromRawResource(AgreementActivity.this, R.raw.agreement, new HtmlTextView.RemoteImageGetter());
+        mHtmlTextView.setHtml(R.raw.agreement, new HtmlRemoteImageGetter(mHtmlTextView));
     }
 
     @Override

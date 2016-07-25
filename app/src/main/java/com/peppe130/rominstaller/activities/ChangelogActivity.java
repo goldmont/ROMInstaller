@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.peppe130.rominstaller.R;
 import com.peppe130.rominstaller.core.Utils;
+import org.sufficientlysecure.htmltextview.HtmlRemoteImageGetter;
 import org.sufficientlysecure.htmltextview.HtmlTextView;
 
 
@@ -19,7 +20,7 @@ public class ChangelogActivity extends AppCompatActivity {
 
         HtmlTextView mHtmlTextView = (HtmlTextView) findViewById(R.id.changelog_html_text);
         assert mHtmlTextView != null;
-        mHtmlTextView.setHtmlFromRawResource(ChangelogActivity.this, R.raw.changelog, new HtmlTextView.RemoteImageGetter());
+        mHtmlTextView.setHtml(R.raw.changelog, new HtmlRemoteImageGetter(mHtmlTextView));
     }
 
     @Override
