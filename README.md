@@ -40,24 +40,24 @@ Make sure that your SDK is updated to the latest version available.
 7. From the side panel on the left, select the **_"Android"_** view.
 8. Expand the **_"app"_** menu and then the **_"java"_** one. The package name should now be visible. (**_com.peppe130.rominstaller_**).
 
-![Screenshots](https://raw.githubusercontent.com/peppe130/ROMInstaller/master/Screenshot/ScreenshotStep8.png) <dl />
+![Screenshots](https://raw.githubusercontent.com/peppe130/ROMInstaller/master/art/ScreenshotStep8.png) <dl />
 9. Right click on the package name > **_"Refactor"_** > **_"Rename"._**
 
-![Screenshots](https://raw.githubusercontent.com/peppe130/ROMInstaller/master/Screenshot/ScreenshotStep9.png) <dl />
+![Screenshots](https://raw.githubusercontent.com/peppe130/ROMInstaller/master/art/ScreenshotStep9.png) <dl />
 10. From the new window that opens, click on **_"Rename Package"_**, enter a new name in **_lowercase_**
 <dl /> (for example: **_newrominstaller_**) and click on **_"Refactor"._**
 
-![Screenshots](https://raw.githubusercontent.com/peppe130/ROMInstaller/master/Screenshot/ScreenshotStep10.png) <dl />
+![Screenshots](https://raw.githubusercontent.com/peppe130/ROMInstaller/master/art/ScreenshotStep10.png) <dl />
 11. From the new window that appears at the bottom, click on **_"Do Refactor"_** and wait until the process is completed.
 
-![Screenshots](https://raw.githubusercontent.com/peppe130/ROMInstaller/master/Screenshot/ScreenshotStep11.png) <dl />
+![Screenshots](https://raw.githubusercontent.com/peppe130/ROMInstaller/master/art/ScreenshotStep11.png) <dl />
 12. Expand the **_"Gradle Scripts"_** menu and open **_"build.gradle(Module: app)"_**. Replace the old package name defined in **_"applicationId"_** with the new one. For example: **_applicationId "com.peppe130.newrominstaller"._**
 
-![Screenshots](https://raw.githubusercontent.com/peppe130/ROMInstaller/master/Screenshot/ScreenshotStep13.png)
+![Screenshots](https://raw.githubusercontent.com/peppe130/ROMInstaller/master/art/ScreenshotStep13.png)
 
 **NB:** If the error **_"Activity class {…} does not exist"_** does occur while the App is compiled by Android Studio, just sync again the project. Look at the picture below:
 
-![Screenshots](https://raw.githubusercontent.com/peppe130/ROMInstaller/master/Screenshot/ScreenshotStep14.png)
+![Screenshots](https://raw.githubusercontent.com/peppe130/ROMInstaller/master/art/ScreenshotStep14.png)
 
 # Project structure
 Project is composed of two packages and two classes:
@@ -622,7 +622,7 @@ The basic parameters are **6**:
 5. _textPrimaryColor_
 6. _textSecondaryColor_
 
-![Screenshots](https://raw.githubusercontent.com/peppe130/ROMInstaller/master/Screenshot/Colors_Guide.png)
+![Screenshots](https://raw.githubusercontent.com/peppe130/ROMInstaller/master/art/Colors_Guide.png)
 
 # How to add your own info in Settings?
 
