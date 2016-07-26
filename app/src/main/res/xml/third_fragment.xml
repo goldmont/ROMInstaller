@@ -36,8 +36,8 @@
             android:summary="@string/selected_item"
             android:key="bootanimation"
             android:defaultValue="1"
-            android:entries="@array/bootanim"
-            android:entryValues="@array/bootanim_values" />
+            android:entries="@array/bootanimation"
+            android:entryValues="@array/bootanimation_values" />
 
     </PreferenceCategory>
 
