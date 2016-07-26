@@ -222,17 +222,7 @@ After adding the preferences, you must set up the **XML** file in Java. To do th
 
 ```
 
-Then, declare the Fragment newly created by adding it to the Fragment list. In the `Setup()` method, under
-
-```java
-
-  if (mListFragment != null) {
-      mListFragment.clear();
-  }
-
-```
-
-write:
+Then, declare the Fragment newly created by adding it to the Fragment list. In the `Setup()` method, write:
 
 ```java
 
