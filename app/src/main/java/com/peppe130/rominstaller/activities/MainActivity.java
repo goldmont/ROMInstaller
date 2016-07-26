@@ -24,16 +24,16 @@ import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.mikepenz.iconics.IconicsDrawable;
 import com.ogaclejapan.smarttablayout.SmartTabLayout;
-import com.peppe130.rominstaller.ControlCenter;
-import com.peppe130.rominstaller.FragmentsCollector;
+import cn.pedant.SweetAlert.SweetAlertDialog;
 import com.peppe130.rominstaller.R;
 import com.peppe130.rominstaller.core.Utils;
+import com.peppe130.rominstaller.ControlCenter;
+import com.peppe130.rominstaller.FragmentsCollector;
 import com.peppe130.rominstaller.core.CustomViewPager;
 import com.peppe130.rominstaller.core.CheckFile;
 import com.peppe130.rominstaller.core.CustomFileChooser;
 import com.peppe130.rominstaller.core.InstallPopupDialog;
 import com.peppe130.rominstaller.core.SystemProperties;
-import cn.pedant.SweetAlert.SweetAlertDialog;
 
 
 @SuppressLint("CommitPrefEdits")
