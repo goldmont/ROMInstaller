@@ -280,7 +280,7 @@ After setting up the buttons, you have to set up the action to run when it get c
 
 public static void DownloadActionGetter(Integer mInt) {
 
-        String mDownloadLink, mDownloadDirectory, mDownloadedFileFinalName, mDownloadedFileMD5, mRecoveryPartition;
+    String mDownloadLink, mDownloadDirectory, mDownloadedFileFinalName, mDownloadedFileMD5, mRecoveryPartition;
 
     switch (mInt) {
         case 0: // Single download without MD5 check
