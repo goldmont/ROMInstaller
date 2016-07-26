@@ -46,6 +46,8 @@ public class AgreementActivity extends AppCompatActivity {
         mFirstTime = SP.getBoolean("first_time", true);
 
         if (!ControlCenter.TRIAL_MODE && !mFirstTime) {
+            finish();
+            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
             startActivity(new Intent(AgreementActivity.this, MainActivity.class));
         }
 

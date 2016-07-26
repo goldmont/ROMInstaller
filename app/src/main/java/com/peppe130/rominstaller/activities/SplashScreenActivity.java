@@ -27,7 +27,7 @@ public class SplashScreenActivity extends Activity {
     RelativeLayout mRelativeLayout;
     BitmapFactory.Options mOptions;
     Boolean isActivityVisible = true;
-    Integer mHeaderColor;
+    Integer mHeaderColor, mTheme = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,8 +37,6 @@ public class SplashScreenActivity extends Activity {
         if (ControlCenter.SHOULD_SHOW_SPLASH_SCREEN) {
             mRelativeLayout = (RelativeLayout) findViewById(R.id.splash_screen_layout);
             mImageView = (ImageView) findViewById(R.id.imageView);
-
-            Integer mTheme = null;
 
             try {
                 mTheme = getPackageManager().getPackageInfo(getPackageName(), 0).applicationInfo.theme;
@@ -85,6 +83,7 @@ public class SplashScreenActivity extends Activity {
             } else {
                 startActivity(new Intent(SplashScreenActivity.this, MainActivity.class));
             }
+            finish();
         }
 
     }
@@ -133,4 +132,5 @@ public class SplashScreenActivity extends Activity {
         super.onPause();
         isActivityVisible = false;
     }
+
 }
