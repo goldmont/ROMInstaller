@@ -226,7 +226,7 @@ Then, declare the Fragment newly created by adding it to the Fragment list. In t
 
 ```java
 
-    mListFragment.add(new YourFragment());
+mListFragment.add(new YourFragment());
 
 ```
 
