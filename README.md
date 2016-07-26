@@ -282,24 +282,24 @@ public static void DownloadActionGetter(Integer mInt) {
 
         String mDownloadLink, mDownloadDirectory, mDownloadedFileFinalName, mDownloadedFileMD5, mRecoveryPartition;
 
-        switch (mInt) {
-            case 0: // Single download without MD5 check
-                mDownloadLink = "YourDownloadLink";
-                mDownloadDirectory = getString(R.string.rom_folder);
-                mDownloadedFileFinalName = "File.zip";
-                mDownloadedFileMD5 = null;
+    switch (mInt) {
+        case 0: // Single download without MD5 check
+            mDownloadLink = "YourDownloadLink";
+            mDownloadDirectory = getString(R.string.rom_folder);
+            mDownloadedFileFinalName = "File.zip";
+            mDownloadedFileMD5 = null;
 
-                Utils.StartSingleDownload(mDownloadLink, mDownloadDirectory, mDownloadedFileFinalName, mDownloadedFileMD5);
-                break;
-            case 1: // Single download with MD5 check
-                mDownloadLink = "YourDownloadLink";
-                mDownloadDirectory = getString(R.string.rom_folder);
-                mDownloadedFileFinalName = "File.zip";
-                mDownloadedFileMD5 = "3a416cafb312cb15ce6b3b09249fe6e6";
+            Utils.StartSingleDownload(mDownloadLink, mDownloadDirectory, mDownloadedFileFinalName, mDownloadedFileMD5);
+            break;
+        case 1: // Single download with MD5 check
+            mDownloadLink = "YourDownloadLink";
+            mDownloadDirectory = getString(R.string.rom_folder);
+            mDownloadedFileFinalName = "File.zip";
+            mDownloadedFileMD5 = "3a416cafb312cb15ce6b3b09249fe6e6";
 
-                Utils.StartSingleDownload(mDownloadLink, mDownloadDirectory, mDownloadedFileFinalName, mDownloadedFileMD5);
-                break;
-	}
+            Utils.StartSingleDownload(mDownloadLink, mDownloadDirectory, mDownloadedFileFinalName, mDownloadedFileMD5);
+            break;
+    }
 
 }
 
