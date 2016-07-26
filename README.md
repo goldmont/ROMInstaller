@@ -244,10 +244,6 @@ write:
 ```java
 
 public static void Setup() {
-
-	if (mListFragment != null) {
-		mListFragment.clear();
-	}
 		
 	mListFragment.add(new YourFragment());
 	mListFragment.add(new YourFragment2());

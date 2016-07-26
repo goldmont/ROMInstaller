@@ -74,6 +74,10 @@ public class MainActivity extends AppCompatActivity implements CustomFileChooser
         assert mSmartTabLayout != null;
         mSmartTabLayout.setSelectedIndicatorColors(Utils.FetchAccentColor());
 
+        if (FragmentsCollector.mListFragment != null) {
+            FragmentsCollector.mListFragment.clear();
+        }
+
         FragmentsCollector.Setup();
 
         if (ControlCenter.TEST_MODE) {

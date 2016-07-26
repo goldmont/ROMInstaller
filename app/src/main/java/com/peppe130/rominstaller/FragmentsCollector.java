@@ -12,10 +12,6 @@ public class FragmentsCollector {
 
     public static void Setup() {
 
-        if (mListFragment != null) {
-            mListFragment.clear();
-        }
-
         mListFragment.add(new FirstFragment());
         mListFragment.add(new SecondFragment());
         mListFragment.add(new ThirdFragment());
