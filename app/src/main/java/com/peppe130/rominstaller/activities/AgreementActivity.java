@@ -68,6 +68,7 @@ public class AgreementActivity extends AppCompatActivity {
                                             break;
                                     }
                                     finish();
+                                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                                     startActivity(new Intent(AgreementActivity.this, MainActivity.class));
                                 }
                             })
@@ -75,6 +76,7 @@ public class AgreementActivity extends AppCompatActivity {
                 } else {
                     mEditor.putBoolean("first_time", false).apply();
                     finish();
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                     startActivity(new Intent(AgreementActivity.this, MainActivity.class));
                 }
             }

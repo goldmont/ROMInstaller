@@ -498,7 +498,9 @@ public class MainActivity extends AppCompatActivity implements CustomFileChooser
                                         .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
                                             @Override
                                             public void onClick(SweetAlertDialog sDialog) {
+                                                sDialog.dismissWithAnimation();
                                                 finishAffinity();
+                                                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                                                 startActivity(getIntent());
                                                 mEditor.putBoolean("default_values", false).commit();
                                             }

@@ -198,8 +198,8 @@ public class CheckFile extends AsyncTask<String, String, Boolean> {
             SweetAlertDialog sweetAlertDialog = new SweetAlertDialog(Utils.ACTIVITY, SweetAlertDialog.ERROR_TYPE)
                     .setTitleText(Utils.ACTIVITY.getString(R.string.zip_file_md5_mismatch_dialog_title))
                     .setContentText(mContent)
-                    .setConfirmText(Utils.ACTIVITY.getString(R.string.download_button))
-                    .setCancelText(Utils.ACTIVITY.getString(R.string.file_chooser_button))
+                    .setConfirmText(Utils.ACTIVITY.getString(R.string.rom_download_button))
+                    .setCancelText(Utils.ACTIVITY.getString(R.string.retry_button))
                     .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
                         @Override
                         public void onClick(SweetAlertDialog sweetAlertDialog) {

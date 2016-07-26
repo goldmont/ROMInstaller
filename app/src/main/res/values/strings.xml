@@ -14,7 +14,7 @@
     <string name="close_button">CLOSE</string>
     <string name="later_button">LATER</string>
     <string name="download_button">DOWNLOAD</string>
-    <string name="file_chooser_button">FILE CHOOSER</string>
+    <string name="retry_button">RETRY</string>
     <string name="rom_download_button">DOWNLOAD ROM</string>
     <string name="clear_downloads_button">CLEAR ALL</string>
     <string name="what_is_inside_button">WHAT\'S INSIDE?</string>
