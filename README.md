@@ -201,24 +201,24 @@ After adding the preferences, you must set up the **XML** file in Java. To do th
 
 ```java
 
-  public static class YourFragment extends XpPreferenceFragment {
+public static class YourFragment extends XpPreferenceFragment {
 
-      public static YourFragment newInstance() {
-          return new YourFragment();
-      }
+    public static YourFragment newInstance() {
+        return new YourFragment();
+    }
 
-      @Override
-      public void onCreate(Bundle savedInstanceState) {
-          super.onCreate(savedInstanceState);
-          addPreferencesFromResource(R.xml.your_xml_file);
-      }
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        addPreferencesFromResource(R.xml.your_xml_file);
+    }
 
-      @Override
-      public void onCreatePreferences2(Bundle savedInstanceState, String rootKey) {
-          // Do nothing
-      }
+    @Override
+    public void onCreatePreferences2(Bundle savedInstanceState, String rootKey) {
+        // Do nothing
+    }
 
-  }
+}
 
 ```
 
@@ -226,7 +226,7 @@ Then, declare the Fragment newly created by adding it to the Fragment list. In t
 
 ```java
 
-  mListFragment.add(new YourFragment());
+    mListFragment.add(new YourFragment());
 
 ```
 
@@ -235,7 +235,7 @@ Then, declare the Fragment newly created by adding it to the Fragment list. In t
 
 public static void Setup() {
 		
-	mListFragment.add(new YourFragment());
+    mListFragment.add(new YourFragment());
 	mListFragment.add(new YourFragment2());
 	mListFragment.add(new YourFragment3());
 	...
@@ -256,14 +256,14 @@ Open **_Control Center_** class, look for `AVAILABLE_DOWNLOADS_NUMBER` variable 
 @Contract(pure = true)
 public static String DownloadNameGetter(Integer mInt) {
 
-        switch (mInt) {
-            case 0: // ID = 0;
-                return "Text of the first button";
-            case 1: // ID = 1;
-                return "Text of the second button";
-        }
+    switch (mInt) {
+        case 0: // ID = 0;
+            return "Text of the first button";
+        case 1: // ID = 1;
+            return "Text of the second button";
+    }
         
-        return null;
+    return null;
 
 }
 
@@ -370,7 +370,7 @@ Utils.StartSingleDownload(mDownloadLink, mDownloadDirectory, mDownloadedFileFina
 
 // Download N°2
 	Utils.EnqueueDownload(
-		"YourDownloadLink",
+	    "YourDownloadLink",
 		getString(R.string.rom_folder),
 		"File2.zip", null);
 
@@ -453,35 +453,35 @@ After setting up the buttons, you have to set up the action to run when it get c
 
 public static void DownloadActionGetter(Integer mInt) {
 
-        String mDownloadLink, mDownloadDirectory, mDownloadedFileFinalName, mDownloadedFileMD5, mRecoveryPartition;
+    String mDownloadLink, mDownloadDirectory, mDownloadedFileFinalName, mDownloadedFileMD5, mRecoveryPartition;
 
-        switch (mInt) {
-            case 0: // Download Recovery
-                mDownloadLink = "http://www.mediafire.com/download/z7fn3nw1vn5oo8a/Test.zip";
-                mDownloadDirectory = Utils.ACTIVITY.getString(R.string.rom_folder);
-                mDownloadedFileFinalName = "Recovery.zip";
-                mRecoveryPartition = "YourDeviceRecoveryPartition";
+    switch (mInt) {
+        case 0: // Download Recovery
+            mDownloadLink = "http://www.mediafire.com/download/z7fn3nw1vn5oo8a/Test.zip";
+            mDownloadDirectory = Utils.ACTIVITY.getString(R.string.rom_folder);
+            mDownloadedFileFinalName = "Recovery.zip";
+            mRecoveryPartition = "YourDeviceRecoveryPartition";
 
-                Utils.StartFlashRecovery(mDownloadLink, mDownloadDirectory, mDownloadedFileFinalName, mRecoveryPartition);
-                break;
-            case 1: // Download Recovery with Add-Ons
-                // Download Recovery
-                mDownloadLink = "http://www.mediafire.com/download/z7fn3nw1vn5oo8a/Test.zip";
-                mDownloadDirectory = Utils.ACTIVITY.getString(R.string.rom_folder);
-                mDownloadedFileFinalName = "Recovery.zip";
-                mRecoveryPartition = "YourDeviceRecoveryPartition";
+            Utils.StartFlashRecovery(mDownloadLink, mDownloadDirectory, mDownloadedFileFinalName, mRecoveryPartition);
+            break;
+        case 1: // Download Recovery with Add-Ons
+            // Download Recovery
+            mDownloadLink = "http://www.mediafire.com/download/z7fn3nw1vn5oo8a/Test.zip";
+            mDownloadDirectory = Utils.ACTIVITY.getString(R.string.rom_folder);
+            mDownloadedFileFinalName = "Recovery.zip";
+            mRecoveryPartition = "YourDeviceRecoveryPartition";
 
-                // Download Add-On N°1
-                Utils.EnqueueDownload(
-                        "http://www.mediafire.com/download/z7fn3nw1vn5oo8a/Test.zip",
-                        Utils.ACTIVITY.getString(R.string.rom_folder),
-                        "Add-On.zip",
-                        "5fb732eea3d3e2b407fa7685c27a5354");
+            // Download Add-On N°1
+            Utils.EnqueueDownload(
+            "http://www.mediafire.com/download/z7fn3nw1vn5oo8a/Test.zip",
+            Utils.ACTIVITY.getString(R.string.rom_folder),
+            "Add-On.zip",
+            "5fb732eea3d3e2b407fa7685c27a5354");
 
-                Utils.StartFlashRecoveryWithAddons(mDownloadLink, mDownloadDirectory, mDownloadedFileFinalName, mRecoveryPartition);
-                break;
+            Utils.StartFlashRecoveryWithAddons(mDownloadLink, mDownloadDirectory, mDownloadedFileFinalName, mRecoveryPartition);
+            break;
 
-        }
+    }
 
 }
 
@@ -635,7 +635,7 @@ You can add as many social networks as you want. Just separate from each other w
 ```java
 
 public static void ROMDeveloperInfoAction() {
-	String[] mSocial = new String[] {"Google+", "Twitter"};
+    String[] mSocial = new String[] {"Google+", "Twitter"};
 	String[] mLinks = new String[] {"YourGoogle+Link", "YourTwitterLink"};
 	Utils.FollowMeDialog(mSocial, mLinks);
 }
