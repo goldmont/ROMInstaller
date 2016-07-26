@@ -26,7 +26,6 @@ public class AgreementActivity extends AppCompatActivity {
     Button AGREE, CLOSE;
     SharedPreferences SP;
     SharedPreferences.Editor mEditor;
-    public static AppCompatActivity mActivity;
     Boolean mFirstTime, mDoubleBackToExit = false;
 
     @Override
@@ -34,7 +33,6 @@ public class AgreementActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_agreement_layout);
 
-        mActivity = this;
         Utils.ACTIVITY = this;
 
         SP = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
@@ -124,18 +122,6 @@ public class AgreementActivity extends AppCompatActivity {
                 mDoubleBackToExit = false;
             }
         }, 2000);
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        Utils.SHOULD_CLOSE_ACTIVITY = false;
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        Utils.SHOULD_CLOSE_ACTIVITY = true;
     }
 
 }

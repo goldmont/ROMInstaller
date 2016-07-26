@@ -39,7 +39,6 @@ public class Utils {
     public static String MODEL;
     public static String FILE_NAME;
 
-    public static Boolean SHOULD_CLOSE_ACTIVITY = false;
     public static Boolean SHOULD_LOCK_UI = true;
 
     public static ArrayList<DownloadManager.Request> DOWNLOAD_REQUEST_LIST = new ArrayList<>();

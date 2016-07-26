@@ -21,7 +21,6 @@ import org.michaelevans.colorart.library.ColorArt;
 @SuppressWarnings("ConstantConditions")
 public class SplashScreenActivity extends Activity {
 
-    public static Activity mActivity;
     Bitmap mBitmap;
     ColorArt mColorArt;
     ImageView mImageView;
@@ -34,8 +33,6 @@ public class SplashScreenActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen_layout);
-
-        mActivity = this;
 
         if (ControlCenter.SHOULD_SHOW_SPLASH_SCREEN) {
             mRelativeLayout = (RelativeLayout) findViewById(R.id.splash_screen_layout);

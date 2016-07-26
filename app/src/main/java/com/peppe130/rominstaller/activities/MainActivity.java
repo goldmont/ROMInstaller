@@ -56,15 +56,9 @@ public class MainActivity extends AppCompatActivity implements CustomFileChooser
 
         Utils.ACTIVITY = this;
 
-        if (Utils.SHOULD_CLOSE_ACTIVITY) {
-            Utils.SHOULD_CLOSE_ACTIVITY = false;
-            if (ControlCenter.SHOULD_SHOW_DISCLAIMER_SCREEN) {
-                AgreementActivity.mActivity.finish();
-            }
-        }
-
         SP = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
         mEditor = SP.edit();
+
         NEXT = (ImageButton) findViewById(R.id.next);
         BACK = (ImageButton) findViewById(R.id.back);
         DONE = (ImageButton) findViewById(R.id.done);
