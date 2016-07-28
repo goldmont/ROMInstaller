@@ -494,7 +494,7 @@ public static void DownloadActionGetter(Integer mInt) {
 String mDownloadLink = It's the download link of your file.
 String mDownloadDirectory = It's the destination folder.
 String mDownloadedFileFinalName = It's the name that the downloaded file should assume.
-String mDownloadedFileMD5 = It's the correct MD5 of the file.
+String mRecoveryPartition = It's the recovery partition of your device.
 
 ```
 
