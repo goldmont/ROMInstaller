@@ -14,10 +14,10 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.concurrent.TimeoutException;
 
+import com.peppe130.rominstaller.R;
+import com.peppe130.rominstaller.ControlCenter;
 import com.google.common.hash.Hashing;
 import com.google.common.io.Files;
-import com.peppe130.rominstaller.ControlCenter;
-import com.peppe130.rominstaller.R;
 import com.stericson.RootShell.exceptions.RootDeniedException;
 import com.stericson.RootShell.execution.Command;
 import com.stericson.RootTools.RootTools;

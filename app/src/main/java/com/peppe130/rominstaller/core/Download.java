@@ -14,11 +14,11 @@ import android.view.WindowManager;
 import java.io.File;
 import java.io.IOException;
 
+import com.peppe130.rominstaller.R;
+import com.peppe130.rominstaller.ControlCenter;
 import com.google.common.hash.HashCode;
 import com.google.common.hash.Hashing;
 import com.google.common.io.Files;
-import com.peppe130.rominstaller.ControlCenter;
-import com.peppe130.rominstaller.R;
 import cn.pedant.SweetAlert.SweetAlertDialog;
 
 

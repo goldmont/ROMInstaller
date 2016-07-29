@@ -13,11 +13,11 @@ import android.view.WindowManager;
 import java.io.IOException;
 import java.util.Arrays;
 
+import com.peppe130.rominstaller.R;
+import com.peppe130.rominstaller.ControlCenter;
+import com.peppe130.rominstaller.activities.MainActivity;
 import com.google.common.hash.Hashing;
 import com.google.common.io.Files;
-import com.peppe130.rominstaller.ControlCenter;
-import com.peppe130.rominstaller.R;
-import com.peppe130.rominstaller.activities.MainActivity;
 import com.stericson.RootTools.RootTools;
 import cn.pedant.SweetAlert.SweetAlertDialog;
 
