@@ -61,6 +61,7 @@ public class AgreementActivity extends AppCompatActivity {
                             .itemsCallback(new MaterialDialog.ListCallback() {
                                 @Override
                                 public void onSelection(MaterialDialog dialog, View view, int which, CharSequence text) {
+                                    dialog.dismiss();
                                     switch (which) {
                                         case 0:
                                             ControlCenter.BUTTON_UI = true;

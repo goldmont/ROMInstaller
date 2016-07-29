@@ -114,7 +114,7 @@ public class MainActivity extends AppCompatActivity implements CustomFileChooser
                                 .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
                                     @Override
                                     public void onClick(SweetAlertDialog sDialog) {
-                                        sDialog.dismiss();
+                                        sDialog.dismissWithAnimation();
                                         Utils.MODEL = SystemProperties.get("ro.product.model");
                                         Setup();
                                     }
@@ -122,7 +122,7 @@ public class MainActivity extends AppCompatActivity implements CustomFileChooser
                                 .setCancelClickListener(new SweetAlertDialog.OnSweetClickListener() {
                                     @Override
                                     public void onClick(SweetAlertDialog sweetAlertDialog) {
-                                        sweetAlertDialog.dismiss();
+                                        sweetAlertDialog.dismissWithAnimation();
                                         new Handler().postDelayed(new Runnable() {
                                             @Override
                                             public void run() {
@@ -132,6 +132,7 @@ public class MainActivity extends AppCompatActivity implements CustomFileChooser
                                                         .itemsCallback(new MaterialDialog.ListCallback() {
                                                             @Override
                                                             public void onSelection(MaterialDialog dialog, View view, int which, CharSequence text) {
+                                                                dialog.dismiss();
                                                                 Utils.MODEL = String.valueOf(text);
                                                                 Setup();
                                                             }
@@ -139,6 +140,7 @@ public class MainActivity extends AppCompatActivity implements CustomFileChooser
                                                         .onPositive(new MaterialDialog.SingleButtonCallback() {
                                                             @Override
                                                             public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
+                                                                dialog.dismiss();
                                                                 new Handler().postDelayed(new Runnable() {
                                                                     @Override
                                                                     public void run() {
@@ -149,6 +151,7 @@ public class MainActivity extends AppCompatActivity implements CustomFileChooser
                                                                                 .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
                                                                                     @Override
                                                                                     public void onClick(SweetAlertDialog sDialog) {
+                                                                                        sDialog.dismiss();
                                                                                         Utils.ACTIVITY.finishAffinity();
                                                                                     }
                                                                                 });
@@ -161,7 +164,7 @@ public class MainActivity extends AppCompatActivity implements CustomFileChooser
                                                         .cancelable(false)
                                                         .show();
                                             }
-                                        }, 300);
+                                        }, 400);
                                     }
                                 });
                         sweetAlertDialog.setCancelable(false);
@@ -325,13 +328,13 @@ public class MainActivity extends AppCompatActivity implements CustomFileChooser
                         .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
                             @Override
                             public void onClick(SweetAlertDialog sDialog) {
+                                sDialog.dismissWithAnimation();
                                 new Handler().postDelayed(new Runnable() {
                                     @Override
                                     public void run() {
                                         Utils.FileChooser();
                                     }
                                 }, 300);
-                                sDialog.dismissWithAnimation();
                             }
                         });
                 sweetAlertDialog.setCancelable(false);
