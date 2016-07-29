@@ -46,7 +46,7 @@ public class ControlCenter {
     }
 
     public static void ROMUtils() {
-        // Do something
+        // Write here the code you want to run in the onResume() method of each activity
     }
 
     public static void ROMDeveloperInfoAction() {
