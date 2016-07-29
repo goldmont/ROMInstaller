@@ -12,11 +12,13 @@ import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import java.io.File;
 
@@ -43,6 +45,7 @@ public class MainActivity extends AppCompatActivity implements CustomFileChooser
     SharedPreferences SP;
     SharedPreferences.Editor mEditor;
     public static ImageButton NEXT, BACK, DONE;
+    public static FrameLayout mFrameLayout;
     public static CustomViewPager mViewPager;
     public static FragmentPagerAdapter mFragmentPagerAdapter;
     public static SmartTabLayout mSmartTabLayout;
@@ -62,9 +65,11 @@ public class MainActivity extends AppCompatActivity implements CustomFileChooser
         NEXT = (ImageButton) findViewById(R.id.next);
         BACK = (ImageButton) findViewById(R.id.back);
         DONE = (ImageButton) findViewById(R.id.done);
-        mViewPager = (CustomViewPager) findViewById(R.id.viewpager);
+        mFrameLayout = (FrameLayout) findViewById(R.id.viewPagerContainer);
+        mFrameLayout.setBackgroundColor(ContextCompat.getColor(this, Utils.BackgroundColorChooser()));
+        mViewPager = (CustomViewPager) findViewById(R.id.viewPager);
         mFragmentPagerAdapter = new PagerAdapter(getSupportFragmentManager());
-        mSmartTabLayout = (SmartTabLayout) findViewById(R.id.indicator);
+        mSmartTabLayout = (SmartTabLayout) findViewById(R.id.viewPagerIndicator);
         assert mSmartTabLayout != null;
         mSmartTabLayout.setSelectedIndicatorColors(Utils.FetchAccentColor());
 

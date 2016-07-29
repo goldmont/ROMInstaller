@@ -1,10 +1,12 @@
 package com.peppe130.rominstaller.core;
 
 import android.annotation.SuppressLint;
+import android.support.annotation.Nullable;
 import android.app.DownloadManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.content.res.AssetManager;
 import android.content.res.TypedArray;
 import android.net.Uri;
@@ -261,6 +263,28 @@ public class Utils {
         int mColor = mTypedArray.getColor(0, 0);
         mTypedArray.recycle();
         return mColor;
+
+    }
+
+    @Nullable
+    public static Integer BackgroundColorChooser() {
+
+        Integer mTheme = null;
+
+        try {
+            mTheme = Utils.ACTIVITY.getPackageManager().getPackageInfo(Utils.ACTIVITY.getPackageName(), 0).applicationInfo.theme;
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        switch (mTheme) {
+            case R.style.AppTheme_Light:
+                return R.color.colorBackground_Theme_Light;
+            case R.style.AppTheme_Dark:
+                return R.color.colorBackground_Theme_Dark;
+        }
+
+        return null;
 
     }
 
