@@ -22,11 +22,6 @@ import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import java.io.File;
 
-import com.afollestad.materialdialogs.DialogAction;
-import com.afollestad.materialdialogs.MaterialDialog;
-import com.mikepenz.iconics.IconicsDrawable;
-import com.ogaclejapan.smarttablayout.SmartTabLayout;
-import cn.pedant.SweetAlert.SweetAlertDialog;
 import com.peppe130.rominstaller.R;
 import com.peppe130.rominstaller.core.Utils;
 import com.peppe130.rominstaller.ControlCenter;
@@ -36,6 +31,12 @@ import com.peppe130.rominstaller.core.CheckFile;
 import com.peppe130.rominstaller.core.CustomFileChooser;
 import com.peppe130.rominstaller.core.InstallPopupDialog;
 import com.peppe130.rominstaller.core.SystemProperties;
+import com.afollestad.materialdialogs.DialogAction;
+import com.afollestad.materialdialogs.MaterialDialog;
+import com.mikepenz.iconics.IconicsDrawable;
+import com.ogaclejapan.smarttablayout.SmartTabIndicationInterpolator;
+import com.ogaclejapan.smarttablayout.SmartTabLayout;
+import cn.pedant.SweetAlert.SweetAlertDialog;
 
 
 @SuppressLint("CommitPrefEdits")
@@ -72,6 +73,7 @@ public class MainActivity extends AppCompatActivity implements CustomFileChooser
         mSmartTabLayout = (SmartTabLayout) findViewById(R.id.viewPagerIndicator);
         assert mSmartTabLayout != null;
         mSmartTabLayout.setSelectedIndicatorColors(Utils.FetchAccentColor());
+        mSmartTabLayout.setIndicationInterpolator(SmartTabIndicationInterpolator.LINEAR);
 
         if (FragmentsCollector.mListFragment != null) {
             FragmentsCollector.mListFragment.clear();
@@ -378,6 +380,8 @@ public class MainActivity extends AppCompatActivity implements CustomFileChooser
             Utils.CopyAssetFolder(getAssets(), "sample", mROMFolder.toString());
         }
 
+        ControlCenter.ROMUtils();
+
     }
 
     @Override
@@ -399,6 +403,7 @@ public class MainActivity extends AppCompatActivity implements CustomFileChooser
                     .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
                         @Override
                         public void onClick(SweetAlertDialog sDialog) {
+                            sDialog.dismiss();
                             finishAffinity();
                         }
                     });

@@ -3,24 +3,26 @@ package com.peppe130.rominstaller.activities;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Environment;
 import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import java.io.File;
 
-import com.afollestad.materialdialogs.MaterialDialog;
-import com.peppe130.rominstaller.ControlCenter;
 import com.peppe130.rominstaller.R;
 import com.peppe130.rominstaller.core.Utils;
+import com.peppe130.rominstaller.ControlCenter;
+import com.afollestad.materialdialogs.MaterialDialog;
 import org.sufficientlysecure.htmltextview.HtmlRemoteImageGetter;
 import org.sufficientlysecure.htmltextview.HtmlTextView;
 import cn.pedant.SweetAlert.SweetAlertDialog;
 
 
-@SuppressWarnings("ConstantConditions")
 @SuppressLint("CommitPrefEdits")
+@SuppressWarnings("ConstantConditions, ResultOfMethodCallIgnored")
 public class AgreementActivity extends AppCompatActivity {
 
     Button AGREE, CLOSE;
@@ -109,6 +111,27 @@ public class AgreementActivity extends AppCompatActivity {
         HtmlTextView mHtmlTextView = (HtmlTextView) findViewById(R.id.agreement_html_text);
         assert mHtmlTextView != null;
         mHtmlTextView.setHtml(R.raw.agreement, new HtmlRemoteImageGetter(mHtmlTextView));
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        Utils.ACTIVITY = this;
+
+        File mROMFolder = new File(Environment.getExternalStorageDirectory().getPath() + "/" + getString(R.string.rom_folder));
+        File mSampleZIP = new File(mROMFolder.getPath() + "/" + "Sample.zip");
+
+        if(!mROMFolder.exists()) {
+            mROMFolder.mkdirs();
+        }
+
+        if(ControlCenter.TRIAL_MODE && !mSampleZIP.exists()) {
+            Utils.CopyAssetFolder(getAssets(), "sample", mROMFolder.toString());
+        }
+
+        ControlCenter.ROMUtils();
+
     }
 
     @Override

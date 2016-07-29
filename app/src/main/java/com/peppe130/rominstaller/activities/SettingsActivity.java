@@ -1,5 +1,6 @@
 package com.peppe130.rominstaller.activities;
 
+import android.support.annotation.Nullable;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
@@ -9,19 +10,18 @@ import android.os.Environment;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
-import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import java.io.File;
 
+import com.peppe130.rominstaller.R;
+import com.peppe130.rominstaller.BuildConfig;
+import com.peppe130.rominstaller.core.Utils;
+import com.peppe130.rominstaller.ControlCenter;
 import com.mikepenz.community_material_typeface_library.CommunityMaterial;
 import com.mikepenz.entypo_typeface_library.Entypo;
 import com.mikepenz.google_material_typeface_library.GoogleMaterial;
 import com.mikepenz.iconics.IconicsDrawable;
-import com.peppe130.rominstaller.BuildConfig;
-import com.peppe130.rominstaller.ControlCenter;
-import com.peppe130.rominstaller.R;
-import com.peppe130.rominstaller.core.Utils;
 
 
 @SuppressWarnings("ResultOfMethodCallIgnored, ConstantConditions")
@@ -60,6 +60,8 @@ public class SettingsActivity extends AppCompatActivity {
         if(ControlCenter.TRIAL_MODE && !mSampleZIP.exists()) {
             Utils.CopyAssetFolder(getAssets(), "sample", mROMFolder.toString());
         }
+
+        ControlCenter.ROMUtils();
 
     }
 

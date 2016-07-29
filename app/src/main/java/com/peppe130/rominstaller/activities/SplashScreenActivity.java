@@ -13,8 +13,8 @@ import android.support.v4.content.ContextCompat;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
-import com.peppe130.rominstaller.ControlCenter;
 import com.peppe130.rominstaller.R;
+import com.peppe130.rominstaller.ControlCenter;
 import org.michaelevans.colorart.library.ColorArt;
 
 

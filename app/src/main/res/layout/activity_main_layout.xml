@@ -38,8 +38,6 @@
         app:stl_dividerColor="@android:color/transparent"
         app:stl_dividerThickness="0dp"
         app:stl_indicatorCornerRadius="4dp"
-        app:stl_indicatorGravity="center"
-        app:stl_indicatorInterpolation="linear"
         app:stl_indicatorThickness="8dp"
         app:stl_underlineColor="@android:color/transparent"
         app:stl_underlineThickness="0dp" />

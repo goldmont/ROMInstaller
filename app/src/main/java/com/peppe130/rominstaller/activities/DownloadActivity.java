@@ -6,9 +6,9 @@ import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.os.Environment;
 import android.os.Handler;
+import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -18,19 +18,18 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-import cn.pedant.SweetAlert.SweetAlertDialog;
-import mehdi.sakout.fancybuttons.FancyButton;
-import com.h6ah4i.android.widget.advrecyclerview.utils.AbstractDraggableItemViewHolder;
-import com.mikepenz.iconics.IconicsDrawable;
-import com.peppe130.rominstaller.ControlCenter;
 import com.peppe130.rominstaller.R;
 import com.peppe130.rominstaller.core.Utils;
+import com.peppe130.rominstaller.ControlCenter;
 import com.peppe130.rominstaller.core.CustomFileChooser;
+import cn.pedant.SweetAlert.SweetAlertDialog;
+import mehdi.sakout.fancybuttons.FancyButton;
+import com.mikepenz.iconics.IconicsDrawable;
+import com.h6ah4i.android.widget.advrecyclerview.utils.AbstractDraggableItemViewHolder;
 
 
 @SuppressWarnings("ResultOfMethodCallIgnored, ConstantConditions")
@@ -172,6 +171,8 @@ public class DownloadActivity extends AppCompatActivity implements CustomFileCho
         if(!mROMFolder.exists()) {
             mROMFolder.mkdirs();
         }
+
+        ControlCenter.ROMUtils();
 
     }
 

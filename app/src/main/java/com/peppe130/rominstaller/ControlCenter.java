@@ -45,6 +45,23 @@ public class ControlCenter {
 
     }
 
+    public static void ROMUtils() {
+        // Do something
+    }
+
+    public static void ROMDeveloperInfoAction() {
+        // Do something
+    }
+
+    public static void ROMThemerInfoAction() {
+        // Do something
+    }
+
+    public static void ROMThreadInfoAction() {
+        Uri mUri = Uri.parse("http://forum.xda-developers.com/galaxy-s4/i9505-develop/rom-osiris-rom-v1-0-t3147053");
+        Utils.ACTIVITY.startActivity(new Intent(Intent.ACTION_VIEW, mUri));
+    }
+
     @Nullable
     @Contract(pure = true)
     public static String DownloadNameGetter(Integer mInt) {
@@ -221,19 +238,6 @@ public class ControlCenter {
                 break;
         }
 
-    }
-
-    public static void ROMDeveloperInfoAction() {
-        // Do something
-    }
-
-    public static void ROMThemerInfoAction() {
-        // Do something
-    }
-
-    public static void ROMThreadInfoAction() {
-        Uri mUri = Uri.parse("http://forum.xda-developers.com/galaxy-s4/i9505-develop/rom-osiris-rom-v1-0-t3147053");
-        Utils.ACTIVITY.startActivity(new Intent(Intent.ACTION_VIEW, mUri));
     }
 
 }
