@@ -208,7 +208,6 @@ public class CheckFile extends AsyncTask<String, String, Boolean> {
                             new Handler().postDelayed(new Runnable() {
                                 @Override
                                 public void run() {
-                                    Utils.ZIP_FILE.delete();
                                     ControlCenter.DownloadROM();
                                 }
                             }, 300);
