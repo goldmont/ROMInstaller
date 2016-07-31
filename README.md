@@ -1,7 +1,7 @@
 
 # ROM Installer
 
-![Screenshots](https://raw.githubusercontent.com/peppe130/ROMInstaller/master/art/GitHub Template.png)
+![Screenshots](https://raw.githubusercontent.com/peppe130/ROMInstaller/master/art/ScreenshotsApp.png)
 
 # Table of contents
 1. [Introduction](https://github.com/peppe130/ROMInstaller#introduction)
