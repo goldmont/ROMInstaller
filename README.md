@@ -140,7 +140,7 @@ To change **UI**, you have to open the **_Control Center_** class and change the
         
         <!--
         
-        android:key = Preference ID
+        android:key = Preference ID.
         android:defaultValue = If set to true, the CheckBox is automatically checked.
         
         -->
@@ -187,7 +187,7 @@ To change **UI**, you have to open the **_Control Center_** class and change the
           
           <!--
             
-            android:key = Preference ID
+            android:key = Preference ID.
             android:defaultValue = Set which item should be selected by default.
             android:entries = Declare the group of items that should be set in the List.
             android:entryValues = Declare the items values.
