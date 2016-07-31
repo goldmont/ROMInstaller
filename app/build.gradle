@@ -33,7 +33,7 @@ dependencies {
     compile 'org.jetbrains:annotations-java5:15.0'
 
     // Advanced RecyclerView
-    compile ('com.h6ah4i.android.widget.advrecyclerview:advrecyclerview:0.9.2@aar'){
+    compile ('com.h6ah4i.android.widget.advrecyclerview:advrecyclerview:0.9.3@aar'){
         transitive=true
     }
 
@@ -47,7 +47,7 @@ dependencies {
     compile 'org.sufficientlysecure:html-textview:1.8'
 
     // Iconics
-    compile "com.mikepenz:iconics-core:2.6.7@aar"
+    compile "com.mikepenz:iconics-core:2.7.1@aar"
     compile 'com.mikepenz:google-material-typeface:2.2.0.2.original@aar'
     compile 'com.mikepenz:community-material-typeface:1.5.54.2@aar'
     compile 'com.mikepenz:entypo-typeface:1.0.0.2@aar'
@@ -58,8 +58,8 @@ dependencies {
     compile 'com.afollestad.material-dialogs:commons:0.8.6.2'
 
     // Preference Fragments
-    compile 'net.xpece.android:support-preference:1.0.0'
-    compile 'com.takisoft.fix:preference-v7:24.1.1.0'
+    compile 'net.xpece.android:support-preference:1.0.1'
+    compile 'com.takisoft.fix:preference-v7:24.1.1.1'
 
     // SmartTabLayout
     compile 'com.ogaclejapan.smarttablayout:library:1.6.1@aar'
