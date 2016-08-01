@@ -73,7 +73,7 @@
             android:summary="@string/rom_themer_summary"/>
 
         <Preference
-            android:key="rom_xda_thread"
+            android:key="rom_thread"
             android:persistent="false"
             android:title="@string/rom_thread"
             android:summary="@string/tap_to_visit"/>

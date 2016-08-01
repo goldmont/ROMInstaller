@@ -83,7 +83,7 @@ public class SettingsActivity extends AppCompatActivity {
             Preference ROM_BUILD_NUMBER = findPreference("rom_build_number");
             Preference ROM_DEVELOPER = findPreference("rom_developer");
             Preference ROM_THEMER = findPreference("rom_themer");
-            Preference ROM_THREAD = findPreference("rom_xda_thread");
+            Preference ROM_THREAD = findPreference("rom_thread");
             Preference REVIEW_APP = findPreference("review_app");
             Preference ALL_MY_APPS = findPreference("all_my_apps");
 
