@@ -74,10 +74,12 @@ public class SettingsActivity extends AppCompatActivity {
             addPreferencesFromResource(R.xml.settings_fragment);
 
             Preference DOWNLOAD_CENTER = findPreference("download_center");
-            Preference PROJECT_BUILD_NUMBER = findPreference("app_build_number");
-            Preference PROJECT_DEVELOPER = findPreference("app_developer");
-            Preference PROJECT_THEMER = findPreference("app_themer");
-            Preference PROJECT_GITHUB = findPreference("app_github");
+            Preference PROJECT_BUILD_NUMBER = findPreference("project_build_number");
+            Preference APP_BUILD_NUMBER = findPreference("app_build_number");
+            Preference PROJECT_DEVELOPER = findPreference("project_developer");
+            Preference PROJECT_THEMER = findPreference("project_themer");
+            Preference PROJECT_THREAD = findPreference("project_thread");
+            Preference PROJECT_GITHUB = findPreference("project_github");
             Preference ROM_BUILD_NUMBER = findPreference("rom_build_number");
             Preference ROM_DEVELOPER = findPreference("rom_developer");
             Preference ROM_THEMER = findPreference("rom_themer");
@@ -92,7 +94,7 @@ public class SettingsActivity extends AppCompatActivity {
                     .color(mIconColor)
                     .sizeDp(40);
 
-            IconicsDrawable mXDAIcon = new IconicsDrawable(getActivity())
+            IconicsDrawable mThreadIcon = new IconicsDrawable(getActivity())
                     .icon(CommunityMaterial.Icon.cmd_book_open_page_variant)
                     .color(mIconColor)
                     .sizeDp(40);
@@ -132,7 +134,7 @@ public class SettingsActivity extends AppCompatActivity {
             });
 
             PROJECT_BUILD_NUMBER.setIcon(mInfoIcon);
-            PROJECT_BUILD_NUMBER.setSummary(BuildConfig.VERSION_NAME);
+            PROJECT_BUILD_NUMBER.setSummary(Double.toString(BuildConfig.projectVersion));
 
             PROJECT_DEVELOPER.setIcon(mDeveloperIcon);
             PROJECT_DEVELOPER.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
@@ -156,6 +158,16 @@ public class SettingsActivity extends AppCompatActivity {
                 }
             });
 
+            PROJECT_THREAD.setIcon(mThreadIcon);
+            PROJECT_THREAD.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+                @Override
+                public boolean onPreferenceClick(Preference preference) {
+                    Uri mUri = Uri.parse("http://forum.xda-developers.com/android/apps-games/app-rom-installer-to-flash-custom-rom-t3430099");
+                    startActivity(new Intent(Intent.ACTION_VIEW, mUri));
+                    return false;
+                }
+            });
+
             PROJECT_GITHUB.setIcon(mGitHubIcon);
             PROJECT_GITHUB.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                 @Override
@@ -165,6 +177,9 @@ public class SettingsActivity extends AppCompatActivity {
                     return false;
                 }
             });
+
+            APP_BUILD_NUMBER.setIcon(mInfoIcon);
+            APP_BUILD_NUMBER.setSummary(BuildConfig.VERSION_NAME);
 
             ROM_BUILD_NUMBER.setIcon(mInfoIcon);
 
@@ -186,7 +201,7 @@ public class SettingsActivity extends AppCompatActivity {
                 }
             });
 
-            ROM_THREAD.setIcon(mXDAIcon);
+            ROM_THREAD.setIcon(mThreadIcon);
             ROM_THREAD.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                 @Override
                 public boolean onPreferenceClick(Preference preference) {

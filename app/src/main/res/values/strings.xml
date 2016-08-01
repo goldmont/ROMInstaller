@@ -122,8 +122,8 @@
 
     <!-- Settings Activity -->
     <string name="general">General</string>
-    <string name="about_app">About App</string>
-    <string name="about_rom">About ROM</string>
+    <string name="about_project">About Project</string>
+    <string name="about_rom">About App &amp; ROM</string>
     <string name="play_store">Play Store</string>
     <string name="status_on">Status: Enabled</string>
     <string name="status_off">Status: Disabled</string>
@@ -131,17 +131,20 @@
     <string name="activity_download_center">Download Center</string>
     <string name="download_center_summary">Download add-ons/features</string>
     <string name="no_downloads_available">No downloads available</string>
+    <string name="project_version">Project version</string>
     <string name="app_version">App version</string>
-    <string name="app_developer_title">Project developer</string>
-    <string name="app_developer_summary">Giuseppe Montuoro</string>
-    <string name="app_themer_title">Project themer</string>
-    <string name="app_themer_summary">Costantino Di Bruno</string>
-    <string name="app_github_title">GitHub</string>
-    <string name="app_github_summary">See the App\'s project on GitHub</string>
+    <string name="project_developer_title">Project developer</string>
+    <string name="project_developer_summary">Giuseppe Montuoro</string>
+    <string name="project_themer_title">Project themer</string>
+    <string name="project_themer_summary">Costantino Di Bruno</string>
+    <string name="project_thread_title">Thread</string>
+    <string name="project_thread_summary">See the project\'s thread</string>
+    <string name="project_github_title">GitHub</string>
+    <string name="project_github_summary">See the App\'s project on GitHub</string>
     <string name="rom_version">ROM version</string>
     <string name="rom_developer_title">App &amp; ROM developer</string>
     <string name="rom_themer_title">App &amp; ROM themer</string>
-    <string name="rom_thread">ROM Thread</string>
+    <string name="rom_thread">Thread</string>
     <string name="review_app_title">Leave a review!</string>
     <string name="review_app_summary">Review the App on Play Store</string>
     <string name="all_my_apps_title">All my apps</string>

@@ -13,35 +13,46 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:title="@string/about_app">
+        android:title="@string/about_project">
 
         <Preference
-            android:key="app_build_number"
+            android:key="project_build_number"
             android:persistent="false"
-            android:title="@string/app_version"/>
+            android:title="@string/project_version"/>
 
         <Preference
-            android:key="app_developer"
+            android:key="project_developer"
             android:persistent="false"
-            android:title="@string/app_developer_title"
-            android:summary="@string/app_developer_summary"/>
+            android:title="@string/project_developer_title"
+            android:summary="@string/project_developer_summary"/>
 
         <Preference
-            android:key="app_themer"
+            android:key="project_themer"
             android:persistent="false"
-            android:title="@string/app_themer_title"
-            android:summary="@string/app_themer_summary"/>
+            android:title="@string/project_themer_title"
+            android:summary="@string/project_themer_summary"/>
 
         <Preference
-            android:key="app_github"
+            android:key="project_thread"
             android:persistent="false"
-            android:title="@string/app_github_title"
-            android:summary="@string/app_github_summary"/>
+            android:title="@string/project_thread_title"
+            android:summary="@string/project_thread_summary"/>
+
+        <Preference
+            android:key="project_github"
+            android:persistent="false"
+            android:title="@string/project_github_title"
+            android:summary="@string/project_github_summary"/>
 
     </PreferenceCategory>
 
     <PreferenceCategory
         android:title="@string/about_rom">
+
+        <Preference
+            android:key="app_build_number"
+            android:persistent="false"
+            android:title="@string/app_version"/>
 
         <Preference
             android:key="rom_build_number"
