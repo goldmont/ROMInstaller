@@ -1,7 +1,7 @@
 
 # ROM Installer
 
-*Screenshot*
+![Screenshots](http://i.imgur.com/6iIPzDd.jpg)
 
 # Table of contents
 1. [Introduction](https://github.com/peppe130/ROMInstaller#introduction)
@@ -24,7 +24,13 @@
 
 
 # Introduction
-ROM Installer is a source code project. This means that you have to download the project and to [import](https://github.com/peppe130/ROMInstaller#how-to-import-the-project) it into your Android Studio. This project requires at least a basic knowledge of Android Studio and Java programming. ROM Installer is the new revolutionary way to flash Custom ROM on every Android device (5.0+). What makes ROM Installer unique is its characteristic of being easily reprogrammable by the developer who adopts it. The App has two user interfaces (ButtonUI and SwipeUI), offers the possibility to add a splash and a disclaimer screen, to verify the integrity of the ROM before installing, to download any type of file in many different modes, to download and install a recovery.
+ROM Installer is a source code project. This means that you have to download the project and to [import](https://github.com/peppe130/ROMInstaller#how-to-import-the-project) it into your Android Studio. This project requires at least a basic knowledge of Android Studio and Java programming. ROM Installer is the new revolutionary way to flash Custom ROM on every Android device (5.0+). What makes ROM Installer unique is its characteristic of being easily reprogrammable by the developer who adopts it. The App has two user interfaces (ButtonUI and SwipeUI), offers the possibility to add a splash and a disclaimer screen, to verify the integrity of the ROM before installing, to download any type of file in many different modes, to download and install a recovery. This project has no special Terms and Conditions. The only one rule is that you must respect the freedom of Open Source. I'm giving you this revolutionary project for free and I expect that you keep this public and Open Source. Moreover you must upload your custom version of this project on GitHub because your work could act as an example for other developers interested in this project and also because I can help you in case you need my help.
+
+Get the latest sample APK on Google Play:
+<dl> <a href="https://play.google.com/store/apps/details?id=com.peppe130.rominstaller" target="_blank">
+  <img alt="Get it on Google Play"
+       src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png" height="60"/>
+</a></dl>
 
 
 # How to import the project?
@@ -140,7 +146,7 @@ To change **UI**, you have to open the **_Control Center_** class and change the
         
         <!--
         
-        android:key = Preference ID
+        android:key = Preference ID.
         android:defaultValue = If set to true, the CheckBox is automatically checked.
         
         -->
@@ -187,8 +193,8 @@ To change **UI**, you have to open the **_Control Center_** class and change the
           
           <!--
             
-            android:key = Preference ID
-            android:defaultValue = Set which item should be selected by default. First item has value 1.
+            android:key = Preference ID.
+            android:defaultValue = Set which item should be selected by default.
             android:entries = Declare the group of items that should be set in the List.
             android:entryValues = Declare the items values.
             
