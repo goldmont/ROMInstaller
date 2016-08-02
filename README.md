@@ -78,7 +78,7 @@ Project is composed of two packages and two classes:
 
 As written in the [Introduction](https://github.com/peppe130/ROMInstaller#introduction), the main feature of ROM Installer is its characteristic of being easily reprogrammable by the developer who adopts it. _Control Center_ allows the developer to adjust the App behavior by changing a few lines of code.
 
-The following items belong to **_Control Center_**:
+The following items belong to _Control Center_:
 * _DEVICE\_COMPATIBILITY\_LIST_ = List of devices compatible with the ROM.
 * _ROM\_MD5\_LIST_ = List of ROM's MD5s and any of its add-ons.
 * _RECOVERY\_MD5\_LIST_ = List of recoveries MD5s.
