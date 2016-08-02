@@ -24,7 +24,7 @@
 
 
 # Introduction
-ROM Installer is a source code project. This means that you have to download the project and to [import](https://github.com/peppe130/ROMInstaller#how-to-import-the-project) it into your Android Studio. This project requires at least a basic knowledge of Android Studio and Java programming. ROM Installer is the new revolutionary way to flash Custom ROM on every Android device (5.0+). What makes ROM Installer unique is its characteristic of being easily reprogrammable by the developer who adopts it. The App has two user interfaces (ButtonUI and SwipeUI), offers the possibility to add a splash and a disclaimer screen, to verify the integrity of the ROM before installing, to download any type of file in many different modes, to download and install a recovery. This project has no special Terms and Conditions. The only one rule is that you must respect the freedom of Open Source. I'm giving you this revolutionary project for free and I expect that you keep this public and Open Source. Moreover you must upload your custom version of this project on GitHub because your work could act as an example for other developers interested in this project and also because I can help you in case you need my help.
+ROM Installer is a source code project. This means that you have to download the project and to [import](https://github.com/peppe130/ROMInstaller#how-to-import-the-project) it into your Android Studio. This project requires at least a basic knowledge of Android Studio and Java programming. ROM Installer is the new revolutionary way to flash Custom ROM on every Android device (5.0+). What makes ROM Installer unique is its characteristic of being easily reprogrammable by the developer who adopts it. The App has two user interfaces (ButtonUI and SwipeUI), offers the possibility to add a splash and a disclaimer screen, to verify the integrity of the ROM before installing, to download any type of file in many different modes, to download and install a recovery. This project has no special Terms and Conditions. The only rule is that you must respect the freedom of Open Source. I'm giving you this revolutionary project for free and I expect that you keep this public and Open Source. Moreover you must upload your custom version of this project on GitHub because your work could act as an example for other developers interested in this project and also because I can help you in case you need my help.
 
 Get the latest sample APK on Google Play:
 <dl> <a href="https://play.google.com/store/apps/details?id=com.peppe130.rominstaller" target="_blank">
@@ -61,7 +61,7 @@ Make sure that your SDK is updated to the latest version available.
 
 ![Screenshots](https://raw.githubusercontent.com/peppe130/ROMInstaller/master/art/ScreenshotStep13.png)
 
-**NB:** If the error **_"Activity class {…} does not exist"_** does occur while the App is compiled by Android Studio, just sync again the project. Look at the picture below:
+**NB:** If the error **_"Activity class {…} does not exist"_** occurs while the App is being compiled by Android Studio, just sync again the project. Look at the picture below:
 
 ![Screenshots](https://raw.githubusercontent.com/peppe130/ROMInstaller/master/art/ScreenshotStep14.png)
 
@@ -80,7 +80,7 @@ As written in the [Introduction](https://github.com/peppe130/ROMInstaller#introd
 
 The following items belong to _Control Center_:
 * _DEVICE\_COMPATIBILITY\_LIST_ = List of devices compatible with the ROM.
-* _ROM\_MD5\_LIST_ = List of ROM's MD5s and any of its add-ons.
+* _ROM\_MD5\_LIST_ = List of ROM MD5 and any of its add-ons.
 * _RECOVERY\_MD5\_LIST_ = List of recoveries MD5s.
 * _TEST\_MODE_ = If set to **_true_**, it enables the [test mode](https://github.com/peppe130/ROMInstaller#what-is-test-mode).
 * _TRIAL\_MODE_ = If set to **_true_**, it enables the [trial mode](https://github.com/peppe130/ROMInstaller#what-is-trial-mode).
@@ -102,7 +102,7 @@ Test mode is a special mode of the App that disables each control that would nor
 Trial mode is another special mode that allows the developer to safely test the App on every device, no matter if it is compatible or not. It was created to allow the developer to test the App on multiple devices without the need to update the compatibility list.
 
 # How to add a device to compatibility list?
-To add a device to the compatibility list, open the **_Control Center_** class, enter the device model in quotation marks on the list and separate from each other with a comma.
+To add a device to the compatibility list, open the **_Control Center_** class, enter the device model in quotation marks on the list and separate each other with a comma.
 
 **Example:** <dl />
 ```java
@@ -110,7 +110,7 @@ public static String[] DEVICE_COMPATIBILITY_LIST = new String[] {"Device", "Devi
 ```
 
 # How to add MD5 to its list?
-As for the compatibility list, even for the MD5 just open the **_Control Center_** class, enter the alphanumeric code in quotation marks on the list and separate from each other with a comma.
+As for the compatibility list, even for the MD5 just open the **_Control Center_** class, enter the alphanumeric code in quotation marks on the list and separate each other with a comma.
 
 **Example:** <dl />
 ```java
@@ -177,7 +177,7 @@ To change **UI**, you have to open the **_Control Center_** class and change the
             
         -->
     ```
-    * After defining the items, you have to create the preference:
+    * After defining the items, you will have to create the preference:
     
       ``` xml
           <PreferenceCategory
@@ -203,7 +203,7 @@ To change **UI**, you have to open the **_Control Center_** class and change the
       ```
 
 # How to add Fragments?
-After adding the preferences, you must set up the **XML** file in Java. To do this you must create a Fragment. Fragment has the purpose to show the preferences on the screen in such a way as to interact with them. To add a Fragment, just open the **FragmentsCollector** and add at the bottom:
+After adding the preferences, you will have to set up the **XML** file in Java. To do this you will have to create a Fragment. Fragment has the purpose to show the preferences on the screen in such a way as to interact with them. To add a Fragment, just open the **FragmentsCollector** and add at the bottom:
 
 ```java
 
@@ -278,7 +278,7 @@ public static String DownloadNameGetter(Integer mInt) {
 # How to download files?
 The App is provided with an internal code that lets you download any type of file in different modes in order to satisfy every need.
 
-After setting up the buttons, you have to set up the action to run when it get clicked. Look for `DownloadActionGetter` method in _Control Center_ class. As for the button's text, for each `case`, you have to write your own download code.
+After setting up the buttons, you will have to set up the action to run when they are clicked. Look for `DownloadActionGetter` method in _Control Center_ class. As for the button's text, for each `case`, you will have to write your own download code.
 
 **For example:**
 
@@ -326,7 +326,7 @@ String mDownloadedFileMD5 = It's the correct MD5 of the file.
 
 1. You should use hosting services which provide you direct download links such as Mediafire or Dropbox (on Dropbox, to download a file rather than display it, you can use **_dl=1_** as a query parameter in your URL).
 
-2. The environment is already placed in the internal storage. So, in **_mDownloadDirectory_**, you have to store only the path from the internal storage to your destination folder and not the full path from root directory.
+2. The environment is already placed in the internal storage. So, in **_mDownloadDirectory_**, you will have to store only the path from the internal storage to your destination folder and not the full path from root directory.
 
 ### The available modes are as follows:
 
@@ -451,7 +451,7 @@ Utils.StartMultipleDownloads();
 
 # How to flash recoveries?
 
-After setting up the buttons, you have to set up the action to run when it get clicked. Look for `DownloadActionGetter` method in **_Control Center_** class. As for the button's text, for each `case`, you have to write your own download code.
+After setting up the buttons, you will have to set up the action to run when they are clicked. Look for `DownloadActionGetter` method in **_Control Center_** class. As for the button's text, for each `case`, you will have to write your own download code.
 
 **For example:**
 
@@ -508,7 +508,7 @@ String mRecoveryPartition = It's the recovery partition of your device.
 
 1. You should use hosting services which provide you direct download links such as Mediafire or Dropbox (on Dropbox, to download a file rather than display it, you can use **_dl=1_** as a query parameter in your URL).
 
-2. The environment is already placed in the internal storage. So, in **_mDownloadDirectory_**, you have to store only the path from the internal storage to your destination folder and not the full path from root directory.
+2. The environment is already placed in the internal storage. So, in **_mDownloadDirectory_**, you will have to store only the path from the internal storage to your destination folder and not the full path from root directory.
 
 3. Remember to add Recovery MD5 to [RECOVERY\_MD5\_LIST](https://github.com/peppe130/ROMInstaller#how-to-add-md5-to-its-list).
 
@@ -562,7 +562,7 @@ Utils.StartFlashRecoveryWithAddons(mDownloadLink, mDownloadDirectory, mDownloade
   ```
   
 # How to read preferences from updater-script?
-First you need to mount `/data` partition using the following command:
+Firstly you need to mount `/data` partition by using the following command:
 
 ```C
 
@@ -634,7 +634,7 @@ Utils.FollowMeDialog(mSocial, mLinks);
 
 ```
 
-You can add as many social networks as you want. Just separate from each other with a comma.
+You can add as many social networks as you want. Just separate each other with a comma.
 
 **Example:**
 
