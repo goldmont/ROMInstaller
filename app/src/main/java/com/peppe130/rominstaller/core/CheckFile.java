@@ -94,7 +94,7 @@ public class CheckFile extends AsyncTask<String, String, Boolean> {
                 e.printStackTrace();
             }
 
-            if ((Utils.ZIP_FILE.exists()) && Arrays.asList(ControlCenter.ROM_MD5_LIST).contains(mMD5)) {
+            if ((Utils.ZIP_FILE.exists()) && Arrays.asList(ControlCenter.ROM_MD5_LIST).contains(mMD5.toUpperCase()) || Arrays.asList(ControlCenter.ROM_MD5_LIST).contains(mMD5.toLowerCase())) {
                 updateResult((long) 5000, sbUpdate.append(Utils.ACTIVITY.getString(R.string.initializing_start)).toString());
                 return true;
             }
