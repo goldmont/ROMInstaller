@@ -21,6 +21,7 @@
 15. [How to read preferences from updater-script?](https://github.com/peppe130/ROMInstaller#how-to-read-preferences-from-updater-script)
 16. [How to change App colors?](https://github.com/peppe130/ROMInstaller#how-to-change-app-colors)
 17. [How to add your own info in Settings?](https://github.com/peppe130/ROMInstaller#how-to-add-your-own-info-in-settings)
+18. [Changelog](https://github.com/peppe130/ROMInstaller/blob/master/CHANGELOG.md)
 
 
 # Introduction
