@@ -117,13 +117,13 @@ As for the compatibility list, even for the MD5 just open the **_Control Center_
 
 **Example:** <dl />
 ```java
-public static String[] ROM_MD5_LIST = new String[] {"4ba678ca02e60557757d29e91e1e792f", "7b8fd857b3448827c93864d691324ddf", "edbaef755357a3e82e45f1837fd2e10b"};
+public static String[] ROM_MD5_LIST = new String[] {"YourFirstMD5", "YourSecondMD5", "YourThirdMD5"};
 ```
 
 **or**
 
 ```java
-public static String[] RECOVERY_MD5_LIST = new String[] {"5fb732eea3d3e2b407fa7685c27a5354", "b79abd4696176ccd48c883a43027b2b4", "44c22fbf70977c3b44ac1e2a0c5626c3"};
+public static String[] RECOVERY_MD5_LIST = new String[] {"YourFirstMD5", "YourSecondMD5", "YourThirdMD5"};
 ```
 
 # How to set which UI to use?
