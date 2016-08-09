@@ -213,13 +213,17 @@ After adding the preferences, you will have to set up the **XML** file in Java. 
 public static class YourFragment extends XpPreferenceFragment {
 
     public static YourFragment newInstance() {
+    
         return new YourFragment();
+        
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        
         addPreferencesFromResource(R.xml.your_xml_file);
+        
     }
 
     @Override
@@ -245,8 +249,11 @@ mListFragment.add(new YourFragment());
 public static void Setup() {
 		
     mListFragment.add(new YourFragment());
+    
 	mListFragment.add(new YourFragment2());
+	
 	mListFragment.add(new YourFragment3());
+	
 	...
 
 }
@@ -266,10 +273,15 @@ Open **_Control Center_** class, look for `AVAILABLE_DOWNLOADS_NUMBER` variable 
 public static String DownloadNameGetter(Integer mInt) {
 
     switch (mInt) {
+    
         case 0: // ID = 0;
+        
             return "Text of the first button";
+            
         case 1: // ID = 1;
+        
             return "Text of the second button";
+            
     }
         
     return null;
@@ -292,22 +304,29 @@ public static void DownloadActionGetter(Integer mInt) {
     String mDownloadLink, mDownloadDirectory, mDownloadedFileFinalName, mDownloadedFileMD5, mRecoveryPartition;
 
     switch (mInt) {
+    
         case 0: // Single download without MD5 check
+        
             mDownloadLink = "YourDownloadLink";
             mDownloadDirectory = getString(R.string.rom_folder);
             mDownloadedFileFinalName = "File.zip";
             mDownloadedFileMD5 = null;
 
             Utils.StartSingleDownload(mDownloadLink, mDownloadDirectory, mDownloadedFileFinalName, mDownloadedFileMD5);
+            
             break;
+            
         case 1: // Single download with MD5 check
+        
             mDownloadLink = "YourDownloadLink";
             mDownloadDirectory = getString(R.string.rom_folder);
             mDownloadedFileFinalName = "File.zip";
             mDownloadedFileMD5 = "3a416cafb312cb15ce6b3b09249fe6e6";
 
             Utils.StartSingleDownload(mDownloadLink, mDownloadDirectory, mDownloadedFileFinalName, mDownloadedFileMD5);
+            
             break;
+            
     }
 
 }
@@ -465,15 +484,20 @@ public static void DownloadActionGetter(Integer mInt) {
     String mDownloadLink, mDownloadDirectory, mDownloadedFileFinalName, mDownloadedFileMD5, mRecoveryPartition;
 
     switch (mInt) {
+    
         case 0: // Download Recovery
+        
             mDownloadLink = "http://www.mediafire.com/download/z7fn3nw1vn5oo8a/Test.zip";
             mDownloadDirectory = Utils.ACTIVITY.getString(R.string.rom_folder);
             mDownloadedFileFinalName = "Recovery.zip";
             mRecoveryPartition = "YourDeviceRecoveryPartition";
 
             Utils.StartFlashRecovery(mDownloadLink, mDownloadDirectory, mDownloadedFileFinalName, mRecoveryPartition);
+            
             break;
+            
         case 1: // Download Recovery with Add-Ons
+        
             // Download Recovery
             mDownloadLink = "http://www.mediafire.com/download/z7fn3nw1vn5oo8a/Test.zip";
             mDownloadDirectory = Utils.ACTIVITY.getString(R.string.rom_folder);
@@ -488,6 +512,7 @@ public static void DownloadActionGetter(Integer mInt) {
             "5fb732eea3d3e2b407fa7685c27a5354");
 
             Utils.StartFlashRecoveryWithAddons(mDownloadLink, mDownloadDirectory, mDownloadedFileFinalName, mRecoveryPartition);
+            
             break;
 
     }
