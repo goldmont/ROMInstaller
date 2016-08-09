@@ -25,7 +25,7 @@
 
 
 # Introduction
-ROM Installer is a source code project. This means that you have to download the project and to [import](https://github.com/peppe130/ROMInstaller#how-to-import-the-project) it into your Android Studio. This project requires at least a basic knowledge of Android Studio. Although the project is made in Java, a high knowledge of the language is not required. ROM Installer is the new revolutionary way to flash Custom ROM on every Android device (5.0+). What makes ROM Installer unique is its characteristic of being easily reprogrammable by the developer who adopts it. The App has two user interfaces (ButtonUI and SwipeUI), offers the possibility to add a splash and a disclaimer screen, to verify the integrity of the ROM before installing, to download any type of file in many different modes, to download and install a recovery. This project has no special Terms and Conditions. The only rule is that you must respect the freedom of Open Source. I'm giving you this revolutionary project for free and I expect that you keep this public and Open Source. Moreover you must upload your custom version of this project on GitHub because your work could act as an example for other developers interested in this project and also because I can help you in case you need my help.
+ROM Installer is a source code project. This means that you have to download the project and to [import](https://github.com/peppe130/ROMInstaller#how-to-import-the-project) it into your Android Studio. This project requires at least a basic knowledge of Android Studio. Although the project is made in Java, a high knowledge of the language is not required. ROM Installer is the new revolutionary way to flash Custom ROM on every Android device (5.0+). What makes ROM Installer unique is its characteristic of being easily reprogrammable by the developer who adopts it. The App has two user interfaces (ButtonUI and SwipeUI), offers the possibility to add a splash and a disclaimer screen, to verify the integrity of the ROM before installing, to download any type of file in many different modes, to download and install a recovery. This project is distributed under GNU General Public License. This means that you must respect the freedom of Open Source. I'm giving you this revolutionary project for free and I expect that you keep this public and Open Source. Moreover you must upload your custom version of this project on GitHub because your work could act as an example for other developers interested in this project and also because I can help you in case you need my help. The most important benefit for users is that they can choose what features to install on their devices. Instead, the most important benefit for developers is that they don't have to edit their updater-script in order to remove mods/features due to users requests. The developer has just to configure the App with a preference for each feature he wants to include in his ROM. Then is on the own of each user to choose whether to install that feature or not.
 
 Get the latest sample APK on Google Play:
 <dl> <a href="https://play.google.com/store/apps/details?id=com.peppe130.rominstaller" target="_blank">
@@ -73,7 +73,8 @@ Project is composed of two packages and two classes:
   3. **_Control Center:_** it is the control center of the App (look [HERE](https://github.com/peppe130/ROMInstaller#what-is-control-center)).
   4. **_FragmentsCollector:_** it is the preferences collector.
 
-**NB:** I will not provide any support for changes made to the **_core_** package.
+**NB:**
+* I will not provide any support for changes made to the **_core_** package.
 
 # What is Control Center?
 
@@ -126,8 +127,8 @@ public static String[] RECOVERY_MD5_LIST = new String[] {"5fb732eea3d3e2b407fa76
 
 # How to set which UI to use?
 To change **UI**, you have to open the **_Control Center_** class and change the value to the boolean **_BUTTON_UI:_** <dl />
-1. **_TRUE:_** Enables the UI with _"Next"_ and _"Back"_ buttons. <dl />
-2. **_FALSE:_** It enables the sensitive UI to the sliding of the finger on the screen.
+* **_TRUE:_** Enables the UI with _"Next"_ and _"Back"_ buttons. <dl />
+* **_FALSE:_** It enables the sensitive UI to the sliding of the finger on the screen.
 
 # How to add Preferences?
 
@@ -325,9 +326,9 @@ String mDownloadedFileMD5 = It's the correct MD5 of the file.
 
 **NB:**
 
-1. You should use hosting services which provide you direct download links such as Mediafire or Dropbox (on Dropbox, to download a file rather than display it, you can use **_dl=1_** as a query parameter in your URL).
+* You should use hosting services which provide you direct download links such as Mediafire or Dropbox (on Dropbox, to download a file rather than display it, you can use **_dl=1_** as a query parameter in your URL).
 
-2. The environment is already placed in the internal storage. So, in **_mDownloadDirectory_**, you will have to store only the path from the internal storage to your destination folder and not the full path from root directory.
+* The environment is already placed in the internal storage. So, in **_mDownloadDirectory_**, you will have to store only the path from the internal storage to your destination folder and not the full path from root directory.
 
 ### The available modes are as follows:
 
@@ -361,9 +362,9 @@ Utils.StartSingleDownload(mDownloadLink, mDownloadDirectory, mDownloadedFileFina
 
 	**NB:**
 
-	1. In _Control Center_ there is a method called `DownloadROM()`. You can configure it to download the ROM and you can call it by typing `ControlCenter.DownloadROM();` wherever you want.
+	* In _Control Center_ there is a method called `DownloadROM()`. You can configure it to download the ROM and you can call it by typing `ControlCenter.DownloadROM();` wherever you want.
 		
-	2. Remember to add ROM MD5 to [ROM\_MD5\_LIST](https://github.com/peppe130/ROMInstaller#how-to-add-md5-to-its-list).
+	* Remember to add ROM MD5 to [ROM\_MD5\_LIST](https://github.com/peppe130/ROMInstaller#how-to-add-md5-to-its-list).
   
 4. Multiple downloads without MD5 check
 
@@ -507,11 +508,11 @@ String mRecoveryPartition = It's the recovery partition of your device.
 
 **NB:**
 
-1. You should use hosting services which provide you direct download links such as Mediafire or Dropbox (on Dropbox, to download a file rather than display it, you can use **_dl=1_** as a query parameter in your URL).
+* You should use hosting services which provide you direct download links such as Mediafire or Dropbox (on Dropbox, to download a file rather than display it, you can use **_dl=1_** as a query parameter in your URL).
 
-2. The environment is already placed in the internal storage. So, in **_mDownloadDirectory_**, you will have to store only the path from the internal storage to your destination folder and not the full path from root directory.
+* The environment is already placed in the internal storage. So, in **_mDownloadDirectory_**, you will have to store only the path from the internal storage to your destination folder and not the full path from root directory.
 
-3. Remember to add Recovery MD5 to [RECOVERY\_MD5\_LIST](https://github.com/peppe130/ROMInstaller#how-to-add-md5-to-its-list).
+* Remember to add Recovery MD5 to [RECOVERY\_MD5\_LIST](https://github.com/peppe130/ROMInstaller#how-to-add-md5-to-its-list).
 
 
 ### The available modes are as follows:
@@ -563,6 +564,11 @@ Utils.StartFlashRecoveryWithAddons(mDownloadLink, mDownloadDirectory, mDownloade
   ```
   
 # How to read preferences from updater-script?
+**NB:**
+* In the META-INF folder you have to include only the original _**updater-binary**_ for your device and the _**updater-script.**_
+
+* If you are using Aroma Installer, just remove all stuff in the META-INF folder except for _**update-binary-installer**_ and _**updater-script**_ files. Then rename the _**update-binary-installer**_ into _**update-binary.**_
+
 Firstly you need to mount `/data` partition by using the following command:
 
 ```C
