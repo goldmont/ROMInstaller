@@ -487,7 +487,7 @@ public static void DownloadActionGetter(Integer mInt) {
     
         case 0: // Download Recovery
         
-            mDownloadLink = "http://www.mediafire.com/download/z7fn3nw1vn5oo8a/Test.zip";
+            mDownloadLink = "YourDownloadLink";
             mDownloadDirectory = Utils.ACTIVITY.getString(R.string.rom_folder);
             mDownloadedFileFinalName = "Recovery.zip";
             mRecoveryPartition = "YourDeviceRecoveryPartition";
@@ -499,17 +499,17 @@ public static void DownloadActionGetter(Integer mInt) {
         case 1: // Download Recovery with Add-Ons
         
             // Download Recovery
-            mDownloadLink = "http://www.mediafire.com/download/z7fn3nw1vn5oo8a/Test.zip";
+            mDownloadLink = "YourDownloadLink";
             mDownloadDirectory = Utils.ACTIVITY.getString(R.string.rom_folder);
             mDownloadedFileFinalName = "Recovery.zip";
             mRecoveryPartition = "YourDeviceRecoveryPartition";
 
             // Download Add-On N°1
             Utils.EnqueueDownload(
-            "http://www.mediafire.com/download/z7fn3nw1vn5oo8a/Test.zip",
-            Utils.ACTIVITY.getString(R.string.rom_folder),
-            "Add-On.zip",
-            "5fb732eea3d3e2b407fa7685c27a5354");
+            	"YourDownloadLink",
+            	Utils.ACTIVITY.getString(R.string.rom_folder),
+            	"Add-On.zip",
+            	"5fb732eea3d3e2b407fa7685c27a5354");
 
             Utils.StartFlashRecoveryWithAddons(mDownloadLink, mDownloadDirectory, mDownloadedFileFinalName, mRecoveryPartition);
             
