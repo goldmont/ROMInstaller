@@ -372,7 +372,7 @@ Utils.StartSingleDownload(mDownloadLink, mDownloadDirectory, mDownloadedFileFina
 String mDownloadLink = "YourDownloadLink";
 String mDownloadDirectory = getString(R.string.rom_folder);
 String mDownloadedFileFinalName = "File.zip";
-String mDownloadedFileMD5 = "3a416cafb312cb15ce6b3b09249fe6e6";
+String mDownloadedFileMD5 = "YourMD5";
 
 Utils.StartSingleDownload(mDownloadLink, mDownloadDirectory, mDownloadedFileFinalName, mDownloadedFileMD5);
   
@@ -421,21 +421,21 @@ Utils.StartMultipleDownloads();
 		"YourDownloadLink",
 		getString(R.string.rom_folder),
 		"File.zip",
-		"5fb732eea3d3e2b407fa7685c27a5354");
+		"YourMD5");
 
 // Download N°2
 	Utils.EnqueueDownload(
 		"YourDownloadLink",
 		getString(R.string.rom_folder),
 		"File2.zip",
-		"3a416cafb312cb15ce6b3b09249fe6e6");
+		"YourMD5");
 
 // Download N°3
 	Utils.EnqueueDownload(
 		"YourDownloadLink",
 		getString(R.string.rom_folder),
 		"File3.zip",
-		"f946055c11a6a25d202f81171944fa1e");
+		"YourMD5");
 
 Utils.StartMultipleDownloads();
   
@@ -452,7 +452,7 @@ Utils.StartMultipleDownloads();
 		"YourDownloadLink",
 		getString(R.string.rom_folder),
 		"File.zip",
-		"f946055c11a6a25d202f81171944fa1e");
+		"YourMD5");
 
 // Download N°2 - MD5 check disabled
 	Utils.EnqueueDownload(
@@ -465,7 +465,7 @@ Utils.StartMultipleDownloads();
 		"YourDownloadLink",
 		getString(R.string.rom_folder),
 		"File3.zip",
-		"f946055c11a6a25d202f81171944fa1e");
+		"YourMD5");
   
 Utils.StartMultipleDownloads();
   
@@ -509,7 +509,7 @@ public static void DownloadActionGetter(Integer mInt) {
             	"YourDownloadLink",
             	Utils.ACTIVITY.getString(R.string.rom_folder),
             	"Add-On.zip",
-            	"5fb732eea3d3e2b407fa7685c27a5354");
+            	"YourMD5");
 
             Utils.StartFlashRecoveryWithAddons(mDownloadLink, mDownloadDirectory, mDownloadedFileFinalName, mRecoveryPartition);
             
@@ -569,21 +569,21 @@ String mRecoveryPartition = "YourDeviceRecoveryPartition";
 		"YourDownloadLink",
 		getString(R.string.rom_folder),
 		"Add-On.zip",
-		"5fb732eea3d3e2b407fa7685c27a5354");
+		"YourMD5");
 
 // Download Add-On N°2
 	Utils.EnqueueDownload(
 		"YourDownloadLink",
 		getString(R.string.rom_folder),
 		"Add-On2.zip",
-		"3a416cafb312cb15ce6b3b09249fe6e6");
+		"YourMD5");
 
 // Download Add-On N°3
 	Utils.EnqueueDownload(
 		"YourDownloadLink",
 		getString(R.string.rom_folder),
 		"Add-On3.zip",
-		"f946055c11a6a25d202f81171944fa1e");
+		"YourMD5");
 
 Utils.StartFlashRecoveryWithAddons(mDownloadLink, mDownloadDirectory, mDownloadedFileFinalName, mRecoveryPartition);
   
