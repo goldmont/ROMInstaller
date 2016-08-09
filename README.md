@@ -62,16 +62,17 @@ Make sure that your SDK is updated to the latest version available.
 
 ![Screenshots](https://raw.githubusercontent.com/peppe130/ROMInstaller/master/art/ScreenshotStep13.png)
 
-**NB:** If the error **_"Activity class {…} does not exist"_** occurs while the App is being compiled by Android Studio, just sync again the project. Look at the picture below:
+**NB:**
+* If the error **_"Activity class {…} does not exist"_** occurs while the App is being compiled by Android Studio, just sync again the project. Look at the picture below:
 
 ![Screenshots](https://raw.githubusercontent.com/peppe130/ROMInstaller/master/art/ScreenshotStep14.png)
 
 # Project structure
 Project is composed of two packages and two classes:
-  1. **_activities:_** it contains all the App's activities.
-  2. **_core:_** it contains the "heart" of the App.
-  3. **_Control Center:_** it is the control center of the App (look [HERE](https://github.com/peppe130/ROMInstaller#what-is-control-center)).
-  4. **_FragmentsCollector:_** it is the preferences collector.
+* **_activities:_** it contains all the App's activities.
+* **_core:_** it contains the "heart" of the App.
+* **_Control Center:_** it is the control center of the App (look [HERE](https://github.com/peppe130/ROMInstaller#what-is-control-center)).
+* **_FragmentsCollector:_** it is the preferences collector.
 
 **NB:**
 * I will not provide any support for changes made to the **_core_** package.
