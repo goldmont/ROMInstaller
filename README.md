@@ -662,7 +662,9 @@ To show a **_"Follow me"_** Dialog, open **_Control Center_**, look for the `ROM
 ```java
 
 String[] mSocial = new String[] {"Google+", "Twitter"};
+
 String[] mLinks = new String[] {"YourGoogle+Link", "YourTwitterLink"};
+
 Utils.FollowMeDialog(mSocial, mLinks);
 
 ```
@@ -674,9 +676,13 @@ You can add as many social networks as you want. Just separate each other with a
 ```java
 
 public static void ROMDeveloperInfoAction() {
+
     String[] mSocial = new String[] {"Google+", "Twitter"};
+    
 	String[] mLinks = new String[] {"YourGoogle+Link", "YourTwitterLink"};
+	
 	Utils.FollowMeDialog(mSocial, mLinks);
+	
 }
 
 ```
