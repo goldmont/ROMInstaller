@@ -56,7 +56,7 @@ import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.mikepenz.iconics.IconicsDrawable;
 import com.ogaclejapan.smarttablayout.SmartTabLayout;
-import com.ogaclejapan.smarttablayout.SmartTabIndicationInterpolator;
+import com.ogaclejapan.smarttablayout.SmartTabIndicationInterpolator;//
 
 
 public class MainActivity extends AppCompatActivity implements CustomFileChooser.FileCallback {

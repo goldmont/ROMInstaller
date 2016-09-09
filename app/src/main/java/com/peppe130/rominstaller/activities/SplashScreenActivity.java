@@ -37,7 +37,7 @@ import com.peppe130.rominstaller.R;
 import com.peppe130.rominstaller.core.Utils;
 import com.peppe130.rominstaller.ControlCenter;
 import org.michaelevans.colorart.library.ColorArt;
-
+//
 
 public class SplashScreenActivity extends Activity {
 

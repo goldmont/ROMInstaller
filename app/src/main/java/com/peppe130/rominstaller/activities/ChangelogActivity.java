@@ -28,7 +28,7 @@ import org.sufficientlysecure.htmltextview.HtmlTextView;
 
 
 public class ChangelogActivity extends AppCompatActivity {
-
+//
     @Override
     @SuppressWarnings("ConstantConditions")
     protected void onCreate(Bundle savedInstanceState) {

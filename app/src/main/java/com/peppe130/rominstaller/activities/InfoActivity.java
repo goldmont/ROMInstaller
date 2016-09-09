@@ -33,7 +33,7 @@ import com.peppe130.rominstaller.BuildConfig;
 import com.peppe130.rominstaller.ControlCenter;
 import com.mikepenz.iconics.IconicsDrawable;
 import com.mikepenz.google_material_typeface_library.GoogleMaterial;
-import com.mikepenz.community_material_typeface_library.CommunityMaterial;
+import com.mikepenz.community_material_typeface_library.CommunityMaterial;//
 
 
 public class InfoActivity extends AppCompatActivity {
