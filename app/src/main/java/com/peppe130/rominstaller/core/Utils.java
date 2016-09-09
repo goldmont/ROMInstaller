@@ -82,7 +82,7 @@ public class Utils {
     public static SharedPreferences SP;
     public static SharedPreferences.Editor SP_EDITOR;
 
-    private static String MODEL;
+    private static String MODEL;//
     private static String FILE_NAME;
     public static String ROM_FOLDER;
     public static String ROM_DOWNLOAD_FOLDER;
