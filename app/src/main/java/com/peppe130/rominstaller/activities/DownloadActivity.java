@@ -48,7 +48,7 @@ import mehdi.sakout.fancybuttons.FancyButton;
 import com.mikepenz.iconics.IconicsDrawable;
 import com.h6ah4i.android.widget.advrecyclerview.utils.AbstractDraggableItemViewHolder;
 
-//
+
 public class DownloadActivity extends AppCompatActivity implements CustomFileChooser.FileCallback {
 
     RecyclerView mRecyclerView;

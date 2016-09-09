@@ -33,7 +33,7 @@ import com.peppe130.bouncingdialogs.BouncingDialog;
 import com.afollestad.materialdialogs.MaterialDialog;
 import org.sufficientlysecure.htmltextview.HtmlTextView;
 
-//
+
 public class AgreementActivity extends AppCompatActivity {
 
     Button AGREE, CLOSE;

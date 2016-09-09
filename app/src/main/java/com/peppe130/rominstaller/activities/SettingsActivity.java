@@ -34,7 +34,7 @@ import com.mikepenz.iconics.IconicsDrawable;
 import com.mikepenz.entypo_typeface_library.Entypo;
 import com.mikepenz.google_material_typeface_library.GoogleMaterial;
 import com.mikepenz.community_material_typeface_library.CommunityMaterial;
-//
+
 
 public class SettingsActivity extends AppCompatActivity {
 
