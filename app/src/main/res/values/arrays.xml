@@ -55,31 +55,4 @@
         <item>2</item>
     </string-array>
 
-    <string-array name="accuweather" >
-        <item>AccuWeather ID = 1</item>
-        <item>AccuWeather ID = 2</item>
-    </string-array>
-    <string-array name="accuweather_values" >
-        <item>1</item>
-        <item>2</item>
-    </string-array>
-
-    <string-array name="sound" >
-        <item>Sound ID = 1</item>
-        <item>Sound ID = 2</item>
-    </string-array>
-    <string-array name="sound_values" >
-        <item>1</item>
-        <item>2</item>
-    </string-array>
-
-    <string-array name="bootanimation" >
-        <item>Boot Animation ID = 1</item>
-        <item>Boot Animation ID = 2</item>
-    </string-array>
-    <string-array name="bootanimation_values" >
-        <item>1</item>
-        <item>2</item>
-    </string-array>
-
 </resources>

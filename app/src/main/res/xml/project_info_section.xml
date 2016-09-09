@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+
+    These preferences belong to the Project Info Section.
+    Edit "rom_info_section.xml" to manage your info.
+
+-->
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <Preference
+        android:key="project_build_number"
+        android:persistent="false"
+        android:title="@string/project_version"/>
+
+    <Preference
+        android:key="project_developer"
+        android:persistent="false"
+        android:title="@string/project_developer_title"
+        android:summary="@string/project_developer_summary"/>
+
+    <Preference
+        android:key="project_themer"
+        android:persistent="false"
+        android:title="@string/project_themer_title"
+        android:summary="@string/project_themer_summary"/>
+
+    <Preference
+        android:key="project_thread"
+        android:persistent="false"
+        android:title="@string/project_thread_title"
+        android:summary="@string/project_thread_summary"/>
+
+    <Preference
+        android:key="project_github"
+        android:persistent="false"
+        android:title="@string/project_github_title"
+        android:summary="@string/project_github_summary"/>
+
+    <Preference
+        android:key="donate_project"
+        android:persistent="false"
+        android:title="@string/donate_project_title"
+        android:summary="@string/donate_project_summary"/>
+
+    <Preference
+        android:key="my_apps"
+        android:persistent="false"
+        android:title="@string/my_apps_title"
+        android:summary="@string/my_apps_summary"/>
+
+</PreferenceScreen>

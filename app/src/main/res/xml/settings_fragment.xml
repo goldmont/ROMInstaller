@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!--
+
+    These preferences belong to the Settings Section.
+
+-->
+
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
     <PreferenceCategory
@@ -10,91 +17,38 @@
             android:title="@string/activity_download_center"
             android:summary="@string/download_center_summary"/>
 
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:title="@string/about_project">
-
         <Preference
-            android:key="project_build_number"
+            android:key="theme_chooser"
             android:persistent="false"
-            android:title="@string/project_version"/>
-
-        <Preference
-            android:key="project_developer"
-            android:persistent="false"
-            android:title="@string/project_developer_title"
-            android:summary="@string/project_developer_summary"/>
-
-        <Preference
-            android:key="project_themer"
-            android:persistent="false"
-            android:title="@string/project_themer_title"
-            android:summary="@string/project_themer_summary"/>
-
-        <Preference
-            android:key="project_thread"
-            android:persistent="false"
-            android:title="@string/project_thread_title"
-            android:summary="@string/project_thread_summary"/>
-
-        <Preference
-            android:key="project_github"
-            android:persistent="false"
-            android:title="@string/project_github_title"
-            android:summary="@string/project_github_summary"/>
+            android:title="@string/theme_chooser_title"
+            android:summary="@string/theme_chooser_summary"/>
 
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:title="@string/about_rom">
+        android:title="@string/info">
 
         <Preference
-            android:key="app_build_number"
+            android:key="device_model"
             android:persistent="false"
-            android:title="@string/app_version"/>
+            android:title="@string/current_device_model"/>
 
         <Preference
-            android:key="rom_build_number"
+            android:key="build_version"
             android:persistent="false"
-            android:title="@string/rom_version"
-            android:summary="@string/rom_build_number"/>
+            android:title="@string/current_build_version"/>
 
         <Preference
-            android:key="rom_developer"
+            android:key="about_project"
             android:persistent="false"
-            android:title="@string/rom_developer_title"
-            android:summary="@string/rom_developer_summary"/>
+            android:title="@string/about_project_title"
+            android:summary="@string/about_project_summary"/>
 
         <Preference
-            android:key="rom_themer"
+            android:key="about_rom"
             android:persistent="false"
-            android:title="@string/rom_themer_title"
-            android:summary="@string/rom_themer_summary"/>
-
-        <Preference
-            android:key="rom_thread"
-            android:persistent="false"
-            android:title="@string/rom_thread"
-            android:summary="@string/tap_to_visit"/>
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:title="@string/play_store">
-
-        <Preference
-            android:key="review_app"
-            android:persistent="false"
-            android:title="@string/review_app_title"
-            android:summary="@string/review_app_summary"/>
-
-        <Preference
-            android:key="all_my_apps"
-            android:persistent="false"
-            android:title="@string/all_my_apps_title"
-            android:summary="@string/all_my_apps_summary"/>
-
+            android:title="@string/about_rom_title"
+            android:summary="@string/about_rom_summary"/>
 
     </PreferenceCategory>
 

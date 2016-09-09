@@ -2,16 +2,15 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 24
-    buildToolsVersion "24.0.0"
+    buildToolsVersion "24.0.2"
 
     defaultConfig {
         applicationId "com.peppe130.rominstaller"
         minSdkVersion 21
-        //noinspection OldTargetApi
-        targetSdkVersion 21
-        versionCode 2
-        versionName "2.0"
-        buildConfigField "Double", "projectVersion", "2.0"
+        targetSdkVersion 24
+        versionCode 1
+        versionName "1.0"
+        buildConfigField "String", "PROJECT_VERSION", '"3.0"'
     }
     buildTypes {
         release {
@@ -28,15 +27,21 @@ repositories {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile group: 'com.google.guava', name: 'guava', version: '19.0'
-    compile 'com.android.support:appcompat-v7:24.1.1'
-    compile 'com.android.support:design:24.1.1'
-    compile 'com.android.support:support-v4:24.1.1'
+    compile 'com.android.support:appcompat-v7:24.2.0'
+    compile 'com.android.support:design:24.2.0'
+    compile 'com.android.support:support-v4:24.2.0'
     compile 'org.jetbrains:annotations-java5:15.0'
 
     // Advanced RecyclerView
-    compile ('com.h6ah4i.android.widget.advrecyclerview:advrecyclerview:0.9.3@aar'){
+    compile ('com.h6ah4i.android.widget.advrecyclerview:advrecyclerview:0.9.3@aar') {
         transitive=true
     }
+
+    // Assent
+    compile 'com.afollestad:assent:0.2.5'
+
+    // Bouncing Dialogs
+    compile 'com.github.peppe130:bouncing-dialogs:0.0.9'
 
     // ColorArt
     compile 'org.michaelevans.colorart:library:0.0.3'
@@ -45,28 +50,25 @@ dependencies {
     compile 'com.github.medyo:fancybuttons:1.8.1'
 
     // HTML TextView
-    compile 'org.sufficientlysecure:html-textview:1.8'
+    compile 'org.sufficientlysecure:html-textview:2.0'
 
     // Iconics
-    compile "com.mikepenz:iconics-core:2.7.1@aar"
-    compile 'com.mikepenz:google-material-typeface:2.2.0.2.original@aar'
+    compile "com.mikepenz:iconics-core:2.8.1@aar"
+    compile 'com.mikepenz:google-material-typeface:2.2.0.3.original@aar'
     compile 'com.mikepenz:community-material-typeface:1.5.54.2@aar'
     compile 'com.mikepenz:entypo-typeface:1.0.0.2@aar'
     compile 'com.mikepenz:ionicons-typeface:2.0.1.2@aar'
 
     // Material Dialogs
-    compile 'com.afollestad.material-dialogs:core:0.8.6.2'
-    compile 'com.afollestad.material-dialogs:commons:0.8.6.2'
+    compile 'com.afollestad.material-dialogs:core:0.9.0.1'
+    compile 'com.afollestad.material-dialogs:commons:0.9.0.1'
 
-    // Preference Fragments
-    compile 'net.xpece.android:support-preference:1.0.1'
-    compile 'com.takisoft.fix:preference-v7:24.1.1.1'
+    // Preferences Fragments
+    compile 'net.xpece.android:support-preference:1.0.3'
+    compile 'com.takisoft.fix:preference-v7:24.2.0.0'
 
     // SmartTabLayout
     compile 'com.ogaclejapan.smarttablayout:library:1.6.1@aar'
     compile 'com.ogaclejapan.smarttablayout:utils-v4:1.6.1@aar'
-
-    // SweetAlertDialog
-    compile 'cn.pedant.sweetalert:library:1.3'
 
 }

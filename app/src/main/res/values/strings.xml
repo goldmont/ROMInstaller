@@ -1,19 +1,18 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <string name="app_name">ROM Installer</string>
-    <string name="toolbar_title2">Preferences</string>
-    <string name="rom_name">ROMInstaller</string>
-    <string name="rom_folder">ROMInstaller/Download</string>
-    <string name="choose_sample_file">Choose \"SampleROM.zip\" file under ROMInstaller/Download</string>
 
     <!-- Buttons -->
     <string name="positive_button">YES</string>
     <string name="negative_button">NO</string>
     <string name="ok_button">OK</string>
+    <string name="continue_button">CONTINUE</string>
+    <string name="got_it_button">GOT IT</string>
     <string name="agree_button">I AGREE</string>
     <string name="close_button">CLOSE</string>
     <string name="later_button">LATER</string>
     <string name="download_button">DOWNLOAD</string>
+    <string name="cancel_button" tools:ignore="ButtonCase">CANCEL</string>
     <string name="retry_button">RETRY</string>
     <string name="rom_download_button">DOWNLOAD ROM</string>
     <string name="clear_downloads_button">CLEAR ALL</string>
@@ -24,53 +23,41 @@
     <string name="back_button">Back</string>
     <string name="done_button">Install</string>
 
-    <!-- Agreement Activity -->
-    <string name="activity_agreement">Agreement</string>
-    <string name="agreement_dialog_title">You must agree!</string>
-    <string name="agreement_dialog_message">Before you can use this App\nyou must agree to Terms and Conditions.</string>
-    <string name="double_back_to_exit">Press twice to exit</string>
-
     <!-- Toolbar -->
-    <string name="set_default_values">Set default values</string>
+    <string name="toolbar_title">Preferences</string>
+    <string name="default_values">Default values</string>
     <string name="activity_changelog">Changelog</string>
     <string name="activity_settings">Settings</string>
     <string name="clear_downloads">Clear downloads</string>
 
-    <!-- Progress Dialog -->
-    <string name="progress_dialog_title">Initializing&#8230;</string>
-    <string name="check_configuration">Checking your device\nconfiguration for compatibility</string>
-    <string name="check_model">Getting device model&#8230;</string>
-    <string name="device_model">\n\nYour device model is:\n%1$s</string>
-    <string name="rom_found">\n\nFound:\n%1$s</string>
-    <string name="calculating_md5">\n\nCalculating MD5&#8230;</string>
-    <string name="initializing_start">\n\nDone!</string>
+    <!-- Agreement Activity -->
+    <string name="activity_agreement">Agreement</string>
+    <string name="agreement_dialog_title">You must agree!</string>
+    <string name="agreement_dialog_message">Before you can use this App\nyou must agree to Terms and Conditions.</string>
 
     <!-- Detect Device Dialog -->
     <string name="detect_device_dialog_title">Device model</string>
-    <string name="detect_device_dialog_message">Detected device: %1$s\n\nIs this your device model? If so, press \"Yes\" otherwise check the compatibility list.</string>
+    <string name="detect_device_dialog_message">Detected device: %1$s\n\nIf this is not your device model,\ncheck the compatibility list.</string>
 
-    <!-- Set Path Dialog -->
+    <!-- File Chooser Dialog -->
     <string name="set_path_dialog_title">Set path</string>
-    <string name="set_path_dialog_message">Choose the path where you\nplaced ROM\'s zip file</string>
+    <string name="set_path_dialog_message">Choose the path where\nyou placed ROM file</string>
+    <string name="choose_sample_file">Choose \"SampleROM.zip\" file under %1$s</string>
+    <string name="not_valid_zip_file">This is not a valid ZIP file.</string>
     <string name="confirm_file_dialog_title">Selected file:</string>
-    <string name="confirm_file_dialog_message">%1$s\n\nProceed with the wizard?</string>
+    <string name="confirm_file_dialog_title2">Path:</string>
     <string name="download_rom_from_file_chooser_dialog_content">Are you sure you wish to download?</string>
 
-    <!-- Set Default Values Dialog -->
-    <string name="confirm_set_default_values">Are you sure you want to\nset default values?</string>
-    <string name="set_default_values_title">Restored!</string>
-    <string name="set_default_values_message">Default values applied</string>
+    <!-- Progress Dialog -->
+    <string name="progress_dialog_title">Initializing&#8230;</string>
+    <string name="check_configuration">Checking your device\nconfiguration for compatibility</string>
+    <string name="device_model">Detected device:\n%1$s</string>
+    <string name="calculating_md5">\n\nCalculating MD5&#8230;</string>
+    <string name="initialized">\n\nDone!</string>
 
     <!-- No Root Access Dialog -->
     <string name="no_root_access_dialog_title">No root access!</string>
     <string name="no_root_access_dialog_message">Root access is required\nto make the app work properly.</string>
-
-    <!-- Install Dialog -->
-    <string name="start_install_dialog_title">Ready to install</string>
-    <string name="start_install_dialog_message">Tap OK to begin the installation. To review or change any of your installation settings, press BACK softkey. Press LATER to quit.\n\nATTENTION: You should not do any wipe before flashing or your preferences will be\nlost and the default ones will get installed.</string>
-    <string name="press_next_to_install">Tap next button again to install.</string>
-    <string name="swipe_right_to_install">Swipe to the left again to install.</string>
-    <string name="swipe_left_or_right_to_install">Swipe to the left or to the right to install.</string>
 
     <!-- Incompatible Device Dialog -->
     <string name="incompatible_device_dialog_title">Device not compatible!</string>
@@ -81,10 +68,22 @@
     <string name="zip_file_md5_mismatch_dialog_title">MD5 does not match!</string>
     <string name="zip_file_md5_mismatch_dialog_message">Please download %1$s again.</string>
 
+    <!-- Default Values Dialog -->
+    <string name="confirm_default_values_title">Default values</string>
+    <string name="confirm_default_values_message">Are you sure you want\nto set default values?</string>
+
+    <!-- Install Dialog -->
+    <string name="start_install_dialog_title">Ready to install</string>
+    <string name="start_install_dialog_message">Tap OK to begin the installation. To review or change any of your installation settings, press BACK softkey. Press LATER to quit.\n\nATTENTION: You should not do any wipe before flashing or your preferences will be\nlost and the default ones will get installed.</string>
+    <string name="press_next_to_install">Tap next button again to install.</string>
+    <string name="swipe_right_to_install">Swipe to the left again to install.</string>
+    <string name="swipe_left_or_right_to_install">Swipe to the left or to the right to install.</string>
+
     <!-- Download Progress Dialog -->
     <string name="download_progress_dialog_title">Downloading</string>
     <string name="download_progress_dialog_message">Please do not close the App\nwhile %1$s is downloaded.</string>
     <string name="downloaded_file_md5_check">Checking MD5 of %1$s</string>
+    <string name="download_canceled">Canceled!</string>
     <string name="download_completed">Downloaded!</string>
 
     <!-- Downloaded File MD5 Mismatch Dialog -->
@@ -110,49 +109,80 @@
     <string name="recovery_needed">Recovery needs to be installed in order to flash properly the ROM.</string>
     <string name="flash_completed">Flashed!</string>
 
+    <!-- No Wi-Fi Network Dialog -->
+    <string name="no_wifi_network_dialog_title">No Wi-Fi network!</string>
+    <string name="no_wifi_network_dialog_message">Your device is not connected to a Wi-Fi network. Do you want to download using mobile data?</string>
+
+    <!-- No Network Dialog -->
+    <string name="no_network_connection_dialog_title">No network connection!</string>
+    <string name="no_network_connection_dialog_message">Your device is not registered on the network.</string>
+
+    <!-- Request Permissions -->
+    <string name="permission_denied_title">Permission denied!</string>
+    <string name="permission_denied_message">The App needs the access to the\ninternal storage in order to work properly.\n\nPlease, grant it.</string>
+
     <!-- Exit Dialog -->
     <string name="exit_dialog_title">Exit</string>
     <string name="exit_dialog_message">Are you sure you want to exit?</string>
 
-    <!-- Options -->
+    <!-- Preferences -->
     <string name="selected_item">Selected: %s</string>
     <string name="select_install">Select to install</string>
-    <string name="select_disable">Select to disable</string>
     <string name="select_enable">Select to enable</string>
+    <string name="select_disable">Select to disable</string>
+    <string name="status_on">Status: Enabled</string>
+    <string name="status_off">Status: Disabled</string>
 
     <!-- Settings Activity -->
     <string name="general">General</string>
-    <string name="about_project">About Project</string>
-    <string name="about_rom">About App &amp; ROM</string>
+    <string name="info">Info</string>
     <string name="play_store">Play Store</string>
-    <string name="status_on">Status: Enabled</string>
-    <string name="status_off">Status: Disabled</string>
     <string name="tap_to_visit">Tap to visit</string>
     <string name="activity_download_center">Download Center</string>
     <string name="download_center_summary">Download add-ons/features</string>
     <string name="no_downloads_available">No downloads available</string>
+    <string name="theme_chooser_title">Theme</string>
+    <string name="theme_chooser_summary">Change the App theme</string>
+    <string name="light_theme">Light theme</string>
+    <string name="dark_theme">Dark theme</string>
+    <string name="change_app_icon_dialog_title">App icon</string>
+    <string name="change_app_icon_dialog_message">Do you want to change the App launcher icon?\n\nYou may have to launch the App manually after waiting a few seconds.</string>
+    <string name="current_device_model">Device model</string>
+    <string name="current_build_version">Build version</string>
+    <string name="about_project_title">Project</string>
+    <string name="about_project_summary">View info about the project</string>
+    <string name="about_rom_title">App &amp; ROM</string>
+    <string name="about_rom_summary">View info about the App and the ROM</string>
     <string name="project_version">Project version</string>
     <string name="project_developer_title">Project developer</string>
     <string name="project_developer_summary">Giuseppe Montuoro</string>
     <string name="project_themer_title">Project themer</string>
     <string name="project_themer_summary">Costantino Di Bruno</string>
     <string name="project_thread_title">Thread</string>
-    <string name="project_thread_summary">See the project\'s thread</string>
+    <string name="project_thread_summary">View the project thread</string>
+    <string name="rom_thread_summary">View the ROM thread</string>
     <string name="project_github_title">GitHub</string>
-    <string name="project_github_summary">See the App\'s project on GitHub</string>
+    <string name="project_github_summary">View the App project on GitHub</string>
+    <string name="rom_github_summary">View the App code on GitHub</string>
     <string name="app_version">App version</string>
     <string name="rom_version">ROM version</string>
     <string name="rom_developer_title">App &amp; ROM developer</string>
     <string name="rom_themer_title">App &amp; ROM themer</string>
-    <string name="rom_thread">Thread</string>
+    <string name="donate_project_title">Donate</string>
+    <string name="donate_project_summary">Become a supporter!</string>
     <string name="review_app_title">Leave a review!</string>
     <string name="review_app_summary">Review the App on Play Store</string>
-    <string name="all_my_apps_title">All my apps</string>
-    <string name="all_my_apps_summary">View all my Apps on Play Store</string>
+    <string name="my_apps_title">My Apps</string>
+    <string name="my_apps_summary">View all my Apps on Play Store</string>
+
+    <!-- Others -->
+    <string name="no_application_found">Can not find an application to perform this action.</string>
+    <string name="disable_test_mode_checkfile">Disable test mode in order to check the downloaded file.</string>
+    <string name="preferences_exported">Preferences exported. Disable test mode in order to install.</string>
 
     <!-- ROM Info -->
-    <string name="rom_build_number">Your ROM\'s build number</string>
-    <string name="rom_developer_summary">App &amp; ROM developer\'s name</string>
-    <string name="rom_themer_summary">App &amp; ROM themer\'s name</string>
+    <string name="rom_build_number">Your ROM build number</string>
+    <string name="rom_developer_summary">App and ROM developer name</string>
+    <string name="rom_themer_summary">App and ROM themer name</string>
 
 </resources>

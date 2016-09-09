@@ -1,54 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--suppress AndroidElementNotAllowed -->
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
     <PreferenceCategory
-        android:title="AccuWeather Widget options">
-
-        <ListPreference
-            android:title="AccuWeather Widget"
-            android:summary="@string/selected_item"
-            android:key="accuweather"
-            android:defaultValue="1"
-            android:entries="@array/accuweather"
-            android:entryValues="@array/accuweather_values" />
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:title="Sounds options">
-
-        <ListPreference
-            android:title="Sounds"
-            android:summary="@string/selected_item"
-            android:key="sound"
-            android:defaultValue="1"
-            android:entries="@array/sound"
-            android:entryValues="@array/sound_values" />
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:title="Boot Animation options">
-
-        <ListPreference
-            android:title="Boot Animation"
-            android:summary="@string/selected_item"
-            android:key="bootanimation"
-            android:defaultValue="1"
-            android:entries="@array/bootanimation"
-            android:entryValues="@array/bootanimation_values" />
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:title="Boot Sound">
+        android:title="Apps">
 
         <CheckBoxPreference
-            android:key="boot_sound"
+            android:key="app1"
             android:defaultValue="false"
-            android:title="Disable Boot Sound?"
-            android:summary="@string/select_disable" />
+            android:title="App 1" />
+
+        <CheckBoxPreference
+            android:key="app2"
+            android:defaultValue="false"
+            android:title="App 2" />
+
+        <CheckBoxPreference
+            android:key="app3"
+            android:defaultValue="false"
+            android:title="App 3" />
+
+        <CheckBoxPreference
+            android:key="app4"
+            android:defaultValue="false"
+            android:title="App 4" />
+
+        <CheckBoxPreference
+            android:key="app5"
+            android:defaultValue="false"
+            android:title="App 5" />
+
+        <CheckBoxPreference
+            android:key="app6"
+            android:defaultValue="false"
+            android:title="App 6" />
+
+        <CheckBoxPreference
+            android:key="app7"
+            android:defaultValue="false"
+            android:title="App 7" />
 
     </PreferenceCategory>
 

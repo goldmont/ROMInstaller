@@ -16,7 +16,6 @@
         android:layout_marginTop="2dp"
         fancy:fb_text="Item"
         fancy:fb_borderWidth="2dp"
-        fancy:fb_radius="5dp">
-    </mehdi.sakout.fancybuttons.FancyButton>
+        fancy:fb_radius="5dp" />
 
 </FrameLayout>

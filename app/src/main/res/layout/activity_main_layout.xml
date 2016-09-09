@@ -20,8 +20,11 @@
             android:id="@+id/viewPager"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:paddingRight="@dimen/activity_horizontal_margin" />
+            android:overScrollMode="never"
+            android:layout_marginLeft="@dimen/view_pager_margin"
+            android:layout_marginStart="@dimen/view_pager_margin"
+            android:layout_marginRight="@dimen/view_pager_margin"
+            android:layout_marginEnd="@dimen/view_pager_margin" />
 
     </FrameLayout>
 
