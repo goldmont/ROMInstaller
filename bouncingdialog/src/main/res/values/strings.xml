@@ -1,0 +1,9 @@
+<resources>
+
+    <string name="app_name">BouncingDialog</string>
+    <string name="dialog_default_title">This is the content</string>
+    <string name="dialog_ok">OK</string>
+    <string name="dialog_cancel">Cancel</string>
+    <string name="LOADING">Loading…</string>
+
+</resources>
