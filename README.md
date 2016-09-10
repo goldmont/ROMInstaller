@@ -1,6 +1,6 @@
 # ROM Installer
 
-![Screenshots](http://i.imgur.com/6iIPzDd.jpg)
+![Screenshots](http://i.imgur.com/Byv8NED.jpg)
 
 # Table of contents
 1. [Introduction](https://github.com/peppe130/ROMInstaller#introduction)
