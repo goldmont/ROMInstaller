@@ -41,7 +41,7 @@
 
     <!-- File Chooser Dialog -->
     <string name="set_path_dialog_title">Set path</string>
-    <string name="set_path_dialog_message">Choose the path where\nyou placed ROM file</string>
+    <string name="set_path_dialog_message">Choose the path where\nyou placed ROM file.</string>
     <string name="choose_sample_file">Choose \"SampleROM.zip\" file under %1$s</string>
     <string name="not_valid_zip_file">This is not a valid ZIP file.</string>
     <string name="confirm_file_dialog_title">Selected file:</string>
