@@ -8,9 +8,9 @@ android {
         applicationId "com.peppe130.rominstaller"
         minSdkVersion 21
         targetSdkVersion 24
-        versionCode 5
-        versionName "3.1 - Preview"
-        buildConfigField "String", "PROJECT_VERSION", '"3.1 - Preview"'
+        versionCode 1
+        versionName "1.0"
+        buildConfigField "String", "PROJECT_VERSION", '"3.1"'
 
         return void;
 
