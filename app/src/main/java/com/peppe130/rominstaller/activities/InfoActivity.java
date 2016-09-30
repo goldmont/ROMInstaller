@@ -19,6 +19,7 @@
 
 package com.peppe130.rominstaller.activities;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -38,6 +39,7 @@ import com.mikepenz.community_material_typeface_library.CommunityMaterial;
 
 public class InfoActivity extends AppCompatActivity {
 
+    @SuppressLint("StaticFieldLeak")
     public static IconicsDrawable mInfoIcon, mDeveloperIcon, mThemerIcon, mThreadIcon, mGitHubIcon, mDonateIcon, mPlayStoreIcon;
 
     @Override

@@ -265,7 +265,7 @@ public class CustomFileChooser extends DialogFragment implements MaterialDialog.
 
         mDialog = new MaterialDialog.Builder(getActivity())
                 .title(parentFolder.getAbsolutePath())
-                .items(getContentsArray())
+                .items((CharSequence[]) getContentsArray())
                 .itemsCallback(this)
                 .positiveText(getLockExplorer() ? getString(R.string.clear_downloads_button) : getString(R.string.rom_download_button))
                 .onPositive(new MaterialDialog.SingleButtonCallback() {
@@ -439,7 +439,7 @@ public class CustomFileChooser extends DialogFragment implements MaterialDialog.
 
                                 getArguments().putString("current_path", parentFolder.toString());
 
-                                dialog2.setItems(getContentsArray());
+                                dialog2.setItems((CharSequence[]) getContentsArray());
 
                             }
                         })
@@ -467,7 +467,7 @@ public class CustomFileChooser extends DialogFragment implements MaterialDialog.
 
             getArguments().putString("current_path", parentFolder.getAbsolutePath());
 
-            dialog.setItems(getContentsArray());
+            dialog.setItems((CharSequence[]) getContentsArray());
 
         }
 
@@ -505,14 +505,14 @@ public class CustomFileChooser extends DialogFragment implements MaterialDialog.
     public static class Builder implements Serializable {
 
         @NonNull
-        protected final transient AppCompatActivity mContext;
-        protected String mInitialPath;
-        protected String mMimeType;
-        protected String mTag;
-        protected String mPathToBeLocked;
-        protected Boolean mLockExplorer = false;
-        protected Boolean mCanceledOnTouchOutside = true;
-        protected Boolean mShowHiddenFiles = false;
+        final transient AppCompatActivity mContext;
+        String mInitialPath;
+        String mMimeType;
+        String mTag;
+        String mPathToBeLocked;
+        Boolean mLockExplorer = false;
+        Boolean mCanceledOnTouchOutside = true;
+        Boolean mShowHiddenFiles = false;
 
         public <ActivityType extends AppCompatActivity & FileCallback> Builder(@NonNull AppCompatActivity context) {
             mContext = context;
@@ -600,7 +600,7 @@ public class CustomFileChooser extends DialogFragment implements MaterialDialog.
         }
 
         @NonNull
-        public CustomFileChooser build() {
+        CustomFileChooser build() {
 
             CustomFileChooser dialog = new CustomFileChooser();
 

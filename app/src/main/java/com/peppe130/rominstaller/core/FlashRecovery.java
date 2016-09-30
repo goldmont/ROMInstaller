@@ -44,7 +44,7 @@ import com.stericson.RootShell.execution.Command;
 import com.stericson.RootTools.RootTools;
 
 
-public class FlashRecovery extends AsyncTask<String, String, Boolean> {
+class FlashRecovery extends AsyncTask<String, String, Boolean> {
 
     private Long mDownloadID;
     private Boolean mHasAddOns;
@@ -55,7 +55,7 @@ public class FlashRecovery extends AsyncTask<String, String, Boolean> {
     private BroadcastReceiver onDownloadFinishReceiver;
     private String mDownloadedFileFinalName, mMD5, mRecoveryPartition;
 
-    public FlashRecovery(DownloadManager.Request request, File downloadDirectory, String downloadedFileFinalName, String recoveryPartition, Boolean hasAddOns) {
+    FlashRecovery(DownloadManager.Request request, File downloadDirectory, String downloadedFileFinalName, String recoveryPartition, Boolean hasAddOns) {
 
         this.mRequest = request;
 

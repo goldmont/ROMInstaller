@@ -67,7 +67,7 @@ public class AgreementActivity extends AppCompatActivity {
                     String[] mString = {"Buttons UI", "Swipe UI"};
 
                     new MaterialDialog.Builder(AgreementActivity.this)
-                            .items(mString)
+                            .items((CharSequence[]) mString)
                             .itemsCallback(new MaterialDialog.ListCallback() {
                                 @Override
                                 public void onSelection(MaterialDialog dialog, View view, int which, CharSequence text) {

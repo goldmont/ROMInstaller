@@ -19,6 +19,7 @@
 
 package com.peppe130.rominstaller.activities;
 
+import android.annotation.SuppressLint;
 import android.support.annotation.NonNull;
 import android.app.ActivityManager;
 import android.graphics.Bitmap;
@@ -61,10 +62,13 @@ import com.ogaclejapan.smarttablayout.SmartTabIndicationInterpolator;
 
 public class MainActivity extends AppCompatActivity implements CustomFileChooser.FileCallback {
 
+    @SuppressLint("StaticFieldLeak")
     private static ImageButton NEXT, BACK, DONE;
+    @SuppressLint("StaticFieldLeak")
     private static FrameLayout mFrameLayout;
     private static CustomViewPager mViewPager;
     private static FragmentPagerAdapter mFragmentPagerAdapter;
+    @SuppressLint("StaticFieldLeak")
     private static SmartTabLayout mSmartTabLayout;
     Integer mTheme, mHeaderColor, mHeaderIcon, mLatestPage, mCurrentItem;
     Boolean mLastPageScrolled = false, mShouldShowSwipeHint = false;
@@ -209,7 +213,7 @@ public class MainActivity extends AppCompatActivity implements CustomFileChooser
 
                                                 new MaterialDialog.Builder(MainActivity.this)
                                                         .positiveText(getString(R.string.not_in_list_button))
-                                                        .items(ControlCenter.DEVICE_COMPATIBILITY_LIST)
+                                                        .items((CharSequence[]) ControlCenter.DEVICE_COMPATIBILITY_LIST)
                                                         .itemsCallback(new MaterialDialog.ListCallback() {
                                                             @Override
                                                             public void onSelection(MaterialDialog dialog, View view, int which, CharSequence text) {
@@ -634,7 +638,7 @@ public class MainActivity extends AppCompatActivity implements CustomFileChooser
 
     public static class Adapter extends FragmentPagerAdapter {
 
-        public Adapter(FragmentManager fragmentManager) {
+        Adapter(FragmentManager fragmentManager) {
 
             super(fragmentManager);
 

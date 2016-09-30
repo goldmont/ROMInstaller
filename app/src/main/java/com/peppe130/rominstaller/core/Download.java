@@ -41,7 +41,7 @@ import com.google.common.hash.Hashing;
 import com.google.common.hash.HashCode;
 
 
-public class Download extends AsyncTask<String, String, String> {
+class Download extends AsyncTask<String, String, String> {
 
     private Long mDownloadID;
     private HashCode mHashCode;
@@ -54,7 +54,7 @@ public class Download extends AsyncTask<String, String, String> {
     private BroadcastReceiver onDownloadFinishReceiver;
     private String mDownloadedFileFinalName, mDownloadedFileMD5;
 
-    public Download(DownloadManager.Request request, File downloadDirectory, String downloadedFileFinalName, Boolean isROM) {
+    Download(DownloadManager.Request request, File downloadDirectory, String downloadedFileFinalName, Boolean isROM) {
 
         this.mRequest = request;
 
@@ -66,7 +66,7 @@ public class Download extends AsyncTask<String, String, String> {
 
     }
 
-    public Download(DownloadManager.Request request, File downloadDirectory, String downloadedFileFinalName, String downloadedFileMD5) {
+    Download(DownloadManager.Request request, File downloadDirectory, String downloadedFileFinalName, String downloadedFileMD5) {
 
         this.mRequest = request;
 
@@ -78,7 +78,7 @@ public class Download extends AsyncTask<String, String, String> {
 
     }
 
-    public Download(DownloadManager.Request request, File downloadDirectory, String downloadedFileFinalName, String downloadedFileMD5, Integer nextDownloadIndex) {
+    Download(DownloadManager.Request request, File downloadDirectory, String downloadedFileFinalName, String downloadedFileMD5, Integer nextDownloadIndex) {
 
         this.mRequest = request;
 

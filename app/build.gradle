@@ -2,15 +2,18 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 24
-    buildToolsVersion "24.0.2"
+    buildToolsVersion "24.0.3"
 
     defaultConfig {
         applicationId "com.peppe130.rominstaller"
         minSdkVersion 21
         targetSdkVersion 24
-        versionCode 1
-        versionName "1.0"
-        buildConfigField "String", "PROJECT_VERSION", '"3.0"'
+        versionCode 5
+        versionName "3.1 - Preview"
+        buildConfigField "String", "PROJECT_VERSION", '"3.1 - Preview"'
+
+        return void;
+
     }
     buildTypes {
         release {
@@ -18,6 +21,9 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    return void;
+
 }
 
 repositories {
@@ -27,9 +33,9 @@ repositories {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile group: 'com.google.guava', name: 'guava', version: '19.0'
-    compile 'com.android.support:appcompat-v7:24.2.0'
-    compile 'com.android.support:design:24.2.0'
-    compile 'com.android.support:support-v4:24.2.0'
+    compile 'com.android.support:appcompat-v7:24.2.1'
+    compile 'com.android.support:design:24.2.1'
+    compile 'com.android.support:support-v4:24.2.1'
     compile 'org.jetbrains:annotations-java5:15.0'
 
     // Advanced RecyclerView
@@ -60,12 +66,12 @@ dependencies {
     compile 'com.mikepenz:ionicons-typeface:2.0.1.2@aar'
 
     // Material Dialogs
-    compile 'com.afollestad.material-dialogs:core:0.9.0.1'
-    compile 'com.afollestad.material-dialogs:commons:0.9.0.1'
+    compile 'com.afollestad.material-dialogs:core:0.9.0.2'
+    compile 'com.afollestad.material-dialogs:commons:0.9.0.2'
 
     // Preferences Fragments
     compile 'net.xpece.android:support-preference:1.0.3'
-    compile 'com.takisoft.fix:preference-v7:24.2.0.0'
+    compile 'com.takisoft.fix:preference-v7:24.2.1.0'
 
     // SmartTabLayout
     compile 'com.ogaclejapan.smarttablayout:library:1.6.1@aar'

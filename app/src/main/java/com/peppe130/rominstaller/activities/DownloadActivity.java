@@ -86,7 +86,7 @@ public class DownloadActivity extends AppCompatActivity implements CustomFileCho
 
         FancyButton mButton;
 
-        public ViewHolder(View itemView) {
+        ViewHolder(View itemView) {
 
             super(itemView);
 
@@ -100,11 +100,11 @@ public class DownloadActivity extends AppCompatActivity implements CustomFileCho
 
     public class Item {
 
-        public final long ID;
+        final long ID;
 
-        public final String TEXT;
+        final String TEXT;
 
-        public Item(long id, String text) {
+        Item(long id, String text) {
 
             this.ID = id;
 
@@ -118,7 +118,7 @@ public class DownloadActivity extends AppCompatActivity implements CustomFileCho
 
         List<Item> mItems;
 
-        public Adapter() {
+        Adapter() {
 
             setHasStableIds(true);
 

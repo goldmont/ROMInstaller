@@ -71,11 +71,11 @@ import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
 
 
-@SuppressLint("CommitPrefEdits")
+@SuppressLint("CommitPrefEdits, StaticFieldLeak")
 @SuppressWarnings("ResultOfMethodCallIgnored, unused, ConstantConditions")
 public class Utils {
 
-    public static Toast TOAST;
+    static Toast TOAST;
     public static Snackbar SNACKBAR;
     public static AppCompatActivity ACTIVITY;
     private static File ZIP_FILE;
@@ -89,13 +89,13 @@ public class Utils {
     public static String TAG = "ROM_INSTALLER";
 
     public static Boolean SHOULD_LOCK_UI = true;
-    protected static Boolean GRANT_INITIAL_ROOT_ACCESS = false;
+    static Boolean GRANT_INITIAL_ROOT_ACCESS = false;
 
-    protected static ArrayList<Uri> DOWNLOAD_LINK_LIST = new ArrayList<>();
-    protected static ArrayList<File> DOWNLOAD_DIRECTORY_LIST = new ArrayList<>();
-    protected static ArrayList<String> DOWNLOADED_FILE_NAME_LIST = new ArrayList<>();
-    protected static ArrayList<String> DOWNLOADED_FILE_MD5_LIST = new ArrayList<>();
-    protected static ArrayList<DownloadManager.Request> DOWNLOAD_REQUEST_LIST = new ArrayList<>();
+    static ArrayList<Uri> DOWNLOAD_LINK_LIST = new ArrayList<>();
+    static ArrayList<File> DOWNLOAD_DIRECTORY_LIST = new ArrayList<>();
+    static ArrayList<String> DOWNLOADED_FILE_NAME_LIST = new ArrayList<>();
+    static ArrayList<String> DOWNLOADED_FILE_MD5_LIST = new ArrayList<>();
+    static ArrayList<DownloadManager.Request> DOWNLOAD_REQUEST_LIST = new ArrayList<>();
 
 
     public enum Action {
@@ -495,7 +495,7 @@ public class Utils {
 
     }
 
-    public static NetworkInfo GetNetworkInfo() {
+    private static NetworkInfo GetNetworkInfo() {
 
         ConnectivityManager mConnectivityManager = (ConnectivityManager) ACTIVITY.getSystemService(Context.CONNECTIVITY_SERVICE);
 
@@ -528,7 +528,7 @@ public class Utils {
     public static void FollowMeDialog(String[] items, final String[] links) {
 
         new MaterialDialog.Builder(ACTIVITY)
-                .items(items)
+                .items((CharSequence[]) items)
                 .itemsCallback(new MaterialDialog.ListCallback() {
                     @Override
                     public void onSelection(MaterialDialog dialog, View view, int which, CharSequence text) {
@@ -833,7 +833,7 @@ public class Utils {
         String[] mString = new String[] {ACTIVITY.getString(R.string.light_theme), ACTIVITY.getString(R.string.dark_theme)};
 
         new MaterialDialog.Builder(ACTIVITY)
-                .items(mString)
+                .items((CharSequence[]) mString)
                 .itemsCallback(new MaterialDialog.ListCallback() {
                     @Override
                     public void onSelection(MaterialDialog dialog, View itemView, int which, CharSequence text) {
@@ -1012,7 +1012,7 @@ public class Utils {
 
     }
 
-    public static boolean isComponentEnabled(PackageManager packageManager, String packageName, String className) {
+    private static boolean isComponentEnabled(PackageManager packageManager, String packageName, String className) {
 
         ComponentName mComponentName = new ComponentName(packageName, className);
 
@@ -1068,7 +1068,7 @@ public class Utils {
 
     }
 
-    public static boolean CopyAsset(AssetManager manager, String fromPath, String toPath) {
+    private static boolean CopyAsset(AssetManager manager, String fromPath, String toPath) {
 
         InputStream mIn;
 
@@ -1102,7 +1102,7 @@ public class Utils {
 
     }
 
-    public static void CopyFile(InputStream in, OutputStream out) throws IOException {
+    private static void CopyFile(InputStream in, OutputStream out) throws IOException {
 
         byte[] mBuffer = new byte[1024];
 
