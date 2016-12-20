@@ -153,6 +153,7 @@
     <orderEntry type="library" exported="" name="support-v13-25.0.0" level="project" />
     <orderEntry type="library" exported="" name="community-material-typeface-1.5.54.2" level="project" />
     <orderEntry type="library" exported="" name="support-spinner-1.0.4" level="project" />
+    <orderEntry type="library" exported="" name="guava-20.0" level="project" />
     <orderEntry type="library" exported="" name="support-core-ui-25.1.0" level="project" />
     <orderEntry type="library" exported="" name="advrecyclerview-0.10.2" level="project" />
     <orderEntry type="library" exported="" name="ionicons-typeface-2.0.1.2" level="project" />
@@ -168,7 +169,6 @@
     <orderEntry type="library" exported="" name="annotations-java5-15.0" level="project" />
     <orderEntry type="library" exported="" name="html-textview-3.1" level="project" />
     <orderEntry type="library" exported="" name="support-annotations-25.1.0" level="project" />
-    <orderEntry type="library" exported="" name="guava-19.0" level="project" />
     <orderEntry type="library" exported="" name="preference-v7-25.1.0" level="project" />
     <orderEntry type="library" exported="" name="support-compat-25.1.0" level="project" />
     <orderEntry type="library" exported="" name="animated-vector-drawable-25.1.0" level="project" />
