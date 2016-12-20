@@ -1140,8 +1140,11 @@ public class Utils {
                             .onPositive(new BouncingDialog.SingleButtonCallback() {
                                 @Override
                                 public void onClick(BouncingDialog bouncingDialog) {
+
                                     bouncingDialog.dismiss();
+
                                     throw new RuntimeException("Crash at \"SetZipFile()\" method.\nFile path: " + file.getAbsolutePath());
+
                                 }
                             });
                     mDialog.setCancelable(false);
@@ -1212,8 +1215,11 @@ public class Utils {
                             .onPositive(new BouncingDialog.SingleButtonCallback() {
                                 @Override
                                 public void onClick(BouncingDialog bouncingDialog) {
+
                                     bouncingDialog.dismiss();
+
                                     throw new RuntimeException("Crash at \"SetDeviceModel()\" method.\nCurrent model: " + model + "\nDevice compatibility list: " + Arrays.asList(ControlCenter.DEVICE_COMPATIBILITY_LIST));
+
                                 }
                             });
                     mDialog.setCancelable(false);
