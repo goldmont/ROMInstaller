@@ -196,9 +196,11 @@ public class MainActivity extends AppCompatActivity implements CustomFileChooser
                                     @Override
                                     public void onClick(BouncingDialog bouncingDialog1) {
 
-                                        Utils.SetDeviceModel(SystemProperties.get("ro.product.model"));
+                                        if (Utils.SetDeviceModel(SystemProperties.get("ro.product.model"))) {
 
-                                        FileChooser();
+                                            FileChooser();
+
+                                        }
 
                                     }
 
@@ -220,9 +222,11 @@ public class MainActivity extends AppCompatActivity implements CustomFileChooser
 
                                                                 dialog.dismiss();
 
-                                                                Utils.SetDeviceModel(text.toString());
+                                                                if (Utils.SetDeviceModel(text.toString())) {
 
-                                                                FileChooser();
+                                                                    FileChooser();
+
+                                                                }
 
                                                             }
                                                         })
@@ -751,11 +755,13 @@ public class MainActivity extends AppCompatActivity implements CustomFileChooser
                             @Override
                             public void onClick(BouncingDialog bouncingDialog1) {
 
-                                Utils.SetZipFile(file);
-
                                 Utils.SP_EDITOR.putString("file_path", file.getAbsolutePath()).apply();
 
-                                new CheckFile().execute();
+                                if (Utils.SetZipFile(file)) {
+
+                                    new CheckFile().execute();
+
+                                }
 
                             }
 

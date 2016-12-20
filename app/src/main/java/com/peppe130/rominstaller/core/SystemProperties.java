@@ -20,6 +20,8 @@
 package com.peppe130.rominstaller.core;
 
 
+import android.support.annotation.Nullable;
+
 @SuppressWarnings("unused")
 public class SystemProperties {
 
@@ -39,6 +41,7 @@ public class SystemProperties {
 
     }
 
+    @Nullable
     public static String get(String key) {
 
         try {

@@ -125,6 +125,11 @@
     <string name="exit_dialog_title">Exit</string>
     <string name="exit_dialog_message">Are you sure you want to exit?</string>
 
+    <!-- Crash Dialog -->
+    <string name="crash_zip_file_dialog_title">Failed to set ZIP file</string>
+    <string name="crash_device_model_dialog_title">Failed to set device model</string>
+    <string name="crash_dialog_message">Please, inform the ROM developer\nabout this issue by reporting it.\nThe App will now crash.\n\nThanks for your patience.</string>
+
     <!-- Preferences -->
     <string name="selected_item">Selected: %s</string>
     <string name="select_install">Select to install</string>
@@ -150,20 +155,20 @@
     <string name="current_device_model">Device model</string>
     <string name="current_build_version">Build version</string>
     <string name="about_project_title">Project</string>
-    <string name="about_project_summary">View info about the project</string>
+    <string name="about_project_summary">View info about the project.</string>
     <string name="about_rom_title">App &amp; ROM</string>
-    <string name="about_rom_summary">View info about the App and the ROM</string>
+    <string name="about_rom_summary">View info about the App and the ROM.</string>
     <string name="project_version">Project version</string>
     <string name="project_developer_title">Project developer</string>
     <string name="project_developer_summary">Giuseppe Montuoro</string>
     <string name="project_themer_title">Project themer</string>
     <string name="project_themer_summary">Costantino Di Bruno</string>
     <string name="project_thread_title">Thread</string>
-    <string name="project_thread_summary">View the project thread</string>
-    <string name="rom_thread_summary">View the ROM thread</string>
+    <string name="project_thread_summary">View the project thread.</string>
+    <string name="rom_thread_summary">View the ROM thread.</string>
     <string name="project_github_title">GitHub</string>
-    <string name="project_github_summary">View the App project on GitHub</string>
-    <string name="rom_github_summary">View the App code on GitHub</string>
+    <string name="project_github_summary">View the App project on GitHub.</string>
+    <string name="rom_github_summary">View the App code on GitHub.</string>
     <string name="app_version">App version</string>
     <string name="rom_version">ROM version</string>
     <string name="rom_developer_title">App &amp; ROM developer</string>
@@ -171,9 +176,9 @@
     <string name="donate_project_title">Donate</string>
     <string name="donate_project_summary">Become a supporter!</string>
     <string name="review_app_title">Leave a review!</string>
-    <string name="review_app_summary">Review the App on Play Store</string>
+    <string name="review_app_summary">Review the App on Play Store.</string>
     <string name="my_apps_title">My Apps</string>
-    <string name="my_apps_summary">View all my Apps on Play Store</string>
+    <string name="my_apps_summary">View all my Apps on Play Store.</string>
 
     <!-- Others -->
     <string name="no_application_found">Can not find an application to perform this action.</string>
@@ -181,8 +186,8 @@
     <string name="preferences_exported">Preferences exported. Disable test mode in order to install.</string>
 
     <!-- ROM Info -->
-    <string name="rom_build_number">Your ROM build number</string>
-    <string name="rom_developer_summary">App and ROM developer name</string>
-    <string name="rom_themer_summary">App and ROM themer name</string>
+    <string name="rom_build_number">Your ROM build number.</string>
+    <string name="rom_developer_summary">App and ROM developer name.</string>
+    <string name="rom_themer_summary">App and ROM themer name.</string>
 
 </resources>

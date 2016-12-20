@@ -42,7 +42,6 @@ public class CheckFile extends AsyncTask<String, String, Boolean> {
     private String mMD5;
     private Vibrator mVibrator;
     private BouncingDialog mProgress;
-    private Boolean isDeviceCompatible;
 
     @Override
     protected void onPreExecute() {
@@ -58,8 +57,6 @@ public class CheckFile extends AsyncTask<String, String, Boolean> {
         Utils.ACTIVITY.getWindow().addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
 
         mVibrator = (Vibrator) Utils.ACTIVITY.getSystemService(Context.VIBRATOR_SERVICE);
-
-        isDeviceCompatible = Arrays.asList(ControlCenter.DEVICE_COMPATIBILITY_LIST).contains(Utils.GetDeviceModel());
 
         mProgress = new BouncingDialog(Utils.ACTIVITY, BouncingDialog.PROGRESS_TYPE);
         mProgress.title(Utils.ACTIVITY.getString(R.string.progress_dialog_title));
@@ -106,51 +103,41 @@ public class CheckFile extends AsyncTask<String, String, Boolean> {
 
         if (ControlCenter.TRIAL_MODE) {
 
-            isDeviceCompatible = true;
+            updateResult((long) 2500, sbUpdate.append(Utils.ACTIVITY.getString(R.string.calculating_md5)).append(" (Fake)").toString());
 
-        }
+            updateResult((long) 5000, sbUpdate.append(Utils.ACTIVITY.getString(R.string.initialized)).toString());
 
-        if (isDeviceCompatible) {
+            return true;
 
-            if (ControlCenter.TRIAL_MODE) {
+        } else {
 
-                updateResult((long) 2500, sbUpdate.append(Utils.ACTIVITY.getString(R.string.calculating_md5)).append(" (Fake)").toString());
+            publishProgress(sbUpdate.append(Utils.ACTIVITY.getString(R.string.calculating_md5)).toString());
+
+            try {
+
+                mMD5 = Files.hash(Utils.GetZipFile(), Hashing.md5()).toString();
+
+            } catch (IOException e) {
+
+                e.printStackTrace();
+
+            }
+
+            try {
+
+                Thread.sleep(2000);
+
+            } catch (InterruptedException e) {
+
+                e.printStackTrace();
+
+            }
+
+            if ((Utils.GetZipFile().exists()) && (Arrays.asList(ControlCenter.ROM_MD5_LIST).contains(mMD5.toUpperCase()) || Arrays.asList(ControlCenter.ROM_MD5_LIST).contains(mMD5.toLowerCase()))) {
 
                 updateResult((long) 5000, sbUpdate.append(Utils.ACTIVITY.getString(R.string.initialized)).toString());
 
                 return true;
-
-            } else {
-
-                publishProgress(sbUpdate.append(Utils.ACTIVITY.getString(R.string.calculating_md5)).toString());
-
-                try {
-
-                    mMD5 = Files.hash(Utils.GetZipFile(), Hashing.md5()).toString();
-
-                } catch (IOException e) {
-
-                    e.printStackTrace();
-
-                }
-
-                try {
-
-                    Thread.sleep(2000);
-
-                } catch (InterruptedException e) {
-
-                    e.printStackTrace();
-
-                }
-
-                if ((Utils.GetZipFile().exists()) && (Arrays.asList(ControlCenter.ROM_MD5_LIST).contains(mMD5.toUpperCase()) || Arrays.asList(ControlCenter.ROM_MD5_LIST).contains(mMD5.toLowerCase()))) {
-
-                    updateResult((long) 5000, sbUpdate.append(Utils.ACTIVITY.getString(R.string.initialized)).toString());
-
-                    return true;
-
-                }
 
             }
 
@@ -196,24 +183,7 @@ public class CheckFile extends AsyncTask<String, String, Boolean> {
 
         Utils.ACTIVITY.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
 
-        if (!isDeviceCompatible) {
-
-            BouncingDialog bouncingDialog = new BouncingDialog(Utils.ACTIVITY, BouncingDialog.ERROR_TYPE)
-                    .title(Utils.ACTIVITY.getString(R.string.incompatible_device_dialog_title))
-                    .content(Utils.ACTIVITY.getString(R.string.incompatible_device_dialog_message))
-                    .positiveText(Utils.ACTIVITY.getString(R.string.close_button))
-                    .onNegative(new BouncingDialog.SingleButtonCallback() {
-                        @Override
-                        public void onClick(BouncingDialog bouncingDialog1) {
-
-                            Utils.ACTIVITY.finishAffinity();
-
-                        }
-                    });
-            bouncingDialog.setCancelable(false);
-            bouncingDialog.show();
-
-        } else if ((Utils.GetZipFile().exists()) && result) {
+        if ((Utils.GetZipFile().exists()) && result) {
 
             mVibrator.vibrate(1500);
 

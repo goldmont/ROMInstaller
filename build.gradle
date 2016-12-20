@@ -1,23 +1,37 @@
 buildscript {
+
     repositories {
+
         jcenter()
+
     }
+
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.2.0'
+
+        classpath 'com.android.tools.build:gradle:2.2.3'
+
     }
+
 }
 
 allprojects {
+
     repositories {
 
         maven { url "http://dl.bintray.com/populov/maven" }
         mavenCentral()
 
     }
+
     repositories {
+
         jcenter {
+
             //noinspection GroovyAssignabilityCheck
             url "http://jcenter.bintray.com/"
+
         }
+
     }
+
 }

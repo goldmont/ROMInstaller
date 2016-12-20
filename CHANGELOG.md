@@ -1,3 +1,7 @@
+* 2016-12-20
+  * Updated Gradle dependencies.
+  * Fixed SetZipFile() and SetDeviceModel() methods in Utils class.
+
 * 2016-09-30
   * Updated Gradle dependencies.
   * No significant changes in the code. You can just replace your current build.gradle with the new one.

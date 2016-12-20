@@ -1116,19 +1116,63 @@ public class Utils {
 
     }
 
-    public static void SetZipFile(File file) {
+    @NonNull
+    public static Boolean SetZipFile(final File file) {
 
-        if (file.getAbsolutePath().contains("/storage/emulated")) {
+        if (CheckZipPath(file)) {
 
             ZIP_FILE = new File(file.getAbsolutePath());
 
             FILE_NAME = file.getName();
 
+            return true;
+
         } else {
 
-            throw new RuntimeException("Please, use \"SetZipFile()\" method only to set a valid ZIP file.");
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+
+                    BouncingDialog mDialog = new BouncingDialog(ACTIVITY, BouncingDialog.ERROR_TYPE)
+                            .title(ACTIVITY.getString(R.string.crash_zip_file_dialog_title))
+                            .content(ACTIVITY.getString(R.string.crash_dialog_message))
+                            .positiveText(ACTIVITY.getString(R.string.ok_button))
+                            .onPositive(new BouncingDialog.SingleButtonCallback() {
+                                @Override
+                                public void onClick(BouncingDialog bouncingDialog) {
+                                    bouncingDialog.dismiss();
+                                    throw new RuntimeException("Crash at \"SetZipFile()\" method.\nFile path: " + file.getAbsolutePath());
+                                }
+                            });
+                    mDialog.setCancelable(false);
+                    mDialog.show();
+
+                }
+            }, 300);
 
         }
+
+        return false;
+
+    }
+
+    @NonNull
+    private static Boolean CheckZipPath(File file) {
+
+        @SuppressLint("SdCardPath")
+        String[] mPaths = new String[] {"/storage/", "/sdcard/", "/mnt/"};
+
+        for (String mPath : mPaths) {
+
+            if (file.getAbsolutePath().contains(mPath)) {
+
+                return true;
+
+            }
+
+        }
+
+        return false;
 
     }
 
@@ -1146,17 +1190,41 @@ public class Utils {
 
     }
 
-    public static void SetDeviceModel(String model) {
+    @NonNull
+    public static Boolean SetDeviceModel(final String model) {
 
         if (ControlCenter.TRIAL_MODE || Arrays.asList(ControlCenter.DEVICE_COMPATIBILITY_LIST).contains(model)) {
 
             MODEL = model;
 
+            return true;
+
         } else {
 
-            throw new RuntimeException("Please, use \"SetDeviceModel()\" method only to set a valid device model.");
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+
+                    BouncingDialog mDialog = new BouncingDialog(ACTIVITY, BouncingDialog.ERROR_TYPE)
+                            .title(ACTIVITY.getString(R.string.crash_device_model_dialog_title))
+                            .content(ACTIVITY.getString(R.string.crash_dialog_message))
+                            .positiveText(ACTIVITY.getString(R.string.ok_button))
+                            .onPositive(new BouncingDialog.SingleButtonCallback() {
+                                @Override
+                                public void onClick(BouncingDialog bouncingDialog) {
+                                    bouncingDialog.dismiss();
+                                    throw new RuntimeException("Crash at \"SetDeviceModel()\" method.\nCurrent model: " + model + "\nDevice compatibility list: " + Arrays.asList(ControlCenter.DEVICE_COMPATIBILITY_LIST));
+                                }
+                            });
+                    mDialog.setCancelable(false);
+                    mDialog.show();
+
+                }
+            }, 300);
 
         }
+
+        return false;
 
     }
 
