@@ -1119,63 +1119,11 @@ public class Utils {
     @NonNull
     public static Boolean SetZipFile(final File file) {
 
-        if (CheckZipPath(file)) {
+        ZIP_FILE = new File(file.getAbsolutePath());
 
-            ZIP_FILE = new File(file.getAbsolutePath());
+        FILE_NAME = file.getName();
 
-            FILE_NAME = file.getName();
-
-            return true;
-
-        } else {
-
-            new Handler().postDelayed(new Runnable() {
-                @Override
-                public void run() {
-
-                    BouncingDialog mDialog = new BouncingDialog(ACTIVITY, BouncingDialog.ERROR_TYPE)
-                            .title(ACTIVITY.getString(R.string.crash_zip_file_dialog_title))
-                            .content(ACTIVITY.getString(R.string.crash_dialog_message))
-                            .positiveText(ACTIVITY.getString(R.string.ok_button))
-                            .onPositive(new BouncingDialog.SingleButtonCallback() {
-                                @Override
-                                public void onClick(BouncingDialog bouncingDialog) {
-
-                                    bouncingDialog.dismiss();
-
-                                    throw new RuntimeException("Crash at \"SetZipFile()\" method.\nFile path: " + file.getAbsolutePath());
-
-                                }
-                            });
-                    mDialog.setCancelable(false);
-                    mDialog.show();
-
-                }
-            }, 300);
-
-        }
-
-        return false;
-
-    }
-
-    @NonNull
-    private static Boolean CheckZipPath(File file) {
-
-        @SuppressLint("SdCardPath")
-        String[] mPaths = new String[] {"/storage/", "/sdcard/", "/mnt/"};
-
-        for (String mPath : mPaths) {
-
-            if (file.getAbsolutePath().contains(mPath)) {
-
-                return true;
-
-            }
-
-        }
-
-        return false;
+        return true;
 
     }
 

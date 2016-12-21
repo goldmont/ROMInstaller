@@ -44,6 +44,7 @@
     <string name="set_path_dialog_message">Choose the path where\nyou placed ROM file.</string>
     <string name="choose_sample_file">Choose \"SampleROM.zip\" file under %1$s</string>
     <string name="not_valid_zip_file">This is not a valid ZIP file.</string>
+    <string name="not_valid_zip_file_path">This is not a valid ZIP file path.</string>
     <string name="confirm_file_dialog_title">Selected file:</string>
     <string name="confirm_file_dialog_title2">Path:</string>
     <string name="download_rom_from_file_chooser_dialog_content">Are you sure you wish to download?</string>
@@ -126,7 +127,6 @@
     <string name="exit_dialog_message">Are you sure you want to exit?</string>
 
     <!-- Crash Dialog -->
-    <string name="crash_zip_file_dialog_title">Failed to set ZIP file</string>
     <string name="crash_device_model_dialog_title">Failed to set device model</string>
     <string name="crash_dialog_message">Please, inform the ROM developer\nabout this issue by reporting it.\nThe App will now crash.\n\nThanks for your patience.</string>
 

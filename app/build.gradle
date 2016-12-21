@@ -12,7 +12,7 @@ android {
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
-        buildConfigField "String", "PROJECT_VERSION", '"3.2"'
+        buildConfigField "String", "PROJECT_VERSION", '"3.3 - Preview"'
 
         return void;
 

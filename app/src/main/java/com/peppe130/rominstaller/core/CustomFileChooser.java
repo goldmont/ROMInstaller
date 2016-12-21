@@ -19,6 +19,7 @@
 
 package com.peppe130.rominstaller.core;
 
+import android.annotation.SuppressLint;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.Manifest;
@@ -30,6 +31,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
+import com.google.common.io.Files;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
@@ -433,23 +435,31 @@ public class CustomFileChooser extends DialogFragment implements MaterialDialog.
 
                                 parentContents = listFiles(getBuilder().mMimeType);
 
-                                MaterialDialog dialog2 = (MaterialDialog) getDialog();
+                                MaterialDialog dialog = (MaterialDialog) getDialog();
 
-                                dialog2.setTitle(parentFolder.toString());
+                                dialog.setTitle(parentFolder.toString());
 
                                 getArguments().putString("current_path", parentFolder.toString());
 
-                                dialog2.setItems((CharSequence[]) getContentsArray());
+                                dialog.setItems((CharSequence[]) getContentsArray());
 
                             }
                         })
                         .show();
 
-            } else if (parentFolder.getAbsolutePath().contains(".zip")) {
+            } else if (Files.getFileExtension(parentFolder.getName()).equalsIgnoreCase("zip")) {
 
-                mCallback.onFileSelection(this, parentFolder);
+                if (CheckZipPath(parentFolder)) {
 
-                dismiss();
+                    mCallback.onFileSelection(this, parentFolder);
+
+                    dismiss();
+
+                } else {
+
+                    Utils.ToastShort(getActivity(), getString(R.string.not_valid_zip_file_path));
+
+                }
 
             } else {
 
@@ -470,6 +480,26 @@ public class CustomFileChooser extends DialogFragment implements MaterialDialog.
             dialog.setItems((CharSequence[]) getContentsArray());
 
         }
+
+    }
+
+    @NonNull
+    private static Boolean CheckZipPath(File file) {
+
+        @SuppressLint("SdCardPath")
+        String[] mPaths = new String[] {"/storage/emulated", "/mnt/sdcard", "/sdcard"};
+
+        for (String mPath : mPaths) {
+
+            if (file.getAbsolutePath().contains(mPath)) {
+
+                return true;
+
+            }
+
+        }
+
+        return false;
 
     }
 

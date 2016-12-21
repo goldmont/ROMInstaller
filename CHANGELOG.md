@@ -1,3 +1,6 @@
+* 2016-12-21
+  * Part of the SetZipFile() method has been moved to CustomFileChooser() class.
+
 * 2016-12-20
   * Updated Gradle dependencies.
   * Fixed SetZipFile() and SetDeviceModel() methods in Utils class.
