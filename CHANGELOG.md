@@ -1,3 +1,6 @@
+* 2018-11-03
+  * Added support for Android 9.0 Pie.
+
 * 2016-12-21
   * Part of the SetZipFile() method has been moved to CustomFileChooser() class.
 
