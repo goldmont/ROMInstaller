@@ -137,7 +137,7 @@ public class MainActivity extends AppCompatActivity implements CustomFileChooser
 
         FragmentsCollector.Setup();
 
-        if (ControlCenter.TEST_MODE) {
+        if (ControlCenter.PREVIEW_MODE) {
 
             Utils.SHOULD_LOCK_UI = false;
 
@@ -385,7 +385,7 @@ public class MainActivity extends AppCompatActivity implements CustomFileChooser
 
                 Utils.ExportPreferences();
 
-                if (!ControlCenter.TEST_MODE) {
+                if (!ControlCenter.PREVIEW_MODE) {
 
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
 
@@ -479,7 +479,7 @@ public class MainActivity extends AppCompatActivity implements CustomFileChooser
 
                 }
 
-                if (mShouldShowSwipeHint && mLatestPage.equals(position) && !ControlCenter.BUTTON_UI && !ControlCenter.TEST_MODE) {
+                if (mShouldShowSwipeHint && mLatestPage.equals(position) && !ControlCenter.BUTTON_UI && !ControlCenter.PREVIEW_MODE) {
 
                     mShouldShowSwipeHint = false;
 
@@ -495,7 +495,7 @@ public class MainActivity extends AppCompatActivity implements CustomFileChooser
 
                         Utils.ExportPreferences();
 
-                        if (!ControlCenter.TEST_MODE) {
+                        if (!ControlCenter.PREVIEW_MODE) {
 
                             if (Utils.SNACKBAR != null) {
 

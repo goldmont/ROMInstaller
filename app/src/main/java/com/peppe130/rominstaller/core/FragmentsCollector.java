@@ -19,8 +19,10 @@
 
 package com.peppe130.rominstaller.core;
 
+import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.preference.XpPreferenceFragment;
 import android.view.LayoutInflater;
@@ -133,6 +135,14 @@ public class FragmentsCollector {
             // Do nothing
         }
 
+        @Override
+        public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+
+            super.onViewCreated(view, savedInstanceState);
+
+            getListView().setBackgroundColor(Color.TRANSPARENT);
+
+        }
     }
 
 }

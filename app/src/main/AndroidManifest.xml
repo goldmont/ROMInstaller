@@ -42,7 +42,7 @@
         <activity
             android:name="com.peppe130.rominstaller.activities.SplashScreenActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.Wallpaper.NoTitleBar.Fullscreen">
+            android:theme="@style/SplashScreenTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

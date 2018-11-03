@@ -29,7 +29,7 @@ public class ControlCenter {
 
     //•• Modes & UI ••//////////////////////////////////////////////////////////////////////////////
 
-    public static Boolean TEST_MODE = false;
+    public static Boolean PREVIEW_MODE = true;
     public static Boolean TRIAL_MODE = true;
     public static Boolean BUTTON_UI = true;
 

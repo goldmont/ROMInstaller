@@ -516,7 +516,7 @@ class Download extends AsyncTask<String, String, String> {
 
                                         cancel(true);
 
-                                        if (!ControlCenter.TEST_MODE) {
+                                        if (!ControlCenter.PREVIEW_MODE) {
 
                                             Utils.SetZipFile(mDownloadedFile);
 
@@ -530,7 +530,7 @@ class Download extends AsyncTask<String, String, String> {
 
                                             Utils.ACTIVITY.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
 
-                                            Utils.ToastLong(Utils.ACTIVITY, Utils.ACTIVITY.getString(R.string.disable_test_mode_checkfile));
+                                            Utils.ToastLong(Utils.ACTIVITY, Utils.ACTIVITY.getString(R.string.disable_preview_mode_checkfile));
 
                                         }
 

@@ -94,7 +94,7 @@
 
     </style>
 
-    <style name="Theme.Wallpaper.NoTitleBar.Fullscreen" parent="Theme.Wallpaper.NoTitleBar.Fullscreen">
+    <style name="SplashScreenTheme">
 
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowFullscreen">true</item>

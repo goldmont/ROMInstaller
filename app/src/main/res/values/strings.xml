@@ -182,8 +182,8 @@
 
     <!-- Others -->
     <string name="no_application_found">Can not find an application to perform this action.</string>
-    <string name="disable_test_mode_checkfile">Disable test mode in order to check the downloaded file.</string>
-    <string name="preferences_exported">Preferences exported. Disable test mode in order to install.</string>
+    <string name="disable_preview_mode_checkfile">Disable preview mode in order to check the downloaded file.</string>
+    <string name="preferences_exported">Preferences exported. Disable preview mode in order to install.</string>
 
     <!-- ROM Info -->
     <string name="rom_build_number">Your ROM build number.</string>
