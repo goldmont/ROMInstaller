@@ -804,7 +804,7 @@ following values in the Gradle: `versionCode 1` and `versionName "1.0"`.
 # License
 
 ```
-Copyright © 2016-2018, Giuseppe Montuoro.
+Copyright © 2016-2019, Giuseppe Montuoro.
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
